@@ -16,3 +16,5 @@ ApplyButtonText,Apply,Appliquer
 ExitButtonText,Return,Retour
 %GeneralTab,,
 LanguageSelection,Select Language,Sélectionnez la langue
+%test,,
+TestLocalisation,It's a test,C'est un test

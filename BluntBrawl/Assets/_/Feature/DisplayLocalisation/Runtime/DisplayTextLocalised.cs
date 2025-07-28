@@ -11,7 +11,7 @@ namespace DisplayLocalisation.Runtime
         #region Unity API
         
 
-        private void OnEnable()
+        private void Start()
         {
             DisplayLocalisedText();
             GameManager.Runtime.GameManager.m_OnLanguageChanged.AddListener(DisplayLocalisedText);

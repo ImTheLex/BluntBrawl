@@ -44,6 +44,8 @@ MonoBehaviour:
         m_textValue: Return
       - m_textKey: LanguageSelection
         m_textValue: Select Language
+      - m_textKey: TestLocalisation
+        m_textValue: It's a test
     - m_languageKey: "Francais\r"
       m_textLoca:
       - m_textKey: TitleGame
@@ -73,4 +75,6 @@ MonoBehaviour:
       - m_textKey: ExitButtonText
         m_textValue: "Retour\r"
       - m_textKey: LanguageSelection
-        m_textValue: "S\xE9lectionnez la langue"
+        m_textValue: "S\xE9lectionnez la langue\r"
+      - m_textKey: TestLocalisation
+        m_textValue: C'est un test

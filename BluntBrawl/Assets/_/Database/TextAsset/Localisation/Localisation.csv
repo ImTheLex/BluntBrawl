@@ -1,0 +1,18 @@
+,English,Francais
+%MainMenu,,
+TitleGame,My Beautiful Game,Mon Magnifique Jeu Vidéal
+StartGame,New Run,Nouvelle Parte
+LoadGame,Load Run,Chargée Partie
+Settings,Settings,Paramètres
+Credits,Credits,Crédits
+ExitGame,Quit,Quitter
+%SettingsMenu,,
+SettingsTitle,Settings,Paramètres
+GeneralButtonText,General,Général
+GraphicsButtonText,Graphics,Vidéo
+AudioButtonText,Sounds,Audio
+InputButtonText,Inputs,Contrôles
+ApplyButtonText,Apply,Appliquer
+ExitButtonText,Return,Retour
+%GeneralTab,,
+LanguageSelection,Select Language,Sélectionnez la langue

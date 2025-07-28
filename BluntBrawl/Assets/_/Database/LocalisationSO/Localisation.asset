@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1e84a37c525744fbf453f351ee8382, type: 3}
+  m_Name: Localisation
+  m_EditorClassIdentifier: 
+  m_localisationData:
+    m_languages:
+    - m_languageKey: English
+      m_textLoca:
+      - m_textKey: TitleGame
+        m_textValue: My Beautiful Game
+      - m_textKey: StartGame
+        m_textValue: New Run
+      - m_textKey: LoadGame
+        m_textValue: Load Run
+      - m_textKey: Settings
+        m_textValue: Settings
+      - m_textKey: Credits
+        m_textValue: Credits
+      - m_textKey: ExitGame
+        m_textValue: Quit
+      - m_textKey: SettingsTitle
+        m_textValue: Settings
+      - m_textKey: GeneralButtonText
+        m_textValue: General
+      - m_textKey: GraphicsButtonText
+        m_textValue: Graphics
+      - m_textKey: AudioButtonText
+        m_textValue: Sounds
+      - m_textKey: InputButtonText
+        m_textValue: Inputs
+      - m_textKey: ApplyButtonText
+        m_textValue: Apply
+      - m_textKey: ExitButtonText
+        m_textValue: Return
+      - m_textKey: LanguageSelection
+        m_textValue: Select Language
+    - m_languageKey: "Francais\r"
+      m_textLoca:
+      - m_textKey: TitleGame
+        m_textValue: "Mon Magnifique Jeu Vid\xE9al\r"
+      - m_textKey: StartGame
+        m_textValue: "Nouvelle Parte\r"
+      - m_textKey: LoadGame
+        m_textValue: "Charg\xE9e Partie\r"
+      - m_textKey: Settings
+        m_textValue: "Param\xE8tres\r"
+      - m_textKey: Credits
+        m_textValue: "Cr\xE9dits\r"
+      - m_textKey: ExitGame
+        m_textValue: "Quitter\r"
+      - m_textKey: SettingsTitle
+        m_textValue: "Param\xE8tres\r"
+      - m_textKey: GeneralButtonText
+        m_textValue: "G\xE9n\xE9ral\r"
+      - m_textKey: GraphicsButtonText
+        m_textValue: "Vid\xE9o\r"
+      - m_textKey: AudioButtonText
+        m_textValue: "Audio\r"
+      - m_textKey: InputButtonText
+        m_textValue: "Contr\xF4les\r"
+      - m_textKey: ApplyButtonText
+        m_textValue: "Appliquer\r"
+      - m_textKey: ExitButtonText
+        m_textValue: "Retour\r"
+      - m_textKey: LanguageSelection
+        m_textValue: "S\xE9lectionnez la langue"

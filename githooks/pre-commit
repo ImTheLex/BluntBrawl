@@ -1,22 +1,38 @@
 #!/bin/bash
 
-# Taille max en octets (ex: 100 Mo)
-MAX_SIZE=$((100 * 1024 * 1024))
+# Limites (en octets)
+MAX_FILE_SIZE=$((95 * 1024 * 1024))      # 95 Mo par fichier
+MAX_TOTAL_SIZE=$((250 * 1024 * 1024))    # 250 Mo pour tous les fichiers
 
-# Récupère la liste des fichiers ajoutés/modifiés pour le commit
+TOTAL_SIZE=0
+
+# Liste des fichiers ajoutés ou modifiés (staged uniquement)
 FILES=$(git diff --cached --name-only --diff-filter=AM)
 
 for file in $FILES; do
-  # Vérifie si le fichier existe (parfois supprimé ou déplacé)
+  # Vérifie si le fichier existe réellement (évite erreurs si supprimé)
   if [ ! -f "$file" ]; then
     continue
   fi
 
   FILESIZE=$(wc -c <"$file")
-  if [ "$FILESIZE" -gt "$MAX_SIZE" ]; then
-    echo "❌ Fichier trop gros : $file (${FILESIZE} octets) - max autorisé : ${MAX_SIZE} octets"
+
+  # Vérifie la taille individuelle
+  if [ "$FILESIZE" -gt "$MAX_FILE_SIZE" ]; then
+    echo "❌ Le fichier '$file' dépasse la taille maximale autorisée de 95 Mo (${FILESIZE} octets)."
     exit 1
   fi
+
+  # Ajoute au total
+  TOTAL_SIZE=$((TOTAL_SIZE + FILESIZE))
 done
 
+# Vérifie la taille totale
+if [ "$TOTAL_SIZE" -gt "$MAX_TOTAL_SIZE" ]; then
+  echo "❌ La taille totale des fichiers dans ce commit est trop élevée (${TOTAL_SIZE} octets)."
+  echo "📦 Limite totale autorisée : ${MAX_TOTAL_SIZE} octets."
+  exit 1
+fi
+
+# Tout est bon
 exit 0

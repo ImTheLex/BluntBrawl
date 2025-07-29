@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Taille max en octets (ex: 100 Mo)
+MAX_SIZE=$((100 * 1024 * 1024))
+
+# Récupère la liste des fichiers ajoutés/modifiés pour le commit
+FILES=$(git diff --cached --name-only --diff-filter=AM)
+
+for file in $FILES; do
+  # Vérifie si le fichier existe (parfois supprimé ou déplacé)
+  if [ ! -f "$file" ]; then
+    continue
+  fi
+
+  FILESIZE=$(wc -c <"$file")
+  if [ "$FILESIZE" -gt "$MAX_SIZE" ]; then
+    echo "❌ Fichier trop gros : $file (${FILESIZE} octets) - max autorisé : ${MAX_SIZE} octets"
+    exit 1
+  fi
+done
+
+exit 0

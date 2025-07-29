@@ -1,0 +1,22 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE="$1"
+COMMIT_MSG=$(head -n 1 "$COMMIT_MSG_FILE")
+
+KEYWORDS="Added Removed Fixed Updated Refactored Improved Docs Tested Chore Breaking"
+
+if [[ "$COMMIT_MSG" != *:* ]]; then
+  echo "❌ Le message doit contenir ':' après un mot-clé."
+  echo "📌 Mots-clés valides : $KEYWORDS"
+  exit 1
+fi
+
+PREFIX=$(echo "$COMMIT_MSG" | cut -d ':' -f 1 | xargs)
+
+if ! echo "$KEYWORDS" | grep -wq "$PREFIX"; then
+  echo "❌ Mot-clé invalide '$PREFIX'. Utilise un des mots-clés suivants :"
+  echo "$KEYWORDS"
+  exit 1
+fi
+
+exit 0

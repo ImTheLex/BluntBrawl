@@ -14,6 +14,7 @@ namespace Player.Runtime
         {
             _playerInputActions = new BluntBrawlInputActions();
             _playerInputActions.Player.SetCallbacks(this);
+            _cameraRig = FindFirstObjectByType<OVRCameraRig>();
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -22,10 +23,12 @@ namespace Player.Runtime
 
         private void Update()
         {
+            MoveCameraRIG();
             MovePlayer();
         }
 
         
+
         #endregion
         
         #region Input Actions
@@ -79,12 +82,22 @@ namespace Player.Runtime
         #region Utils
 
         
+        private void MoveCameraRIG()
+        {
+            Vector3 cameraDirection = new Vector3();
+            cameraDirection.x = _playerInputMovement.x;
+            cameraDirection.z = _playerInputMovement.y;
+            _cameraRig.trackingSpace.position += cameraDirection * (Time.deltaTime * _moveSpeed);
+        }
+        
         private void MovePlayer()
         {
-            Vector3 playerDirection = new Vector3();
-            playerDirection.x = _playerInputMovement.x;
-            playerDirection.z = _playerInputMovement.y;
-            transform.position += playerDirection * (Time.deltaTime * _moveSpeed);
+            Vector3 cameraRigPosition = new Vector2();
+            cameraRigPosition.x = _cameraRig.centerEyeAnchor.position.x;
+            cameraRigPosition.y = transform.position.y;
+            cameraRigPosition.z = _cameraRig.centerEyeAnchor.position.z;
+            
+            transform.position = cameraRigPosition;
         }
 
         #endregion
@@ -96,6 +109,8 @@ namespace Player.Runtime
         
         [SerializeField] private float _moveSpeed;
         private Vector2 _playerInputMovement;
+        
+        private OVRCameraRig _cameraRig;
 
         #endregion
     }

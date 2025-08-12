@@ -1,9 +1,8 @@
 {
-    "name": "Player.Runtime",
-    "rootNamespace": "Player.Runtime",
+    "name": "InputSystem.BluntBrawl",
+    "rootNamespace": "InputSystem.BluntBrawl",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:e1fae2a514a506345a71eedd9ac336f6"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

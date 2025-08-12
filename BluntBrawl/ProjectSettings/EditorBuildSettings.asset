@@ -6,9 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_/Levels/00_MainMenu.unity
-    guid: fe751974ee0335b4e9d9d2a366b9d621
+    path: Assets/_/Levels/Nicolas/SoloTest.unity
+    guid: 4da2266630d641f4780cfebd68a84fd9
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 250f46c0c463e4149ab3aba9d7d9564a, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 28e87a6096fe1144cbca036a4a922079, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: ce40df35bace2e645af2fbf84a5fa1cf, type: 2}

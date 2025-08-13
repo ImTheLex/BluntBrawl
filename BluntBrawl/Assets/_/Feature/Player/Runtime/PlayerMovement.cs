@@ -81,32 +81,14 @@ namespace Player.Runtime
         #endregion
 
         #region Utils
-
+      
         
-        private void MoveCameraRIG()
-        {
-            Vector3 cameraDirection = new Vector3();
-            cameraDirection.x = _playerInputMovement.x;
-            cameraDirection.z = _playerInputMovement.y;
-            _cameraRig.trackingSpace.position += cameraDirection * (Time.deltaTime * _moveSpeed);
-        }
-        
-        private void MovePlayer()
-        {
-            Vector3 cameraRigPosition = new Vector2();
-            cameraRigPosition.x = _cameraRig.centerEyeAnchor.position.x;
-            cameraRigPosition.y = transform.position.y;
-            cameraRigPosition.z = _cameraRig.centerEyeAnchor.position.z;
-            
-            transform.position = cameraRigPosition;
-        }
-
         private void MoveDebugPlayer()
         {
             Vector3 cameraDirection = new Vector3();
             cameraDirection.x = _playerInputMovement.x;
             cameraDirection.z = _playerInputMovement.y;
-            transform.position += cameraDirection * (Time.deltaTime * _moveSpeed);
+            _characterController.Move(cameraDirection * (Time.deltaTime * _moveSpeed));
         }
 
         #endregion
@@ -118,8 +100,8 @@ namespace Player.Runtime
         
         [SerializeField] private float _moveSpeed;
         private Vector2 _playerInputMovement;
-        
-        private OVRCameraRig _cameraRig;
+
+        private CharacterController _characterController;
 
         #endregion
     }

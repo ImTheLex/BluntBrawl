@@ -3,9 +3,7 @@
     "rootNamespace": "Player.Runtime",
     "references": [
         "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:e1fae2a514a506345a71eedd9ac336f6",
-        "GUID:f64c9ebcd7899c3448a08dc9f9ddbe30",
-        "GUID:2a230cb87a1d3ba4a98bdc0ddae76e6c"
+        "GUID:e1fae2a514a506345a71eedd9ac336f6"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

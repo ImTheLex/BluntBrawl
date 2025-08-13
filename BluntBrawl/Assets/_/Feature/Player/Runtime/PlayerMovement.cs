@@ -14,7 +14,7 @@ namespace Player.Runtime
         {
             _playerInputActions = new BluntBrawlInputActions();
             _playerInputActions.Player.SetCallbacks(this);
-            _characterController.GetComponent<CharacterController>();
+            // _characterController.GetComponent<CharacterController>();
             //_cameraRig = FindFirstObjectByType<OVRCameraRig>();
         }
 
@@ -89,7 +89,7 @@ namespace Player.Runtime
             Vector3 cameraDirection = new Vector3();
             cameraDirection.x = _playerInputMovement.x;
             cameraDirection.z = _playerInputMovement.y;
-            _characterController.Move(cameraDirection * (Time.deltaTime * _moveSpeed));
+            // _characterController.Move(cameraDirection * (Time.deltaTime * _moveSpeed));
         }
 
         #endregion
@@ -102,7 +102,7 @@ namespace Player.Runtime
         [SerializeField] private float _moveSpeed;
         private Vector2 _playerInputMovement;
 
-        private Oculus.Interaction.Locomotion.CharacterController _characterController;
+        // private Oculus.Interaction.Locomotion.CharacterController _characterController;
 
         #endregion
     }

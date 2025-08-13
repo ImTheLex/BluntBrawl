@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8919618807308650453}
   - component: {fileID: 2980662253674329003}
   - component: {fileID: 2489586108304332390}
-  - component: {fileID: 1061127139183406365}
   m_Layer: 0
   m_Name: P_Player
   m_TagString: Untagged
@@ -101,63 +100,6 @@ MonoBehaviour:
   _maxReboundSteps: 3
   _headAnchor: {fileID: 0}
   _feetAnchor: {fileID: 0}
---- !u!114 &1061127139183406365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793321201639762522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6a2955cc1374944a4634c6f312985a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterController: {fileID: 2489586108304332390}
-  _playerOrigin: {fileID: 0}
-  _playerEyes: {fileID: 0}
-  _maxWallPenetrationDistance: 0.3
-  _exitHotspotDistance: 0.3
-  _autoUpdateHeight: 1
-  _defaultHeight: 1.4
-  _heightOffset: 0
-  _crouchHeightOffset: -0.5
-  _speedFactor: 30
-  _crouchSpeedFactor: 10
-  _runningSpeedFactor: 50
-  _acceleration: 5
-  _groundDamping: 40
-  _jumpDamping: 0
-  _airDamping: 1
-  _jumpForce: 2.5
-  _gravityFactor: 1
-  _flattenInputVelocity: 1
-  _inputVelocityStabilization:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _velocityDisabled: 0
-  _maxStartGroundDistance: 10
 --- !u!1 &3749757037354438995
 GameObject:
   m_ObjectHideFlags: 0

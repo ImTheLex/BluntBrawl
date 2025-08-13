@@ -15,7 +15,6 @@ namespace NetworkConnection.Runtime
         #endregion
         private void Start()
         {
-            _networkManager = NetworkManager.singleton;
             m_discovery.OnServerFound.AddListener(OnServerFound);
             Debug.Log("Searching for host");
             m_discovery.StartDiscovery();
@@ -30,15 +29,15 @@ namespace NetworkConnection.Runtime
             
             foundServer = true;
             Debug.Log("Server found at " + info.EndPoint.Address + ":" + info.EndPoint.Port);
-            _networkManager.networkAddress = info.uri.Host; 
-            _networkManager.StartClient();
+            NetworkManager.singleton.networkAddress = info.uri.Host; 
+            NetworkManager.singleton.StartClient();
         }
 
         private void BecomeHost()
         {
             if (foundServer) return;
             Debug.Log("BecomeHost");
-            _networkManager.StartHost();
+            NetworkManager.singleton.StartHost();
             m_discovery.AdvertiseServer();
             
         }
@@ -47,7 +46,6 @@ namespace NetworkConnection.Runtime
         
         #region Privates
         
-        private NetworkManager _networkManager;
         private bool foundServer = false;
         
         #endregion

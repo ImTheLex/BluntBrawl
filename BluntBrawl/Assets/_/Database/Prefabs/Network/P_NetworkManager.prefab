@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6786390845849760935}
   - component: {fileID: 3581962715668036509}
-  - component: {fileID: 919560476088320274}
   - component: {fileID: 1878762495234780805}
+  - component: {fileID: 7465289040763628085}
+  - component: {fileID: 4254437120310066663}
+  - component: {fileID: -2515597523990358634}
   m_Layer: 0
   m_Name: P_NetworkManager
   m_TagString: Untagged
@@ -55,12 +57,12 @@ MonoBehaviour:
   onlineScene: 
   offlineSceneLoadDelay: 0
   transport: {fileID: 1878762495234780805}
-  networkAddress: 10.64.100.110
+  networkAddress: 192.168.137.182
   maxConnections: 100
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 2717471289372107060, guid: 8377969e89251492fa82424fc0447749, type: 3}
+  playerPrefab: {fileID: 1793321201639762522, guid: b2057013f617be44aa7f1f4bd75469d9, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
@@ -79,20 +81,6 @@ MonoBehaviour:
   evaluationMethod: 0
   evaluationInterval: 3
   timeInterpolationGui: 0
---- !u!114 &919560476088320274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182541369029750026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offsetX: 0
-  offsetY: 0
 --- !u!114 &1878762495234780805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +110,62 @@ MonoBehaviour:
   debugLog: 0
   statisticsGUI: 0
   statisticsLog: 0
+--- !u!114 &7465289040763628085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182541369029750026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c761308e733c51245b2e8bb4201f46dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableActiveDiscovery: 1
+  BroadcastAddress: 
+  serverBroadcastListenPort: 47777
+  ActiveDiscoveryInterval: 3
+  transport: {fileID: 1878762495234780805}
+  OnServerFound:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4254437120310066663}
+        m_TargetAssemblyTypeName: Mirror.Discovery.NetworkDiscoveryHUD, Mirror.Components
+        m_MethodName: OnDiscoveredServer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  secretHandshake: 8623953361379444650
+--- !u!114 &4254437120310066663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182541369029750026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c37d3deca7a834d80cfd8d3cfcc510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkDiscovery: {fileID: 7465289040763628085}
+--- !u!114 &-2515597523990358634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182541369029750026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06d16d9f66bb49c99749fcc689bf0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_discovery: {fileID: 7465289040763628085}

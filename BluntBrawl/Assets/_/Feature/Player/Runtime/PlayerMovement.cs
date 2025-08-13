@@ -14,6 +14,7 @@ namespace Player.Runtime
         {
             _playerInputActions = new BluntBrawlInputActions();
             _playerInputActions.Player.SetCallbacks(this);
+            _characterController.GetComponent<CharacterController>();
             //_cameraRig = FindFirstObjectByType<OVRCameraRig>();
         }
 
@@ -25,7 +26,7 @@ namespace Player.Runtime
         {
             //MoveCameraRIG();
             //MovePlayer();
-            MoveDebugPlayer();
+            //MoveDebugPlayer();
         }
 
         
@@ -101,7 +102,7 @@ namespace Player.Runtime
         [SerializeField] private float _moveSpeed;
         private Vector2 _playerInputMovement;
 
-        private CharacterController _characterController;
+        private Oculus.Interaction.Locomotion.CharacterController _characterController;
 
         #endregion
     }

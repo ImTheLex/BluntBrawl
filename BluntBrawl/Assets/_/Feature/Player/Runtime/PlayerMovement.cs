@@ -14,7 +14,7 @@ namespace Player.Runtime
         {
             _playerInputActions = new BluntBrawlInputActions();
             _playerInputActions.Player.SetCallbacks(this);
-            _cameraRig = FindFirstObjectByType<OVRCameraRig>();
+            //_cameraRig = FindFirstObjectByType<OVRCameraRig>();
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -23,8 +23,9 @@ namespace Player.Runtime
 
         private void Update()
         {
-            MoveCameraRIG();
-            MovePlayer();
+            //MoveCameraRIG();
+            //MovePlayer();
+            MoveDebugPlayer();
         }
 
         
@@ -98,6 +99,14 @@ namespace Player.Runtime
             cameraRigPosition.z = _cameraRig.centerEyeAnchor.position.z;
             
             transform.position = cameraRigPosition;
+        }
+
+        private void MoveDebugPlayer()
+        {
+            Vector3 cameraDirection = new Vector3();
+            cameraDirection.x = _playerInputMovement.x;
+            cameraDirection.z = _playerInputMovement.y;
+            transform.position += cameraDirection * (Time.deltaTime * _moveSpeed);
         }
 
         #endregion

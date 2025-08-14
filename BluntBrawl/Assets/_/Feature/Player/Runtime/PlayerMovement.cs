@@ -1,5 +1,6 @@
 using InputSystem.BluntBrawl;
 using Mirror;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,7 @@ namespace Player.Runtime
         {
             _playerInputActions = new BluntBrawlInputActions();
             _playerInputActions.Player.SetCallbacks(this);
+            _playerHead = _playerOrigin.GetComponent<XROrigin>().Camera.transform;
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -22,7 +24,11 @@ namespace Player.Runtime
 
         private void Update()
         {
-            if (isLocalPlayer) MoveMediator();
+            if (isLocalPlayer)
+            {
+                Move();
+                //MoveLook();
+            }
         }
         
 
@@ -36,7 +42,7 @@ namespace Player.Runtime
     
             public void OnLook(InputAction.CallbackContext context)
             {
-                
+                _playerInputView = context.ReadValue<Vector2>();
             }
     
             public void OnAttack(InputAction.CallbackContext context)
@@ -79,12 +85,17 @@ namespace Player.Runtime
         #region Utils
       
         
-        private void MoveMediator()
+        private void Move()
         {
-            Vector3 cameraDirection = new Vector3();
-            cameraDirection.x = _playerInputMovement.x;
-            cameraDirection.z = _playerInputMovement.y;
-            _playerOrigin.position += cameraDirection * (Time.deltaTime * _moveSpeed);
+            Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y + _playerHead.right * _playerInputMovement.x;
+            inputDirection.y = 0;
+            _playerOrigin.position += inputDirection * (Time.deltaTime * _moveSpeed);
+        }
+
+        private void MoveLook()
+        {
+            float rotateDirection = _playerInputView.y * Time.deltaTime * _rotateSpeed;
+            _playerOrigin.Rotate(0, rotateDirection, 0);
         }
 
         #endregion
@@ -94,10 +105,14 @@ namespace Player.Runtime
         
         private BluntBrawlInputActions _playerInputActions;
         
-        [SerializeField] private float _moveSpeed;
-        private Vector2 _playerInputMovement;
-        [SerializeField] private Transform _playerOrigin;
+        [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
 
+        [SerializeField, Tooltip("Degre per second")] private float _rotateSpeed;
+        [SerializeField, Tooltip("XROrigin of this player")] private Transform _playerOrigin;
+        private Transform _playerHead;
+        
+        private Vector2 _playerInputMovement;
+        private Vector2 _playerInputView;
 
 
         #endregion

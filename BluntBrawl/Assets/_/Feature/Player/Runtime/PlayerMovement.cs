@@ -1,10 +1,11 @@
 using InputSystem.BluntBrawl;
+using Mirror;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player.Runtime
 {
-    public class PlayerMovement : MonoBehaviour, BluntBrawlInputActions.IPlayerActions
+    public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions
     {
         
         #region Unity API
@@ -13,8 +14,6 @@ namespace Player.Runtime
         {
             _playerInputActions = new BluntBrawlInputActions();
             _playerInputActions.Player.SetCallbacks(this);
-            // _characterController.GetComponent<CharacterController>();
-            //_cameraRig = FindFirstObjectByType<OVRCameraRig>();
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -23,11 +22,8 @@ namespace Player.Runtime
 
         private void Update()
         {
-            //MoveCameraRIG();
-            //MovePlayer();
-            //MoveDebugPlayer();
+            if (isLocalPlayer) MoveMediator();
         }
-
         
 
         #endregion
@@ -83,12 +79,12 @@ namespace Player.Runtime
         #region Utils
       
         
-        private void MoveDebugPlayer()
+        private void MoveMediator()
         {
             Vector3 cameraDirection = new Vector3();
             cameraDirection.x = _playerInputMovement.x;
             cameraDirection.z = _playerInputMovement.y;
-            // _characterController.Move(cameraDirection * (Time.deltaTime * _moveSpeed));
+            _playerOrigin.position += cameraDirection * (Time.deltaTime * _moveSpeed);
         }
 
         #endregion
@@ -100,8 +96,9 @@ namespace Player.Runtime
         
         [SerializeField] private float _moveSpeed;
         private Vector2 _playerInputMovement;
+        [SerializeField] private Transform _playerOrigin;
 
-        // private Oculus.Interaction.Locomotion.CharacterController _characterController;
+
 
         #endregion
     }

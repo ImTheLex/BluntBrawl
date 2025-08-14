@@ -10,7 +10,7 @@ namespace Player.Runtime
             _playerOrigin.SetActive(true);
             _playerAvatar.SetActive(false);
             
-            _playerLocomotion.SetActive(true);
+            //_playerLocomotion.SetActive(true);
         }
 
         public override void OnStartClient()
@@ -28,7 +28,7 @@ namespace Player.Runtime
         [SerializeField] private GameObject _playerOrigin;
         [SerializeField] private GameObject _playerAvatar;
 
-        [SerializeField] private GameObject _playerLocomotion;
+        //[SerializeField] private GameObject _playerLocomotion;
         
 
         #endregion

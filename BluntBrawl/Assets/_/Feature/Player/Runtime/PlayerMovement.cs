@@ -27,8 +27,13 @@ namespace Player.Runtime
         
 
         #endregion
+
+
+        #region Input action
+
         
-        #region Input Actions
+
+        
             public void OnMove(InputAction.CallbackContext context)
             {
                 _playerInputMovement = context.ReadValue<Vector2>();
@@ -75,6 +80,7 @@ namespace Player.Runtime
             }
         
         #endregion
+        
 
         #region Utils
       
@@ -89,6 +95,7 @@ namespace Player.Runtime
 
         #endregion
         
+        
         #region Private and Protected
 
         
@@ -99,7 +106,8 @@ namespace Player.Runtime
         [SerializeField] private Transform _playerOrigin;
 
 
-
         #endregion
+
+        
     }
 }

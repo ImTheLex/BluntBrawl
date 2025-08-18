@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 183447416815930981}
   m_Layer: 0
-  m_Name: P_PlayerSpawns
+  m_Name: P_SpawnPositions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1391,7 +1391,7 @@
             ]
         },
         {
-            "name": "XRI Right Interaction",
+            "name": "BB XRI Right Interaction",
             "id": "dc7f1177-1646-43bd-a612-c47e38460721",
             "actions": [
                 {
@@ -1793,7 +1793,7 @@
             ]
         },
         {
-            "name": "XRI Left Interaction",
+            "name": "BB XRI Left Interaction",
             "id": "5c93cd3a-3f46-4cc8-b3d2-c84391020f51",
             "actions": [
                 {

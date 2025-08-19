@@ -466,6 +466,8 @@ MonoBehaviour:
   syncInterval: 0
   _playerOrigin: {fileID: 3547495322754242636}
   _playerAvatar: {fileID: 8862631026413526394}
+  _playerLeftController: {fileID: 428474854730730471}
+  _playerRightController: {fileID: 448511163717283907}
 --- !u!114 &378834558803462490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +691,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd26a1c93df0b4a499c48527134b92e8, type: 3}
+--- !u!1 &428474854730730471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 483684188712661005, guid: cd26a1c93df0b4a499c48527134b92e8, type: 3}
+  m_PrefabInstance: {fileID: 235413861079546858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &428474854730730488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483684188712661010, guid: cd26a1c93df0b4a499c48527134b92e8, type: 3}

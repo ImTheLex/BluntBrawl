@@ -1479,7 +1479,7 @@ namespace InputSystem.BluntBrawl
             ]
         },
         {
-            ""name"": ""XRI Right Interaction"",
+            ""name"": ""BB XRI Right Interaction"",
             ""id"": ""dc7f1177-1646-43bd-a612-c47e38460721"",
             ""actions"": [
                 {
@@ -1881,7 +1881,7 @@ namespace InputSystem.BluntBrawl
             ]
         },
         {
-            ""name"": ""XRI Left Interaction"",
+            ""name"": ""BB XRI Left Interaction"",
             ""id"": ""5c93cd3a-3f46-4cc8-b3d2-c84391020f51"",
             ""actions"": [
                 {
@@ -2926,34 +2926,34 @@ namespace InputSystem.BluntBrawl
             m_BBXRILeft_GripPosition = m_BBXRILeft.FindAction("Grip Position", throwIfNotFound: true);
             m_BBXRILeft_GripRotation = m_BBXRILeft.FindAction("Grip Rotation", throwIfNotFound: true);
             m_BBXRILeft_Thumbstick = m_BBXRILeft.FindAction("Thumbstick", throwIfNotFound: true);
-            // XRI Right Interaction
-            m_XRIRightInteraction = asset.FindActionMap("XRI Right Interaction", throwIfNotFound: true);
-            m_XRIRightInteraction_Select = m_XRIRightInteraction.FindAction("Select", throwIfNotFound: true);
-            m_XRIRightInteraction_SelectValue = m_XRIRightInteraction.FindAction("Select Value", throwIfNotFound: true);
-            m_XRIRightInteraction_Activate = m_XRIRightInteraction.FindAction("Activate", throwIfNotFound: true);
-            m_XRIRightInteraction_ActivateValue = m_XRIRightInteraction.FindAction("Activate Value", throwIfNotFound: true);
-            m_XRIRightInteraction_UIPress = m_XRIRightInteraction.FindAction("UI Press", throwIfNotFound: true);
-            m_XRIRightInteraction_UIPressValue = m_XRIRightInteraction.FindAction("UI Press Value", throwIfNotFound: true);
-            m_XRIRightInteraction_UIScroll = m_XRIRightInteraction.FindAction("UI Scroll", throwIfNotFound: true);
-            m_XRIRightInteraction_TranslateManipulation = m_XRIRightInteraction.FindAction("Translate Manipulation", throwIfNotFound: true);
-            m_XRIRightInteraction_RotateManipulation = m_XRIRightInteraction.FindAction("Rotate Manipulation", throwIfNotFound: true);
-            m_XRIRightInteraction_DirectionalManipulation = m_XRIRightInteraction.FindAction("Directional Manipulation", throwIfNotFound: true);
-            m_XRIRightInteraction_ScaleToggle = m_XRIRightInteraction.FindAction("Scale Toggle", throwIfNotFound: true);
-            m_XRIRightInteraction_ScaleOverTime = m_XRIRightInteraction.FindAction("Scale Over Time", throwIfNotFound: true);
-            // XRI Left Interaction
-            m_XRILeftInteraction = asset.FindActionMap("XRI Left Interaction", throwIfNotFound: true);
-            m_XRILeftInteraction_Select = m_XRILeftInteraction.FindAction("Select", throwIfNotFound: true);
-            m_XRILeftInteraction_SelectValue = m_XRILeftInteraction.FindAction("Select Value", throwIfNotFound: true);
-            m_XRILeftInteraction_Activate = m_XRILeftInteraction.FindAction("Activate", throwIfNotFound: true);
-            m_XRILeftInteraction_ActivateValue = m_XRILeftInteraction.FindAction("Activate Value", throwIfNotFound: true);
-            m_XRILeftInteraction_UIPress = m_XRILeftInteraction.FindAction("UI Press", throwIfNotFound: true);
-            m_XRILeftInteraction_UIPressValue = m_XRILeftInteraction.FindAction("UI Press Value", throwIfNotFound: true);
-            m_XRILeftInteraction_UIScroll = m_XRILeftInteraction.FindAction("UI Scroll", throwIfNotFound: true);
-            m_XRILeftInteraction_TranslateManipulation = m_XRILeftInteraction.FindAction("Translate Manipulation", throwIfNotFound: true);
-            m_XRILeftInteraction_RotateManipulation = m_XRILeftInteraction.FindAction("Rotate Manipulation", throwIfNotFound: true);
-            m_XRILeftInteraction_DirectionalManipulation = m_XRILeftInteraction.FindAction("Directional Manipulation", throwIfNotFound: true);
-            m_XRILeftInteraction_ScaleToggle = m_XRILeftInteraction.FindAction("Scale Toggle", throwIfNotFound: true);
-            m_XRILeftInteraction_ScaleOverTime = m_XRILeftInteraction.FindAction("Scale Over Time", throwIfNotFound: true);
+            // BB XRI Right Interaction
+            m_BBXRIRightInteraction = asset.FindActionMap("BB XRI Right Interaction", throwIfNotFound: true);
+            m_BBXRIRightInteraction_Select = m_BBXRIRightInteraction.FindAction("Select", throwIfNotFound: true);
+            m_BBXRIRightInteraction_SelectValue = m_BBXRIRightInteraction.FindAction("Select Value", throwIfNotFound: true);
+            m_BBXRIRightInteraction_Activate = m_BBXRIRightInteraction.FindAction("Activate", throwIfNotFound: true);
+            m_BBXRIRightInteraction_ActivateValue = m_BBXRIRightInteraction.FindAction("Activate Value", throwIfNotFound: true);
+            m_BBXRIRightInteraction_UIPress = m_BBXRIRightInteraction.FindAction("UI Press", throwIfNotFound: true);
+            m_BBXRIRightInteraction_UIPressValue = m_BBXRIRightInteraction.FindAction("UI Press Value", throwIfNotFound: true);
+            m_BBXRIRightInteraction_UIScroll = m_BBXRIRightInteraction.FindAction("UI Scroll", throwIfNotFound: true);
+            m_BBXRIRightInteraction_TranslateManipulation = m_BBXRIRightInteraction.FindAction("Translate Manipulation", throwIfNotFound: true);
+            m_BBXRIRightInteraction_RotateManipulation = m_BBXRIRightInteraction.FindAction("Rotate Manipulation", throwIfNotFound: true);
+            m_BBXRIRightInteraction_DirectionalManipulation = m_BBXRIRightInteraction.FindAction("Directional Manipulation", throwIfNotFound: true);
+            m_BBXRIRightInteraction_ScaleToggle = m_BBXRIRightInteraction.FindAction("Scale Toggle", throwIfNotFound: true);
+            m_BBXRIRightInteraction_ScaleOverTime = m_BBXRIRightInteraction.FindAction("Scale Over Time", throwIfNotFound: true);
+            // BB XRI Left Interaction
+            m_BBXRILeftInteraction = asset.FindActionMap("BB XRI Left Interaction", throwIfNotFound: true);
+            m_BBXRILeftInteraction_Select = m_BBXRILeftInteraction.FindAction("Select", throwIfNotFound: true);
+            m_BBXRILeftInteraction_SelectValue = m_BBXRILeftInteraction.FindAction("Select Value", throwIfNotFound: true);
+            m_BBXRILeftInteraction_Activate = m_BBXRILeftInteraction.FindAction("Activate", throwIfNotFound: true);
+            m_BBXRILeftInteraction_ActivateValue = m_BBXRILeftInteraction.FindAction("Activate Value", throwIfNotFound: true);
+            m_BBXRILeftInteraction_UIPress = m_BBXRILeftInteraction.FindAction("UI Press", throwIfNotFound: true);
+            m_BBXRILeftInteraction_UIPressValue = m_BBXRILeftInteraction.FindAction("UI Press Value", throwIfNotFound: true);
+            m_BBXRILeftInteraction_UIScroll = m_BBXRILeftInteraction.FindAction("UI Scroll", throwIfNotFound: true);
+            m_BBXRILeftInteraction_TranslateManipulation = m_BBXRILeftInteraction.FindAction("Translate Manipulation", throwIfNotFound: true);
+            m_BBXRILeftInteraction_RotateManipulation = m_BBXRILeftInteraction.FindAction("Rotate Manipulation", throwIfNotFound: true);
+            m_BBXRILeftInteraction_DirectionalManipulation = m_BBXRILeftInteraction.FindAction("Directional Manipulation", throwIfNotFound: true);
+            m_BBXRILeftInteraction_ScaleToggle = m_BBXRILeftInteraction.FindAction("Scale Toggle", throwIfNotFound: true);
+            m_BBXRILeftInteraction_ScaleOverTime = m_BBXRILeftInteraction.FindAction("Scale Over Time", throwIfNotFound: true);
             // BB XRI Right
             m_BBXRIRight = asset.FindActionMap("BB XRI Right", throwIfNotFound: true);
             m_BBXRIRight_Position = m_BBXRIRight.FindAction("Position", throwIfNotFound: true);
@@ -2977,8 +2977,8 @@ namespace InputSystem.BluntBrawl
             UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.Player.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.UI.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_BBXRILeft.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRILeft.Disable() has not been called.");
-            UnityEngine.Debug.Assert(!m_XRIRightInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.XRIRightInteraction.Disable() has not been called.");
-            UnityEngine.Debug.Assert(!m_XRILeftInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.XRILeftInteraction.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_BBXRIRightInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRIRightInteraction.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_BBXRILeftInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRILeftInteraction.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_BBXRIRight.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRIRight.Disable() has not been called.");
         }
 
@@ -3670,84 +3670,84 @@ namespace InputSystem.BluntBrawl
         /// </summary>
         public BBXRILeftActions @BBXRILeft => new BBXRILeftActions(this);
 
-        // XRI Right Interaction
-        private readonly InputActionMap m_XRIRightInteraction;
-        private List<IXRIRightInteractionActions> m_XRIRightInteractionActionsCallbackInterfaces = new List<IXRIRightInteractionActions>();
-        private readonly InputAction m_XRIRightInteraction_Select;
-        private readonly InputAction m_XRIRightInteraction_SelectValue;
-        private readonly InputAction m_XRIRightInteraction_Activate;
-        private readonly InputAction m_XRIRightInteraction_ActivateValue;
-        private readonly InputAction m_XRIRightInteraction_UIPress;
-        private readonly InputAction m_XRIRightInteraction_UIPressValue;
-        private readonly InputAction m_XRIRightInteraction_UIScroll;
-        private readonly InputAction m_XRIRightInteraction_TranslateManipulation;
-        private readonly InputAction m_XRIRightInteraction_RotateManipulation;
-        private readonly InputAction m_XRIRightInteraction_DirectionalManipulation;
-        private readonly InputAction m_XRIRightInteraction_ScaleToggle;
-        private readonly InputAction m_XRIRightInteraction_ScaleOverTime;
+        // BB XRI Right Interaction
+        private readonly InputActionMap m_BBXRIRightInteraction;
+        private List<IBBXRIRightInteractionActions> m_BBXRIRightInteractionActionsCallbackInterfaces = new List<IBBXRIRightInteractionActions>();
+        private readonly InputAction m_BBXRIRightInteraction_Select;
+        private readonly InputAction m_BBXRIRightInteraction_SelectValue;
+        private readonly InputAction m_BBXRIRightInteraction_Activate;
+        private readonly InputAction m_BBXRIRightInteraction_ActivateValue;
+        private readonly InputAction m_BBXRIRightInteraction_UIPress;
+        private readonly InputAction m_BBXRIRightInteraction_UIPressValue;
+        private readonly InputAction m_BBXRIRightInteraction_UIScroll;
+        private readonly InputAction m_BBXRIRightInteraction_TranslateManipulation;
+        private readonly InputAction m_BBXRIRightInteraction_RotateManipulation;
+        private readonly InputAction m_BBXRIRightInteraction_DirectionalManipulation;
+        private readonly InputAction m_BBXRIRightInteraction_ScaleToggle;
+        private readonly InputAction m_BBXRIRightInteraction_ScaleOverTime;
         /// <summary>
-        /// Provides access to input actions defined in input action map "XRI Right Interaction".
+        /// Provides access to input actions defined in input action map "BB XRI Right Interaction".
         /// </summary>
-        public struct XRIRightInteractionActions
+        public struct BBXRIRightInteractionActions
         {
             private @BluntBrawlInputActions m_Wrapper;
 
             /// <summary>
             /// Construct a new instance of the input action map wrapper class.
             /// </summary>
-            public XRIRightInteractionActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
+            public BBXRIRightInteractionActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/Select".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/Select".
             /// </summary>
-            public InputAction @Select => m_Wrapper.m_XRIRightInteraction_Select;
+            public InputAction @Select => m_Wrapper.m_BBXRIRightInteraction_Select;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/SelectValue".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/SelectValue".
             /// </summary>
-            public InputAction @SelectValue => m_Wrapper.m_XRIRightInteraction_SelectValue;
+            public InputAction @SelectValue => m_Wrapper.m_BBXRIRightInteraction_SelectValue;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/Activate".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/Activate".
             /// </summary>
-            public InputAction @Activate => m_Wrapper.m_XRIRightInteraction_Activate;
+            public InputAction @Activate => m_Wrapper.m_BBXRIRightInteraction_Activate;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/ActivateValue".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/ActivateValue".
             /// </summary>
-            public InputAction @ActivateValue => m_Wrapper.m_XRIRightInteraction_ActivateValue;
+            public InputAction @ActivateValue => m_Wrapper.m_BBXRIRightInteraction_ActivateValue;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/UIPress".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/UIPress".
             /// </summary>
-            public InputAction @UIPress => m_Wrapper.m_XRIRightInteraction_UIPress;
+            public InputAction @UIPress => m_Wrapper.m_BBXRIRightInteraction_UIPress;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/UIPressValue".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/UIPressValue".
             /// </summary>
-            public InputAction @UIPressValue => m_Wrapper.m_XRIRightInteraction_UIPressValue;
+            public InputAction @UIPressValue => m_Wrapper.m_BBXRIRightInteraction_UIPressValue;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/UIScroll".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/UIScroll".
             /// </summary>
-            public InputAction @UIScroll => m_Wrapper.m_XRIRightInteraction_UIScroll;
+            public InputAction @UIScroll => m_Wrapper.m_BBXRIRightInteraction_UIScroll;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/TranslateManipulation".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/TranslateManipulation".
             /// </summary>
-            public InputAction @TranslateManipulation => m_Wrapper.m_XRIRightInteraction_TranslateManipulation;
+            public InputAction @TranslateManipulation => m_Wrapper.m_BBXRIRightInteraction_TranslateManipulation;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/RotateManipulation".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/RotateManipulation".
             /// </summary>
-            public InputAction @RotateManipulation => m_Wrapper.m_XRIRightInteraction_RotateManipulation;
+            public InputAction @RotateManipulation => m_Wrapper.m_BBXRIRightInteraction_RotateManipulation;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/DirectionalManipulation".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/DirectionalManipulation".
             /// </summary>
-            public InputAction @DirectionalManipulation => m_Wrapper.m_XRIRightInteraction_DirectionalManipulation;
+            public InputAction @DirectionalManipulation => m_Wrapper.m_BBXRIRightInteraction_DirectionalManipulation;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/ScaleToggle".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/ScaleToggle".
             /// </summary>
-            public InputAction @ScaleToggle => m_Wrapper.m_XRIRightInteraction_ScaleToggle;
+            public InputAction @ScaleToggle => m_Wrapper.m_BBXRIRightInteraction_ScaleToggle;
             /// <summary>
-            /// Provides access to the underlying input action "XRIRightInteraction/ScaleOverTime".
+            /// Provides access to the underlying input action "BBXRIRightInteraction/ScaleOverTime".
             /// </summary>
-            public InputAction @ScaleOverTime => m_Wrapper.m_XRIRightInteraction_ScaleOverTime;
+            public InputAction @ScaleOverTime => m_Wrapper.m_BBXRIRightInteraction_ScaleOverTime;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
-            public InputActionMap Get() { return m_Wrapper.m_XRIRightInteraction; }
+            public InputActionMap Get() { return m_Wrapper.m_BBXRIRightInteraction; }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
             public void Enable() { Get().Enable(); }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -3755,9 +3755,9 @@ namespace InputSystem.BluntBrawl
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
             public bool enabled => Get().enabled;
             /// <summary>
-            /// Implicitly converts an <see ref="XRIRightInteractionActions" /> to an <see ref="InputActionMap" /> instance.
+            /// Implicitly converts an <see ref="BBXRIRightInteractionActions" /> to an <see ref="InputActionMap" /> instance.
             /// </summary>
-            public static implicit operator InputActionMap(XRIRightInteractionActions set) { return set.Get(); }
+            public static implicit operator InputActionMap(BBXRIRightInteractionActions set) { return set.Get(); }
             /// <summary>
             /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
             /// </summary>
@@ -3765,11 +3765,11 @@ namespace InputSystem.BluntBrawl
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
             /// </remarks>
-            /// <seealso cref="XRIRightInteractionActions" />
-            public void AddCallbacks(IXRIRightInteractionActions instance)
+            /// <seealso cref="BBXRIRightInteractionActions" />
+            public void AddCallbacks(IBBXRIRightInteractionActions instance)
             {
-                if (instance == null || m_Wrapper.m_XRIRightInteractionActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_XRIRightInteractionActionsCallbackInterfaces.Add(instance);
+                if (instance == null || m_Wrapper.m_BBXRIRightInteractionActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_BBXRIRightInteractionActionsCallbackInterfaces.Add(instance);
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
@@ -3814,8 +3814,8 @@ namespace InputSystem.BluntBrawl
             /// <remarks>
             /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
             /// </remarks>
-            /// <seealso cref="XRIRightInteractionActions" />
-            private void UnregisterCallbacks(IXRIRightInteractionActions instance)
+            /// <seealso cref="BBXRIRightInteractionActions" />
+            private void UnregisterCallbacks(IBBXRIRightInteractionActions instance)
             {
                 @Select.started -= instance.OnSelect;
                 @Select.performed -= instance.OnSelect;
@@ -3856,12 +3856,12 @@ namespace InputSystem.BluntBrawl
             }
 
             /// <summary>
-            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="XRIRightInteractionActions.UnregisterCallbacks(IXRIRightInteractionActions)" />.
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BBXRIRightInteractionActions.UnregisterCallbacks(IBBXRIRightInteractionActions)" />.
             /// </summary>
-            /// <seealso cref="XRIRightInteractionActions.UnregisterCallbacks(IXRIRightInteractionActions)" />
-            public void RemoveCallbacks(IXRIRightInteractionActions instance)
+            /// <seealso cref="BBXRIRightInteractionActions.UnregisterCallbacks(IBBXRIRightInteractionActions)" />
+            public void RemoveCallbacks(IBBXRIRightInteractionActions instance)
             {
-                if (m_Wrapper.m_XRIRightInteractionActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_BBXRIRightInteractionActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
@@ -3871,100 +3871,100 @@ namespace InputSystem.BluntBrawl
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
             /// </remarks>
-            /// <seealso cref="XRIRightInteractionActions.AddCallbacks(IXRIRightInteractionActions)" />
-            /// <seealso cref="XRIRightInteractionActions.RemoveCallbacks(IXRIRightInteractionActions)" />
-            /// <seealso cref="XRIRightInteractionActions.UnregisterCallbacks(IXRIRightInteractionActions)" />
-            public void SetCallbacks(IXRIRightInteractionActions instance)
+            /// <seealso cref="BBXRIRightInteractionActions.AddCallbacks(IBBXRIRightInteractionActions)" />
+            /// <seealso cref="BBXRIRightInteractionActions.RemoveCallbacks(IBBXRIRightInteractionActions)" />
+            /// <seealso cref="BBXRIRightInteractionActions.UnregisterCallbacks(IBBXRIRightInteractionActions)" />
+            public void SetCallbacks(IBBXRIRightInteractionActions instance)
             {
-                foreach (var item in m_Wrapper.m_XRIRightInteractionActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_BBXRIRightInteractionActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_XRIRightInteractionActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_BBXRIRightInteractionActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
         /// <summary>
-        /// Provides a new <see cref="XRIRightInteractionActions" /> instance referencing this action map.
+        /// Provides a new <see cref="BBXRIRightInteractionActions" /> instance referencing this action map.
         /// </summary>
-        public XRIRightInteractionActions @XRIRightInteraction => new XRIRightInteractionActions(this);
+        public BBXRIRightInteractionActions @BBXRIRightInteraction => new BBXRIRightInteractionActions(this);
 
-        // XRI Left Interaction
-        private readonly InputActionMap m_XRILeftInteraction;
-        private List<IXRILeftInteractionActions> m_XRILeftInteractionActionsCallbackInterfaces = new List<IXRILeftInteractionActions>();
-        private readonly InputAction m_XRILeftInteraction_Select;
-        private readonly InputAction m_XRILeftInteraction_SelectValue;
-        private readonly InputAction m_XRILeftInteraction_Activate;
-        private readonly InputAction m_XRILeftInteraction_ActivateValue;
-        private readonly InputAction m_XRILeftInteraction_UIPress;
-        private readonly InputAction m_XRILeftInteraction_UIPressValue;
-        private readonly InputAction m_XRILeftInteraction_UIScroll;
-        private readonly InputAction m_XRILeftInteraction_TranslateManipulation;
-        private readonly InputAction m_XRILeftInteraction_RotateManipulation;
-        private readonly InputAction m_XRILeftInteraction_DirectionalManipulation;
-        private readonly InputAction m_XRILeftInteraction_ScaleToggle;
-        private readonly InputAction m_XRILeftInteraction_ScaleOverTime;
+        // BB XRI Left Interaction
+        private readonly InputActionMap m_BBXRILeftInteraction;
+        private List<IBBXRILeftInteractionActions> m_BBXRILeftInteractionActionsCallbackInterfaces = new List<IBBXRILeftInteractionActions>();
+        private readonly InputAction m_BBXRILeftInteraction_Select;
+        private readonly InputAction m_BBXRILeftInteraction_SelectValue;
+        private readonly InputAction m_BBXRILeftInteraction_Activate;
+        private readonly InputAction m_BBXRILeftInteraction_ActivateValue;
+        private readonly InputAction m_BBXRILeftInteraction_UIPress;
+        private readonly InputAction m_BBXRILeftInteraction_UIPressValue;
+        private readonly InputAction m_BBXRILeftInteraction_UIScroll;
+        private readonly InputAction m_BBXRILeftInteraction_TranslateManipulation;
+        private readonly InputAction m_BBXRILeftInteraction_RotateManipulation;
+        private readonly InputAction m_BBXRILeftInteraction_DirectionalManipulation;
+        private readonly InputAction m_BBXRILeftInteraction_ScaleToggle;
+        private readonly InputAction m_BBXRILeftInteraction_ScaleOverTime;
         /// <summary>
-        /// Provides access to input actions defined in input action map "XRI Left Interaction".
+        /// Provides access to input actions defined in input action map "BB XRI Left Interaction".
         /// </summary>
-        public struct XRILeftInteractionActions
+        public struct BBXRILeftInteractionActions
         {
             private @BluntBrawlInputActions m_Wrapper;
 
             /// <summary>
             /// Construct a new instance of the input action map wrapper class.
             /// </summary>
-            public XRILeftInteractionActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
+            public BBXRILeftInteractionActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/Select".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/Select".
             /// </summary>
-            public InputAction @Select => m_Wrapper.m_XRILeftInteraction_Select;
+            public InputAction @Select => m_Wrapper.m_BBXRILeftInteraction_Select;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/SelectValue".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/SelectValue".
             /// </summary>
-            public InputAction @SelectValue => m_Wrapper.m_XRILeftInteraction_SelectValue;
+            public InputAction @SelectValue => m_Wrapper.m_BBXRILeftInteraction_SelectValue;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/Activate".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/Activate".
             /// </summary>
-            public InputAction @Activate => m_Wrapper.m_XRILeftInteraction_Activate;
+            public InputAction @Activate => m_Wrapper.m_BBXRILeftInteraction_Activate;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/ActivateValue".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/ActivateValue".
             /// </summary>
-            public InputAction @ActivateValue => m_Wrapper.m_XRILeftInteraction_ActivateValue;
+            public InputAction @ActivateValue => m_Wrapper.m_BBXRILeftInteraction_ActivateValue;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/UIPress".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/UIPress".
             /// </summary>
-            public InputAction @UIPress => m_Wrapper.m_XRILeftInteraction_UIPress;
+            public InputAction @UIPress => m_Wrapper.m_BBXRILeftInteraction_UIPress;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/UIPressValue".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/UIPressValue".
             /// </summary>
-            public InputAction @UIPressValue => m_Wrapper.m_XRILeftInteraction_UIPressValue;
+            public InputAction @UIPressValue => m_Wrapper.m_BBXRILeftInteraction_UIPressValue;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/UIScroll".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/UIScroll".
             /// </summary>
-            public InputAction @UIScroll => m_Wrapper.m_XRILeftInteraction_UIScroll;
+            public InputAction @UIScroll => m_Wrapper.m_BBXRILeftInteraction_UIScroll;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/TranslateManipulation".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/TranslateManipulation".
             /// </summary>
-            public InputAction @TranslateManipulation => m_Wrapper.m_XRILeftInteraction_TranslateManipulation;
+            public InputAction @TranslateManipulation => m_Wrapper.m_BBXRILeftInteraction_TranslateManipulation;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/RotateManipulation".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/RotateManipulation".
             /// </summary>
-            public InputAction @RotateManipulation => m_Wrapper.m_XRILeftInteraction_RotateManipulation;
+            public InputAction @RotateManipulation => m_Wrapper.m_BBXRILeftInteraction_RotateManipulation;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/DirectionalManipulation".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/DirectionalManipulation".
             /// </summary>
-            public InputAction @DirectionalManipulation => m_Wrapper.m_XRILeftInteraction_DirectionalManipulation;
+            public InputAction @DirectionalManipulation => m_Wrapper.m_BBXRILeftInteraction_DirectionalManipulation;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/ScaleToggle".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/ScaleToggle".
             /// </summary>
-            public InputAction @ScaleToggle => m_Wrapper.m_XRILeftInteraction_ScaleToggle;
+            public InputAction @ScaleToggle => m_Wrapper.m_BBXRILeftInteraction_ScaleToggle;
             /// <summary>
-            /// Provides access to the underlying input action "XRILeftInteraction/ScaleOverTime".
+            /// Provides access to the underlying input action "BBXRILeftInteraction/ScaleOverTime".
             /// </summary>
-            public InputAction @ScaleOverTime => m_Wrapper.m_XRILeftInteraction_ScaleOverTime;
+            public InputAction @ScaleOverTime => m_Wrapper.m_BBXRILeftInteraction_ScaleOverTime;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
-            public InputActionMap Get() { return m_Wrapper.m_XRILeftInteraction; }
+            public InputActionMap Get() { return m_Wrapper.m_BBXRILeftInteraction; }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
             public void Enable() { Get().Enable(); }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -3972,9 +3972,9 @@ namespace InputSystem.BluntBrawl
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
             public bool enabled => Get().enabled;
             /// <summary>
-            /// Implicitly converts an <see ref="XRILeftInteractionActions" /> to an <see ref="InputActionMap" /> instance.
+            /// Implicitly converts an <see ref="BBXRILeftInteractionActions" /> to an <see ref="InputActionMap" /> instance.
             /// </summary>
-            public static implicit operator InputActionMap(XRILeftInteractionActions set) { return set.Get(); }
+            public static implicit operator InputActionMap(BBXRILeftInteractionActions set) { return set.Get(); }
             /// <summary>
             /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
             /// </summary>
@@ -3982,11 +3982,11 @@ namespace InputSystem.BluntBrawl
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
             /// </remarks>
-            /// <seealso cref="XRILeftInteractionActions" />
-            public void AddCallbacks(IXRILeftInteractionActions instance)
+            /// <seealso cref="BBXRILeftInteractionActions" />
+            public void AddCallbacks(IBBXRILeftInteractionActions instance)
             {
-                if (instance == null || m_Wrapper.m_XRILeftInteractionActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_XRILeftInteractionActionsCallbackInterfaces.Add(instance);
+                if (instance == null || m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Add(instance);
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
@@ -4031,8 +4031,8 @@ namespace InputSystem.BluntBrawl
             /// <remarks>
             /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
             /// </remarks>
-            /// <seealso cref="XRILeftInteractionActions" />
-            private void UnregisterCallbacks(IXRILeftInteractionActions instance)
+            /// <seealso cref="BBXRILeftInteractionActions" />
+            private void UnregisterCallbacks(IBBXRILeftInteractionActions instance)
             {
                 @Select.started -= instance.OnSelect;
                 @Select.performed -= instance.OnSelect;
@@ -4073,12 +4073,12 @@ namespace InputSystem.BluntBrawl
             }
 
             /// <summary>
-            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="XRILeftInteractionActions.UnregisterCallbacks(IXRILeftInteractionActions)" />.
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BBXRILeftInteractionActions.UnregisterCallbacks(IBBXRILeftInteractionActions)" />.
             /// </summary>
-            /// <seealso cref="XRILeftInteractionActions.UnregisterCallbacks(IXRILeftInteractionActions)" />
-            public void RemoveCallbacks(IXRILeftInteractionActions instance)
+            /// <seealso cref="BBXRILeftInteractionActions.UnregisterCallbacks(IBBXRILeftInteractionActions)" />
+            public void RemoveCallbacks(IBBXRILeftInteractionActions instance)
             {
-                if (m_Wrapper.m_XRILeftInteractionActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
@@ -4088,21 +4088,21 @@ namespace InputSystem.BluntBrawl
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
             /// </remarks>
-            /// <seealso cref="XRILeftInteractionActions.AddCallbacks(IXRILeftInteractionActions)" />
-            /// <seealso cref="XRILeftInteractionActions.RemoveCallbacks(IXRILeftInteractionActions)" />
-            /// <seealso cref="XRILeftInteractionActions.UnregisterCallbacks(IXRILeftInteractionActions)" />
-            public void SetCallbacks(IXRILeftInteractionActions instance)
+            /// <seealso cref="BBXRILeftInteractionActions.AddCallbacks(IBBXRILeftInteractionActions)" />
+            /// <seealso cref="BBXRILeftInteractionActions.RemoveCallbacks(IBBXRILeftInteractionActions)" />
+            /// <seealso cref="BBXRILeftInteractionActions.UnregisterCallbacks(IBBXRILeftInteractionActions)" />
+            public void SetCallbacks(IBBXRILeftInteractionActions instance)
             {
-                foreach (var item in m_Wrapper.m_XRILeftInteractionActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_XRILeftInteractionActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
         /// <summary>
-        /// Provides a new <see cref="XRILeftInteractionActions" /> instance referencing this action map.
+        /// Provides a new <see cref="BBXRILeftInteractionActions" /> instance referencing this action map.
         /// </summary>
-        public XRILeftInteractionActions @XRILeftInteraction => new XRILeftInteractionActions(this);
+        public BBXRILeftInteractionActions @BBXRILeftInteraction => new BBXRILeftInteractionActions(this);
 
         // BB XRI Right
         private readonly InputActionMap m_BBXRIRight;
@@ -4663,11 +4663,11 @@ namespace InputSystem.BluntBrawl
             void OnThumbstick(InputAction.CallbackContext context);
         }
         /// <summary>
-        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "XRI Right Interaction" which allows adding and removing callbacks.
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BB XRI Right Interaction" which allows adding and removing callbacks.
         /// </summary>
-        /// <seealso cref="XRIRightInteractionActions.AddCallbacks(IXRIRightInteractionActions)" />
-        /// <seealso cref="XRIRightInteractionActions.RemoveCallbacks(IXRIRightInteractionActions)" />
-        public interface IXRIRightInteractionActions
+        /// <seealso cref="BBXRIRightInteractionActions.AddCallbacks(IBBXRIRightInteractionActions)" />
+        /// <seealso cref="BBXRIRightInteractionActions.RemoveCallbacks(IBBXRIRightInteractionActions)" />
+        public interface IBBXRIRightInteractionActions
         {
             /// <summary>
             /// Method invoked when associated input action "Select" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
@@ -4755,11 +4755,11 @@ namespace InputSystem.BluntBrawl
             void OnScaleOverTime(InputAction.CallbackContext context);
         }
         /// <summary>
-        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "XRI Left Interaction" which allows adding and removing callbacks.
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BB XRI Left Interaction" which allows adding and removing callbacks.
         /// </summary>
-        /// <seealso cref="XRILeftInteractionActions.AddCallbacks(IXRILeftInteractionActions)" />
-        /// <seealso cref="XRILeftInteractionActions.RemoveCallbacks(IXRILeftInteractionActions)" />
-        public interface IXRILeftInteractionActions
+        /// <seealso cref="BBXRILeftInteractionActions.AddCallbacks(IBBXRILeftInteractionActions)" />
+        /// <seealso cref="BBXRILeftInteractionActions.RemoveCallbacks(IBBXRILeftInteractionActions)" />
+        public interface IBBXRILeftInteractionActions
         {
             /// <summary>
             /// Method invoked when associated input action "Select" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.

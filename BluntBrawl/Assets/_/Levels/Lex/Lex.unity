@@ -227,6 +227,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &260644333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2350312154220774817, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+  m_PrefabInstance: {fileID: 368987213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &260644340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260644333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9a26486a7b24fe486a46c0c61197d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  lastSyncTime: 0
+  <netIdentity>k__BackingField: {fileID: 0}
+  <ComponentIndex>k__BackingField: 0
+  syncVarDirtyBits: 0
+  syncObjectDirtyBits: 0
+  syncVarHookGuard: 0
+  ownerNetId: 0
+  handTarget: {fileID: 0}
 --- !u!1001 &368987213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,10 +311,14 @@ PrefabInstance:
       propertyPath: sceneId
       value: 2086645289
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 849857176212634417, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2350312154220774817, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 260644340}
   m_SourcePrefab: {fileID: 100100000, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
 --- !u!1001 &1008327459
 PrefabInstance:

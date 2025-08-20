@@ -942,7 +942,7 @@ namespace InputSystem.BluntBrawl
             ""id"": ""294a4b39-61ca-4f45-b73a-12bc521aaab0"",
             ""actions"": [
                 {
-                    ""name"": ""Position"",
+                    ""name"": ""PositionLeft"",
                     ""type"": ""Value"",
                     ""id"": ""a07f1b68-10d6-465d-b8de-f574a20c1712"",
                     ""expectedControlType"": ""Vector3"",
@@ -951,118 +951,10 @@ namespace InputSystem.BluntBrawl
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Rotation"",
+                    ""name"": ""RotationLeft"",
                     ""type"": ""Value"",
                     ""id"": ""9ff1e48c-f4f6-4801-9495-e67ad76e6f79"",
                     ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Is Tracked"",
-                    ""type"": ""Button"",
-                    ""id"": ""d21ff5a9-d8e7-4830-940f-42926c5f086f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Tracking State"",
-                    ""type"": ""Value"",
-                    ""id"": ""57d0ae94-744d-4221-9827-4a77e61209e0"",
-                    ""expectedControlType"": ""Integer"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Haptic Device"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""479a9dd3-cb18-4b66-bf4f-ed7fe3c0676c"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Aim Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""5de171ce-d22a-475a-bdcf-123b0d4e2ef8"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Aim Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""c1cd6353-8b29-40c7-867c-59b596b362fc"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Meta Aim Flags"",
-                    ""type"": ""Value"",
-                    ""id"": ""0c6d1169-b80d-492b-97b5-676a8e6520a2"",
-                    ""expectedControlType"": ""Integer"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Pinch Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""615f3571-426f-4868-91f0-1fc2cf4f6f34"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Poke Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""0eb4b8b9-81cc-45c0-a63b-bd11d5f8ef0f"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Poke Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""1d176b4f-f273-4fa3-9600-0acd3d6a7e4f"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Grip Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""706e7012-83dc-49e0-be69-ebcdcd4def32"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Grip Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""bd263c29-6e71-4905-a4f2-c9469f88316e"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Thumbstick"",
-                    ""type"": ""Value"",
-                    ""id"": ""5a1c5b4f-91ef-477a-8208-f5b6e0a3f405"",
-                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -1076,7 +968,7 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""RotationLeft"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -1087,7 +979,7 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""RotationLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -1098,7 +990,7 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""RotationLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -1109,7 +1001,7 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""RotationLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -1120,7 +1012,7 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Position"",
+                    ""action"": ""PositionLeft"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -1131,7 +1023,7 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Position"",
+                    ""action"": ""PositionLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -1142,7 +1034,7 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Position"",
+                    ""action"": ""PositionLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -1153,328 +1045,123 @@ namespace InputSystem.BluntBrawl
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Position"",
+                    ""action"": ""PositionLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""BB XRI Right"",
+            ""id"": ""1f2d5520-b873-4774-aa5a-a845fc9d479a"",
+            ""actions"": [
+                {
+                    ""name"": ""PositionRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""920d6b62-ca39-49f8-a023-ce0a742a40ea"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""5da375f6-c5a7-4f71-b2d2-2c59119a113d"",
-                    ""path"": ""<XRController>{LeftHand}/*"",
-                    ""interactions"": """",
+                    ""name"": ""RotationRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""a30ac311-40a2-4c1c-b6e8-f66f300f8b95"",
+                    ""expectedControlType"": ""Quaternion"",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Haptic Device"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""be0cb6f9-b75f-44ef-90c2-60d72091fe89"",
-                    ""path"": ""<XRController>{LeftHand}/trackingState"",
                     ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Tracking State"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a9370d6e-91ff-41f2-83b5-435e5660f7da"",
-                    ""path"": ""<XRHandDevice>{LeftHand}/trackingState"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Tracking State"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6473d6f2-5ed9-450b-bd5c-98567adb5ef1"",
-                    ""path"": ""<MetaAimHand>{LeftHand}/devicePosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4c8c2c74-1abf-48f7-a55e-8959c8faaa95"",
-                    ""path"": ""<HandInteraction>{LeftHand}/pointer/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""06ce61e3-cd45-40fd-a368-676e4dfd082a"",
-                    ""path"": ""<HandInteractionPoses>{LeftHand}/pointer/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4cb3030f-3f31-4f08-bc11-e740629e2118"",
-                    ""path"": ""<HoloLensHand>{LeftHand}/pointer/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""463a7180-abc0-420d-8890-7ff759fff5e3"",
-                    ""path"": ""<MetaAimHand>{LeftHand}/deviceRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2acc555c-1026-478a-a0f9-e4a70a21b009"",
-                    ""path"": ""<HandInteraction>{LeftHand}/pointer/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c43f1d13-f074-4200-8eed-e22df5059ac8"",
-                    ""path"": ""<HandInteractionPoses>{LeftHand}/pointer/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""32d8bc01-f823-4c8f-bdd0-0af4709c6ed3"",
-                    ""path"": ""<HoloLensHand>{LeftHand}/pointer/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Vector 3 Fallback"",
-                    ""id"": ""25ffee3e-46a0-4209-aa98-97a79d137085"",
-                    ""path"": ""Vector3Fallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""2fb8ed6d-022e-4ab6-a7a3-9929c5bb6c08"",
-                    ""path"": ""<XRHandDevice>{LeftHand}/pinchPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""second"",
-                    ""id"": ""7d8cf1e3-69c1-457c-8642-eb69883ff312"",
-                    ""path"": ""<HandInteraction>{LeftHand}/pinchPose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""third"",
-                    ""id"": ""07e01bec-6134-4ae5-9eab-883ed0fc18ce"",
-                    ""path"": ""<HandInteractionPoses>{LeftHand}/pinchPose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Vector 3 Fallback"",
-                    ""id"": ""b3f76c94-b3b3-40ec-bfc1-a600bf0584db"",
-                    ""path"": ""Vector3Fallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""74422555-8b01-4f09-8edb-67b2a95151f4"",
-                    ""path"": ""<XRHandDevice>{LeftHand}/pokePosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""second"",
-                    ""id"": ""29fe8235-d2e9-4f67-8d47-79c4090ea66d"",
-                    ""path"": ""<HandInteraction>{LeftHand}/pokePose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""third"",
-                    ""id"": ""a5ab1ad2-4d46-48b3-93b3-124b32ae672b"",
-                    ""path"": ""<HandInteractionPoses>{LeftHand}/pokePose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
                 {
                     ""name"": ""Quaternion Fallback"",
-                    ""id"": ""a1ac14a2-63ff-40d0-8e83-e8d4c2ea6196"",
+                    ""id"": ""e5c6f02c-e3f4-4052-9e9c-c8d4f5eb6c47"",
                     ""path"": ""QuaternionFallback"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Poke Rotation"",
+                    ""action"": ""RotationRight"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""first"",
-                    ""id"": ""6dcc7646-0e50-4d5c-a5c7-d5bde27118ea"",
-                    ""path"": ""<XRHandDevice>{LeftHand}/pokeRotation"",
+                    ""id"": ""a84098c7-6af5-466c-a9af-8ca7d6abc752"",
+                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Poke Rotation"",
+                    ""action"": ""RotationRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""second"",
-                    ""id"": ""ab2d1810-2a10-48fb-978d-c705877d3f3d"",
-                    ""path"": ""<HandInteraction>{LeftHand}/pokePose/rotation"",
+                    ""id"": ""5fca6ea1-2726-44c9-8c48-6432f6fe5f9d"",
+                    ""path"": ""<XRController>{RightHand}/deviceRotation"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Poke Rotation"",
+                    ""action"": ""RotationRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""third"",
-                    ""id"": ""f52f889b-7045-40a5-823c-2cfbff76dd2d"",
-                    ""path"": ""<HandInteractionPoses>{LeftHand}/pokePose/rotation"",
+                    ""id"": ""38097cb0-eeb3-4df4-b1a8-a09e97655050"",
+                    ""path"": ""<XRHandDevice>{RightHand}/deviceRotation"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Poke Rotation"",
+                    ""action"": ""RotationRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""02afbc0a-5451-45f9-bce7-93a777d18812"",
-                    ""path"": ""<XRController>{LeftHand}/isTracked"",
+                    ""name"": ""Vector 3 Fallback"",
+                    ""id"": ""aefdbdf5-a657-41b4-af35-8eb2c4aa0620"",
+                    ""path"": ""Vector3Fallback"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Is Tracked"",
-                    ""isComposite"": false,
+                    ""action"": ""PositionRight"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""ebc711e9-c1eb-4c2f-81b7-b2331ffe7158"",
-                    ""path"": ""<XRHandDevice>{LeftHand}/isTracked"",
+                    ""name"": ""first"",
+                    ""id"": ""36c0ccee-80eb-4bb9-8002-7dcd6b554758"",
+                    ""path"": ""<XRController>{RightHand}/pointerPosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Is Tracked"",
+                    ""action"": ""PositionRight"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""2fd75754-6003-45da-af4c-9b5806484042"",
-                    ""path"": ""<MetaAimHand>{LeftHand}/aimFlags"",
+                    ""name"": ""second"",
+                    ""id"": ""da4a6102-443e-4844-9627-94bddd48e683"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Meta Aim Flags"",
+                    ""action"": ""PositionRight"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""e6296e73-c988-4804-8c7a-4818c047fc2b"",
-                    ""path"": ""<XRHandDevice>{LeftHand}/gripPosition"",
+                    ""name"": ""third"",
+                    ""id"": ""bbd11b45-f05e-4fbc-b584-e4bb6911394a"",
+                    ""path"": ""<XRHandDevice>{RightHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Grip Position"",
+                    ""action"": ""PositionRight"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b5ee9eda-37bd-42f5-a75a-3db1fe13660f"",
-                    ""path"": ""<XRHandDevice>{LeftHand}/gripRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Grip Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6ec62443-0b42-40a1-abbd-fac5c1f87c86"",
-                    ""path"": ""<XRController>{LeftHand}/{Primary2DAxis}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Thumbstick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -2281,547 +1968,6 @@ namespace InputSystem.BluntBrawl
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""BB XRI Right"",
-            ""id"": ""1f2d5520-b873-4774-aa5a-a845fc9d479a"",
-            ""actions"": [
-                {
-                    ""name"": ""Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""920d6b62-ca39-49f8-a023-ce0a742a40ea"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""a30ac311-40a2-4c1c-b6e8-f66f300f8b95"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Is Tracked"",
-                    ""type"": ""Button"",
-                    ""id"": ""22cce23d-8ee8-48f2-a380-2e76b8adcbd4"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Tracking State"",
-                    ""type"": ""Value"",
-                    ""id"": ""c87c54e9-f661-4a33-934d-7764b92d9d03"",
-                    ""expectedControlType"": ""Integer"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Haptic Device"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""c7aa87ef-039a-4021-818a-8546bfababa5"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Aim Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""d992b322-989b-4faa-9ee5-71ce38687ba7"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Aim Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""56492189-cd23-45f6-b6a6-af462c3b12ef"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Meta Aim Flags"",
-                    ""type"": ""Value"",
-                    ""id"": ""431c0a02-b4b0-406f-8716-5faf3e7dc3e5"",
-                    ""expectedControlType"": ""Integer"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Pinch Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""5a3c7bf3-ea4e-422d-9000-18712cbf3a5c"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Poke Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""3854df92-c7d6-485e-9da9-a00e24fd03fc"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Poke Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""86e31de1-414e-4bab-9f24-402303da9407"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Grip Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""92a6914a-afa5-4040-bc00-2caeed2b6c2e"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Grip Rotation"",
-                    ""type"": ""Value"",
-                    ""id"": ""e0e46f27-130a-4471-ad6c-001b2bc4b550"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Thumbstick"",
-                    ""type"": ""Value"",
-                    ""id"": ""20715633-fbf0-4d68-911e-5d8095b1ca07"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": ""Quaternion Fallback"",
-                    ""id"": ""e5c6f02c-e3f4-4052-9e9c-c8d4f5eb6c47"",
-                    ""path"": ""QuaternionFallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""a84098c7-6af5-466c-a9af-8ca7d6abc752"",
-                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""second"",
-                    ""id"": ""5fca6ea1-2726-44c9-8c48-6432f6fe5f9d"",
-                    ""path"": ""<XRController>{RightHand}/deviceRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""third"",
-                    ""id"": ""38097cb0-eeb3-4df4-b1a8-a09e97655050"",
-                    ""path"": ""<XRHandDevice>{RightHand}/deviceRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Vector 3 Fallback"",
-                    ""id"": ""aefdbdf5-a657-41b4-af35-8eb2c4aa0620"",
-                    ""path"": ""Vector3Fallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Position"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""36c0ccee-80eb-4bb9-8002-7dcd6b554758"",
-                    ""path"": ""<XRController>{RightHand}/pointerPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""second"",
-                    ""id"": ""da4a6102-443e-4844-9627-94bddd48e683"",
-                    ""path"": ""<XRController>{RightHand}/devicePosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""third"",
-                    ""id"": ""bbd11b45-f05e-4fbc-b584-e4bb6911394a"",
-                    ""path"": ""<XRHandDevice>{RightHand}/devicePosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e8abff9d-d951-41a3-969b-c83c9d858e90"",
-                    ""path"": ""<XRController>{RightHand}/*"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Haptic Device"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6f429f0b-7c2b-45bc-8399-ce00e003aefe"",
-                    ""path"": ""<XRController>{RightHand}/trackingState"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Tracking State"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a2f47688-8358-4c28-8ef2-167617be77ce"",
-                    ""path"": ""<XRHandDevice>{RightHand}/trackingState"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Tracking State"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8d596104-d8b1-43b2-af92-439e77d65847"",
-                    ""path"": ""<MetaAimHand>{RightHand}/devicePosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0198cb1f-a126-4690-9046-8469cf9a6ce3"",
-                    ""path"": ""<HandInteraction>{RightHand}/pointer/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""234be921-0ff2-45a9-81c5-14f0ff5ddb58"",
-                    ""path"": ""<HandInteractionPoses>{RightHand}/pointer/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e34679b5-507b-4ccd-a399-c9172993e5a7"",
-                    ""path"": ""<HoloLensHand>{RightHand}/pointer/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""36d15005-c01c-48df-9fa8-2539cc5bbb69"",
-                    ""path"": ""<MetaAimHand>{RightHand}/deviceRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a05b2c09-e2a4-4d35-929b-36840659c8b2"",
-                    ""path"": ""<HandInteraction>{RightHand}/pointer/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0e51e967-f56a-4f71-85f5-c8e678f8cf64"",
-                    ""path"": ""<HandInteractionPoses>{RightHand}/pointer/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""43075b0e-0b5a-4a90-b3c5-d3000fe5ce22"",
-                    ""path"": ""<HoloLensHand>{RightHand}/pointer/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Vector 3 Fallback"",
-                    ""id"": ""d5716b66-370f-4de5-82cd-c41613c99f50"",
-                    ""path"": ""Vector3Fallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""f37554c4-0d0c-473c-b754-3537db15f4ad"",
-                    ""path"": ""<XRHandDevice>{RightHand}/pinchPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""second"",
-                    ""id"": ""38419d9a-fba8-451b-ba46-c65a8413368f"",
-                    ""path"": ""<HandInteraction>{RightHand}/pinchPose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""third"",
-                    ""id"": ""9956ccd8-9ee8-46dd-831a-21c45f16e0d1"",
-                    ""path"": ""<HandInteractionPoses>{RightHand}/pinchPose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pinch Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Vector 3 Fallback"",
-                    ""id"": ""e495454f-01c5-437d-92d4-882266bd7522"",
-                    ""path"": ""Vector3Fallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""126b1361-9bdd-4bd5-9437-8aa9276e8560"",
-                    ""path"": ""<XRHandDevice>{RightHand}/pokePosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""second"",
-                    ""id"": ""554f0861-ba1f-4c7e-a603-87fe73caa211"",
-                    ""path"": ""<HandInteraction>{RightHand}/pokePose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""third"",
-                    ""id"": ""3c0226f6-14c5-4de7-a345-b197f2da64aa"",
-                    ""path"": ""<HandInteractionPoses>{RightHand}/pokePose/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Quaternion Fallback"",
-                    ""id"": ""65060529-9611-499c-b857-26aa51ce3b6b"",
-                    ""path"": ""QuaternionFallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Rotation"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""5413eb69-1c13-4509-9ac6-a89ccb400f1e"",
-                    ""path"": ""<XRHandDevice>{RightHand}/pokeRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""second"",
-                    ""id"": ""7dfb8249-a60e-4168-92ac-31b792b4ffa9"",
-                    ""path"": ""<HandInteraction>{RightHand}/pokePose/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""third"",
-                    ""id"": ""5696fcb6-cef1-45f2-ad1a-31010bcb4e98"",
-                    ""path"": ""<HandInteractionPoses>{RightHand}/pokePose/rotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Poke Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e32e76d6-0456-4d04-96d0-0597137d6dbd"",
-                    ""path"": ""<XRController>{RightHand}/isTracked"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Is Tracked"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4d95181d-a7ab-4b6d-ab46-885b50689d84"",
-                    ""path"": ""<XRHandDevice>{RightHand}/isTracked"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Is Tracked"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8a8e5b2b-6456-4d57-bf2d-01f2820a1cb7"",
-                    ""path"": ""<MetaAimHand>{RightHand}/aimFlags"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Meta Aim Flags"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""63df2032-6a61-4b27-8c75-45c415343cbb"",
-                    ""path"": ""<XRHandDevice>{RightHand}/gripPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Grip Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""042d3ce6-b971-4fae-978f-cbfc61ab4987"",
-                    ""path"": ""<XRHandDevice>{RightHand}/gripRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Grip Rotation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""27b6ccf6-109f-459b-82d7-7af66563221b"",
-                    ""path"": ""<XRController>{RightHand}/{Primary2DAxis}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Thumbstick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
@@ -2912,20 +2058,12 @@ namespace InputSystem.BluntBrawl
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
             // BB XRI Left
             m_BBXRILeft = asset.FindActionMap("BB XRI Left", throwIfNotFound: true);
-            m_BBXRILeft_Position = m_BBXRILeft.FindAction("Position", throwIfNotFound: true);
-            m_BBXRILeft_Rotation = m_BBXRILeft.FindAction("Rotation", throwIfNotFound: true);
-            m_BBXRILeft_IsTracked = m_BBXRILeft.FindAction("Is Tracked", throwIfNotFound: true);
-            m_BBXRILeft_TrackingState = m_BBXRILeft.FindAction("Tracking State", throwIfNotFound: true);
-            m_BBXRILeft_HapticDevice = m_BBXRILeft.FindAction("Haptic Device", throwIfNotFound: true);
-            m_BBXRILeft_AimPosition = m_BBXRILeft.FindAction("Aim Position", throwIfNotFound: true);
-            m_BBXRILeft_AimRotation = m_BBXRILeft.FindAction("Aim Rotation", throwIfNotFound: true);
-            m_BBXRILeft_MetaAimFlags = m_BBXRILeft.FindAction("Meta Aim Flags", throwIfNotFound: true);
-            m_BBXRILeft_PinchPosition = m_BBXRILeft.FindAction("Pinch Position", throwIfNotFound: true);
-            m_BBXRILeft_PokePosition = m_BBXRILeft.FindAction("Poke Position", throwIfNotFound: true);
-            m_BBXRILeft_PokeRotation = m_BBXRILeft.FindAction("Poke Rotation", throwIfNotFound: true);
-            m_BBXRILeft_GripPosition = m_BBXRILeft.FindAction("Grip Position", throwIfNotFound: true);
-            m_BBXRILeft_GripRotation = m_BBXRILeft.FindAction("Grip Rotation", throwIfNotFound: true);
-            m_BBXRILeft_Thumbstick = m_BBXRILeft.FindAction("Thumbstick", throwIfNotFound: true);
+            m_BBXRILeft_PositionLeft = m_BBXRILeft.FindAction("PositionLeft", throwIfNotFound: true);
+            m_BBXRILeft_RotationLeft = m_BBXRILeft.FindAction("RotationLeft", throwIfNotFound: true);
+            // BB XRI Right
+            m_BBXRIRight = asset.FindActionMap("BB XRI Right", throwIfNotFound: true);
+            m_BBXRIRight_PositionRight = m_BBXRIRight.FindAction("PositionRight", throwIfNotFound: true);
+            m_BBXRIRight_RotationRight = m_BBXRIRight.FindAction("RotationRight", throwIfNotFound: true);
             // BB XRI Right Interaction
             m_BBXRIRightInteraction = asset.FindActionMap("BB XRI Right Interaction", throwIfNotFound: true);
             m_BBXRIRightInteraction_Select = m_BBXRIRightInteraction.FindAction("Select", throwIfNotFound: true);
@@ -2954,22 +2092,6 @@ namespace InputSystem.BluntBrawl
             m_BBXRILeftInteraction_DirectionalManipulation = m_BBXRILeftInteraction.FindAction("Directional Manipulation", throwIfNotFound: true);
             m_BBXRILeftInteraction_ScaleToggle = m_BBXRILeftInteraction.FindAction("Scale Toggle", throwIfNotFound: true);
             m_BBXRILeftInteraction_ScaleOverTime = m_BBXRILeftInteraction.FindAction("Scale Over Time", throwIfNotFound: true);
-            // BB XRI Right
-            m_BBXRIRight = asset.FindActionMap("BB XRI Right", throwIfNotFound: true);
-            m_BBXRIRight_Position = m_BBXRIRight.FindAction("Position", throwIfNotFound: true);
-            m_BBXRIRight_Rotation = m_BBXRIRight.FindAction("Rotation", throwIfNotFound: true);
-            m_BBXRIRight_IsTracked = m_BBXRIRight.FindAction("Is Tracked", throwIfNotFound: true);
-            m_BBXRIRight_TrackingState = m_BBXRIRight.FindAction("Tracking State", throwIfNotFound: true);
-            m_BBXRIRight_HapticDevice = m_BBXRIRight.FindAction("Haptic Device", throwIfNotFound: true);
-            m_BBXRIRight_AimPosition = m_BBXRIRight.FindAction("Aim Position", throwIfNotFound: true);
-            m_BBXRIRight_AimRotation = m_BBXRIRight.FindAction("Aim Rotation", throwIfNotFound: true);
-            m_BBXRIRight_MetaAimFlags = m_BBXRIRight.FindAction("Meta Aim Flags", throwIfNotFound: true);
-            m_BBXRIRight_PinchPosition = m_BBXRIRight.FindAction("Pinch Position", throwIfNotFound: true);
-            m_BBXRIRight_PokePosition = m_BBXRIRight.FindAction("Poke Position", throwIfNotFound: true);
-            m_BBXRIRight_PokeRotation = m_BBXRIRight.FindAction("Poke Rotation", throwIfNotFound: true);
-            m_BBXRIRight_GripPosition = m_BBXRIRight.FindAction("Grip Position", throwIfNotFound: true);
-            m_BBXRIRight_GripRotation = m_BBXRIRight.FindAction("Grip Rotation", throwIfNotFound: true);
-            m_BBXRIRight_Thumbstick = m_BBXRIRight.FindAction("Thumbstick", throwIfNotFound: true);
         }
 
         ~@BluntBrawlInputActions()
@@ -2977,9 +2099,9 @@ namespace InputSystem.BluntBrawl
             UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.Player.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.UI.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_BBXRILeft.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRILeft.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_BBXRIRight.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRIRight.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_BBXRIRightInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRIRightInteraction.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_BBXRILeftInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRILeftInteraction.Disable() has not been called.");
-            UnityEngine.Debug.Assert(!m_BBXRIRight.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRIRight.Disable() has not been called.");
         }
 
         /// <summary>
@@ -3434,20 +2556,8 @@ namespace InputSystem.BluntBrawl
         // BB XRI Left
         private readonly InputActionMap m_BBXRILeft;
         private List<IBBXRILeftActions> m_BBXRILeftActionsCallbackInterfaces = new List<IBBXRILeftActions>();
-        private readonly InputAction m_BBXRILeft_Position;
-        private readonly InputAction m_BBXRILeft_Rotation;
-        private readonly InputAction m_BBXRILeft_IsTracked;
-        private readonly InputAction m_BBXRILeft_TrackingState;
-        private readonly InputAction m_BBXRILeft_HapticDevice;
-        private readonly InputAction m_BBXRILeft_AimPosition;
-        private readonly InputAction m_BBXRILeft_AimRotation;
-        private readonly InputAction m_BBXRILeft_MetaAimFlags;
-        private readonly InputAction m_BBXRILeft_PinchPosition;
-        private readonly InputAction m_BBXRILeft_PokePosition;
-        private readonly InputAction m_BBXRILeft_PokeRotation;
-        private readonly InputAction m_BBXRILeft_GripPosition;
-        private readonly InputAction m_BBXRILeft_GripRotation;
-        private readonly InputAction m_BBXRILeft_Thumbstick;
+        private readonly InputAction m_BBXRILeft_PositionLeft;
+        private readonly InputAction m_BBXRILeft_RotationLeft;
         /// <summary>
         /// Provides access to input actions defined in input action map "BB XRI Left".
         /// </summary>
@@ -3460,61 +2570,13 @@ namespace InputSystem.BluntBrawl
             /// </summary>
             public BBXRILeftActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
             /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/Position".
+            /// Provides access to the underlying input action "BBXRILeft/PositionLeft".
             /// </summary>
-            public InputAction @Position => m_Wrapper.m_BBXRILeft_Position;
+            public InputAction @PositionLeft => m_Wrapper.m_BBXRILeft_PositionLeft;
             /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/Rotation".
+            /// Provides access to the underlying input action "BBXRILeft/RotationLeft".
             /// </summary>
-            public InputAction @Rotation => m_Wrapper.m_BBXRILeft_Rotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/IsTracked".
-            /// </summary>
-            public InputAction @IsTracked => m_Wrapper.m_BBXRILeft_IsTracked;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/TrackingState".
-            /// </summary>
-            public InputAction @TrackingState => m_Wrapper.m_BBXRILeft_TrackingState;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/HapticDevice".
-            /// </summary>
-            public InputAction @HapticDevice => m_Wrapper.m_BBXRILeft_HapticDevice;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/AimPosition".
-            /// </summary>
-            public InputAction @AimPosition => m_Wrapper.m_BBXRILeft_AimPosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/AimRotation".
-            /// </summary>
-            public InputAction @AimRotation => m_Wrapper.m_BBXRILeft_AimRotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/MetaAimFlags".
-            /// </summary>
-            public InputAction @MetaAimFlags => m_Wrapper.m_BBXRILeft_MetaAimFlags;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/PinchPosition".
-            /// </summary>
-            public InputAction @PinchPosition => m_Wrapper.m_BBXRILeft_PinchPosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/PokePosition".
-            /// </summary>
-            public InputAction @PokePosition => m_Wrapper.m_BBXRILeft_PokePosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/PokeRotation".
-            /// </summary>
-            public InputAction @PokeRotation => m_Wrapper.m_BBXRILeft_PokeRotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/GripPosition".
-            /// </summary>
-            public InputAction @GripPosition => m_Wrapper.m_BBXRILeft_GripPosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/GripRotation".
-            /// </summary>
-            public InputAction @GripRotation => m_Wrapper.m_BBXRILeft_GripRotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRILeft/Thumbstick".
-            /// </summary>
-            public InputAction @Thumbstick => m_Wrapper.m_BBXRILeft_Thumbstick;
+            public InputAction @RotationLeft => m_Wrapper.m_BBXRILeft_RotationLeft;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -3541,48 +2603,12 @@ namespace InputSystem.BluntBrawl
             {
                 if (instance == null || m_Wrapper.m_BBXRILeftActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_BBXRILeftActionsCallbackInterfaces.Add(instance);
-                @Position.started += instance.OnPosition;
-                @Position.performed += instance.OnPosition;
-                @Position.canceled += instance.OnPosition;
-                @Rotation.started += instance.OnRotation;
-                @Rotation.performed += instance.OnRotation;
-                @Rotation.canceled += instance.OnRotation;
-                @IsTracked.started += instance.OnIsTracked;
-                @IsTracked.performed += instance.OnIsTracked;
-                @IsTracked.canceled += instance.OnIsTracked;
-                @TrackingState.started += instance.OnTrackingState;
-                @TrackingState.performed += instance.OnTrackingState;
-                @TrackingState.canceled += instance.OnTrackingState;
-                @HapticDevice.started += instance.OnHapticDevice;
-                @HapticDevice.performed += instance.OnHapticDevice;
-                @HapticDevice.canceled += instance.OnHapticDevice;
-                @AimPosition.started += instance.OnAimPosition;
-                @AimPosition.performed += instance.OnAimPosition;
-                @AimPosition.canceled += instance.OnAimPosition;
-                @AimRotation.started += instance.OnAimRotation;
-                @AimRotation.performed += instance.OnAimRotation;
-                @AimRotation.canceled += instance.OnAimRotation;
-                @MetaAimFlags.started += instance.OnMetaAimFlags;
-                @MetaAimFlags.performed += instance.OnMetaAimFlags;
-                @MetaAimFlags.canceled += instance.OnMetaAimFlags;
-                @PinchPosition.started += instance.OnPinchPosition;
-                @PinchPosition.performed += instance.OnPinchPosition;
-                @PinchPosition.canceled += instance.OnPinchPosition;
-                @PokePosition.started += instance.OnPokePosition;
-                @PokePosition.performed += instance.OnPokePosition;
-                @PokePosition.canceled += instance.OnPokePosition;
-                @PokeRotation.started += instance.OnPokeRotation;
-                @PokeRotation.performed += instance.OnPokeRotation;
-                @PokeRotation.canceled += instance.OnPokeRotation;
-                @GripPosition.started += instance.OnGripPosition;
-                @GripPosition.performed += instance.OnGripPosition;
-                @GripPosition.canceled += instance.OnGripPosition;
-                @GripRotation.started += instance.OnGripRotation;
-                @GripRotation.performed += instance.OnGripRotation;
-                @GripRotation.canceled += instance.OnGripRotation;
-                @Thumbstick.started += instance.OnThumbstick;
-                @Thumbstick.performed += instance.OnThumbstick;
-                @Thumbstick.canceled += instance.OnThumbstick;
+                @PositionLeft.started += instance.OnPositionLeft;
+                @PositionLeft.performed += instance.OnPositionLeft;
+                @PositionLeft.canceled += instance.OnPositionLeft;
+                @RotationLeft.started += instance.OnRotationLeft;
+                @RotationLeft.performed += instance.OnRotationLeft;
+                @RotationLeft.canceled += instance.OnRotationLeft;
             }
 
             /// <summary>
@@ -3594,48 +2620,12 @@ namespace InputSystem.BluntBrawl
             /// <seealso cref="BBXRILeftActions" />
             private void UnregisterCallbacks(IBBXRILeftActions instance)
             {
-                @Position.started -= instance.OnPosition;
-                @Position.performed -= instance.OnPosition;
-                @Position.canceled -= instance.OnPosition;
-                @Rotation.started -= instance.OnRotation;
-                @Rotation.performed -= instance.OnRotation;
-                @Rotation.canceled -= instance.OnRotation;
-                @IsTracked.started -= instance.OnIsTracked;
-                @IsTracked.performed -= instance.OnIsTracked;
-                @IsTracked.canceled -= instance.OnIsTracked;
-                @TrackingState.started -= instance.OnTrackingState;
-                @TrackingState.performed -= instance.OnTrackingState;
-                @TrackingState.canceled -= instance.OnTrackingState;
-                @HapticDevice.started -= instance.OnHapticDevice;
-                @HapticDevice.performed -= instance.OnHapticDevice;
-                @HapticDevice.canceled -= instance.OnHapticDevice;
-                @AimPosition.started -= instance.OnAimPosition;
-                @AimPosition.performed -= instance.OnAimPosition;
-                @AimPosition.canceled -= instance.OnAimPosition;
-                @AimRotation.started -= instance.OnAimRotation;
-                @AimRotation.performed -= instance.OnAimRotation;
-                @AimRotation.canceled -= instance.OnAimRotation;
-                @MetaAimFlags.started -= instance.OnMetaAimFlags;
-                @MetaAimFlags.performed -= instance.OnMetaAimFlags;
-                @MetaAimFlags.canceled -= instance.OnMetaAimFlags;
-                @PinchPosition.started -= instance.OnPinchPosition;
-                @PinchPosition.performed -= instance.OnPinchPosition;
-                @PinchPosition.canceled -= instance.OnPinchPosition;
-                @PokePosition.started -= instance.OnPokePosition;
-                @PokePosition.performed -= instance.OnPokePosition;
-                @PokePosition.canceled -= instance.OnPokePosition;
-                @PokeRotation.started -= instance.OnPokeRotation;
-                @PokeRotation.performed -= instance.OnPokeRotation;
-                @PokeRotation.canceled -= instance.OnPokeRotation;
-                @GripPosition.started -= instance.OnGripPosition;
-                @GripPosition.performed -= instance.OnGripPosition;
-                @GripPosition.canceled -= instance.OnGripPosition;
-                @GripRotation.started -= instance.OnGripRotation;
-                @GripRotation.performed -= instance.OnGripRotation;
-                @GripRotation.canceled -= instance.OnGripRotation;
-                @Thumbstick.started -= instance.OnThumbstick;
-                @Thumbstick.performed -= instance.OnThumbstick;
-                @Thumbstick.canceled -= instance.OnThumbstick;
+                @PositionLeft.started -= instance.OnPositionLeft;
+                @PositionLeft.performed -= instance.OnPositionLeft;
+                @PositionLeft.canceled -= instance.OnPositionLeft;
+                @RotationLeft.started -= instance.OnRotationLeft;
+                @RotationLeft.performed -= instance.OnRotationLeft;
+                @RotationLeft.canceled -= instance.OnRotationLeft;
             }
 
             /// <summary>
@@ -3669,6 +2659,113 @@ namespace InputSystem.BluntBrawl
         /// Provides a new <see cref="BBXRILeftActions" /> instance referencing this action map.
         /// </summary>
         public BBXRILeftActions @BBXRILeft => new BBXRILeftActions(this);
+
+        // BB XRI Right
+        private readonly InputActionMap m_BBXRIRight;
+        private List<IBBXRIRightActions> m_BBXRIRightActionsCallbackInterfaces = new List<IBBXRIRightActions>();
+        private readonly InputAction m_BBXRIRight_PositionRight;
+        private readonly InputAction m_BBXRIRight_RotationRight;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "BB XRI Right".
+        /// </summary>
+        public struct BBXRIRightActions
+        {
+            private @BluntBrawlInputActions m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public BBXRIRightActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "BBXRIRight/PositionRight".
+            /// </summary>
+            public InputAction @PositionRight => m_Wrapper.m_BBXRIRight_PositionRight;
+            /// <summary>
+            /// Provides access to the underlying input action "BBXRIRight/RotationRight".
+            /// </summary>
+            public InputAction @RotationRight => m_Wrapper.m_BBXRIRight_RotationRight;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_BBXRIRight; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="BBXRIRightActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(BBXRIRightActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="BBXRIRightActions" />
+            public void AddCallbacks(IBBXRIRightActions instance)
+            {
+                if (instance == null || m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Add(instance);
+                @PositionRight.started += instance.OnPositionRight;
+                @PositionRight.performed += instance.OnPositionRight;
+                @PositionRight.canceled += instance.OnPositionRight;
+                @RotationRight.started += instance.OnRotationRight;
+                @RotationRight.performed += instance.OnRotationRight;
+                @RotationRight.canceled += instance.OnRotationRight;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="BBXRIRightActions" />
+            private void UnregisterCallbacks(IBBXRIRightActions instance)
+            {
+                @PositionRight.started -= instance.OnPositionRight;
+                @PositionRight.performed -= instance.OnPositionRight;
+                @PositionRight.canceled -= instance.OnPositionRight;
+                @RotationRight.started -= instance.OnRotationRight;
+                @RotationRight.performed -= instance.OnRotationRight;
+                @RotationRight.canceled -= instance.OnRotationRight;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BBXRIRightActions.UnregisterCallbacks(IBBXRIRightActions)" />.
+            /// </summary>
+            /// <seealso cref="BBXRIRightActions.UnregisterCallbacks(IBBXRIRightActions)" />
+            public void RemoveCallbacks(IBBXRIRightActions instance)
+            {
+                if (m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="BBXRIRightActions.AddCallbacks(IBBXRIRightActions)" />
+            /// <seealso cref="BBXRIRightActions.RemoveCallbacks(IBBXRIRightActions)" />
+            /// <seealso cref="BBXRIRightActions.UnregisterCallbacks(IBBXRIRightActions)" />
+            public void SetCallbacks(IBBXRIRightActions instance)
+            {
+                foreach (var item in m_Wrapper.m_BBXRIRightActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="BBXRIRightActions" /> instance referencing this action map.
+        /// </summary>
+        public BBXRIRightActions @BBXRIRight => new BBXRIRightActions(this);
 
         // BB XRI Right Interaction
         private readonly InputActionMap m_BBXRIRightInteraction;
@@ -4103,245 +3200,6 @@ namespace InputSystem.BluntBrawl
         /// Provides a new <see cref="BBXRILeftInteractionActions" /> instance referencing this action map.
         /// </summary>
         public BBXRILeftInteractionActions @BBXRILeftInteraction => new BBXRILeftInteractionActions(this);
-
-        // BB XRI Right
-        private readonly InputActionMap m_BBXRIRight;
-        private List<IBBXRIRightActions> m_BBXRIRightActionsCallbackInterfaces = new List<IBBXRIRightActions>();
-        private readonly InputAction m_BBXRIRight_Position;
-        private readonly InputAction m_BBXRIRight_Rotation;
-        private readonly InputAction m_BBXRIRight_IsTracked;
-        private readonly InputAction m_BBXRIRight_TrackingState;
-        private readonly InputAction m_BBXRIRight_HapticDevice;
-        private readonly InputAction m_BBXRIRight_AimPosition;
-        private readonly InputAction m_BBXRIRight_AimRotation;
-        private readonly InputAction m_BBXRIRight_MetaAimFlags;
-        private readonly InputAction m_BBXRIRight_PinchPosition;
-        private readonly InputAction m_BBXRIRight_PokePosition;
-        private readonly InputAction m_BBXRIRight_PokeRotation;
-        private readonly InputAction m_BBXRIRight_GripPosition;
-        private readonly InputAction m_BBXRIRight_GripRotation;
-        private readonly InputAction m_BBXRIRight_Thumbstick;
-        /// <summary>
-        /// Provides access to input actions defined in input action map "BB XRI Right".
-        /// </summary>
-        public struct BBXRIRightActions
-        {
-            private @BluntBrawlInputActions m_Wrapper;
-
-            /// <summary>
-            /// Construct a new instance of the input action map wrapper class.
-            /// </summary>
-            public BBXRIRightActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/Position".
-            /// </summary>
-            public InputAction @Position => m_Wrapper.m_BBXRIRight_Position;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/Rotation".
-            /// </summary>
-            public InputAction @Rotation => m_Wrapper.m_BBXRIRight_Rotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/IsTracked".
-            /// </summary>
-            public InputAction @IsTracked => m_Wrapper.m_BBXRIRight_IsTracked;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/TrackingState".
-            /// </summary>
-            public InputAction @TrackingState => m_Wrapper.m_BBXRIRight_TrackingState;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/HapticDevice".
-            /// </summary>
-            public InputAction @HapticDevice => m_Wrapper.m_BBXRIRight_HapticDevice;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/AimPosition".
-            /// </summary>
-            public InputAction @AimPosition => m_Wrapper.m_BBXRIRight_AimPosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/AimRotation".
-            /// </summary>
-            public InputAction @AimRotation => m_Wrapper.m_BBXRIRight_AimRotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/MetaAimFlags".
-            /// </summary>
-            public InputAction @MetaAimFlags => m_Wrapper.m_BBXRIRight_MetaAimFlags;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/PinchPosition".
-            /// </summary>
-            public InputAction @PinchPosition => m_Wrapper.m_BBXRIRight_PinchPosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/PokePosition".
-            /// </summary>
-            public InputAction @PokePosition => m_Wrapper.m_BBXRIRight_PokePosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/PokeRotation".
-            /// </summary>
-            public InputAction @PokeRotation => m_Wrapper.m_BBXRIRight_PokeRotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/GripPosition".
-            /// </summary>
-            public InputAction @GripPosition => m_Wrapper.m_BBXRIRight_GripPosition;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/GripRotation".
-            /// </summary>
-            public InputAction @GripRotation => m_Wrapper.m_BBXRIRight_GripRotation;
-            /// <summary>
-            /// Provides access to the underlying input action "BBXRIRight/Thumbstick".
-            /// </summary>
-            public InputAction @Thumbstick => m_Wrapper.m_BBXRIRight_Thumbstick;
-            /// <summary>
-            /// Provides access to the underlying input action map instance.
-            /// </summary>
-            public InputActionMap Get() { return m_Wrapper.m_BBXRIRight; }
-            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
-            public void Enable() { Get().Enable(); }
-            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
-            public void Disable() { Get().Disable(); }
-            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
-            public bool enabled => Get().enabled;
-            /// <summary>
-            /// Implicitly converts an <see ref="BBXRIRightActions" /> to an <see ref="InputActionMap" /> instance.
-            /// </summary>
-            public static implicit operator InputActionMap(BBXRIRightActions set) { return set.Get(); }
-            /// <summary>
-            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-            /// </summary>
-            /// <param name="instance">Callback instance.</param>
-            /// <remarks>
-            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
-            /// </remarks>
-            /// <seealso cref="BBXRIRightActions" />
-            public void AddCallbacks(IBBXRIRightActions instance)
-            {
-                if (instance == null || m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Add(instance);
-                @Position.started += instance.OnPosition;
-                @Position.performed += instance.OnPosition;
-                @Position.canceled += instance.OnPosition;
-                @Rotation.started += instance.OnRotation;
-                @Rotation.performed += instance.OnRotation;
-                @Rotation.canceled += instance.OnRotation;
-                @IsTracked.started += instance.OnIsTracked;
-                @IsTracked.performed += instance.OnIsTracked;
-                @IsTracked.canceled += instance.OnIsTracked;
-                @TrackingState.started += instance.OnTrackingState;
-                @TrackingState.performed += instance.OnTrackingState;
-                @TrackingState.canceled += instance.OnTrackingState;
-                @HapticDevice.started += instance.OnHapticDevice;
-                @HapticDevice.performed += instance.OnHapticDevice;
-                @HapticDevice.canceled += instance.OnHapticDevice;
-                @AimPosition.started += instance.OnAimPosition;
-                @AimPosition.performed += instance.OnAimPosition;
-                @AimPosition.canceled += instance.OnAimPosition;
-                @AimRotation.started += instance.OnAimRotation;
-                @AimRotation.performed += instance.OnAimRotation;
-                @AimRotation.canceled += instance.OnAimRotation;
-                @MetaAimFlags.started += instance.OnMetaAimFlags;
-                @MetaAimFlags.performed += instance.OnMetaAimFlags;
-                @MetaAimFlags.canceled += instance.OnMetaAimFlags;
-                @PinchPosition.started += instance.OnPinchPosition;
-                @PinchPosition.performed += instance.OnPinchPosition;
-                @PinchPosition.canceled += instance.OnPinchPosition;
-                @PokePosition.started += instance.OnPokePosition;
-                @PokePosition.performed += instance.OnPokePosition;
-                @PokePosition.canceled += instance.OnPokePosition;
-                @PokeRotation.started += instance.OnPokeRotation;
-                @PokeRotation.performed += instance.OnPokeRotation;
-                @PokeRotation.canceled += instance.OnPokeRotation;
-                @GripPosition.started += instance.OnGripPosition;
-                @GripPosition.performed += instance.OnGripPosition;
-                @GripPosition.canceled += instance.OnGripPosition;
-                @GripRotation.started += instance.OnGripRotation;
-                @GripRotation.performed += instance.OnGripRotation;
-                @GripRotation.canceled += instance.OnGripRotation;
-                @Thumbstick.started += instance.OnThumbstick;
-                @Thumbstick.performed += instance.OnThumbstick;
-                @Thumbstick.canceled += instance.OnThumbstick;
-            }
-
-            /// <summary>
-            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-            /// </summary>
-            /// <remarks>
-            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
-            /// </remarks>
-            /// <seealso cref="BBXRIRightActions" />
-            private void UnregisterCallbacks(IBBXRIRightActions instance)
-            {
-                @Position.started -= instance.OnPosition;
-                @Position.performed -= instance.OnPosition;
-                @Position.canceled -= instance.OnPosition;
-                @Rotation.started -= instance.OnRotation;
-                @Rotation.performed -= instance.OnRotation;
-                @Rotation.canceled -= instance.OnRotation;
-                @IsTracked.started -= instance.OnIsTracked;
-                @IsTracked.performed -= instance.OnIsTracked;
-                @IsTracked.canceled -= instance.OnIsTracked;
-                @TrackingState.started -= instance.OnTrackingState;
-                @TrackingState.performed -= instance.OnTrackingState;
-                @TrackingState.canceled -= instance.OnTrackingState;
-                @HapticDevice.started -= instance.OnHapticDevice;
-                @HapticDevice.performed -= instance.OnHapticDevice;
-                @HapticDevice.canceled -= instance.OnHapticDevice;
-                @AimPosition.started -= instance.OnAimPosition;
-                @AimPosition.performed -= instance.OnAimPosition;
-                @AimPosition.canceled -= instance.OnAimPosition;
-                @AimRotation.started -= instance.OnAimRotation;
-                @AimRotation.performed -= instance.OnAimRotation;
-                @AimRotation.canceled -= instance.OnAimRotation;
-                @MetaAimFlags.started -= instance.OnMetaAimFlags;
-                @MetaAimFlags.performed -= instance.OnMetaAimFlags;
-                @MetaAimFlags.canceled -= instance.OnMetaAimFlags;
-                @PinchPosition.started -= instance.OnPinchPosition;
-                @PinchPosition.performed -= instance.OnPinchPosition;
-                @PinchPosition.canceled -= instance.OnPinchPosition;
-                @PokePosition.started -= instance.OnPokePosition;
-                @PokePosition.performed -= instance.OnPokePosition;
-                @PokePosition.canceled -= instance.OnPokePosition;
-                @PokeRotation.started -= instance.OnPokeRotation;
-                @PokeRotation.performed -= instance.OnPokeRotation;
-                @PokeRotation.canceled -= instance.OnPokeRotation;
-                @GripPosition.started -= instance.OnGripPosition;
-                @GripPosition.performed -= instance.OnGripPosition;
-                @GripPosition.canceled -= instance.OnGripPosition;
-                @GripRotation.started -= instance.OnGripRotation;
-                @GripRotation.performed -= instance.OnGripRotation;
-                @GripRotation.canceled -= instance.OnGripRotation;
-                @Thumbstick.started -= instance.OnThumbstick;
-                @Thumbstick.performed -= instance.OnThumbstick;
-                @Thumbstick.canceled -= instance.OnThumbstick;
-            }
-
-            /// <summary>
-            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BBXRIRightActions.UnregisterCallbacks(IBBXRIRightActions)" />.
-            /// </summary>
-            /// <seealso cref="BBXRIRightActions.UnregisterCallbacks(IBBXRIRightActions)" />
-            public void RemoveCallbacks(IBBXRIRightActions instance)
-            {
-                if (m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Remove(instance))
-                    UnregisterCallbacks(instance);
-            }
-
-            /// <summary>
-            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
-            /// </summary>
-            /// <remarks>
-            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
-            /// </remarks>
-            /// <seealso cref="BBXRIRightActions.AddCallbacks(IBBXRIRightActions)" />
-            /// <seealso cref="BBXRIRightActions.RemoveCallbacks(IBBXRIRightActions)" />
-            /// <seealso cref="BBXRIRightActions.UnregisterCallbacks(IBBXRIRightActions)" />
-            public void SetCallbacks(IBBXRIRightActions instance)
-            {
-                foreach (var item in m_Wrapper.m_BBXRIRightActionsCallbackInterfaces)
-                    UnregisterCallbacks(item);
-                m_Wrapper.m_BBXRIRightActionsCallbackInterfaces.Clear();
-                AddCallbacks(instance);
-            }
-        }
-        /// <summary>
-        /// Provides a new <see cref="BBXRIRightActions" /> instance referencing this action map.
-        /// </summary>
-        public BBXRIRightActions @BBXRIRight => new BBXRIRightActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         /// <summary>
         /// Provides access to the input control scheme.
@@ -4564,103 +3422,41 @@ namespace InputSystem.BluntBrawl
         public interface IBBXRILeftActions
         {
             /// <summary>
-            /// Method invoked when associated input action "Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "PositionLeft" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPosition(InputAction.CallbackContext context);
+            void OnPositionLeft(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "RotationLeft" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnRotation(InputAction.CallbackContext context);
+            void OnRotationLeft(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BB XRI Right" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="BBXRIRightActions.AddCallbacks(IBBXRIRightActions)" />
+        /// <seealso cref="BBXRIRightActions.RemoveCallbacks(IBBXRIRightActions)" />
+        public interface IBBXRIRightActions
+        {
             /// <summary>
-            /// Method invoked when associated input action "Is Tracked" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "PositionRight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnIsTracked(InputAction.CallbackContext context);
+            void OnPositionRight(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "Tracking State" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "RotationRight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnTrackingState(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Haptic Device" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnHapticDevice(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Aim Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnAimPosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Aim Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnAimRotation(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Meta Aim Flags" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnMetaAimFlags(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Pinch Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPinchPosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Poke Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPokePosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Poke Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPokeRotation(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Grip Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnGripPosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Grip Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnGripRotation(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Thumbstick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnThumbstick(InputAction.CallbackContext context);
+            void OnRotationRight(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BB XRI Right Interaction" which allows adding and removing callbacks.
@@ -4845,112 +3641,6 @@ namespace InputSystem.BluntBrawl
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnScaleOverTime(InputAction.CallbackContext context);
-        }
-        /// <summary>
-        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BB XRI Right" which allows adding and removing callbacks.
-        /// </summary>
-        /// <seealso cref="BBXRIRightActions.AddCallbacks(IBBXRIRightActions)" />
-        /// <seealso cref="BBXRIRightActions.RemoveCallbacks(IBBXRIRightActions)" />
-        public interface IBBXRIRightActions
-        {
-            /// <summary>
-            /// Method invoked when associated input action "Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnRotation(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Is Tracked" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnIsTracked(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Tracking State" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnTrackingState(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Haptic Device" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnHapticDevice(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Aim Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnAimPosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Aim Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnAimRotation(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Meta Aim Flags" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnMetaAimFlags(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Pinch Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPinchPosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Poke Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPokePosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Poke Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPokeRotation(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Grip Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnGripPosition(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Grip Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnGripRotation(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Thumbstick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnThumbstick(InputAction.CallbackContext context);
         }
     }
 }

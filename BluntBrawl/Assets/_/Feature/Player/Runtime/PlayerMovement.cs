@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace Player.Runtime
 {
-    public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions
+    public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions, BluntBrawlInputActions.IBBXRILeftActions, BluntBrawlInputActions.IBBXRIRightActions
     {
         
         #region Unity API
@@ -15,6 +15,9 @@ namespace Player.Runtime
         {
             _playerInputActions = new BluntBrawlInputActions();
             _playerInputActions.Player.SetCallbacks(this);
+            _playerInputActions.BBXRILeft.SetCallbacks(this);
+            _playerInputActions.BBXRIRight.SetCallbacks(this);
+            
             _playerHead = _playerOrigin.GetComponent<XROrigin>().Camera.transform;
         }
 
@@ -27,11 +30,12 @@ namespace Player.Runtime
             if (isLocalPlayer)
             {
                 Move();
-                //MoveLook();
+                TrackingPositionController();
+                TrackingRotationController();
             }
         }
-        
 
+        
         #endregion
 
 
@@ -39,7 +43,7 @@ namespace Player.Runtime
 
         
 
-        
+            //main player
             public void OnMove(InputAction.CallbackContext context)
             {
                 _playerInputMovement = context.ReadValue<Vector2>();
@@ -47,7 +51,7 @@ namespace Player.Runtime
     
             public void OnLook(InputAction.CallbackContext context)
             {
-                _playerInputView = context.ReadValue<Vector2>();
+                
             }
     
             public void OnAttack(InputAction.CallbackContext context)
@@ -84,12 +88,35 @@ namespace Player.Runtime
             {
                
             }
-        
-        #endregion
-        
+            
+            //Left
+            public void OnPositionLeft(InputAction.CallbackContext context)
+            {
+                _leftControllerInputPosition = context.ReadValue<Vector3>();
+            }
 
+            public void OnRotationLeft(InputAction.CallbackContext context)
+            {
+                _leftControllerInputRotation = context.ReadValue<Quaternion>();
+            }
+            
+            //Right
+            public void OnPositionRight(InputAction.CallbackContext context)
+            {
+                _rightControllerInputPosition = context.ReadValue<Vector3>();
+            }
+
+            public void OnRotationRight(InputAction.CallbackContext context)
+            {
+                _rightControllerInputRotation = context.ReadValue<Quaternion>();
+            }
+            
+            
+            #endregion
+            
+    
         #region Utils
-      
+    
         
         private void Move()
         {
@@ -97,11 +124,18 @@ namespace Player.Runtime
             inputDirection.y = 0;
             _playerOrigin.position += inputDirection * (Time.deltaTime * _moveSpeed);
         }
-
-        private void MoveLook()
+       
+        
+        private void TrackingPositionController()
         {
-            float rotateDirection = _playerInputView.y * Time.deltaTime * _rotateSpeed;
-            _playerOrigin.Rotate(0, rotateDirection, 0);
+            _leftController.localPosition = _leftControllerInputPosition;
+            _rightController.localPosition = _rightControllerInputPosition;
+        }
+        
+        private void TrackingRotationController()
+        {
+            _leftController.rotation = _leftControllerInputRotation;
+            _rightController.rotation = _rightControllerInputRotation;
         }
 
         #endregion
@@ -112,17 +146,29 @@ namespace Player.Runtime
         
         private BluntBrawlInputActions _playerInputActions;
         
+        [Header("Settings for Movement")]
+        [SerializeField, Tooltip("XROrigin of this player")] private Transform _playerOrigin;
         [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
 
-        [SerializeField, Tooltip("Degre per second")] private float _rotateSpeed;
-        [SerializeField, Tooltip("XROrigin of this player")] private Transform _playerOrigin;
+        [Header("Settings for Tracked Controller")] 
+        [SerializeField] private Transform _leftController;
+        [SerializeField] private Transform _rightController;
+
         private Transform _playerHead;
         
+        
         private Vector2 _playerInputMovement;
-        private Vector2 _playerInputView;
+
+        private Vector3 _leftControllerInputPosition;
+        private Vector3 _rightControllerInputPosition;
+        
+        private Quaternion _leftControllerInputRotation;
+        private Quaternion _rightControllerInputRotation;
+
 
         #endregion
 
-        
+
+
     }
 }

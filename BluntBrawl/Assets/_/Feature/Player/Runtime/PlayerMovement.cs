@@ -1,4 +1,5 @@
 using InputSystem.BluntBrawl;
+using Interfaces.Runtime;
 using Mirror;
 using Unity.XR.CoreUtils;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace Player.Runtime
             _playerHead = _XROrigin.Camera.transform;
             _playerRigidbody = _XROrigin.GetComponent<Rigidbody>();
             _playerRigidbody.maxLinearVelocity = 10f;
+            
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -174,8 +176,6 @@ namespace Player.Runtime
 
 
         #endregion
-
-
-
+        
     }
 }

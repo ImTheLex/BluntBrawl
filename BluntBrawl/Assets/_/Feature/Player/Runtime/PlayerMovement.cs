@@ -17,8 +17,11 @@ namespace Player.Runtime
             _playerInputActions.Player.SetCallbacks(this);
             _playerInputActions.BBXRILeft.SetCallbacks(this);
             _playerInputActions.BBXRIRight.SetCallbacks(this);
-            
-            _playerHead = _playerOrigin.GetComponent<XROrigin>().Camera.transform;
+
+            _XROrigin = _playerOrigin.GetComponent<XROrigin>();
+            _playerHead = _XROrigin.Camera.transform;
+            _playerRigidbody = _XROrigin.GetComponent<Rigidbody>();
+            _playerRigidbody.maxLinearVelocity = 10f;
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -122,7 +125,9 @@ namespace Player.Runtime
         {
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y + _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
-            _playerOrigin.position += inputDirection * (Time.deltaTime * _moveSpeed);
+            _playerRigidbody.linearVelocity += inputDirection * (Time.deltaTime * _moveSpeed);
+            if  (_playerInputMovement.magnitude <= 0f) _playerRigidbody.linearVelocity = Vector3.zero;
+            
         }
        
         
@@ -155,6 +160,8 @@ namespace Player.Runtime
         [SerializeField] private Transform _rightController;
 
         private Transform _playerHead;
+        private XROrigin _XROrigin;
+        private Rigidbody _playerRigidbody;
         
         
         private Vector2 _playerInputMovement;

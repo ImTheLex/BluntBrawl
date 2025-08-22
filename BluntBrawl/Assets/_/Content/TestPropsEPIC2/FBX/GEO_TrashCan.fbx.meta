@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: IMG_Text_Test
-    second: {fileID: 2100000, guid: c351572d7bc0bd245b046b02039c8299, type: 2}
+    second: {fileID: 2100000, guid: 6f4cd137eedfc994b8ec14fb78b42e39, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

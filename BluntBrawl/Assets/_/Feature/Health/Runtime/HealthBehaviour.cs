@@ -17,11 +17,11 @@ namespace Health.Runtime
         
         #region Unity API
 
-        private void Awake()
-        {
-            name = gameObject.name;
-            if(m_renderer != null) baseColor = m_renderer.material.color;
-        }
+            private void Awake()
+            {
+                name = gameObject.name;
+                if(m_renderer != null) baseColor = m_renderer.material.color;
+            }
 
         #endregion
 
@@ -47,6 +47,7 @@ namespace Health.Runtime
             {
                 GetComponentInChildren<Renderer>().material.color = baseColor;
             }
+            
         #endregion
         
         

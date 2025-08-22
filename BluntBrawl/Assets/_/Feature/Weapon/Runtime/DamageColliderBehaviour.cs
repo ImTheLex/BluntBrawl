@@ -8,13 +8,14 @@ namespace Weapon.Runtime
     {
         #region Unity API
         
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.TryGetComponent<IDamageable>(out var damageable))
+            private void OnTriggerEnter(Collider other)
             {
-                damageable.TakeDamage();
+                if (other.TryGetComponent<IDamageable>(out var damageable))
+                {
+                    damageable.TakeDamage();
+                }
             }
-        }
+        
         #endregion
     }
 }

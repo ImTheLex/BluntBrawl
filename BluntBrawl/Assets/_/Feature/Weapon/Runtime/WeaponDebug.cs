@@ -11,8 +11,13 @@ namespace Weapon.Runtime
             public bool m_isVerbose;
             public TMP_Text m_debugText;
             public WeaponBehaviour m_weaponBehaviour;
+            public Canvas m_debugCanvas;
 
         #endregion
+
+        private void Start()
+        {
+        }
 
         #region Unity API
 
@@ -20,7 +25,12 @@ namespace Weapon.Runtime
             {
                 if (m_isVerbose)
                 {
-                    m_debugText.text = "Velocity: " + m_weaponBehaviour.m_velocity.ToString("F2");
+                    if (m_debugCanvas.gameObject.activeSelf == false) m_debugCanvas.gameObject.SetActive(true);
+                    m_debugText.text = "Velocity: " + m_weaponBehaviour.m_velocity.ToString("F2") +"\nRequired: " + m_weaponBehaviour.m_speedRequired;
+                }
+                else
+                {
+                    m_debugCanvas.gameObject.SetActive(false);
                 }
             }
 

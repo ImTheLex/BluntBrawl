@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 2488156854
+  _assetId: 2654449017
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -825,12 +825,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_RightControllerVisual
       objectReference: {fileID: 0}
-    - target: {fileID: 8993385919061817775, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 4331621373969296445}
-    m_RemovedComponents:
-    - {fileID: 7894411455304078417, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

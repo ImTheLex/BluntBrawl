@@ -10,6 +10,7 @@ namespace Weapon.Runtime
             public float m_speedRequired;
             public float m_velocity => _weaponVelocity;
             
+            
         #endregion
         
         
@@ -27,7 +28,7 @@ namespace Weapon.Runtime
         private void HandleDamageColliderOnVelocity()
         {
             
-            var translation = transform.position - _previousPos;
+            var translation = _localPositionReference.transform.localPosition - _previousPos;
             var velocity = translation.magnitude / Time.deltaTime;
             _weaponVelocity = velocity;
             //var velocity = Vector3.Magnitude(_weaponRb.linearVelocity);
@@ -44,7 +45,7 @@ namespace Weapon.Runtime
                 _weaponDamageCollider.isTrigger = false;
                 
             }
-            _previousPos = transform.position;
+            _previousPos = _localPositionReference.transform.localPosition;
         }
 
        
@@ -53,7 +54,8 @@ namespace Weapon.Runtime
         
         #region Privates & Protected
 
-        
+
+            [SerializeField] private Transform _localPositionReference;
             [SerializeField] private Collider _weaponDamageCollider;
             [SerializeField] private Rigidbody _weaponRb;
             private float _weaponVelocity;

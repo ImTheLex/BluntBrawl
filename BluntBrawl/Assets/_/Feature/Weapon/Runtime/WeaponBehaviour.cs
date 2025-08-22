@@ -8,6 +8,7 @@ namespace Weapon.Runtime
         #region Publics
 
             public float m_speedRequired;
+            public float m_velocity => _weaponVelocity;
             
         #endregion
         
@@ -25,7 +26,11 @@ namespace Weapon.Runtime
 
         private void HandleDamageColliderOnVelocity()
         {
-            var velocity = Vector3.Magnitude(_weaponRb.linearVelocity);
+            
+            var translation = transform.position - _previousPos;
+            var velocity = translation.magnitude / Time.deltaTime;
+            _weaponVelocity = velocity;
+            //var velocity = Vector3.Magnitude(_weaponRb.linearVelocity);
             if (velocity > m_speedRequired)
             {
                 Debug.Log("Can damage because Velocity is : " + velocity.ToString("F2") + " And required is : " + m_speedRequired);
@@ -35,26 +40,26 @@ namespace Weapon.Runtime
             }
             else
             {
-                //Invoke(nameof(DisableCollider),2f);
+                _weaponDamageCollider.enabled = false;
+                _weaponDamageCollider.isTrigger = false;
                 
             }
+            _previousPos = transform.position;
         }
 
-        private void DisableCollider()
-        {
-            _weaponDamageCollider.enabled = false;
-            _weaponDamageCollider.isTrigger = false;
-        }
+       
         #endregion
         
         
         #region Privates & Protected
 
-        [SerializeField] private Collider _weaponDamageCollider;
-        [SerializeField] private Rigidbody _weaponRb;
-        private float _weaponVelocity;
         
+            [SerializeField] private Collider _weaponDamageCollider;
+            [SerializeField] private Rigidbody _weaponRb;
+            private float _weaponVelocity;
+            private Vector3 _previousPos;
 
-        #endregion
+
+            #endregion
     }
 }

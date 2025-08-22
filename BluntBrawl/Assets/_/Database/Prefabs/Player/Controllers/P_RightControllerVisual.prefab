@@ -967,6 +967,10 @@ PrefabInstance:
       value: P_Sword
       objectReference: {fileID: 0}
     - target: {fileID: 2904401123572991345, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+      propertyPath: m_weaponStats
+      value: 
+      objectReference: {fileID: 11400000, guid: f6c4e2ef7c6c34983997a4a935f47f93, type: 2}
+    - target: {fileID: 2904401123572991345, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
       propertyPath: _localPositionReference
       value: 
       objectReference: {fileID: 4175998751492634237}

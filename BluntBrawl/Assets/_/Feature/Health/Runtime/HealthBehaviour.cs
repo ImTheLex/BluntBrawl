@@ -1,16 +1,21 @@
 using System;
 using Interfaces.Runtime;
+using Mirror;
+using TMPro;
 using UnityEngine;
 
 namespace Health.Runtime
 {
-    public class HealthBehaviour : MonoBehaviour, IDamageable
+    public class HealthBehaviour : NetworkBehaviour, IDamageable
     {
 
         #region Publics
 
-            public int m_health;
+            public int m_maxHealth;
+            
             public Renderer m_renderer;
+            public Canvas m_canvas;
+            public TMP_Text m_text;
 
         #endregion
         
@@ -20,17 +25,27 @@ namespace Health.Runtime
             private void Awake()
             {
                 name = gameObject.name;
+                _health = m_maxHealth;
+                
                 if(m_renderer != null) baseColor = m_renderer.material.color;
+                m_canvas.gameObject.SetActive(true);
             }
 
-        #endregion
+            private void Update()
+            {
+                m_text.text = "Current Health: " + _health;
+            }
+
+            #endregion
 
         
         #region TestDamage
        
-            public void TakeDamage()
+            public void TakeDamage(int amount)
             {
                 Debug.Log($"Player {name} damaged");
+                
+                _health -= amount;
                 if (m_renderer is null)
                 {
                     m_renderer = gameObject.GetComponentInChildren<Renderer>();
@@ -54,6 +69,7 @@ namespace Health.Runtime
         #region Privates
         
             private string name;
+            private int _health;
             private Color baseColor;
         
         #endregion

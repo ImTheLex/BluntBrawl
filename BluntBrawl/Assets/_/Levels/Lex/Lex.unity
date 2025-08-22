@@ -1048,6 +1048,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3049629617197251500, guid: e2523d06c90b744abbf381560514927a, type: 3}
+      propertyPath: sceneId
+      value: 3843987083
+      objectReference: {fileID: 0}
     - target: {fileID: 3977747580226826716, guid: e2523d06c90b744abbf381560514927a, type: 3}
       propertyPath: m_Name
       value: P_DamageableEntity

@@ -79,6 +79,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speedRequired: 1
+  m_weaponStats: {fileID: 0}
+  m_owner: {fileID: 0}
+  _localPositionReference: {fileID: 0}
   _weaponDamageCollider: {fileID: 8484718051785760924}
   _weaponRb: {fileID: 8924011763791465317}
 --- !u!114 &5376118505713071364
@@ -96,6 +99,7 @@ MonoBehaviour:
   m_isVerbose: 1
   m_debugText: {fileID: 2762938403157604258}
   m_weaponBehaviour: {fileID: 2904401123572991345}
+  m_debugCanvas: {fileID: 0}
 --- !u!114 &2921295698324951469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2127f25dfdac4651a83987aa33d6001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_weaponBehaviour: {fileID: 2904401123572991345}
 --- !u!1 &6091586671458620574
 GameObject:
   m_ObjectHideFlags: 0

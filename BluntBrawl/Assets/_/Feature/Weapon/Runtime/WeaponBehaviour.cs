@@ -9,12 +9,15 @@ namespace Weapon.Runtime
 
             public float m_speedRequired;
             public float m_velocity => _weaponVelocity;
-            
+            public WeaponStats m_weaponStats;
+            public GameObject m_owner;
             
         #endregion
         
         
         #region Unity API
+        
+
         private void Update()
         {
             HandleDamageColliderOnVelocity();

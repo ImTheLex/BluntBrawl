@@ -3,7 +3,12 @@ guid: c95a05cc9fd635547bab83f5132c7b9b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IMG_Text_Test.001
+    second: {fileID: 2100000, guid: 6f4cd137eedfc994b8ec14fb78b42e39, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

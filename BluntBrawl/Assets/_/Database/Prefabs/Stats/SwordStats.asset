@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: SwordStats
   m_EditorClassIdentifier: 
   m_damage: 4
+  m_velocityDamageMultiplier: 1

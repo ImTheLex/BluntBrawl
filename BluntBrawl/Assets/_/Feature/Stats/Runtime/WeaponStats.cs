@@ -5,4 +5,5 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     public int m_damage;
+    public int m_velocityDamageMultiplier;
 }

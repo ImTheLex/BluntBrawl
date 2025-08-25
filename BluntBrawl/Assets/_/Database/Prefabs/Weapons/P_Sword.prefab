@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2904401123572991345}
   - component: {fileID: 5376118505713071364}
   - component: {fileID: 2921295698324951469}
+  - component: {fileID: 3846541421435689692}
+  - component: {fileID: -7074210283315368797}
   m_Layer: 0
   m_Name: P_Sword
   m_TagString: Untagged
@@ -81,7 +83,7 @@ MonoBehaviour:
   m_speedRequired: 1
   m_weaponStats: {fileID: 0}
   m_owner: {fileID: 0}
-  _localPositionReference: {fileID: 0}
+  _localPositionReference: {fileID: 1379783501357606790}
   _weaponDamageCollider: {fileID: 8484718051785760924}
   _weaponRb: {fileID: 8924011763791465317}
 --- !u!114 &5376118505713071364
@@ -134,6 +136,38 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &3846541421435689692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350312154220774817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df2aa6b72c4847b781f0559d2c2e0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _grabItemUI: {fileID: 4861876332911553144}
+--- !u!114 &-7074210283315368797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350312154220774817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c0f9612981845729415f60bb8cc151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isVerbose: 1
+  m_debugText: {fileID: 2762938403157604258}
+  m_weaponBehaviour: {fileID: 2904401123572991345}
+  m_debugCanvas: {fileID: 4861876332911553144}
 --- !u!1 &3462813399527513913
 GameObject:
   m_ObjectHideFlags: 0

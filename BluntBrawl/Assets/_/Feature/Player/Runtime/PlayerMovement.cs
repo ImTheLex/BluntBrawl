@@ -1,5 +1,4 @@
 using InputSystem.BluntBrawl;
-using Interfaces.Runtime;
 using Mirror;
 using Unity.XR.CoreUtils;
 using UnityEngine;
@@ -126,9 +125,12 @@ namespace Player.Runtime
         private void Move()
         {
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y + _playerHead.right * _playerInputMovement.x;
-            inputDirection.y = 0;
-            _playerRigidbody.linearVelocity += inputDirection * (Time.deltaTime * _moveSpeed);
-            if  (_playerInputMovement.magnitude <= 0f) _playerRigidbody.linearVelocity = Vector3.zero;
+            inputDirection.y = 0f;
+            _playerRigidbody.AddForce(inputDirection * _moveSpeed,ForceMode.VelocityChange);
+            if (_playerInputMovement.magnitude <= 0f)
+            {
+                _playerRigidbody.linearVelocity = new Vector3(0,Physics.gravity.y,0);
+            }
             
         }
        

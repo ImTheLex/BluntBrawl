@@ -11,8 +11,15 @@ namespace Item.Runtime
 	
         public string m_grabOwner => _grabOwner;
         public Transform m_grabTransform => transform;
-        
-	
+
+        public WeaponStats m_weaponData
+        {
+            get
+            {
+                return _weaponData;
+            }
+        }
+
         #endregion
 	
         #region Unity API

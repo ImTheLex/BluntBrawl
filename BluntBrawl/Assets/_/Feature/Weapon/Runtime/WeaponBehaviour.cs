@@ -22,8 +22,9 @@ namespace Weapon.Runtime
 
         private void Start()
         {
-            ItemGrabber item = GetComponentInParent<ItemGrabber>();
-            item.EquipStartingWeapon(gameObject, _weaponData);
+            
+            _itemGrabber = GetComponentInParent<ItemGrabber>();
+            _itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
         }
 
         private void Update()
@@ -71,8 +72,9 @@ namespace Weapon.Runtime
             [SerializeField] private Rigidbody _weaponRb;
             private float _weaponVelocity;
             private Vector3 _previousPos;
-        
-            private WeaponStats _weaponData => GetComponent<WeaponStats>();
+            [SerializeField] private ItemGrabber _itemGrabber;
+
+            private WeaponStats _weaponData => GetComponent<ItemBehaviour>().m_weaponData;
 
 
             #endregion

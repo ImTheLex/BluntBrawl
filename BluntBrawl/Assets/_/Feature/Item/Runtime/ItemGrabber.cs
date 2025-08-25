@@ -80,6 +80,7 @@ namespace Item.Runtime
         private GameObject _inHandWeapon;
         private WeaponStats _grabbableWeaponData;
         private GameObject _grabbableObject;
+        
 
         #endregion
     }

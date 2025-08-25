@@ -483,11 +483,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speedRequired: 2
-  m_weaponStats: {fileID: 11400000, guid: f6c4e2ef7c6c34983997a4a935f47f93, type: 2}
   m_owner: {fileID: 0}
   _localPositionReference: {fileID: 4127591316944050016}
   _weaponDamageCollider: {fileID: 38215749388227772}
   _weaponRb: {fileID: 7592046281717406919}
+  _itemGrabber: {fileID: 0}
 --- !u!114 &5561588998882814956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,8 +520,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _grabItemUI: {fileID: 1730530930752802815}
-  _worldPrefab: {fileID: 0}
-  _localPrefab: {fileID: 0}
+  _weaponData: {fileID: 11400000, guid: 2552adc3713bbce4ea5d66dfd0efba5d, type: 2}
 --- !u!1 &8873136427657458798
 GameObject:
   m_ObjectHideFlags: 0

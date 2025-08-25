@@ -6,4 +6,7 @@ public class WeaponStats : ScriptableObject
 {
     public int m_damage;
     public int m_velocityDamageMultiplier;
+
+    public GameObject m_inWorldPrefab;
+    public GameObject m_inHandPrefab;
 }

@@ -505,6 +505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_WorldFakePipe
       objectReference: {fileID: 0}
+    - target: {fileID: 984304358264190842, guid: c2385437d8136472892410efa389fbaa, type: 3}
+      propertyPath: _weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2552adc3713bbce4ea5d66dfd0efba5d, type: 2}
     - target: {fileID: 1230184891288877828, guid: c2385437d8136472892410efa389fbaa, type: 3}
       propertyPath: m_IsTrigger
       value: 0

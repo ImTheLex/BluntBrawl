@@ -1,22 +1,30 @@
-using System;
+using Item.Runtime;
 using UnityEngine;
 
 namespace Weapon.Runtime
+
 {
+    [RequireComponent(typeof(ItemBehaviour))]
     public class WeaponBehaviour : MonoBehaviour
     {
         #region Publics
 
             public float m_speedRequired;
             public float m_velocity => _weaponVelocity;
-            public WeaponStats m_weaponStats;
+            public int m_damage => _weaponData.m_damage;
+            public int m_velocityDamage => _weaponData.m_velocityDamageMultiplier;
             public GameObject m_owner;
             
         #endregion
         
         
         #region Unity API
-        
+
+        private void Start()
+        {
+            ItemGrabber item = GetComponentInParent<ItemGrabber>();
+            item.EquipStartingWeapon(gameObject, _weaponData);
+        }
 
         private void Update()
         {
@@ -63,6 +71,8 @@ namespace Weapon.Runtime
             [SerializeField] private Rigidbody _weaponRb;
             private float _weaponVelocity;
             private Vector3 _previousPos;
+        
+            private WeaponStats _weaponData => GetComponent<WeaponStats>();
 
 
             #endregion

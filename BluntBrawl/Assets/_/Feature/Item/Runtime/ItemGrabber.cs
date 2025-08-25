@@ -14,39 +14,25 @@ namespace Item.Runtime
 	
         #region Unity API
 
-        public void Awake()
-        {
-
-	        var test = _currentItemInterface.GetComponent<IGrabbable>();
-	        _currentItem = test.m_grabTransform.gameObject;
-	        _currentLocalItem = test.m_localPrefab;
-	        _currentWorldItem = test.m_worldPrefab;
-        }
-
+        
         public void OnTriggerEnter(Collider collider)
         {
-            //if(!isLocalPlayer) return;
+            
             if(collider.TryGetComponent<IGrabbable>(out var grabbable))
             {
-				
-                //if(grabbable.m_grabOwner != null) return;
-				
-                _grabbableCurrentTarget = grabbable.m_grabTransform.gameObject;
-                _currentLocalItem = grabbable.m_localPrefab;
+                _grabbableWeaponData = grabbable.m_weaponData;
+                _grabbableObject = collider.gameObject;
                 grabbable.DisplayGrabItemUI();
-	
             }
         }
 		
         public void OnTriggerExit(Collider collider)
         {
-            //if(!isLocalPlayer) return;
+            
             if(collider.TryGetComponent<IGrabbable>(out var grabbable))
             {
-                //if(grabbable.m_grabOwner != null) return;
-                _currentLocalItem = _currentItem;
-                _grabbableCurrentTarget = null;
-
+	            _grabbableWeaponData = null;
+                _grabbableObject = null;
                 grabbable.HideGrabItemUI();
             }
         }
@@ -54,27 +40,22 @@ namespace Item.Runtime
         #endregion
 	
         #region MainMethods
+
+        public void EquipStartingWeapon(GameObject weapon, WeaponStats weaponStats)
+        {
+	        _inHandWeapon = weapon;
+	        _inHandWeaponData = weaponStats;
+        } 
 	
 		[ContextMenu("Grab Item")]
         public void GrabItem()
         {
 	
 			
-            if(_grabbableCurrentTarget == null) return;
-            if(_currentItem != null) UngrabItem();
-            
-            Instantiate(_currentLocalItem, transform.position, transform.rotation,transform);
-            
-            var spawnPos = _grabbableCurrentTarget.transform.position;
-            
-	        var obj = Instantiate(_currentWorldItem);
-            obj.transform.position = new Vector3(spawnPos.x, spawnPos.y+2, spawnPos.z);
-            
-            var test = _currentLocalItem.GetComponent<IGrabbable>();
-            _currentWorldItem = test.m_worldPrefab;
-            Destroy(_grabbableCurrentTarget);
-            
-
+            if(_grabbableWeaponData == null || _grabbableObject == null) return;
+            if(_inHandWeaponData != null) UngrabItem();
+            Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
+            Destroy(_grabbableObject);
         }
 	
         #endregion
@@ -84,15 +65,8 @@ namespace Item.Runtime
 	
         public void UngrabItem()
         {
-			Instantiate(_currentWorldItem);
-			//_currentItem.SetActive(false);
-			Destroy(_currentItem);
-
-			/*
-            var currentItemRb = _currentItem.GetComponent<Rigidbody>();
-            _currentItem.transform.SetParent(null);
-            currentItemRb.isKinematic = false;
-            */
+	        Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
+	        Destroy(_inHandWeapon);
         }
 	
         #endregion
@@ -102,14 +76,11 @@ namespace Item.Runtime
 	
         private string _grabOwner;
         
-        [SerializeField] private GameObject _currentItemInterface;
-        
-        private GameObject _currentLocalItem;
-        private GameObject _currentWorldItem;
+        private WeaponStats _inHandWeaponData;
+        private GameObject _inHandWeapon;
+        private WeaponStats _grabbableWeaponData;
+        private GameObject _grabbableObject;
 
-        private GameObject _grabbableCurrentTarget;
-        private GameObject _currentItem;
-	
         #endregion
     }
 

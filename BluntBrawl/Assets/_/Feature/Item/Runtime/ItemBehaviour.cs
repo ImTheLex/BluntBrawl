@@ -1,4 +1,3 @@
-using System;
 using Interfaces.Runtime;
 using Mirror;
 using TMPro;
@@ -11,17 +10,8 @@ namespace Item.Runtime
         #region Publics
 	
         public string m_grabOwner => _grabOwner;
-        public GameObject m_worldPrefab
-        {
-            get { return _worldPrefab; }
-        }
-
-        public GameObject m_localPrefab
-        {
-            get { return _localPrefab; }
-        }
-
         public Transform m_grabTransform => transform;
+        
 	
         #endregion
 	
@@ -60,8 +50,7 @@ namespace Item.Runtime
         private string _grabOwner;
         
         [SerializeField] private Canvas _grabItemUI;
-        [SerializeField] private GameObject _worldPrefab;
-        [SerializeField] private GameObject _localPrefab;
+        [SerializeField] private WeaponStats _weaponData;
         
         private TMP_Text _grabItemUIText;
 		

@@ -1,4 +1,6 @@
 using InputSystem.BluntBrawl;
+using Interfaces.Runtime;
+using Item.Runtime;
 using Mirror;
 using Unity.XR.CoreUtils;
 using UnityEngine;
@@ -6,8 +8,14 @@ using UnityEngine.InputSystem;
 
 namespace Player.Runtime
 {
-    public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions, BluntBrawlInputActions.IBBXRILeftActions, BluntBrawlInputActions.IBBXRIRightActions
+    public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions, BluntBrawlInputActions.IBBXRILeftActions, BluntBrawlInputActions.IBBXRIRightActions,BluntBrawlInputActions.IBBXRIRightInteractionActions
     {
+        
+        #region Publics
+            //public BluntBrawlInputActions m_playerInputActions => _playerInputActions;
+            
+        #endregion
+        
         
         #region Unity API
 
@@ -17,12 +25,15 @@ namespace Player.Runtime
             _playerInputActions.Player.SetCallbacks(this);
             _playerInputActions.BBXRILeft.SetCallbacks(this);
             _playerInputActions.BBXRIRight.SetCallbacks(this);
+            _playerInputActions.BBXRIRightInteraction.SetCallbacks(this);
 
             _XROrigin = _playerOrigin.GetComponent<XROrigin>();
             _playerHead = _XROrigin.Camera.transform;
             _playerRigidbody = _XROrigin.GetComponent<Rigidbody>();
             _playerRigidbody.maxLinearVelocity = 10f;
-            
+
+            _itemGrabber = _rightController.GetComponent<ItemGrabber>();
+
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -115,9 +126,73 @@ namespace Player.Runtime
                 _rightControllerInputRotation = context.ReadValue<Quaternion>();
             }
             
+            //Right interaction
+            public void OnSelect(InputAction.CallbackContext context)
+            {
+                if (context.performed)
+                {
+                    _itemGrabber.GrabItem();
+                }
+            }
+
+            public void OnSelectValue(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnActivate(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnActivateValue(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnUIPress(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnUIPressValue(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnUIScroll(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnTranslateManipulation(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnRotateManipulation(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnDirectionalManipulation(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnScaleToggle(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnScaleOverTime(InputAction.CallbackContext context)
+            {
+                throw new System.NotImplementedException();
+            }
             
             #endregion
             
+        
     
         #region Utils
     
@@ -125,12 +200,9 @@ namespace Player.Runtime
         private void Move()
         {
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y + _playerHead.right * _playerInputMovement.x;
-            inputDirection.y = 0f;
-            _playerRigidbody.AddForce(inputDirection * _moveSpeed,ForceMode.VelocityChange);
-            if (_playerInputMovement.magnitude <= 0f)
-            {
-                _playerRigidbody.linearVelocity = new Vector3(0,Physics.gravity.y,0);
-            }
+            inputDirection.y = 0;
+            _playerRigidbody.linearVelocity += inputDirection * (Time.deltaTime * _moveSpeed);
+            if  (_playerInputMovement.magnitude <= 0f) _playerRigidbody.linearVelocity = Vector3.zero;
             
         }
        
@@ -162,7 +234,7 @@ namespace Player.Runtime
         [Header("Settings for Tracked Controller")] 
         [SerializeField] private Transform _leftController;
         [SerializeField] private Transform _rightController;
-
+        
         private Transform _playerHead;
         private XROrigin _XROrigin;
         private Rigidbody _playerRigidbody;
@@ -175,9 +247,12 @@ namespace Player.Runtime
         
         private Quaternion _leftControllerInputRotation;
         private Quaternion _rightControllerInputRotation;
+        
+        [SerializeField] private ItemGrabber _itemGrabber;
 
 
         #endregion
+
         
     }
 }

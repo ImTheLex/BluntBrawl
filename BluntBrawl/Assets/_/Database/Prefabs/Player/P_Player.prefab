@@ -555,6 +555,7 @@ MonoBehaviour:
   _moveSpeed: 5
   _leftController: {fileID: 1458621288132667182}
   _rightController: {fileID: 8106022825021961714}
+  _itemGrabber: {fileID: 3031821662416850972}
 --- !u!1 &4658324333076756846
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +829,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
+--- !u!114 &3031821662416850972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7176892619310879635, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
+  m_PrefabInstance: {fileID: 5299118773810561935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb718a26e98354c9db2fe830b13e1b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8106022825021961714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4175998751492634237, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}

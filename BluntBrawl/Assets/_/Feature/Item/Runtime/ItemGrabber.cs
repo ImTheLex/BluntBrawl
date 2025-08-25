@@ -14,10 +14,13 @@ namespace Item.Runtime
 	
         #region Unity API
 
-        public void Update()
+        public void Awake()
         {
-	        var _currentItemInterface = GetComponentInChildren<IGrabbable>();
-	        _currentItem = _currentItemInterface.m_grabTransform.gameObject;
+
+	        var test = _currentItemInterface.GetComponent<IGrabbable>();
+	        _currentItem = test.m_grabTransform.gameObject;
+	        _currentLocalItem = test.m_localPrefab;
+	        _currentWorldItem = test.m_worldPrefab;
         }
 
         public void OnTriggerEnter(Collider collider)
@@ -26,9 +29,10 @@ namespace Item.Runtime
             if(collider.TryGetComponent<IGrabbable>(out var grabbable))
             {
 				
-                //if(grabbable.m_grabOwner != "none") return;
+                //if(grabbable.m_grabOwner != null) return;
 				
                 _grabbableCurrentTarget = grabbable.m_grabTransform.gameObject;
+                _currentLocalItem = grabbable.m_localPrefab;
                 grabbable.DisplayGrabItemUI();
 	
             }
@@ -39,9 +43,10 @@ namespace Item.Runtime
             //if(!isLocalPlayer) return;
             if(collider.TryGetComponent<IGrabbable>(out var grabbable))
             {
-                //if(grabbable.m_grabOwner != "none") return;
-							
+                //if(grabbable.m_grabOwner != null) return;
+                _currentLocalItem = _currentItem;
                 _grabbableCurrentTarget = null;
+
                 grabbable.HideGrabItemUI();
             }
         }
@@ -56,16 +61,20 @@ namespace Item.Runtime
 	
 			
             if(_grabbableCurrentTarget == null) return;
-            var nextGrabbableItemPosition = _currentItem.transform.position;
-			
             if(_currentItem != null) UngrabItem();
-            _grabbableCurrentTarget.transform.position = nextGrabbableItemPosition;
-            _grabbableCurrentTarget.transform.SetParent(transform);
-            _currentItem = _grabbableCurrentTarget;
-			
-			
-			
-			
+            
+            Instantiate(_currentLocalItem, transform.position, transform.rotation,transform);
+            
+            var spawnPos = _grabbableCurrentTarget.transform.position;
+            
+	        var obj = Instantiate(_currentWorldItem);
+            obj.transform.position = new Vector3(spawnPos.x, spawnPos.y+2, spawnPos.z);
+            
+            var test = _currentLocalItem.GetComponent<IGrabbable>();
+            _currentWorldItem = test.m_worldPrefab;
+            Destroy(_grabbableCurrentTarget);
+            
+
         }
 	
         #endregion
@@ -75,10 +84,15 @@ namespace Item.Runtime
 	
         public void UngrabItem()
         {
-			
+			Instantiate(_currentWorldItem);
+			//_currentItem.SetActive(false);
+			Destroy(_currentItem);
+
+			/*
             var currentItemRb = _currentItem.GetComponent<Rigidbody>();
             _currentItem.transform.SetParent(null);
             currentItemRb.isKinematic = false;
+            */
         }
 	
         #endregion
@@ -87,6 +101,12 @@ namespace Item.Runtime
         #region Privates
 	
         private string _grabOwner;
+        
+        [SerializeField] private GameObject _currentItemInterface;
+        
+        private GameObject _currentLocalItem;
+        private GameObject _currentWorldItem;
+
         private GameObject _grabbableCurrentTarget;
         private GameObject _currentItem;
 	

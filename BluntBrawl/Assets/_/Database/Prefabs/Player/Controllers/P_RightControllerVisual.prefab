@@ -693,9 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb718a26e98354c9db2fe830b13e1b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
+  _currentItemInterface: {fileID: 5296451618333421838}
 --- !u!1 &7526929846644549869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1036,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3846541421435689692, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+      propertyPath: _localPrefab
+      value: 
+      objectReference: {fileID: 5296451618333421838}
+    - target: {fileID: 3846541421435689692, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+      propertyPath: _worldPrefab
+      value: 
+      objectReference: {fileID: 2350312154220774817, guid: 280c54c1c470242ea917144b8b032307, type: 3}
     - target: {fileID: 5376118505713071364, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
       propertyPath: m_debugCanvas
       value: 
@@ -1070,6 +1076,11 @@ PrefabInstance:
 --- !u!223 &3055094346832469719 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 4861876332911553144, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+  m_PrefabInstance: {fileID: 7574274868218344623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5296451618333421838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2350312154220774817, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
   m_PrefabInstance: {fileID: 7574274868218344623}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8807003564104733481 stripped

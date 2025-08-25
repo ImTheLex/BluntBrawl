@@ -116,8 +116,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _grabItemUI: {fileID: 4861876332911553144}
-  _worldPrefab: {fileID: 2350312154220774817}
-  _localPrefab: {fileID: 2350312154220774817, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+  _weaponData: {fileID: 11400000, guid: f6c4e2ef7c6c34983997a4a935f47f93, type: 2}
 --- !u!65 &-955764538500860805
 BoxCollider:
   m_ObjectHideFlags: 0

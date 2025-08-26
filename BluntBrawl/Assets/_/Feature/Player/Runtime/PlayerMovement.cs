@@ -30,7 +30,7 @@ namespace Player.Runtime
             _XROrigin = _playerOrigin.GetComponent<XROrigin>();
             _playerHead = _XROrigin.Camera.transform;
             _playerRigidbody = _XROrigin.GetComponent<Rigidbody>();
-            _playerRigidbody.maxLinearVelocity = 10f;
+            _playerRigidbody.maxLinearVelocity = 20f;
 
             _itemGrabber = _rightController.GetComponent<ItemGrabber>();
 
@@ -101,7 +101,7 @@ namespace Player.Runtime
     
             public void OnSprint(InputAction.CallbackContext context)
             {
-               
+                if (isLocalPlayer) _isSprinting = context.performed;
             }
             
             //Left
@@ -129,65 +129,67 @@ namespace Player.Runtime
             //Right interaction
             public void OnSelect(InputAction.CallbackContext context)
             {
+                if (!isLocalPlayer) return;
                 if (context.performed)
                 {
                     _itemGrabber.GrabItem();
                 }
+                
             }
 
             public void OnSelectValue(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnActivate(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnActivateValue(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnUIPress(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnUIPressValue(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnUIScroll(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnTranslateManipulation(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnRotateManipulation(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnDirectionalManipulation(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnScaleToggle(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
 
             public void OnScaleOverTime(InputAction.CallbackContext context)
             {
-                throw new System.NotImplementedException();
+                
             }
             
             #endregion
@@ -201,7 +203,9 @@ namespace Player.Runtime
         {
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y + _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
-            _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
+            
+            if (_isSprinting) _playerRigidbody.linearVelocity = inputDirection * (_moveSpeed * (_sprintMultiplier > 1f ? _sprintMultiplier:1f));
+            else _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
             if (_playerInputMovement.magnitude <= 0f) _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
             
             
@@ -231,6 +235,8 @@ namespace Player.Runtime
         [Header("Settings for Movement")]
         [SerializeField, Tooltip("XROrigin of this player")] private Transform _playerOrigin;
         [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
+        private bool _isSprinting;
+        [SerializeField] private float _sprintMultiplier;
 
         [Header("Settings for Tracked Controller")] 
         [SerializeField] private Transform _leftController;

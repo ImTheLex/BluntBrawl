@@ -1,11 +1,10 @@
-using System;
 using Interfaces.Runtime;
 using Mirror;
 using UnityEngine;
 
 namespace Item.Runtime
 {
-    public class ItemGrabber : MonoBehaviour
+    public class ItemGrabber : NetworkBehaviour
     {
         #region Publics
 	
@@ -48,13 +47,18 @@ namespace Item.Runtime
         } 
 	
 		[ContextMenu("Grab Item")]
-        public void GrabItem()
+		
+		public void GrabItem()
         {
 	
 			
             if(_grabbableWeaponData == null || _grabbableObject == null) return;
             if(_inHandWeaponData != null) UngrabItem();
-            Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
+            
+            GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
+            NetworkServer.Spawn(obj);
+            
+            
             Destroy(_grabbableObject);
         }
 	
@@ -65,7 +69,8 @@ namespace Item.Runtime
 	
         public void UngrabItem()
         {
-	        Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
+	        GameObject obj = Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
+	        NetworkServer.Spawn(obj);
 	        Destroy(_inHandWeapon);
         }
 	

@@ -201,8 +201,9 @@ namespace Player.Runtime
         {
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y + _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
-            _playerRigidbody.linearVelocity += inputDirection * (Time.deltaTime * _moveSpeed);
-            if  (_playerInputMovement.magnitude <= 0f) _playerRigidbody.linearVelocity = Vector3.zero;
+            _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
+            if (_playerInputMovement.magnitude <= 0f) _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
+            
             
         }
        

@@ -431,6 +431,7 @@ MonoBehaviour:
   m_renderer: {fileID: 5409489645823264124}
   m_canvas: {fileID: 1096870417095263422}
   m_text: {fileID: 4293142425707692413}
+  _invincibilityDuration: 1
 --- !u!1 &4139709100620377146
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 2488156854
+  _assetId: 2654449017
   serverOnly: 0
   visibility: 0
   hasSpawned: 0

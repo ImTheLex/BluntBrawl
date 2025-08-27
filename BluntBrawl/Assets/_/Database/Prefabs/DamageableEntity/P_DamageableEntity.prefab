@@ -252,6 +252,9 @@ MonoBehaviour:
   m_renderer: {fileID: 1092993978579646750}
   m_canvas: {fileID: 5815994777374012265}
   m_text: {fileID: 104465374911253432}
+  _damageTreshold: 10
+  _chanceToDiePerTreshold: 5
+  _invincibilityDuration: 1
 --- !u!114 &3049629617197251500
 MonoBehaviour:
   m_ObjectHideFlags: 0

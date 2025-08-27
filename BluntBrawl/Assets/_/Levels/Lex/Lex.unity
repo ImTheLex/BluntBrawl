@@ -444,6 +444,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
+      propertyPath: 'spawnPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4139709100620377146, guid: b2057013f617be44aa7f1f4bd75469d9, type: 3}
     - target: {fileID: 6786390845849760935, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1088,6 +1096,10 @@ PrefabInstance:
     - target: {fileID: 3977747580226826716, guid: e2523d06c90b744abbf381560514927a, type: 3}
       propertyPath: m_Name
       value: P_DamageableEntity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496794916541886338, guid: e2523d06c90b744abbf381560514927a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.39
       objectReference: {fileID: 0}
     - target: {fileID: 6206157926549440383, guid: e2523d06c90b744abbf381560514927a, type: 3}
       propertyPath: m_LocalPosition.x

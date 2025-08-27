@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 2654449017
+  _assetId: 2488156854
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -553,7 +553,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _playerOrigin: {fileID: 187618716551820272}
-  _moveSpeed: 2.5
+  _moveSpeed: 5
+  _sprintMultiplier: 2
+  _dashTimeWindow: 0.5
+  _dashDistance: 5
   _leftController: {fileID: 1458621288132667182}
   _rightController: {fileID: 8106022825021961714}
   _itemGrabber: {fileID: 3031821662416850972}

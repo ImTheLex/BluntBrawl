@@ -86,6 +86,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "e2a99d1c-1e7c-430a-b5ce-39da3f393048",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -224,7 +233,7 @@
                 {
                     "name": "",
                     "id": "d8bf24bf-3f2f-4160-a97c-38ec1eb520ba",
-                    "path": "<XRController>/trigger",
+                    "path": "<XRController>{LeftHand}/{TriggerButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
@@ -328,6 +337,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3cc07201-5bc9-4740-99bc-896ebd248c04",
+                    "path": "<XRController>{LeftHand}/thumbstick",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

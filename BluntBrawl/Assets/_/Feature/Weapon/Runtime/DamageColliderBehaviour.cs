@@ -19,7 +19,8 @@ namespace Weapon.Runtime
                     if (owner == other.gameObject) return;
 
                     var amount = m_weaponBehaviour.m_damage * m_weaponBehaviour.m_velocityDamage;
-                    damageable.TakeDamage(amount);
+                    //damageable.CmdTakeDamage(amount);
+                    damageable.CmdIncreaseVulnerability(amount);
                 }
             }
         

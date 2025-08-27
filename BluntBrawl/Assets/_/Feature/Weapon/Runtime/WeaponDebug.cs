@@ -23,10 +23,12 @@ namespace Weapon.Runtime
 
             private void Update()
             {
+                float fps = 1.0f / Time.deltaTime;
+                
                 if (m_isVerbose)
                 {
                     if (m_debugCanvas.gameObject.activeSelf == false) m_debugCanvas.gameObject.SetActive(true);
-                    m_debugText.text = "Velocity: " + m_weaponBehaviour.m_velocity.ToString("F2") +"\nRequired: " + m_weaponBehaviour.m_speedRequired;
+                    m_debugText.text = "Nombre de fps :" + fps.ToString("F0");
                 }
                 else
                 {
@@ -34,6 +36,13 @@ namespace Weapon.Runtime
                 }
             }
 
+        #endregion
+        
+        #region Private and Protected
+        
+        
+        
+        
         #endregion
     }
 }

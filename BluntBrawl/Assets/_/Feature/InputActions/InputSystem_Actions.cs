@@ -430,11 +430,11 @@ namespace InputSystem.BluntBrawl
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3cc07201-5bc9-4740-99bc-896ebd248c04"",
-                    ""path"": ""<XRController>{LeftHand}/thumbstick"",
-                    ""interactions"": ""Tap"",
+                    ""id"": ""d853a4a0-4547-4122-9bdf-67029e321107"",
+                    ""path"": ""<XRController>{LeftHand}/secondaryButton"",
+                    ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

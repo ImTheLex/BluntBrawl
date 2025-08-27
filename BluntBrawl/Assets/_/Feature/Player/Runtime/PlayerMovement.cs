@@ -62,7 +62,7 @@ namespace Player.Runtime
             if (context.started)
             {
                 Vector2 movement = context.ReadValue<Vector2>();
-                
+                if (movement.magnitude < 0.7f) return;
                 
                 var startTap = context.startTime;
                 var dashTime = startTap - _previousTapTime;
@@ -89,7 +89,7 @@ namespace Player.Runtime
 
         public void OnInteract(InputAction.CallbackContext context)
         {
-
+            
         }
 
         public void OnCrouch(InputAction.CallbackContext context)
@@ -119,7 +119,8 @@ namespace Player.Runtime
 
         public void OnDash(InputAction.CallbackContext context)
         {
-
+            if (!isLocalPlayer) return;
+            if (context.started) _playerRigidbody.position = new Vector3(0, 5, 0);
         }
 
         //Left

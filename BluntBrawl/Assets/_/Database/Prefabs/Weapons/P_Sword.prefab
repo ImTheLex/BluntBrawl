@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8924011763791465317}
   - component: {fileID: 2904401123572991345}
   - component: {fileID: 5376118505713071364}
-  - component: {fileID: 2921295698324951469}
   - component: {fileID: 3846541421435689692}
   m_Layer: 0
   m_Name: P_Sword
@@ -97,44 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c0f9612981845729415f60bb8cc151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isVerbose: 0
+  m_isVerbose: 1
   m_debugText: {fileID: 2762938403157604258}
   m_weaponBehaviour: {fileID: 2904401123572991345}
   m_debugCanvas: {fileID: 4861876332911553144}
---- !u!114 &2921295698324951469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2350312154220774817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  target: {fileID: 1379783501357606790}
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  onlySyncOnChange: 1
-  compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  coordinateSpace: 0
-  timelineOffset: 1
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  onlySyncOnChangeCorrectionMultiplier: 2
-  useFixedUpdate: 0
-  rotationSensitivity: 0.01
-  positionPrecision: 0.01
-  scalePrecision: 0.01
 --- !u!114 &3846541421435689692
 MonoBehaviour:
   m_ObjectHideFlags: 0

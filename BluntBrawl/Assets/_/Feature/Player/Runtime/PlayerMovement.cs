@@ -2,21 +2,20 @@ using InputSystem.BluntBrawl;
 using Interfaces.Runtime;
 using Item.Runtime;
 using Mirror;
+using PlasticGui;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Processors;
 
 namespace Player.Runtime
 {
-    public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions, BluntBrawlInputActions.IBBXRILeftActions, BluntBrawlInputActions.IBBXRIRightActions,BluntBrawlInputActions.IBBXRIRightInteractionActions
+    public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions,
+        BluntBrawlInputActions.IBBXRILeftActions, BluntBrawlInputActions.IBBXRIRightActions,
+        BluntBrawlInputActions.IBBXRIRightInteractionActions
     {
-        
-        #region Publics
-            //public BluntBrawlInputActions m_playerInputActions => _playerInputActions;
-            
-        #endregion
-        
-        
+
+
         #region Unity API
 
         private void Awake()
@@ -37,7 +36,7 @@ namespace Player.Runtime
         }
 
         private void OnEnable() => _playerInputActions.Enable();
-        
+
         private void OnDisable() => _playerInputActions.Disable();
 
         private void Update()
@@ -50,165 +49,210 @@ namespace Player.Runtime
             }
         }
 
-        
+
         #endregion
 
 
         #region Input action
 
-        
 
-            //main player
-            public void OnMove(InputAction.CallbackContext context)
-            {
-                _playerInputMovement = context.ReadValue<Vector2>();
-            }
-    
-            public void OnLook(InputAction.CallbackContext context)
-            {
-                
-            }
-    
-            public void OnAttack(InputAction.CallbackContext context)
-            {
-                
-            }
-    
-            public void OnInteract(InputAction.CallbackContext context)
-            {
-                
-            }
-    
-            public void OnCrouch(InputAction.CallbackContext context)
-            {
-                
-            }
-    
-            public void OnJump(InputAction.CallbackContext context)
-            {
-                
-            }
-    
-            public void OnPrevious(InputAction.CallbackContext context)
-            {
-                
-            }
-    
-            public void OnNext(InputAction.CallbackContext context)
-            {
-               
-            }
-    
-            public void OnSprint(InputAction.CallbackContext context)
-            {
-                if (isLocalPlayer) _isSprinting = context.performed;
-            }
-            
-            //Left
-            public void OnPositionLeft(InputAction.CallbackContext context)
-            {
-                _leftControllerInputPosition = context.ReadValue<Vector3>();
-            }
 
-            public void OnRotationLeft(InputAction.CallbackContext context)
+        //main player
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            if (!isLocalPlayer) return;
+            _playerInputMovement = context.ReadValue<Vector2>();
+            if (context.started)
             {
-                _leftControllerInputRotation = context.ReadValue<Quaternion>();
-            }
-            
-            //Right
-            public void OnPositionRight(InputAction.CallbackContext context)
-            {
-                _rightControllerInputPosition = context.ReadValue<Vector3>();
-            }
-
-            public void OnRotationRight(InputAction.CallbackContext context)
-            {
-                _rightControllerInputRotation = context.ReadValue<Quaternion>();
-            }
-            
-            //Right interaction
-            public void OnSelect(InputAction.CallbackContext context)
-            {
-                if (!isLocalPlayer) return;
-                if (context.performed)
+                Vector2 movement = context.ReadValue<Vector2>();
+                
+                
+                var startTap = context.startTime;
+                var dashTime = startTap - _previousTapTime;
+                if (_previousTapTime > 0f && startTap - _previousTapTime <= _dashTimeWindow)
                 {
-                    _itemGrabber.GrabItem();
+                    if (!VerifyDashDirection(movement.normalized)) return;
+                    Dash(movement.normalized);
+                    Debug.Log("Dash " + movement.normalized);
                 }
-                
+
+                _previousTapTime = startTap;
+            }
+        }
+
+        public void OnLook(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnCrouch(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnJump(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnPrevious(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnNext(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnSprint(InputAction.CallbackContext context)
+        {
+            if (isLocalPlayer) _isSprinting = context.performed;
+        }
+
+        public void OnDash(InputAction.CallbackContext context)
+        {
+
+        }
+
+        //Left
+        public void OnPositionLeft(InputAction.CallbackContext context)
+        {
+            _leftControllerInputPosition = context.ReadValue<Vector3>();
+        }
+
+        public void OnRotationLeft(InputAction.CallbackContext context)
+        {
+            _leftControllerInputRotation = context.ReadValue<Quaternion>();
+        }
+
+        //Right
+        public void OnPositionRight(InputAction.CallbackContext context)
+        {
+            _rightControllerInputPosition = context.ReadValue<Vector3>();
+        }
+
+        public void OnRotationRight(InputAction.CallbackContext context)
+        {
+            _rightControllerInputRotation = context.ReadValue<Quaternion>();
+        }
+
+        //Right interaction
+        public void OnSelect(InputAction.CallbackContext context)
+        {
+            if (!isLocalPlayer) return;
+            if (context.performed)
+            {
+                _itemGrabber.GrabItem();
             }
 
-            public void OnSelectValue(InputAction.CallbackContext context)
-            {
-                
-            }
+        }
 
-            public void OnActivate(InputAction.CallbackContext context)
-            {
-                
-            }
+        public void OnSelectValue(InputAction.CallbackContext context)
+        {
 
-            public void OnActivateValue(InputAction.CallbackContext context)
-            {
-                
-            }
+        }
 
-            public void OnUIPress(InputAction.CallbackContext context)
-            {
-                
-            }
+        public void OnActivate(InputAction.CallbackContext context)
+        {
 
-            public void OnUIPressValue(InputAction.CallbackContext context)
-            {
-                
-            }
+        }
 
-            public void OnUIScroll(InputAction.CallbackContext context)
-            {
-                
-            }
+        public void OnActivateValue(InputAction.CallbackContext context)
+        {
 
-            public void OnTranslateManipulation(InputAction.CallbackContext context)
-            {
-                
-            }
+        }
 
-            public void OnRotateManipulation(InputAction.CallbackContext context)
-            {
-                
-            }
+        public void OnUIPress(InputAction.CallbackContext context)
+        {
 
-            public void OnDirectionalManipulation(InputAction.CallbackContext context)
-            {
-                
-            }
+        }
 
-            public void OnScaleToggle(InputAction.CallbackContext context)
-            {
-                
-            }
+        public void OnUIPressValue(InputAction.CallbackContext context)
+        {
 
-            public void OnScaleOverTime(InputAction.CallbackContext context)
-            {
-                
-            }
-            
-            #endregion
-            
-        
-    
+        }
+
+        public void OnUIScroll(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnTranslateManipulation(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnRotateManipulation(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnDirectionalManipulation(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnScaleToggle(InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnScaleOverTime(InputAction.CallbackContext context)
+        {
+
+        }
+
+        #endregion
+
+
+
         #region Utils
-    
-        
+
+
         private void Move()
         {
-            Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y + _playerHead.right * _playerInputMovement.x;
+            Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y +
+                                     _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
-            
-            if (_isSprinting) _playerRigidbody.linearVelocity = inputDirection * (_moveSpeed * (_sprintMultiplier > 1f ? _sprintMultiplier:1f));
+
+            if (_isSprinting)
+                _playerRigidbody.linearVelocity =
+                    inputDirection * (_moveSpeed * (_sprintMultiplier > 1f ? _sprintMultiplier : 1f));
             else _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
-            if (_playerInputMovement.magnitude <= 0f) _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
-            
-            
+            if (_playerInputMovement.magnitude <= 0f)
+                _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
+        }
+
+        private bool VerifyDashDirection(Vector2 direction)
+        {
+            float dotProduct = Vector2.Dot(direction, _previousDirection);
+            Debug.Log("dot product " + dotProduct.ToString("F2"));
+            if (dotProduct >= 0.75f)
+            {
+                _previousDirection = Vector2.zero;
+                return true;
+            }
+            _previousDirection = direction;
+            return false;
+        }
+    
+
+    private void Dash(Vector2 direction)
+        {
+            Vector3 inputDirection = _playerHead.forward * direction.y + _playerHead.right * direction.x; inputDirection.y = 0;
+            inputDirection.y = 0;
+            _playerRigidbody.position += inputDirection * _dashDistance;
         }
        
         
@@ -237,6 +281,12 @@ namespace Player.Runtime
         [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
         private bool _isSprinting;
         [SerializeField] private float _sprintMultiplier;
+        
+        //dash
+        private double _previousTapTime;
+        private Vector2 _previousDirection;
+        [SerializeField] private float _dashTimeWindow;
+        [SerializeField] private float _dashDistance;
 
         [Header("Settings for Tracked Controller")] 
         [SerializeField] private Transform _leftController;

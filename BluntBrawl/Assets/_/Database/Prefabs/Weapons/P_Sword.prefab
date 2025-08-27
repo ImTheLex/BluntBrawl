@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c0f9612981845729415f60bb8cc151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isVerbose: 1
+  m_isVerbose: 0
   m_debugText: {fileID: 2762938403157604258}
   m_weaponBehaviour: {fileID: 2904401123572991345}
   m_debugCanvas: {fileID: 4861876332911553144}

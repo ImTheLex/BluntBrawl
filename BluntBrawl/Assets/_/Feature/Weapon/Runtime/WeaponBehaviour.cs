@@ -46,7 +46,7 @@ namespace Weapon.Runtime
             //var velocity = Vector3.Magnitude(_weaponRb.linearVelocity);
             if (velocity > m_speedRequired)
             {
-                Debug.Log("Can damage because Velocity is : " + velocity.ToString("F2") + " And required is : " + m_speedRequired);
+                //Debug.Log("Can damage because Velocity is : " + velocity.ToString("F2") + " And required is : " + m_speedRequired);
                 _weaponDamageCollider.enabled = true;
                 _weaponDamageCollider.isTrigger = true;
                 

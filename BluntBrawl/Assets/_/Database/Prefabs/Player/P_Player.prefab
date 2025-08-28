@@ -559,9 +559,9 @@ MonoBehaviour:
   syncInterval: 0
   _playerOrigin: {fileID: 187618716551820272}
   _moveSpeed: 5
-  _sprintMultiplier: 2
+  _sprintMultiplier: 1.7
   _dashTimeWindow: 0.5
-  _dashDistance: 5
+  _dashDistance: 2.5
   _leftController: {fileID: 1458621288132667182}
   _rightController: {fileID: 8106022825021961714}
   _itemGrabber: {fileID: 3031821662416850972}

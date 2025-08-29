@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using Interfaces.Runtime;
 using Mirror;
 using TMPro;
@@ -47,20 +45,24 @@ namespace Health.Runtime
                 if(m_renderer != null) baseColor = m_renderer.material.color;
                 m_canvas.gameObject.SetActive(true);
             }
-            
 
-        #endregion
+            private void Update()
+            {
+                if (_isInvincible) IFrame();
+            }
+
+            #endregion
 
         
         #region Main Methods
 
 
-            [Server]
+            //[Server]
             public void IncreaseVulnerability(int vulnerabilityAmount)
             {
-                if (_isInvincible) return;
-                StartCoroutine(HandleInvincibilityFrame());
+                //change color material
                 RpcFlash();
+                
                 //Pour chaque tranche de x dégat subit, on augmente de y les chances de se faire kick.
                 _vulnerability += vulnerabilityAmount;
                 var chancesToDie = Mathf.FloorToInt(_vulnerability / _damageTreshold) * _chanceToDiePerTreshold;
@@ -85,9 +87,11 @@ namespace Health.Runtime
                 UpdateVulnerability(_vulnerability, _vulnerability);
             }
 
-            [Command(requiresAuthority = false)]
+            //[Command(requiresAuthority = false)]
             public void CmdIncreaseVulnerability(int vulnerabilityAmount)
             {
+                if (_isInvincible) return;
+                _isInvincible = true;
                 IncreaseVulnerability(vulnerabilityAmount);
             }
             
@@ -104,48 +108,15 @@ namespace Health.Runtime
                 gameObject.SetActive(false);
             }
             
-            [Server]
-            public void TakeDamage(int amount)
-            {
-                //if (!isServer) return;
-                if (_isInvincible) return;
-                _health -= amount;
-                StartCoroutine(HandleInvincibilityFrame());
-                
-                if (_health > 0)
-                {
-
-                    RpcFlash();
-
-                }
-                else
-                {
-                    m_text.text = "You died : "  + _health;;
-                    
-                }
-
-                UpdateHealth(_health, _health);
-            }
-
-            [Command(requiresAuthority = false)]
-            public void CmdTakeDamage(int amount)
-            {
-                TakeDamage(amount);
-            }
             
-            public IEnumerator HandleInvincibilityFrame()
+            public void IFrame()
             {
-                _isInvincible = true;
-
-                var counter = 0f;
-                while (counter < _invincibilityDuration)
+                _invincibilityTimer += Time.deltaTime;
+                if (_invincibilityTimer >= _invincibilityDuration)
                 {
-                    counter += 0.1f;
-
-                    yield return new WaitForSeconds(0.1f);
-                    if (counter > 20f) break;
+                   _isInvincible = false;
+                   _invincibilityTimer = 0;
                 }
-                _isInvincible = false;
             }
             
             public void ResetColor()
@@ -200,6 +171,7 @@ namespace Health.Runtime
             [SyncVar(hook = nameof(UpdateHealth))]
             private int _health;
             [SerializeField] private float _invincibilityDuration = 1f;
+            private float _invincibilityTimer;
         
             private Color baseColor;
             [SyncVar] private bool _isInvincible;

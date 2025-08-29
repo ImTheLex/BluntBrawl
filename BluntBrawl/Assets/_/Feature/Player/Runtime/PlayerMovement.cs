@@ -41,7 +41,6 @@ namespace Player.Runtime
             if (isLocalPlayer)
             {
                 Move();
-                //if (_isDashing) Dash();
                 TrackingPositionController();
                 TrackingRotationController();
             }
@@ -60,17 +59,15 @@ namespace Player.Runtime
         {
             if (!isLocalPlayer) return;
             _playerInputMovement = context.ReadValue<Vector2>();
+            
+            //dash
             if (context.started)
             {
-                Vector2 movement = context.ReadValue<Vector2>();
-                if (movement.magnitude < 0.7f) return;
-                
                 var startTap = context.startTime;
                 var dashTime = startTap - _previousTapTime;
                 if (_previousTapTime > 0f && dashTime <= _dashTimeWindow)
                 {
-                    //if (!VerifyDashDirection(movement.normalized) && !_isDashing) return;
-                    //_isDashing = true;
+                    Debug.Log("Double Tap "+ dashTime.ToString("F2"));
                 }
                 _previousTapTime = startTap;
             }
@@ -227,31 +224,10 @@ namespace Player.Runtime
                 _playerRigidbody.linearVelocity =
                     inputDirection * (_moveSpeed * (_sprintMultiplier > 1f ? _sprintMultiplier : 1f));
             else _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
+            
             if (_playerInputMovement.magnitude <= 0f)
                 _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
         }
-
-        private bool VerifyDashDirection(Vector2 direction)
-        {
-            float dotProduct = Vector2.Dot(direction, _previousDirection);
-            Debug.Log("dot product " + dotProduct.ToString("F2"));
-            if (dotProduct >= 0.75f)
-            {
-                _previousDirection = Vector2.zero;
-                return true;
-            }
-            _previousDirection = direction;
-            return false;
-        }
-    
-
-    private void Dash(Vector2 direction)
-        {
-            Vector3 inputDirection = _playerHead.forward * direction.y + _playerHead.right * direction.x; inputDirection.y = 0;
-            inputDirection.y = 0;
-            _playerRigidbody.AddForce(inputDirection * _dashDistance, ForceMode.Impulse);
-        }
-       
         
         private void TrackingPositionController()
         {
@@ -281,11 +257,12 @@ namespace Player.Runtime
         
         //dash
         private double _previousTapTime;
-        private Vector2 _previousDirection;
-        private bool _isDashing;
-        private float _dashDuration = .5f;
-        [SerializeField] private float _dashTimeWindow;
-        [SerializeField] private float _dashDistance;
+        
+        private float _dashChrono;
+        
+        [SerializeField, Tooltip("Speed of the dash")] private float _dashDuration = .25f;
+        [SerializeField, Tooltip("Time to trigger the double tap (in seconds)")] private float _dashTimeWindow;
+        [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashDistance;
 
         [Header("Settings for Tracked Controller")] 
         [SerializeField] private Transform _leftController;

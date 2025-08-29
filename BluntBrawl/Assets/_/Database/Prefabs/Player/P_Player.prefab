@@ -561,7 +561,7 @@ MonoBehaviour:
   _moveSpeed: 5
   _sprintMultiplier: 1.7
   _dashTimeWindow: 0.5
-  _dashDistance: 2.5
+  _dashDistance: 10
   _leftController: {fileID: 1018988536599595518}
   _rightController: {fileID: 7522599289072299311}
   _itemGrabber: {fileID: 3605401159702284481}

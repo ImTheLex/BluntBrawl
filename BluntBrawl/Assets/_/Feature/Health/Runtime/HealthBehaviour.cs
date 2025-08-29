@@ -95,7 +95,7 @@ namespace Health.Runtime
             public void HandleDamageableDeath()
             {
                 //gameObject.SetActive(false);
-                RpcHandleDamageableDeath();
+                //RpcHandleDamageableDeath();
             }
 
             [ClientRpc]

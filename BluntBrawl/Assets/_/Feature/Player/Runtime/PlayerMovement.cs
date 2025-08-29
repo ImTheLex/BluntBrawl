@@ -41,6 +41,7 @@ namespace Player.Runtime
             if (isLocalPlayer)
             {
                 Move();
+                //if (_isDashing) Dash();
                 TrackingPositionController();
                 TrackingRotationController();
             }
@@ -66,13 +67,11 @@ namespace Player.Runtime
                 
                 var startTap = context.startTime;
                 var dashTime = startTap - _previousTapTime;
-                if (_previousTapTime > 0f && startTap - _previousTapTime <= _dashTimeWindow)
+                if (_previousTapTime > 0f && dashTime <= _dashTimeWindow)
                 {
-                    if (!VerifyDashDirection(movement.normalized)) return;
-                    Dash(movement.normalized);
-                    Debug.Log("Dash " + movement.normalized);
+                    //if (!VerifyDashDirection(movement.normalized) && !_isDashing) return;
+                    //_isDashing = true;
                 }
-
                 _previousTapTime = startTap;
             }
         }
@@ -250,7 +249,7 @@ namespace Player.Runtime
         {
             Vector3 inputDirection = _playerHead.forward * direction.y + _playerHead.right * direction.x; inputDirection.y = 0;
             inputDirection.y = 0;
-            _playerRigidbody.position += inputDirection * _dashDistance;
+            _playerRigidbody.AddForce(inputDirection * _dashDistance, ForceMode.Impulse);
         }
        
         
@@ -283,6 +282,8 @@ namespace Player.Runtime
         //dash
         private double _previousTapTime;
         private Vector2 _previousDirection;
+        private bool _isDashing;
+        private float _dashDuration = .5f;
         [SerializeField] private float _dashTimeWindow;
         [SerializeField] private float _dashDistance;
 

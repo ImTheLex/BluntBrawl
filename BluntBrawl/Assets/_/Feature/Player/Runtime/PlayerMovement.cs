@@ -14,7 +14,8 @@ namespace Player.Runtime
 
 
         #region Unity API
-
+        
+        
         private void Awake()
         {
             _playerInputActions = new BluntBrawlInputActions();
@@ -29,10 +30,15 @@ namespace Player.Runtime
             _playerRigidbody.maxLinearVelocity = 20f;
 
             _itemGrabber = _rightController.GetComponent<ItemGrabber>();
-
         }
 
         private void OnEnable() => _playerInputActions.Enable();
+
+        private void Start()
+        {
+            _XROrigin.MoveCameraToWorldLocation(Vector3.zero);
+            _XROrigin.MatchOriginUpCameraForward(Vector3.up, Vector3.forward);
+        }
 
         private void OnDisable() => _playerInputActions.Disable();
 
@@ -40,6 +46,17 @@ namespace Player.Runtime
         {
             if (isLocalPlayer)
             {
+                if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
+                if (_isDashing)
+                {
+                    _dashChrono += Time.deltaTime;
+                    Dash();
+                    if (_dashChrono > _dashDuration)
+                    {
+                        _dashChrono = 0;
+                        _isDashing = false;
+                    }
+                }
                 Move();
                 TrackingPositionController();
                 TrackingRotationController();
@@ -59,64 +76,44 @@ namespace Player.Runtime
         {
             if (!isLocalPlayer) return;
             _playerInputMovement = context.ReadValue<Vector2>();
-            
-            //dash
-            if (context.started)
-            {
-                var startTap = context.startTime;
-                var dashTime = startTap - _previousTapTime;
-                if (_previousTapTime > 0f && dashTime <= _dashTimeWindow)
-                {
-                    Debug.Log("Double Tap "+ dashTime.ToString("F2"));
-                }
-                _previousTapTime = startTap;
-            }
         }
 
         public void OnLook(InputAction.CallbackContext context)
         {
-
-        }
-
-        public void OnAttack(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnInteract(InputAction.CallbackContext context)
-        {
             
-        }
-
-        public void OnCrouch(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnJump(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnPrevious(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnNext(InputAction.CallbackContext context)
-        {
-
         }
 
         public void OnSprint(InputAction.CallbackContext context)
         {
-            if (isLocalPlayer) _isSprinting = context.performed;
+            //if (isLocalPlayer) _isSprinting = context.performed;
+        }
+
+        public void OnDebugPosition(InputAction.CallbackContext context)
+        {
+            if (!isLocalPlayer) return;
+            if (context.started) _playerRigidbody.position = new Vector3(0, 5, 0);
         }
 
         public void OnDash(InputAction.CallbackContext context)
         {
-            if (!isLocalPlayer) return;
-            if (context.started) _playerRigidbody.position = new Vector3(0, 5, 0);
+            if (_doubleTapChrono <= 0f && context.started)
+            {
+                _doubleTapChrono = _dashTimeWindow;
+                _previousDirection = context.ReadValue<Vector2>().normalized;
+            }else if (!_isDashing && context.started)
+            {
+                float dotProduct = Vector2.Dot(_previousDirection, context.ReadValue<Vector2>().normalized);
+                if (dotProduct >= 0.7f)
+                {
+                    _isDashing = true;
+                    _dashDirection = context.ReadValue<Vector2>().normalized;
+                }
+                else
+                {
+                    _doubleTapChrono = _dashTimeWindow;
+                    _previousDirection = context.ReadValue<Vector2>().normalized;
+                }
+            }
         }
 
         //Left
@@ -152,61 +149,6 @@ namespace Player.Runtime
 
         }
 
-        public void OnSelectValue(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnActivate(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnActivateValue(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnUIPress(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnUIPressValue(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnUIScroll(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnTranslateManipulation(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnRotateManipulation(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnDirectionalManipulation(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnScaleToggle(InputAction.CallbackContext context)
-        {
-
-        }
-
-        public void OnScaleOverTime(InputAction.CallbackContext context)
-        {
-
-        }
-
         #endregion
 
 
@@ -220,13 +162,21 @@ namespace Player.Runtime
                                      _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
 
-            if (_isSprinting)
-                _playerRigidbody.linearVelocity =
-                    inputDirection * (_moveSpeed * (_sprintMultiplier > 1f ? _sprintMultiplier : 1f));
-            else _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
+            // if (_isSprinting)
+            //     _playerRigidbody.linearVelocity =
+            //         inputDirection * (_moveSpeed * (_sprintMultiplier > 1f ? _sprintMultiplier : 1f));
+            //else
+            _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
             
             if (_playerInputMovement.magnitude <= 0f)
                 _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
+        }
+
+        private void Dash()
+        {
+            Vector3 dashDirection = _playerHead.forward * _dashDirection.y + _playerHead.right * _dashDirection.x;
+            dashDirection.y = 0;
+            _playerRigidbody.AddForce(dashDirection * _dashForce, ForceMode.Impulse);
         }
         
         private void TrackingPositionController()
@@ -253,16 +203,19 @@ namespace Player.Runtime
         [SerializeField, Tooltip("XROrigin of this player")] private Transform _playerOrigin;
         [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
         private bool _isSprinting;
-        [SerializeField] private float _sprintMultiplier;
+        //[SerializeField] private float _sprintMultiplier;
         
         //dash
-        private double _previousTapTime;
+        private float _doubleTapChrono;
+        private Vector2 _previousDirection;
         
         private float _dashChrono;
+        private bool _isDashing;
+        private Vector2 _dashDirection;
         
         [SerializeField, Tooltip("Speed of the dash")] private float _dashDuration = .25f;
         [SerializeField, Tooltip("Time to trigger the double tap (in seconds)")] private float _dashTimeWindow;
-        [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashDistance;
+        [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashForce;
 
         [Header("Settings for Tracked Controller")] 
         [SerializeField] private Transform _leftController;

@@ -96,6 +96,19 @@ namespace Player.Runtime
 
         public void OnDash(InputAction.CallbackContext context)
         {
+            if (!isLocalPlayer) return;
+            if (!_isDashing && context.started)
+            {
+                _isDashing = true;
+                _dashDirection = _playerInputMovement.normalized;
+            }
+        }
+        
+        
+        /*Dash method on double tap joystick
+         
+         public void OnDash(InputAction.CallbackContext context)
+        {
             if (_doubleTapChrono <= 0f && context.started)
             {
                 _doubleTapChrono = _dashTimeWindow;
@@ -114,7 +127,7 @@ namespace Player.Runtime
                     _previousDirection = context.ReadValue<Vector2>().normalized;
                 }
             }
-        }
+        }*/
 
         //Left
         public void OnPositionLeft(InputAction.CallbackContext context)

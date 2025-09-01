@@ -44,12 +44,12 @@
                 },
                 {
                     "name": "Dash",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "650da67c-2084-470c-a49a-51b2c7abc5f2",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Tap(duration=0.2,pressPoint=0.5)",
-                    "initialStateCheck": true
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -121,8 +121,8 @@
                 },
                 {
                     "name": "",
-                    "id": "e790c05b-6aec-4d15-bb7a-32aa90e87639",
-                    "path": "<XRController>{LeftHand}/thumbstick",
+                    "id": "f79e7954-65b6-44cd-9545-081130eff68d",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",

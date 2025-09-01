@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 053b8d1268ba8994c81d23c42790b477
+guid: d72d9c336b95b564ab6a8614a565cba8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Texture_Weapon
+    second: {fileID: 2100000, guid: c469555a657ff3c48a1535be35e5ef39, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -76,7 +81,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []

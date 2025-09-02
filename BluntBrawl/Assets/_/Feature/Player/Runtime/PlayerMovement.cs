@@ -89,14 +89,8 @@ namespace Player.Runtime
             {
                 Vector3 direction = _playerHead.transform.forward + _playerRigidbody.position;
                 direction.y += 1f;
-                if (isServer)
-                {
-                    _spawnPrefabCube.RpcSpawn(direction);
-                }
-                else
-                {
-                    _spawnPrefabCube.CmdSpawn(direction);
-                }
+                _spawnPrefabCube.CmdSpawn(direction);
+                
             }
         }
 

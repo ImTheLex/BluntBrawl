@@ -8,16 +8,18 @@ namespace Player.Runtime
         [SerializeField] private GameObject _prefab;
         
         
-        [ClientRpc]
+        /*[ClientRpc]
         public void RpcSpawn(Vector3 position)
         {
-           Instantiate(_prefab,position, Quaternion.identity);
+           GameObject obj = Instantiate(_prefab,position, Quaternion.identity);
         }
-
+        */
         [Command]
         public void CmdSpawn(Vector3 position)
         {
-            RpcSpawn(position);
+            //RpcSpawn(position);
+            GameObject obj = Instantiate(_prefab,position, Quaternion.identity);
+            NetworkServer.Spawn(obj);
         }
     }
 }

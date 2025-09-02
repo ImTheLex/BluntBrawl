@@ -1,3 +1,4 @@
+using System;
 using Item.Runtime;
 using UnityEngine;
 
@@ -24,7 +25,13 @@ namespace Weapon.Runtime
         {
             
             _itemGrabber = GetComponentInParent<ItemGrabber>();
+            _localPositionReference = _itemGrabber.transform;
             _itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
+        }
+
+        private void OnEnable()
+        {
+            m_owner =  transform.root.gameObject;
         }
 
         private void Update()

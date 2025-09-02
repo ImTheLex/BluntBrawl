@@ -44,6 +44,8 @@ namespace Item.Runtime
 		
         #endregion
 	
+        
+        
         #region MainMethods
 
         public void EquipStartingWeapon(GameObject weapon, WeaponStats weaponStats)
@@ -52,8 +54,9 @@ namespace Item.Runtime
 	        _inHandWeaponData = weaponStats;
         } 
 	
+        
+        
 		[ContextMenu("Grab Item")]
-		
 		public void GrabItem()
         {
 	
@@ -63,6 +66,7 @@ namespace Item.Runtime
             
             GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
             NetworkServer.Spawn(obj);
+            obj.transform.localPosition = Vector3.zero;
             
             
             Destroy(_grabbableObject);

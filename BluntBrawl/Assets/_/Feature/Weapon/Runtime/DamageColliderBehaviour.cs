@@ -16,7 +16,7 @@ namespace Weapon.Runtime
                 {
                     var owner = m_weaponBehaviour.m_owner;
 
-                    if (owner == other.gameObject) return;
+                    if (owner == other.gameObject.transform.root.gameObject) return;
 
                     var amount = m_weaponBehaviour.m_damage * m_weaponBehaviour.m_velocityDamage;
                     //damageable.CmdTakeDamage(amount);

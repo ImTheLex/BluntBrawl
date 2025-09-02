@@ -9,7 +9,12 @@ namespace Item.Runtime
     {
         #region Publics
 	
-        public string m_grabOwner => _grabOwner;
+        public string m_grabOwner
+        {
+            get => _grabOwner;
+            set => _grabOwner = value;
+        }
+
         public Transform m_grabTransform => transform;
 
         public WeaponStats m_weaponData

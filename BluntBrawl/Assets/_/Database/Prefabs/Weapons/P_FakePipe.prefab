@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2127f25dfdac4651a83987aa33d6001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponBehaviour: {fileID: 0}
+  m_weaponBehaviour: {fileID: 2170996109111074346}
 --- !u!1 &5069817172175517406
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +364,8 @@ GameObject:
   - component: {fileID: 2170996109111074346}
   - component: {fileID: 5561588998882814956}
   - component: {fileID: 6519530311222829419}
+  - component: {fileID: 7224952637631285010}
+  - component: {fileID: -944926287190873001}
   m_Layer: 0
   m_Name: P_FakePipe
   m_TagString: Untagged
@@ -468,6 +470,57 @@ MonoBehaviour:
   syncInterval: 0
   _grabItemUI: {fileID: 1730530930752802815}
   _weaponData: {fileID: 11400000, guid: 2552adc3713bbce4ea5d66dfd0efba5d, type: 2}
+--- !u!114 &7224952637631285010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069817172175517406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 866489593
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
+--- !u!114 &-944926287190873001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069817172175517406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 4127591316944050016}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &8873136427657458798
 GameObject:
   m_ObjectHideFlags: 0

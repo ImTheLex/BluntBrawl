@@ -34,9 +34,12 @@ namespace Player.Runtime
 
         private void OnEnable() => _playerInputActions.Enable();
 
-        private void Start()
+        public override void OnStartClient()
         {
-            _XROrigin.MoveCameraToWorldLocation(_XROrigin.transform.position);
+            base.OnStartClient();
+            if (!isLocalPlayer) return;
+
+            
         }
 
         private void OnDisable() => _playerInputActions.Disable();
@@ -61,6 +64,8 @@ namespace Player.Runtime
                 TrackingRotationController();
             }
         }
+        
+        
 
 
         #endregion
@@ -87,10 +92,9 @@ namespace Player.Runtime
             if (!isLocalPlayer) return;
             if (context.started)
             {
-                Vector3 direction = _playerHead.transform.forward + _playerRigidbody.position;
-                direction.y += 1f;
-                _spawnPrefabCube.CmdSpawn(direction);
-                
+                // Vector3 direction = _playerHead.transform.forward + _playerRigidbody.position;
+                // direction.y += 1f;
+                // _spawnPrefabCube.CmdSpawn(direction);
             }
         }
 
@@ -256,7 +260,7 @@ namespace Player.Runtime
         [SerializeField] private ItemGrabber _itemGrabber;
         
         [SerializeField] private SpawnPrefabCube _spawnPrefabCube;
-
+        
 
         #endregion
 

@@ -13,7 +13,13 @@ namespace Item.Runtime
 	
         #region Unity API
 
-        
+        private void Awake()
+        {
+	        GameObject obj = Instantiate(_startingWeapon.m_inHandPrefab, transform);
+	        NetworkServer.Spawn(obj);
+	        obj.transform.localPosition = Vector3.zero;
+        }
+
         public void OnTriggerEnter(Collider collider)
         {
             
@@ -85,7 +91,8 @@ namespace Item.Runtime
         private GameObject _inHandWeapon;
         private WeaponStats _grabbableWeaponData;
         private GameObject _grabbableObject;
-        
+
+        [SerializeField] private WeaponStats _startingWeapon;
 
         #endregion
     }

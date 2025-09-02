@@ -85,7 +85,20 @@ namespace Player.Runtime
 
         public void OnSprint(InputAction.CallbackContext context)
         {
-            //if (isLocalPlayer) _isSprinting = context.performed;
+            if (!isLocalPlayer) return;
+            if (context.started)
+            {
+                Vector3 direction = _playerHead.transform.forward + _playerRigidbody.position;
+                direction.y += 1f;
+                if (isServer)
+                {
+                    _spawnPrefabCube.RpcSpawn(direction);
+                }
+                else
+                {
+                    _spawnPrefabCube.CmdSpawn(direction);
+                }
+            }
         }
 
         public void OnDebugPosition(InputAction.CallbackContext context)
@@ -168,7 +181,7 @@ namespace Player.Runtime
 
         #region Utils
 
-
+        
         private void Move()
         {
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y +
@@ -248,6 +261,8 @@ namespace Player.Runtime
         private Quaternion _rightControllerInputRotation;
         
         [SerializeField] private ItemGrabber _itemGrabber;
+        
+        [SerializeField] private SpawnPrefabCube _spawnPrefabCube;
 
 
         #endregion

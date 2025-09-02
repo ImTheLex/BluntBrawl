@@ -36,8 +36,7 @@ namespace Player.Runtime
 
         private void Start()
         {
-            //_XROrigin.MoveCameraToWorldLocation(Vector3.zero);
-            //_XROrigin.MatchOriginUpCameraForward(Vector3.up, Vector3.forward);
+            _XROrigin.MoveCameraToWorldLocation(_XROrigin.transform.position);
         }
 
         private void OnDisable() => _playerInputActions.Disable();

@@ -11,14 +11,13 @@ namespace Player.Runtime
         [ClientRpc]
         public void RpcSpawn(Vector3 position)
         {
-           GameObject obj = Instantiate(_prefab,position, Quaternion.identity);
+           Instantiate(_prefab,position, Quaternion.identity);
         }
 
         [Command]
         public void CmdSpawn(Vector3 position)
         {
             RpcSpawn(position);
-            NetworkServer.Spawn(gameObject);
         }
     }
 }

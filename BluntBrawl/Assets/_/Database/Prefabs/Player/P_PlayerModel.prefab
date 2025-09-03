@@ -78,6 +78,8 @@ GameObject:
   - component: {fileID: 4616998770259778628}
   - component: {fileID: 973542957714898481}
   - component: {fileID: 6318594608136443083}
+  - component: {fileID: 8655640130902121848}
+  - component: {fileID: 8433804418781626802}
   m_Layer: 0
   m_Name: P_PlayerModel
   m_TagString: Untagged
@@ -154,6 +156,50 @@ MonoBehaviour:
   positionSensitivity: 0.01
   rotationSensitivity: 0.01
   scaleSensitivity: 0.01
+--- !u!114 &8655640130902121848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402249739753128350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8a60c4bcd2e4b4687860af4144b4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  m_renderer: {fileID: 0}
+  m_canvas: {fileID: 0}
+  m_text: {fileID: 0}
+  _damageTreshold: 10
+  _chanceToDiePerTreshold: 5
+  _invincibilityDuration: 1
+--- !u!136 &8433804418781626802
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402249739753128350}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25170994
+  m_Height: 1.7977788
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.95196927, z: 0}
 --- !u!1001 &1422250334576864608
 PrefabInstance:
   m_ObjectHideFlags: 0

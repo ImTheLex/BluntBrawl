@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3326722926545770789}
+  - component: {fileID: 4680759157360989636}
   m_Layer: 0
   m_Name: RotateAnchor
   m_TagString: Untagged
@@ -32,6 +33,40 @@ Transform:
   - {fileID: 5746643831227972149}
   m_Father: {fileID: 4616998770259778628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4680759157360989636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167225916289975463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 3326722926545770789}
+  syncPosition: 0
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChangeCorrectionMultiplier: 2
+  useFixedUpdate: 0
+  rotationSensitivity: 0.01
+  positionPrecision: 0.01
+  scalePrecision: 0.01
 --- !u!1 &5402249739753128350
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4616998770259778628}
   - component: {fileID: 973542957714898481}
+  - component: {fileID: 6318594608136443083}
   m_Layer: 0
   m_Name: P_PlayerModel
   m_TagString: Untagged
@@ -79,8 +115,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f98ab93c63214c6439d6e98f70d6ec51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   _playerOrigin: {fileID: 0}
   _playerAvatar: {fileID: 3326722926545770789}
+--- !u!114 &6318594608136443083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402249739753128350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 4616998770259778628}
+  syncPosition: 1
+  syncRotation: 0
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1001 &1422250334576864608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -165,13 +238,55 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 2592447701339751194, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6898919691151135709, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2266955227457550171}
   m_SourcePrefab: {fileID: 100100000, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
 --- !u!4 &3046959587251133213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4175998751492634237, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
   m_PrefabInstance: {fileID: 1422250334576864608}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5476724373029174973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6898919691151135709, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
+  m_PrefabInstance: {fileID: 1422250334576864608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2266955227457550171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476724373029174973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 3046959587251133213}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1001 &5209142372305542622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,8 +412,50 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7850077993901618714, guid: 6304ec705d0e9a84b98cb9410f43f792, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3678538750377741478}
   m_SourcePrefab: {fileID: 100100000, guid: 6304ec705d0e9a84b98cb9410f43f792, type: 3}
+--- !u!1 &1313826591472950749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7850077993901618714, guid: 6304ec705d0e9a84b98cb9410f43f792, type: 3}
+  m_PrefabInstance: {fileID: 9136310554332818375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3678538750377741478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313826591472950749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 5479034697992863692}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChangeCorrectionMultiplier: 2
+  useFixedUpdate: 0
+  rotationSensitivity: 0.01
+  positionPrecision: 0.01
+  scalePrecision: 0.01
 --- !u!4 &5479034697992863692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3657981785797530635, guid: 6304ec705d0e9a84b98cb9410f43f792, type: 3}

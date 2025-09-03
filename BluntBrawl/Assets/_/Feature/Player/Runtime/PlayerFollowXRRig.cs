@@ -1,18 +1,23 @@
-using System;
+using Mirror;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
 namespace Player.Runtime
 {
-    public class PlayerFollowXRRig : MonoBehaviour
+    public class PlayerFollowXRRig : NetworkBehaviour
     {
         
         [SerializeField]private Transform _playerOrigin;
         [SerializeField]private Transform _playerAvatar;
         private XROrigin _XRorigin;
 
-        private void Awake()=> _XRorigin = _playerOrigin.GetComponent<XROrigin>();
-        
+        //private void Awake()=> _XRorigin = _playerOrigin.GetComponent<XROrigin>();
+
+        public override void OnStartLocalPlayer()
+        {
+            base.OnStartLocalPlayer();
+            _XRorigin = _playerOrigin.GetComponent<XROrigin>();
+        }
 
 
         private void Update()

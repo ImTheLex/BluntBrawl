@@ -13,15 +13,19 @@ namespace Item.Runtime
 	
         #region Unity API
 
-        private void Awake()
+        public override void OnStartServer()
         {
+	        base.OnStartServer();
 	        GameObject obj = Instantiate(_startingWeapon.m_inHandPrefab, transform);
-	        NetworkServer.Spawn(obj);
+	        NetworkServer.Spawn(obj, connectionToClient); 
+
 	        _inHandWeapon = obj;
 	        _inHandWeaponData = _startingWeapon;
+
 	        obj.transform.localPosition = Vector3.zero;
         }
-
+        
+        
         public void OnTriggerEnter(Collider collider)
         {
             
@@ -95,14 +99,17 @@ namespace Item.Runtime
 	
         #region Hooks
 
-        public void UpdateWeaponStats(WeaponStats oldStats, WeaponStats newStats)
+        private void OnWeaponChanged(GameObject oldWeapon, GameObject newWeapon)
         {
-	        
-        }
+	        if (oldWeapon != null)
+		        Destroy(oldWeapon);
 
-        public void UpdateWeaponGO(GameObject go, GameObject newGO)
-        {
-	        
+	        if (newWeapon != null)
+	        {
+		        newWeapon.transform.SetParent(transform);
+		        newWeapon.transform.localPosition = Vector3.zero;
+		        newWeapon.transform.localRotation = Quaternion.identity;
+	        }
         }
         
         #endregion
@@ -112,6 +119,7 @@ namespace Item.Runtime
         private string _grabOwner;
         
 	    private WeaponStats _inHandWeaponData;
+	    [SyncVar(hook = nameof(OnWeaponChanged))]
 		private GameObject _inHandWeapon;
         private WeaponStats _grabbableWeaponData;
         private GameObject _grabbableObject;

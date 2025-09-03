@@ -21,17 +21,20 @@ namespace Weapon.Runtime
         
         #region Unity API
 
-        private void Start()
+        private void Awake()
         {
             
             _itemGrabber = GetComponentInParent<ItemGrabber>();
-            _localPositionReference = _itemGrabber.transform;
+          
             //_itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
         }
 
-        private void OnEnable()
+        private void Start()
         {
+            if(!_itemGrabber){_localPositionReference = gameObject.transform;}
+            else {_localPositionReference = _itemGrabber.transform;}
             m_owner =  transform.root.gameObject;
+
         }
 
         private void Update()

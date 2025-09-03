@@ -8,6 +8,7 @@ namespace Player.Runtime
     {
         
         [SerializeField]private Transform _playerOrigin;
+        [SerializeField]private Transform _playerAvatar;
         private XROrigin _XRorigin;
 
         private void Awake()=> _XRorigin = _playerOrigin.GetComponent<XROrigin>();
@@ -17,8 +18,14 @@ namespace Player.Runtime
         private void Update()
         {
             transform.position = _XRorigin.Origin.transform.position;
-            transform.rotation = _playerOrigin.rotation;
-        } 
+            _playerAvatar.rotation = Quaternion.Euler(RotateCharacterByHeadRotation(_XRorigin.Camera.transform));
+        }
+
+        private Vector3 RotateCharacterByHeadRotation(Transform head)
+        {
+            Vector3 headRotation = new Vector3(0f, head.rotation.eulerAngles.y, 0f);
+            return headRotation;
+        }
         
     }
 }

@@ -537,6 +537,7 @@ MonoBehaviour:
   syncInterval: 0
   _playerOrigin: {fileID: 187618716551820272}
   _moveSpeed: 2.5
+  _rotateAngle: 0
   _dashDuration: 0.25
   _dashTimeWindow: 0.4
   _dashForce: 10

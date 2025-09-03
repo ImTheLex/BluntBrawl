@@ -109,7 +109,7 @@ namespace InputSystem.BluntBrawl
                     ""id"": ""6b444451-8a00-4d00-a97e-f47457f736a8"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap(pressPoint=0.75)"",
                     ""initialStateCheck"": true
                 },
                 {

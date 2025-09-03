@@ -84,6 +84,15 @@ namespace Player.Runtime
 
         public void OnLook(InputAction.CallbackContext context)
         {
+            if (!isLocalPlayer) return;
+            if (context.started)
+            {
+                Vector2 direction = context.ReadValue<Vector2>();
+                if (direction.x >= 0.5f || direction.x <= -0.5f)
+                {
+                    Debug.Log("Right Stick " + direction.x);
+                }
+            }
             
         }
 
@@ -227,6 +236,9 @@ namespace Player.Runtime
         [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
         private bool _isSprinting;
         //[SerializeField] private float _sprintMultiplier;
+        [Header("Settings for rotation")]
+        [SerializeField, Tooltip("Angle in degree that will be add when right stick tap")] private float _rotateAngle;
+        
         
         //dash
         private float _doubleTapChrono;
@@ -239,7 +251,9 @@ namespace Player.Runtime
         [SerializeField, Tooltip("Speed of the dash")] private float _dashDuration = .25f;
         [SerializeField, Tooltip("Time to trigger the double tap (in seconds)")] private float _dashTimeWindow;
         [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashForce;
-
+        
+        
+        
         [Header("Settings for Tracked Controller")] 
         [SerializeField] private Transform _leftController;
         [SerializeField] private Transform _rightController;
@@ -250,6 +264,7 @@ namespace Player.Runtime
         
         
         private Vector2 _playerInputMovement;
+        private Vector2 _playerInputRotation;
 
         private Vector3 _leftControllerInputPosition;
         private Vector3 _rightControllerInputPosition;

@@ -10,7 +10,7 @@ namespace Weapon.Runtime
     {
         #region Publics
 
-            public float m_speedRequired;
+            //public float m_speedRequired;
             public float m_velocity => _weaponVelocity;
             public int m_damage => _weaponData.m_damage;
             public int m_velocityDamage => _weaponData.m_velocityDamageMultiplier;
@@ -54,7 +54,8 @@ namespace Weapon.Runtime
             var velocity = translation.magnitude / Time.deltaTime;
             _weaponVelocity = velocity;
             //var velocity = Vector3.Magnitude(_weaponRb.linearVelocity);
-            if (velocity > m_speedRequired)
+            if (velocity > _weaponData.m_velocityRequired)
+            //if (velocity > m_speedRequired)
             {
                 //Debug.Log("Can damage because Velocity is : " + velocity.ToString("F2") + " And required is : " + m_speedRequired);
                 _weaponDamageCollider.enabled = true;

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 003084dab50154bf188a37d1c11290bb, type: 3}
-  m_Name: SwordStats
+  m_Name: MetalPipeStats
   m_EditorClassIdentifier: 
-  m_damage: 4
-  m_velocityRequired: 1
+  m_damage: 3
+  m_velocityRequired: 1.4
   m_velocityDamageMultiplier: 1
-  m_inWorldPrefab: {fileID: 2350312154220774817, guid: 280c54c1c470242ea917144b8b032307, type: 3}
-  m_inHandPrefab: {fileID: 2350312154220774817, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+  m_inWorldPrefab: {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
+  m_inHandPrefab: {fileID: 919615289787293967, guid: d06fe26c5dc65314da5065ccb03e2fc5, type: 3}

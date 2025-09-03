@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2127f25dfdac4651a83987aa33d6001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponBehaviour: {fileID: 0}
+  m_weaponBehaviour: {fileID: 7825915998965787887}
 --- !u!1 &8375742226066822164
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +495,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40514b37f837f4fe380026fb965036e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speedRequired: 0
+  m_speedRequired: 1
   m_owner: {fileID: 0}
   _localPositionReference: {fileID: 0}
   _weaponDamageCollider: {fileID: 8815985324096124792}

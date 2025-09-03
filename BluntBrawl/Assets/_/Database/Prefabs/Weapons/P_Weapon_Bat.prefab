@@ -418,7 +418,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _grabItemUI: {fileID: 3616058845196417025}
-  _weaponData: {fileID: 11400000, guid: f6c4e2ef7c6c34983997a4a935f47f93, type: 2}
+  _weaponData: {fileID: 11400000, guid: d4c85ca536fe92446ae8ba2490391977, type: 2}
 --- !u!114 &4364198369174661419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40514b37f837f4fe380026fb965036e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speedRequired: 1
   m_owner: {fileID: 0}
   _localPositionReference: {fileID: 0}
   _weaponDamageCollider: {fileID: 8308195362546501394}

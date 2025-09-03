@@ -139,7 +139,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -159,8 +159,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _grabItemUI: {fileID: 0}
-  _weaponData: {fileID: 0}
+  _grabItemUI: {fileID: 8454522048604022067}
+  _weaponData: {fileID: 11400000, guid: 94875a70df98c48f6af3a8ba11fc7720, type: 2}
 --- !u!114 &3319744346761345788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_speedRequired: 0
   m_owner: {fileID: 0}
   _localPositionReference: {fileID: 0}
-  _weaponDamageCollider: {fileID: 0}
+  _weaponDamageCollider: {fileID: 8182257692355353054}
   _weaponRb: {fileID: 610458410164907398}
   _itemGrabber: {fileID: 0}
 --- !u!114 &384270418743110187
@@ -192,9 +192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isVerbose: 1
-  m_debugText: {fileID: 0}
+  m_debugText: {fileID: 5412123317827315296}
   m_weaponBehaviour: {fileID: 3319744346761345788}
-  m_debugCanvas: {fileID: 0}
+  m_debugCanvas: {fileID: 8454522048604022067}
 --- !u!114 &5781596232966053381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2127f25dfdac4651a83987aa33d6001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponBehaviour: {fileID: 0}
+  m_weaponBehaviour: {fileID: 3319744346761345788}
 --- !u!1 &6624359267908570244
 GameObject:
   m_ObjectHideFlags: 0

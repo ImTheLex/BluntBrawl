@@ -10,8 +10,6 @@ namespace Health.Runtime
 
         #region Publics
 
-            public int m_maxHealth;
-            
             public Renderer m_renderer;
             public Canvas m_canvas;
             public TMP_Text m_text;
@@ -25,7 +23,6 @@ namespace Health.Runtime
             {
                 base.OnStartClient();
                 // S'assurer que chaque client voit l'état actuel
-                //UpdateHealth(_health, _health);
                 UpdateVulnerability(_vulnerability,_vulnerability);
             }
             
@@ -37,10 +34,6 @@ namespace Health.Runtime
             private void Awake()
             {
                 name = gameObject.name;
-                _health = m_maxHealth;
-                Debug.Log("CurrentChanceToDIe " + _currentChanceToDie);
-                //m_text.text = "Current Health: " + _health;
-                
                 
                 if(m_renderer != null) baseColor = m_renderer.material.color;
                 m_canvas.gameObject.SetActive(true);
@@ -146,11 +139,6 @@ namespace Health.Runtime
             Invoke(nameof(ResetColor), 0.5f);
         }
         
-        private void UpdateHealth(int previousHealth, int currentHealth)
-        { 
-            m_text.text = "Current Health: " + currentHealth;
-        }
-        
         private void UpdateVulnerability(int previousVulnerability, int currentVulnerability)
         { 
             m_text.text = "Current Vulnerability: " + currentVulnerability;
@@ -166,10 +154,8 @@ namespace Health.Runtime
             
             [SerializeField,SyncVar] private int _chanceToDiePerTreshold = 5;
             
-            
-            
-            [SyncVar(hook = nameof(UpdateHealth))]
-            private int _health;
+        
+       
             [SerializeField] private float _invincibilityDuration = 1f;
             private float _invincibilityTimer;
         

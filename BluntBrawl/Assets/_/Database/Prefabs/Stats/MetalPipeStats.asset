@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 003084dab50154bf188a37d1c11290bb, type: 3}
-  m_Name: HammerCatStats
+  m_Name: MetalPipeStats
   m_EditorClassIdentifier: 
-  m_damage: 10
+  m_damage: 3
   m_velocityDamageMultiplier: 1
-  m_inWorldPrefab: {fileID: 2350312154220774817, guid: e9004c861940c411a96a6cb923c9ff1e, type: 3}
-  m_inHandPrefab: {fileID: 8375742226066822164, guid: bec7ccf3b635640478fb58568d27d2ba, type: 3}
+  m_inWorldPrefab: {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
+  m_inHandPrefab: {fileID: 919615289787293967, guid: d06fe26c5dc65314da5065ccb03e2fc5, type: 3}

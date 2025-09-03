@@ -88,13 +88,11 @@ namespace Player.Runtime
             if (context.started)
             {
                 Vector2 direction = context.ReadValue<Vector2>();
-                if (direction.x >= 0.5f || direction.x <= -0.5f)
-                {
-                    Debug.Log("Right Stick " + direction.x);
-                }
+                MoveHead(direction);
             }
             
         }
+        
 
         public void OnSprint(InputAction.CallbackContext context)
         {
@@ -202,6 +200,16 @@ namespace Player.Runtime
             
             if (_playerInputMovement.magnitude <= 0f)
                 _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
+        }
+        
+        private void MoveHead(Vector2 direction)
+        {
+            Vector3 headLocalRotation = _playerHead.localRotation.eulerAngles;
+            if (direction.x >= 0.5f)
+                _playerHead.localRotation = Quaternion.Euler(headLocalRotation.x,headLocalRotation.y + _rotateAngle,headLocalRotation.z);
+                
+            else if (direction.x <= -0.5f)
+                _playerHead.localRotation = Quaternion.Euler(headLocalRotation.x,headLocalRotation.y - _rotateAngle,headLocalRotation.z);
         }
 
         private void Dash()

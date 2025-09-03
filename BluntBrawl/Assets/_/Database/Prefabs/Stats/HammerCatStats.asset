@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HammerCatStats
   m_EditorClassIdentifier: 
   m_damage: 10
+  m_velocityRequired: 2.3
   m_velocityDamageMultiplier: 1
   m_inWorldPrefab: {fileID: 2350312154220774817, guid: e9004c861940c411a96a6cb923c9ff1e, type: 3}
   m_inHandPrefab: {fileID: 8375742226066822164, guid: bec7ccf3b635640478fb58568d27d2ba, type: 3}

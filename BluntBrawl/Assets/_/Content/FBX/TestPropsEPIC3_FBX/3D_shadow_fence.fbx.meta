@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 07ac280b5374b444fac22fae450c5b12
+guid: 4be2a6a51aa769f4aa989ff5a0c94901
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_Texture_Props
+      name: Mat_Texture_Props.004
     second: {fileID: 2100000, guid: dbdc0607392041f439d90aea4db00ccd, type: 2}
   materials:
     materialImportMode: 2

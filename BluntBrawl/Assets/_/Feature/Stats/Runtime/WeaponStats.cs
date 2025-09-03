@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     public int m_damage;
+    public float m_velocityRequired;
     public int m_velocityDamageMultiplier;
 
     public GameObject m_inWorldPrefab;

@@ -293,7 +293,6 @@ GameObject:
   - component: {fileID: 2578217187222381581}
   - component: {fileID: 1268105205122340669}
   - component: {fileID: 3460201151102721621}
-  - component: {fileID: 355580280639646201}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: Untagged
@@ -412,28 +411,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &355580280639646201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547495322754242636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8a60c4bcd2e4b4687860af4144b4d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  m_maxHealth: 20
-  m_renderer: {fileID: 0}
-  m_canvas: {fileID: 1523027206074772078}
-  m_text: {fileID: 2417996166302658477}
-  _damageTreshold: 10
-  _chanceToDiePerTreshold: 5
-  _invincibilityDuration: 1
 --- !u!1 &4139709100620377146
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,22 +566,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4054308585848922407}
     m_Modifications:
-    - target: {fileID: 315905202395624949, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 973542957714898481, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
       propertyPath: _playerOrigin
       value: 
       objectReference: {fileID: 187618716551820272}
-    - target: {fileID: 1248067081423053877, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156743886444721779, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4616998770259778628, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -649,14 +614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_PlayerModel
       objectReference: {fileID: 0}
-    - target: {fileID: 5528222955635559522, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8899586145485363751, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -677,22 +634,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5479034697992863692, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
   m_PrefabInstance: {fileID: 4768570571888899634}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &1523027206074772078 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 6273440095005973596, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-  m_PrefabInstance: {fileID: 4768570571888899634}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2417996166302658477 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7179634012416661919, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-  m_PrefabInstance: {fileID: 4768570571888899634}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3605401159702284481 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8081050834378931955, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}

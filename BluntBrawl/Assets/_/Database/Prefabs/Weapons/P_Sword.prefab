@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40514b37f837f4fe380026fb965036e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speedRequired: 1
+  m_speedRequired: 1.3
   m_owner: {fileID: 0}
   _localPositionReference: {fileID: 0}
   _weaponDamageCollider: {fileID: 8484718051785760924}

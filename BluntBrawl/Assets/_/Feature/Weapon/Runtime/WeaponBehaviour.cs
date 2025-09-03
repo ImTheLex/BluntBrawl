@@ -10,7 +10,7 @@ namespace Weapon.Runtime
     {
         #region Publics
 
-            public float m_speedRequired;
+            //public float m_speedRequired;
             public float m_velocity => _weaponVelocity;
             public int m_damage => _weaponData.m_damage;
             public int m_velocityDamage => _weaponData.m_velocityDamageMultiplier;
@@ -21,17 +21,20 @@ namespace Weapon.Runtime
         
         #region Unity API
 
-        private void Start()
+        private void Awake()
         {
             
             _itemGrabber = GetComponentInParent<ItemGrabber>();
-            _localPositionReference = _itemGrabber.transform;
+          
             //_itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
         }
 
-        private void OnEnable()
+        private void Start()
         {
+            if(!_itemGrabber){_localPositionReference = gameObject.transform;}
+            else {_localPositionReference = _itemGrabber.transform;}
             m_owner =  transform.root.gameObject;
+
         }
 
         private void Update()
@@ -51,7 +54,8 @@ namespace Weapon.Runtime
             var velocity = translation.magnitude / Time.deltaTime;
             _weaponVelocity = velocity;
             //var velocity = Vector3.Magnitude(_weaponRb.linearVelocity);
-            if (velocity > m_speedRequired)
+            if (velocity > _weaponData.m_velocityRequired)
+            //if (velocity > m_speedRequired)
             {
                 //Debug.Log("Can damage because Velocity is : " + velocity.ToString("F2") + " And required is : " + m_speedRequired);
                 _weaponDamageCollider.enabled = true;

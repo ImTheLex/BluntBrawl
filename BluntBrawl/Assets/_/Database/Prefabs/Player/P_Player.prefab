@@ -293,7 +293,6 @@ GameObject:
   - component: {fileID: 2578217187222381581}
   - component: {fileID: 1268105205122340669}
   - component: {fileID: 3460201151102721621}
-  - component: {fileID: 355580280639646201}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: Untagged
@@ -412,28 +411,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &355580280639646201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3547495322754242636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8a60c4bcd2e4b4687860af4144b4d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  m_maxHealth: 20
-  m_renderer: {fileID: 0}
-  m_canvas: {fileID: 1523027206074772078}
-  m_text: {fileID: 2417996166302658477}
-  _damageTreshold: 10
-  _chanceToDiePerTreshold: 5
-  _invincibilityDuration: 1
 --- !u!1 &4139709100620377146
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 2488156854
+  _assetId: 2654449017
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -741,10 +718,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_PlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 5402249739753128350, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5402249739753128350, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4689745921309887433}
+    - targetCorrespondingSourceObject: {fileID: 5402249739753128350, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5017808445798261250}
   m_SourcePrefab: {fileID: 100100000, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
 --- !u!4 &161991326797032054 stripped
 Transform:
@@ -756,6 +743,56 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4939321459110060175, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
   m_PrefabInstance: {fileID: 4768570571888899634}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &636687805677778860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5402249739753128350, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+  m_PrefabInstance: {fileID: 4768570571888899634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4689745921309887433
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636687805677778860}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25170994
+  m_Height: 1.7977788
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.95196927, z: 0}
+--- !u!114 &5017808445798261250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636687805677778860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8a60c4bcd2e4b4687860af4144b4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  m_maxHealth: 100
+  m_renderer: {fileID: 0}
+  m_canvas: {fileID: 1523027206074772078}
+  m_text: {fileID: 2417996166302658477}
+  _damageTreshold: 10
+  _chanceToDiePerTreshold: 5
+  _invincibilityDuration: 1
 --- !u!4 &1018988536599595518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5479034697992863692, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}

@@ -26,7 +26,7 @@ namespace Weapon.Runtime
             
             _itemGrabber = GetComponentInParent<ItemGrabber>();
             _localPositionReference = _itemGrabber.transform;
-            _itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
+            //_itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
         }
 
         private void OnEnable()

@@ -17,6 +17,8 @@ namespace Item.Runtime
         {
 	        GameObject obj = Instantiate(_startingWeapon.m_inHandPrefab, transform);
 	        NetworkServer.Spawn(obj);
+	        _inHandWeapon = obj;
+	        _inHandWeaponData = _startingWeapon;
 	        obj.transform.localPosition = Vector3.zero;
         }
 
@@ -56,43 +58,61 @@ namespace Item.Runtime
 	
         
         
-		[ContextMenu("Grab Item")]
+		[Command,ContextMenu("Grab Item")]
 		public void GrabItem()
-        {
-	
-			
+		{
+
             if(_grabbableWeaponData == null || _grabbableObject == null) return;
-            if(_inHandWeaponData != null) UngrabItem();
+            if (_inHandWeaponData != null)
+            {
+	            UngrabItem();
+            }
             
             GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
-            NetworkServer.Spawn(obj);
-            obj.transform.localPosition = Vector3.zero;
-            
-            
-            Destroy(_grabbableObject);
-        }
+            NetworkServer.Spawn(obj,connectionToClient);
+            _inHandWeapon = obj;
+            _inHandWeaponData = _grabbableWeaponData;
+            NetworkServer.Destroy(_grabbableObject);
+
+		}
 	
         #endregion
 	
 	
         #region Utils
 	
+       
         public void UngrabItem()
         {
 	        GameObject obj = Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
 	        NetworkServer.Spawn(obj);
-	        Destroy(_inHandWeapon);
+	        NetworkServer.Destroy(_inHandWeapon);
+	        _inHandWeapon = null;
+	        _inHandWeaponData = null;	
         }
 	
         #endregion
 	
+        #region Hooks
+
+        public void UpdateWeaponStats(WeaponStats oldStats, WeaponStats newStats)
+        {
+	        
+        }
+
+        public void UpdateWeaponGO(GameObject go, GameObject newGO)
+        {
+	        
+        }
+        
+        #endregion
 	
         #region Privates
 	
         private string _grabOwner;
         
-        private WeaponStats _inHandWeaponData;
-        private GameObject _inHandWeapon;
+	    private WeaponStats _inHandWeaponData;
+		private GameObject _inHandWeapon;
         private WeaponStats _grabbableWeaponData;
         private GameObject _grabbableObject;
 

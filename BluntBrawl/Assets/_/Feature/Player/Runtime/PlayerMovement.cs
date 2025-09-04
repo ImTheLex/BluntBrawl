@@ -49,6 +49,7 @@ namespace Player.Runtime
             if (isLocalPlayer)
             {
                 if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
+                if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
                 if (_isDashing)
                 {
                     _dashChrono += Time.deltaTime;
@@ -56,6 +57,7 @@ namespace Player.Runtime
                     if (_dashChrono > _dashDuration)
                     {
                         _dashChrono = 0;
+                        _dashCooldownChrono = _dashCooldown;
                         _isDashing = false;
                     }
                 }
@@ -116,6 +118,7 @@ namespace Player.Runtime
             if (!isLocalPlayer) return;
             if (!_isDashing && context.started)
             {
+                if (_dashCooldownChrono >= 0f) return;
                 _isDashing = true;
                 _dashDirection = _playerInputMovement.normalized;
             }
@@ -250,6 +253,7 @@ namespace Player.Runtime
         [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
         private bool _isSprinting;
         //[SerializeField] private float _sprintMultiplier;
+        
         [Header("Settings for rotation")]
         [SerializeField, Tooltip("Angle in degree that will be add when right stick tap")] private float _rotateAngle;
         
@@ -262,9 +266,14 @@ namespace Player.Runtime
         private bool _isDashing;
         private Vector2 _dashDirection;
         
+        [Header("Settings for Dash")]
         [SerializeField, Tooltip("Speed of the dash")] private float _dashDuration = .25f;
         [SerializeField, Tooltip("Time to trigger the double tap (in seconds)")] private float _dashTimeWindow;
         [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashForce;
+
+        [SerializeField, Tooltip("Time in seconds after a new Dash can be done")] private float _dashCooldown;
+
+        private float _dashCooldownChrono;
         
         
         

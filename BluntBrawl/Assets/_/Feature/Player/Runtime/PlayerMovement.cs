@@ -204,12 +204,18 @@ namespace Player.Runtime
         
         private void MoveHead(Vector2 direction)
         {
-            Vector3 headLocalRotation = _playerHead.localRotation.eulerAngles;
+            Vector3 xrRotation =_XROrigin.transform.rotation.eulerAngles;
+            Debug.Log(direction.x);
             if (direction.x >= 0.5f)
-                _playerHead.localRotation = Quaternion.Euler(headLocalRotation.x,headLocalRotation.y + _rotateAngle,headLocalRotation.z);
-                
+            {
+                _XROrigin.transform.rotation = Quaternion.Euler(xrRotation.x,xrRotation.y + _rotateAngle,xrRotation.z);
+                Debug.Log(xrRotation.x);
+            }
             else if (direction.x <= -0.5f)
-                _playerHead.localRotation = Quaternion.Euler(headLocalRotation.x,headLocalRotation.y - _rotateAngle,headLocalRotation.z);
+            {
+                _XROrigin.transform.rotation = Quaternion.Euler(xrRotation.x,xrRotation.y - _rotateAngle,xrRotation.z);
+                Debug.Log(xrRotation.x);
+            }
         }
 
         private void Dash()
@@ -227,8 +233,8 @@ namespace Player.Runtime
         
         private void TrackingRotationController()
         {
-            _leftController.rotation = _leftControllerInputRotation;
-            _rightController.rotation = _rightControllerInputRotation;
+            _leftController.localRotation = _leftControllerInputRotation;
+            _rightController.localRotation = _rightControllerInputRotation;
         }
 
         #endregion

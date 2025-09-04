@@ -7,6 +7,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MAT_Texture_Border-Dark
+    second: {fileID: 2100000, guid: 77d0039a277b7e649b7c9f456efe442b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Texture_Border-Light
+    second: {fileID: 2100000, guid: 6ef2157c2a692c544a8b5894691567ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Texture_Ground
+    second: {fileID: 2100000, guid: 38e8a82d5b4b24549b1881d3a6edc80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MAT_Texture_Map
     second: {fileID: 2100000, guid: 27d7475d870c4984fa0a3a9d3f066d51, type: 2}
   materials:

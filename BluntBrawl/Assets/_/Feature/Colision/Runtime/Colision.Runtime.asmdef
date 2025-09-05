@@ -1,0 +1,17 @@
+{
+    "name": "Colision.Runtime",
+    "rootNamespace": "Colision.Runtime",
+    "references": [
+        "GUID:9be71c5015e914bcdbe5700a4053c8d1",
+        "GUID:9a14b54b2306c47c7a10175f3bd4a7a3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

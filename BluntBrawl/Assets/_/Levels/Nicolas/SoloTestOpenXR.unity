@@ -5229,6 +5229,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1147958271216728484, guid: 6d3f026ca803a79449c3e2de7cda1a1a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3884969463507899255, guid: 6d3f026ca803a79449c3e2de7cda1a1a, type: 3}
       propertyPath: m_Name
       value: P_Map_RoofTop
@@ -5272,6 +5276,10 @@ PrefabInstance:
     - target: {fileID: 6355382977411675016, guid: 6d3f026ca803a79449c3e2de7cda1a1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412530368794168320, guid: 6d3f026ca803a79449c3e2de7cda1a1a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

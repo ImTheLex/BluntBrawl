@@ -15,13 +15,13 @@ namespace Colision.Runtime
         #endregion
         
         #region Utils
-        
-        
+
+
         public void PlayerBumpOnHit(Vector3 direction, float force)
         {
-            if (HealthBehaviour.)
+            
         }
-        
+
         #endregion
 
 

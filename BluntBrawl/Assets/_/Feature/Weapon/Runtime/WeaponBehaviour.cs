@@ -71,6 +71,11 @@ namespace Weapon.Runtime
             _previousPos = _localPositionReference.transform.localPosition;
         }
 
+        private void HandleCooldownOnHit()
+        {
+            
+            
+        }
        
         #endregion
         
@@ -88,6 +93,6 @@ namespace Weapon.Runtime
             private WeaponStats _weaponData => GetComponent<ItemBehaviour>().m_weaponData;
 
 
-            #endregion
+        #endregion
     }
 }

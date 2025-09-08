@@ -19,7 +19,7 @@ namespace Colision.Runtime
         
         public void PlayerBumpOnHit(Vector3 direction, float force)
         {
-            if (HealthBehaviour.)
+           // if (HealthBehaviour.)
         }
         
         #endregion

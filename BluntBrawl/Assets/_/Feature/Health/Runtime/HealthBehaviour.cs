@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Interfaces.Runtime;
 using Mirror;
+using Rounds.Runtime;
 using TMPro;
 using UnityEngine;
 
@@ -15,7 +16,14 @@ namespace Health.Runtime
             public Renderer m_renderer;
             public Canvas m_canvas;
             public TMP_Text m_text;
+
+            public float m_invincibilityDuration
+            {
+                get => _invincibilityDuration;
+                set => _invincibilityDuration = value;
+            }
             
+            public bool m_isInvincible => _isInvincible;
             public int m_currentHealth => _currentHealth;
             public int m_maxHealth => _maxHealth;
 
@@ -39,11 +47,11 @@ namespace Health.Runtime
 
             private void Awake()
             {
-                name = gameObject.name;
                 _currentHealth = _maxHealth;
+                _maxBars = _bars.Count;
                 
                 if(m_renderer != null) baseColor = m_renderer.material.color;
-                m_canvas.gameObject.SetActive(true);
+                if(m_canvas){m_canvas.gameObject.SetActive(true);}
             }
 
 
@@ -52,18 +60,28 @@ namespace Health.Runtime
                 Debug.Log("Local player : " + isLocalPlayer);
                 if (isLocalPlayer == false)
                 {
-                    foreach (var bar in _bars)
+                    if (_bars is not null)
                     {
-                        bar.SetActive(false);
+                        foreach (var bar in _bars)
+                        {
+                            bar.SetActive(false);
+                        }
                     }
+                    
+                    _notLocalPlayerSphereRenderer.gameObject.SetActive(true);
                 }
 
                 if (isLocalPlayer == true)
                 {
-                    foreach (var bar in _bars)
+                    if (_bars is not null)
                     {
-                        bar.GetComponent<Renderer>().material.color = Color.green;
+                        foreach (var bar in _bars)
+                        {
+                            bar.GetComponent<Renderer>().material.color = Color.green;
+                        }
                     }
+                    _notLocalPlayerSphereRenderer.gameObject.SetActive(false);
+                    
                 }
             }
 
@@ -120,8 +138,9 @@ namespace Health.Runtime
             
             public void TakeDamage(int damageAmount)
             {
+                RpcFlash();
                 _currentHealth -= damageAmount;
-                //HandleHealth();
+                if(_currentHealth <= 0) {CmdHandleDamageableDeath();}
             }
             
 
@@ -133,17 +152,16 @@ namespace Health.Runtime
                 TakeDamage(damageAmount);
             }
             
-            [Server]
             public void HandleDamageableDeath()
             {
-                //gameObject.SetActive(false);
-                //RpcHandleDamageableDeath();
+                CmdHandleDamageableDeath();
             }
-
-            [ClientRpc]
-            public void RpcHandleDamageableDeath()
+            
+            [Command(requiresAuthority = false)]
+            public void CmdHandleDamageableDeath()
             {
-                gameObject.SetActive(false);
+                CmdResetHealth();
+                _roundPlayer.SetDefeat();
             }
             
             
@@ -168,7 +186,7 @@ namespace Health.Runtime
                 HandleHealth();
             }
 
-            [Command(requiresAuthority = false)]
+            //[Command(requiresAuthority = false)]
             public void CmdResetHealth()
             {
                 ResetHealth();
@@ -225,14 +243,18 @@ namespace Health.Runtime
 
             private void HandleHealth()
             {
-                if (!isLocalPlayer) return;
+                //if (!isLocalPlayer) return;
                 float healthPercentage = (float)_currentHealth / (float)_maxHealth;
                 _activeBars = Mathf.CeilToInt(healthPercentage * _maxBars);
 
                 for (int i = 0; i < _bars.Count; i++)
                 {
-                    if (_currentHealth <= (_maxHealth / 4) * 3)
+
+                    _bars[i].gameObject.GetComponent<Renderer>().material.color = GetColor();
+                    
+                    /*if (_currentHealth <= (_maxHealth / 4) * 3)
                     {
+                        
                         _bars[i].gameObject.GetComponent<Renderer>().material.color = Color.yellow;
                     }
 
@@ -245,15 +267,45 @@ namespace Health.Runtime
                     {
                         _bars[i].gameObject.GetComponent<Renderer>().material.color = Color.red;
                     }
-                    
+                    */
                     _bars[i].SetActive(i < _activeBars);
                 }
             }
+
+            private Color GetColor()
+            {
+                if (_currentHealth <= _maxHealth / 4)
+                { 
+                    return Color.red;
+                }
+                else if (_currentHealth <= _maxHealth / 2) 
+                {
+                    return Color.magenta;
+                }
+                else if (_currentHealth <= (_maxHealth / 4) * 3)
+                {
+                    return Color.yellow;
+                }
+                else                                       
+                {
+                    return Color.green;
+                }
+            }
+            
+            
             private void UpdateHealth(int previousHealth, int currentHealth)
             {
-                if (!isLocalPlayer) return;
-                m_text.text = currentHealth.ToString();
-                HandleHealth();
+                //if (!isLocalPlayer) return;
+                if (isLocalPlayer)
+                {
+                    if(m_text){m_text.text = currentHealth.ToString();}
+                    HandleHealth();
+                    
+                }
+                else
+                {
+                    _notLocalPlayerSphereRenderer.material.color = GetColor();
+                }
                
             }
         
@@ -271,18 +323,21 @@ namespace Health.Runtime
             
             [SyncVar(hook = nameof(UpdateHealth))] private int _currentHealth;
             private int _activeBars;
+            private int _maxBars;
+            
             [SerializeField] private List<GameObject> _bars;
-            [SerializeField] private int _maxBars = 5;
             [SerializeField] private int _maxHealth = 100;
             
-            [Header("Invincibility")]
             private float _invincibilityTimer;
-            [SerializeField] private float _invincibilityDuration;
+            private float _invincibilityDuration;
             [SyncVar] private bool _isInvincible;
             
         
             private Color baseColor;
-
+            
+            [SerializeField] private Renderer _notLocalPlayerSphereRenderer;
+            [SerializeField] private RoundPlayer _roundPlayer;
+            
             #endregion
     }
 }

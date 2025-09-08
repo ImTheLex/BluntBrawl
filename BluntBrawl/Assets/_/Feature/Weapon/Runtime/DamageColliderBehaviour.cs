@@ -21,9 +21,15 @@ namespace Weapon.Runtime
 
                     if (owner == other.gameObject.transform.root.gameObject) return;
 
+                    
                     var amount = m_weaponBehaviour.m_damage * m_weaponBehaviour.m_velocityDamage;
                     //damageable.CmdTakeDamage(amount);
+                    if (!damageable.m_isInvincible)
+                    {
+                        damageable.m_invincibilityDuration = m_weaponBehaviour.m_invincibilityDuration;
+                    }
                     damageable.CmdTakeDamage(amount);
+                    
                 }
 
                 if (other.TryGetComponent<IBumpable>(out var bumpable))

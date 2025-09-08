@@ -17,6 +17,7 @@ namespace Weapon.Runtime
             public float m_invincibilityDuration => _weaponData.m_invincibilityDuration;
             public int m_velocityDamage => _weaponData.m_velocityDamageMultiplier;
             public GameObject m_owner;
+            public float m_force => _weaponData.m_force;
             
         #endregion
         
@@ -91,6 +92,7 @@ namespace Weapon.Runtime
             private float _weaponVelocity;
             private Vector3 _previousPos;
             [SerializeField] private ItemGrabber _itemGrabber;
+            
 
             private WeaponStats _weaponData => GetComponent<ItemBehaviour>().m_weaponData;
 

@@ -12,7 +12,16 @@ namespace Player.Runtime
         BluntBrawlInputActions.IBBXRIRightInteractionActions
     {
 
+        #region Publics
+        
+        [HideInInspector] public bool m_isBumping = false;
 
+        [HideInInspector] public XROrigin m_XROrigin => _XROrigin;
+        
+        
+        #endregion
+        
+        
         #region Unity API
         
         
@@ -48,6 +57,9 @@ namespace Player.Runtime
         {
             if (isLocalPlayer)
             {
+                TrackingPositionController();
+                TrackingRotationController();
+                if (m_isBumping) return;
                 if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
                 if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
                 if (_isDashing)
@@ -62,8 +74,6 @@ namespace Player.Runtime
                     }
                 }
                 Move();
-                TrackingPositionController();
-                TrackingRotationController();
             }
         }
         
@@ -71,6 +81,8 @@ namespace Player.Runtime
 
 
         #endregion
+
+        
 
 
         #region Input action

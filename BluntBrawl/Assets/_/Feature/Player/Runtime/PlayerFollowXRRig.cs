@@ -22,6 +22,7 @@ namespace Player.Runtime
 
         private void Update()
         {
+            if (!isLocalPlayer) return;
             transform.position = _XRorigin.Origin.transform.position;
             transform.rotation = _XRorigin.Origin.transform.rotation;
             _playerAvatar.rotation = Quaternion.Euler(RotateCharacterByHeadRotation(_XRorigin.Camera.transform));

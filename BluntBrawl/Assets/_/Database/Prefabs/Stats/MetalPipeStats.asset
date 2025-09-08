@@ -15,5 +15,6 @@ MonoBehaviour:
   m_damage: 3
   m_velocityRequired: 1.4
   m_velocityDamageMultiplier: 1
+  m_force: 2.5
   m_inWorldPrefab: {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
   m_inHandPrefab: {fileID: 919615289787293967, guid: d06fe26c5dc65314da5065ccb03e2fc5, type: 3}

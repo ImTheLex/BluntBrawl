@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: MAT_txt_Map02
     second: {fileID: 2100000, guid: dbdc0607392041f439d90aea4db00ccd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Texture_Props
+    second: {fileID: 2100000, guid: dbdc0607392041f439d90aea4db00ccd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

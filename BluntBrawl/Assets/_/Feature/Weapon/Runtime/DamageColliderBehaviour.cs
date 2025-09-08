@@ -20,7 +20,7 @@ namespace Weapon.Runtime
 
                     var amount = m_weaponBehaviour.m_damage * m_weaponBehaviour.m_velocityDamage;
                     //damageable.CmdTakeDamage(amount);
-                    damageable.CmdIncreaseVulnerability(amount);
+                    damageable.CmdTakeDamage(amount);
                 }
             }
         

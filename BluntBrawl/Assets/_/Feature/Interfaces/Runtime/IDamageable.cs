@@ -1,6 +1,3 @@
-using System.Collections;
-using UnityEngine;
-
 namespace Interfaces.Runtime
 {
     public interface IDamageable

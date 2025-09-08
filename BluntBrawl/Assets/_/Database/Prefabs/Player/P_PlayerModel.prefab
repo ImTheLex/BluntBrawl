@@ -184,7 +184,6 @@ MonoBehaviour:
   _maxBars: 5
   _maxHealth: 100
   _invincibilityDuration: 1
-  _playerColisionFeedback: {fileID: 1521662896283660811}
 --- !u!136 &8433804418781626802
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -226,7 +225,7 @@ MonoBehaviour:
   _vecticalForcePerDamage: 0.5
   _horizontalForcePerDamage: 1
   _baseForce: 5
-  _bumpTimer: 0.5
+  _bumpTimer: 1
 --- !u!1001 &1422250334576864608
 PrefabInstance:
   m_ObjectHideFlags: 0

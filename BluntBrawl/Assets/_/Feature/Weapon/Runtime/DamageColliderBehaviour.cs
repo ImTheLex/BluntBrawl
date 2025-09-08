@@ -1,9 +1,12 @@
 using Interfaces.Runtime;
+using Mirror;
+using Player.Runtime;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 namespace Weapon.Runtime
 {
-    public class DamageColliderBehaviour : MonoBehaviour
+    public class DamageColliderBehaviour : NetworkBehaviour
     {
         
         
@@ -21,6 +24,17 @@ namespace Weapon.Runtime
                     var amount = m_weaponBehaviour.m_damage * m_weaponBehaviour.m_velocityDamage;
                     //damageable.CmdTakeDamage(amount);
                     damageable.CmdTakeDamage(amount);
+                }
+
+                if (other.TryGetComponent<IBumpable>(out var bumpable))
+                {
+                    XROrigin xrOrigin = m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>().m_XROrigin;
+
+                    if (isClient)
+                        bumpable.PlayerBumpOnHit(xrOrigin.transform.position, m_weaponBehaviour.m_force);
+                    else
+                        if (isServer)
+                            bumpable.CMDPlayerBumpOnHit(xrOrigin.transform.position, m_weaponBehaviour.m_force);
                 }
             }
         

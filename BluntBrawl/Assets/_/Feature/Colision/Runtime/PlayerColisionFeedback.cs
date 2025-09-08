@@ -18,6 +18,7 @@ namespace Colision.Runtime
             
             _bumpChrono -= Time.deltaTime;
             _playerRigidbody.AddForce(_bumpDirection * _forceWeapon, ForceMode.Impulse);
+            
             if (_bumpChrono <= 0)
             {
                 _isBumping = false;
@@ -27,9 +28,9 @@ namespace Colision.Runtime
 
         #endregion
         
-        #region Utils
+        #region Publics Methods
         
-        [Server]
+        
         public void PlayerBumpOnHit(Vector3 hitPosition, float force)
         {
            if (_isBumping) return;
@@ -49,6 +50,19 @@ namespace Colision.Runtime
            _playerMovement.m_isBumping = true;
         }
         
+        [Command(requiresAuthority = false)]
+        public void CMDPlayerBumpOnHit(Vector3 direction, float force)
+        {
+            PlayerBumpOnHit(direction, force);
+        }
+        
+        
+        #endregion
+        
+        #region Utils
+
+        
+        
         
         #endregion
 
@@ -56,7 +70,7 @@ namespace Colision.Runtime
         #region Privates
 
         
-        private HealthBehaviour _playerHealth;
+        private HealthBehaviour _playerHealth => GetComponent<HealthBehaviour>();
         private PlayerMovement _playerMovement => GetComponentInParent<PlayerMovement>();
         private XROrigin _xROrigin => _playerMovement.m_XROrigin;
         private Rigidbody _playerRigidbody => _xROrigin.GetComponent<Rigidbody>();
@@ -67,7 +81,7 @@ namespace Colision.Runtime
         private float _bumpChrono;
         
 
-        private Vector3 _bumpDirection;
+        private Vector3 _bumpDirection = new Vector3(0f, 0f, 0f);
         private float _forceWeapon;
         private bool _isBumping;
         

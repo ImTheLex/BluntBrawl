@@ -15,5 +15,6 @@ MonoBehaviour:
   m_damage: 5
   m_velocityRequired: 1.2
   m_velocityDamageMultiplier: 1
+  m_invincibilityDuration: 5
   m_inWorldPrefab: {fileID: 2350312154220774817, guid: 36d8c7095d57648c0b4db9e878378a49, type: 3}
   m_inHandPrefab: {fileID: 1956511803332399994, guid: c3882abefec32364996b71e677ea029a, type: 3}

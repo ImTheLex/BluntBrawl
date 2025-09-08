@@ -13,6 +13,8 @@ namespace Weapon.Runtime
             //public float m_speedRequired;
             public float m_velocity => _weaponVelocity;
             public int m_damage => _weaponData.m_damage;
+            
+            public float m_invincibilityDuration => _weaponData.m_invincibilityDuration;
             public int m_velocityDamage => _weaponData.m_velocityDamageMultiplier;
             public GameObject m_owner;
             

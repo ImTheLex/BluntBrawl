@@ -597,6 +597,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  m_playerCurrentHealth: 0
+  m_playerName: 
 --- !u!1001 &4768570571888899634
 PrefabInstance:
   m_ObjectHideFlags: 0

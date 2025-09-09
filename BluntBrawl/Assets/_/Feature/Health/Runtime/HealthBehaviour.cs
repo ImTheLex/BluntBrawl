@@ -161,7 +161,7 @@ namespace Health.Runtime
             public void CmdHandleDamageableDeath()
             {
                 CmdResetHealth();
-                _roundPlayer.SetDefeat();
+                _roundPlayer.CmdSetDefeat();
             }
             
             
@@ -299,6 +299,7 @@ namespace Health.Runtime
                 if (isLocalPlayer)
                 {
                     if(m_text){m_text.text = currentHealth.ToString();}
+                    _roundPlayer.CmdSetCurrentPlayerHealth(currentHealth);
                     HandleHealth();
                     
                 }

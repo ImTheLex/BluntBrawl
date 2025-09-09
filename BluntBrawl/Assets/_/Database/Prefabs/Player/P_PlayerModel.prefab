@@ -220,7 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fb0cd640d2b9044b0f0c482131a2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerRigidbody: {fileID: 0}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _vecticalForcePerDamage: 0.1
+  _horizontalForcePerDamage: 0.5
+  _baseForce: 5
+  _bumpTimer: 0.25
 --- !u!1001 &1422250334576864608
 PrefabInstance:
   m_ObjectHideFlags: 0

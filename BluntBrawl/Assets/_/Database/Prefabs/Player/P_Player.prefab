@@ -536,6 +536,9 @@ MonoBehaviour:
   m_isBumping: 0
   _playerOrigin: {fileID: 187618716551820272}
   _moveSpeed: 3
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   _rotateAngle: 20
   _dashDuration: 0.25
   _dashTimeWindow: 0.4

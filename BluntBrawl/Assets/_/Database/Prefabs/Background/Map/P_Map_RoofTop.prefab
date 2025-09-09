@@ -72,7 +72,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8034582151063609080
 Transform:
   m_ObjectHideFlags: 0
@@ -10247,6 +10247,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a4e4d747da509d444a02aacd87e82ec7, type: 3}
       propertyPath: m_Name
       value: 3D_Map_RoofTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4e4d747da509d444a02aacd87e82ec7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -10,6 +10,10 @@ public class WeaponStats : ScriptableObject
     public float m_invincibilityDuration;
     public float m_force;
 
+	public Color m_velocityMatchedColor;
+	public Color m_onCooldownColor;
+	public Color m_readyToUseColor;
+
     public GameObject m_inWorldPrefab;
     public GameObject m_inHandPrefab;
 }

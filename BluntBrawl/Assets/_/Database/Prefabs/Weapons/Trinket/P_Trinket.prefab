@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8103131393001990526}
+  - component: {fileID: 7051454817584410813}
   m_Layer: 0
   m_Name: P_Trinket
   m_TagString: Untagged
@@ -64,6 +65,20 @@ Transform:
   - {fileID: 6705911136126600355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7051454817584410813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719199770800939554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fac32b6fb3a647e39117519bff488e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponBehaviour: {fileID: 0}
+  _lightRenderer: {fileID: 7703584427557401454}
 --- !u!1001 &2510407511058826947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,5 +139,10 @@ PrefabInstance:
 --- !u!4 &2692162096986005800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
+  m_PrefabInstance: {fileID: 2510407511058826947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7703584427557401454 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5205707535195600301, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
   m_PrefabInstance: {fileID: 2510407511058826947}
   m_PrefabAsset: {fileID: 0}

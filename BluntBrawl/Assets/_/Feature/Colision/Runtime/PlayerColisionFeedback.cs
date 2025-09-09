@@ -43,15 +43,15 @@ namespace Colision.Runtime
            direction.x *= _horizontalForcePerDamage * force * currentDamage;
            direction.z *= _horizontalForcePerDamage * force * currentDamage;
            
-           _bumpDirection = direction;
+           _bumpDirection = direction.normalized;
            _bumpChrono = _bumpTimer;
            _forceWeapon = force;
            _isBumping = true;
            _playerMovement.m_isBumping = true;
         }
         
-        [Command(requiresAuthority = false)]
-        public void CMDPlayerBumpOnHit(Vector3 direction, float force)
+        [TargetRpc]
+        public void TargetPlayerBumpOnHit(NetworkConnectionToClient target, Vector3 direction, float force)
         {
             PlayerBumpOnHit(direction, force);
         }

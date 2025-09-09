@@ -12,6 +12,12 @@ namespace Weapon.Runtime
 
             //public float m_speedRequired;
             public float m_velocity => _weaponVelocity;
+            public float m_requiredVelocity => _weaponData.m_velocityRequired;
+
+            [HideInInspector] public bool m_hasHit;
+            public Color m_velocityMatchedColor => _weaponData.m_velocityMatchedColor;
+            public Color m_onCooldownColor => _weaponData.m_onCooldownColor;
+            public Color m_readyToUseColor => _weaponData.m_readyToUseColor;
             public int m_damage => _weaponData.m_damage;
             
             public float m_invincibilityDuration => _weaponData.m_invincibilityDuration;
@@ -28,7 +34,7 @@ namespace Weapon.Runtime
         {
             
             _itemGrabber = GetComponentInParent<ItemGrabber>();
-          
+            _debugTimer = m_invincibilityDuration;
             //_itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
         }
 
@@ -43,6 +49,15 @@ namespace Weapon.Runtime
         private void Update()
         {
             HandleDamageColliderOnVelocity();
+            if (m_hasHit)
+            {
+                _debugTimer -= Time.deltaTime;
+            }
+            if (_debugTimer <= 0)
+            {
+                m_hasHit = false;
+                _debugTimer = m_invincibilityDuration;
+            }
         }
         
         #endregion
@@ -93,7 +108,7 @@ namespace Weapon.Runtime
             private Vector3 _previousPos;
             [SerializeField] private ItemGrabber _itemGrabber;
             
-
+            private float _debugTimer;
             private WeaponStats _weaponData => GetComponent<ItemBehaviour>().m_weaponData;
 
 

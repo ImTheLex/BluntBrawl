@@ -65,7 +65,18 @@ MonoBehaviour:
   playerPrefab: {fileID: 4139709100620377146, guid: b2057013f617be44aa7f1f4bd75469d9, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 3977747580226826716, guid: e2523d06c90b744abbf381560514927a, type: 3}
+  - {fileID: 2350312154220774817, guid: c8b9efc12bcdf487eb88fb4dd41e80ca, type: 3}
+  - {fileID: 7446135580147635493, guid: ec79aa7cfcfa53743a1453cc6a67fe18, type: 3}
+  - {fileID: 8375742226066822164, guid: bec7ccf3b635640478fb58568d27d2ba, type: 3}
+  - {fileID: 919615289787293967, guid: d06fe26c5dc65314da5065ccb03e2fc5, type: 3}
+  - {fileID: 1956511803332399994, guid: c3882abefec32364996b71e677ea029a, type: 3}
+  - {fileID: 2350312154220774817, guid: fefa140f4ad0c4222823d72fecb3d15f, type: 3}
+  - {fileID: 841164805902355239, guid: c2385437d8136472892410efa389fbaa, type: 3}
+  - {fileID: 2350312154220774817, guid: e9004c861940c411a96a6cb923c9ff1e, type: 3}
+  - {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
+  - {fileID: 2350312154220774817, guid: 36d8c7095d57648c0b4db9e878378a49, type: 3}
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2

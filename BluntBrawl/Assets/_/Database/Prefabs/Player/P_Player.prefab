@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 2488156854
+  _assetId: 2654449017
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -543,7 +543,7 @@ MonoBehaviour:
   _dashDuration: 0.25
   _dashTimeWindow: 0.4
   _dashForce: 35
-  _dashCooldown: 1
+  _dashCooldown: 2.5
   _leftController: {fileID: 1018988536599595518}
   _rightController: {fileID: 7522599289072299311}
   _itemGrabber: {fileID: 3605401159702284481}

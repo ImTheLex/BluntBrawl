@@ -37,6 +37,7 @@ TagManager:
   - UI
   - Model
   - XROrigin
+  - Ground
   - 
   - 
   - 
@@ -58,8 +59,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - ShaderOutline
   - 
   m_SortingLayers:
   - name: Default

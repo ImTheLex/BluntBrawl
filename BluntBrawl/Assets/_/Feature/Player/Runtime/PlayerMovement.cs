@@ -43,42 +43,33 @@ namespace Player.Runtime
 
         private void OnEnable() => _playerInputActions.Enable();
 
-        public override void OnStartClient()
-        {
-            base.OnStartClient();
-            if (!isLocalPlayer) return;
-
-            
-        }
-
+        
         private void OnDisable() => _playerInputActions.Disable();
 
         private void Update()
         {
-            if (isLocalPlayer)
+            if (!isLocalPlayer) return;
+            TrackingPositionController();
+            TrackingRotationController();
+            if (DetectKillZ()) _playerRigidbody.position = new Vector3(0, 5, 0);
+            if (m_isBumping) return;
+            if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
+            if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
+            if (_isDashing)
             {
-                TrackingPositionController();
-                TrackingRotationController();
-                if (m_isBumping) return;
-                if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
-                if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
-                if (_isDashing)
+                _dashChrono += Time.deltaTime;
+                Dash();
+                if (_dashChrono > _dashDuration)
                 {
-                    _dashChrono += Time.deltaTime;
-                    Dash();
-                    if (_dashChrono > _dashDuration)
-                    {
-                        _dashChrono = 0;
-                        _dashCooldownChrono = _dashCooldown;
-                        _isDashing = false;
-                    }
+                    _dashChrono = 0;
+                    _dashCooldownChrono = _dashCooldown;
+                    _isDashing = false;
                 }
-                Move();
             }
+            Move();
         }
-        
-        
 
+        
 
         #endregion
 
@@ -203,18 +194,27 @@ namespace Player.Runtime
         
         private void Move()
         {
+            if (!IsGrounded())
+            {
+                _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
+                return;
+            }
+            
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y +
                                      _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
-
-            // if (_isSprinting)
-            //     _playerRigidbody.linearVelocity =
-            //         inputDirection * (_moveSpeed * (_sprintMultiplier > 1f ? _sprintMultiplier : 1f));
-            //else
-            _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
             
-            if (_playerInputMovement.magnitude <= 0f)
-                _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
+            _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
+        }
+
+        private bool IsGrounded()
+        {
+            return Physics.OverlapSphere(_XROrigin.transform.position,0.3f, _groundLayer).Length > 0;
+        }
+        
+        private bool DetectKillZ()
+        {
+            return _playerRigidbody.position.y <= -15f;
         }
         
         private void MoveHead(Vector2 direction)
@@ -263,6 +263,7 @@ namespace Player.Runtime
         [Header("Settings for Movement")]
         [SerializeField, Tooltip("XROrigin of this player")] private Transform _playerOrigin;
         [SerializeField, Tooltip("Meter per second")] private float _moveSpeed;
+        [SerializeField] private LayerMask _groundLayer;
         private bool _isSprinting;
         //[SerializeField] private float _sprintMultiplier;
         
@@ -310,6 +311,7 @@ namespace Player.Runtime
         [SerializeField] private ItemGrabber _itemGrabber;
         
         [SerializeField] private SpawnPrefabCube _spawnPrefabCube;
+        
         
 
         #endregion

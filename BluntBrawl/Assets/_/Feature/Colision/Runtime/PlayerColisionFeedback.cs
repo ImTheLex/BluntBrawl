@@ -1,3 +1,4 @@
+using Animation.Runtime;
 using Health.Runtime;
 using Interfaces.Runtime;
 using Mirror;
@@ -22,6 +23,7 @@ namespace Colision.Runtime
             if (_bumpChrono <= 0)
             {
                 _isBumping = false;
+                _faceOffset.ChangeFace("normal");
                 _playerMovement.m_isBumping = false;
             }
         }
@@ -48,6 +50,8 @@ namespace Colision.Runtime
            _forceWeapon = force;
            _isBumping = true;
            _playerMovement.m_isBumping = true;
+           
+           _faceOffset.ChangeFace("hurt" + Random.Range(0, 2));
         }
         
         [TargetRpc]
@@ -61,7 +65,7 @@ namespace Colision.Runtime
         
         #region Utils
 
-        
+
         
         
         #endregion
@@ -84,11 +88,13 @@ namespace Colision.Runtime
         private Vector3 _bumpDirection = new Vector3(0f, 0f, 0f);
         private float _forceWeapon;
         private bool _isBumping;
-        
+
+        [SerializeField]private FaceOffset _faceOffset;
+
 
 
         #endregion
 
-        
+
     }
 }

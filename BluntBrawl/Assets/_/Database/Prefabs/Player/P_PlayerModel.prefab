@@ -206,7 +206,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3395360181205252950}
-  - component: {fileID: 103806253118431304}
   m_Layer: 30
   m_Name: IK_HAND.R_target
   m_TagString: Untagged
@@ -229,22 +228,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 340387881749682964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &103806253118431304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3216798172351312735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c313060f29a96747a355e67ee1de325, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  _handToFollow: {fileID: 3046959587251133213}
 --- !u!1 &5181373293613480173
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +500,7 @@ MonoBehaviour:
   _horizontalForcePerDamage: 0.5
   _baseForce: 5
   _bumpTimer: 0.25
+  _faceOffset: {fileID: 0}
 --- !u!1 &7166222518744904851
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +541,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2001429715001649969}
-  - component: {fileID: 3352470732480931726}
   m_Layer: 30
   m_Name: IK_HAND.L_target
   m_TagString: Untagged
@@ -580,22 +563,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8972859115575977896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3352470732480931726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8450727883675588699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c313060f29a96747a355e67ee1de325, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  _handToFollow: {fileID: 5479034697992863692}
 --- !u!1 &8975950182032862487
 GameObject:
   m_ObjectHideFlags: 0

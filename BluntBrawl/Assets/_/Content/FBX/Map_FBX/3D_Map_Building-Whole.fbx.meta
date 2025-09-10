@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: MAT_Texture_Map
     second: {fileID: 2100000, guid: 27d7475d870c4984fa0a3a9d3f066d51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_map_main-palette
+    second: {fileID: 2100000, guid: 27d7475d870c4984fa0a3a9d3f066d51, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

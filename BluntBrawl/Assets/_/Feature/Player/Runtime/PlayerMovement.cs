@@ -49,12 +49,16 @@ namespace Player.Runtime
         private void Update()
         {
             if (!isLocalPlayer) return;
+            
             TrackingPositionController();
             TrackingRotationController();
+            
             if (DetectKillZ()) _playerRigidbody.position = new Vector3(0, 5, 0);
             if (m_isBumping) return;
+            
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
             if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
+            
             if (_isDashing)
             {
                 _dashChrono += Time.deltaTime;
@@ -65,6 +69,8 @@ namespace Player.Runtime
                     _dashCooldownChrono = _dashCooldown;
                     _isDashing = false;
                 }
+
+                return;
             }
             Move();
         }

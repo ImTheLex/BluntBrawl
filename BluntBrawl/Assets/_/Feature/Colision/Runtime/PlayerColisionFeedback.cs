@@ -51,7 +51,7 @@ namespace Colision.Runtime
            _isBumping = true;
            _playerMovement.m_isBumping = true;
            
-           _faceOffset.ChangeFace("hurt" + Random.Range(0, 2));
+           _faceOffset.ChangeFace("hurt" + Random.Range(1,3));
         }
         
         [TargetRpc]
@@ -59,8 +59,21 @@ namespace Colision.Runtime
         {
             PlayerBumpOnHit(direction, force);
         }
-        
-        
+
+        [ContextMenu("ChangeFace")]
+        public void ChangeFaceDebug()
+        {
+            if (!_isFacingRight)
+            {
+                _faceOffset.ChangeFace("hurt"+ Random.Range(1, 3));
+                _isFacingRight = true;
+            }
+            else
+            {
+                _faceOffset.ChangeFace("normal");
+                _isFacingRight = false;
+            }
+        }
         #endregion
         
         #region Utils
@@ -90,6 +103,8 @@ namespace Colision.Runtime
         private bool _isBumping;
 
         [SerializeField]private FaceOffset _faceOffset;
+        
+        private bool _isFacingRight = false;
 
 
 

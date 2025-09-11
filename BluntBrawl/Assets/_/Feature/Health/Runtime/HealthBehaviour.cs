@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Interfaces.Runtime;
 using Mirror;
@@ -52,7 +51,7 @@ namespace Health.Runtime
                 if (_isPlayer)
                 {
                     _maxBars = _bars.Count;
-                    _notLocalPlayerSphereRenderer.material.color = GetColor();
+                    //_notLocalPlayerSphereRenderer.material.color = GetColor();
                     if (m_canvas) m_canvas.gameObject.SetActive(true);
                     
                 }
@@ -77,7 +76,7 @@ namespace Health.Runtime
                         }
                     }
                     
-                    _notLocalPlayerSphereRenderer.gameObject.SetActive(true);
+                    //_notLocalPlayerSphereRenderer.gameObject.SetActive(true);
                 }
 
                 if (isLocalPlayer == true)
@@ -89,7 +88,7 @@ namespace Health.Runtime
                             bar.GetComponent<Renderer>().material.color = Color.green;
                         }
                     }
-                    _notLocalPlayerSphereRenderer.gameObject.SetActive(false);
+                    //_notLocalPlayerSphereRenderer.gameObject.SetActive(false);
                     
                 } 
             }
@@ -189,7 +188,7 @@ namespace Health.Runtime
             {
                 if (_isPlayer)
                 {
-                    _notLocalPlayerSphereRenderer.material.color = GetColor();
+                    _notLocalPlayerSphereRenderer.SetPropertyBlock(null,0);
                 }
                 else m_renderer.material.color = baseColor;
             }
@@ -246,7 +245,7 @@ namespace Health.Runtime
             private void RpcFlash()
             {
                 if (m_renderer != null) m_renderer.material.color = Color.red;
-                if (_isPlayer) _notLocalPlayerSphereRenderer.material.color = Color.red;
+                if (_isPlayer) _notLocalPlayerSphereRenderer.SetPropertyBlock(GetMaterialPropertyBlock(),0);
                 Debug.Log("RPC Flash");
                 Invoke(nameof(ResetColor), 0.5f);
             }
@@ -291,6 +290,13 @@ namespace Health.Runtime
                 }
             }
 
+            private MaterialPropertyBlock GetMaterialPropertyBlock()
+            {
+                MaterialPropertyBlock block = new MaterialPropertyBlock();
+                block.SetColor("_BaseColor", Color.red);
+                return block;
+            }
+
             // 
             // 1) couldn't find how to set back the s to 1 and give it to the color.
             // 2) Doesn't work on SkinnedMeshMaterial in our case cause its color is blank or some sort.
@@ -320,7 +326,7 @@ namespace Health.Runtime
                 }
                 else
                 {
-                    _notLocalPlayerSphereRenderer.material.color = GetColor();
+                    //_notLocalPlayerSphereRenderer.material.color = GetColor();
                 }
                
             }
@@ -351,7 +357,7 @@ namespace Health.Runtime
         
             private Color baseColor;
             
-            [SerializeField] private Renderer _notLocalPlayerSphereRenderer;
+            [SerializeField] private SkinnedMeshRenderer _notLocalPlayerSphereRenderer;
             [SerializeField] private RoundPlayer _roundPlayer;
             
             [SerializeField] private bool _isPlayer;

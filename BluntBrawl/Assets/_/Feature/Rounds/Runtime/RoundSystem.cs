@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Rounds.Runtime
             public static RoundSystem Instance;
             public RoundStats m_roundStats;
             public float m_currentRoundTime => _roundTimer;
+            public float m_preStartRoundTimer => _preStartRoundTimer;
 
         #endregion
 
@@ -37,22 +39,40 @@ namespace Rounds.Runtime
         private void Start()
         {
             // Initialisé uniquement côté serveur
-            _roundTimer = m_roundStats.m_maxRountTime;
+            _roundTimer = m_roundStats.m_maxRoundTime;
         }
 
         [ServerCallback]
         private void Update()
         {
             
-            if (!_roundBreak && !_roundStarted && _players.Count >= m_roundStats.m_requiredPlayers)
+            if (_currentRound > m_roundStats.m_maxRounds)
             {
-                _roundStarted = true;
-                StartRound();
+                EndMatch();
+                return;
             }
 
+            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted)
+            {
+                PreStartRound();
+            }
+            
+            if (_isPreStartingRound)
+            {
+                
+                _preStartRoundTimer -= Time.deltaTime;
+                RpcUpdatePreStartRoundTimer();
+                
+                if (_preStartRoundTimer <= 0)
+                {
+                    StartRound();
+                }
+            }
+            
             if (_roundStarted && !_roundBreak)
             {
                 _roundTimer -= Time.deltaTime;
+                RpcUpdateRoundTimer();
                 if (_roundTimer <= 0)
                 {
                     EndRound();
@@ -64,26 +84,43 @@ namespace Rounds.Runtime
 
         #region Main Methods
 
+
+        [Server]
+        public void PreStartRound()
+        {
+            ResetPlayers();
+            _isPreStartingRound = true;
+            _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
+        }
+        
         [Server]
         public void StartRound()
         {
             Debug.Log("Round started!");
-            _roundTimer = m_roundStats.m_maxRountTime;
-            foreach (var player in _playersAlive)
-            {
-                Debug.Log("Player " + player.m_playerName+ " is alive!");
-            }
+            _isPreStartingRound = false;
+            _roundStarted = true;
+            _roundTimer = m_roundStats.m_maxRoundTime;
         }
         
         [Server]
         public void EndRound()
         {
             Debug.Log("Round ended!");
+            
             _roundStarted = false;
             _roundBreak = true;
+            CheckWinners();
+            _currentRound++;
+            RepopulatePlayers();
+            Invoke(nameof(ClearBreak), 3f); 
+
         }
 
-        
+        public void EndMatch()
+        {
+           _matchWinner = _playersAlive.OrderByDescending(p => p.m_roundsWon).First();
+           RpcBroadcast($"Match won by\n{_matchWinner.m_playerName}");
+        }
         
         [Server]
         public void SetRoundWinner()
@@ -102,9 +139,10 @@ namespace Rounds.Runtime
             if (_playersAlive.Count == 1)
             {
                 _winnerPlayer = _playersAlive[0];
+                _winnerPlayer.m_roundsWon++;
                 Invoke(nameof(SetRoundWinner),3f);
             }
-            
+            Invoke(nameof(ClearBreak),6f);
         }
         
         
@@ -112,35 +150,81 @@ namespace Rounds.Runtime
 
         #region Utils
 
-        private void UpdateRoundTimer(float oldValue, float newValue)
+
+        private void RepopulatePlayers()
         {
-            if (_roundBreak) return;
-            foreach (var text in m_texts)
+            foreach (var player in _players)
             {
-                //text.text = "Time\n" + newValue.ToString("F2");
+                if(!_playersAlive.Contains(player)) _playersAlive.Add(player);
             }
         }
+        
+        private void ResetPlayers()
+        {
+            foreach (var player in _playersAlive)
+            {
+                player.InitializePlayer();
+            }
+        }
+        
+        private void ForEachTextType(string message)
+        {
+            foreach (var text in m_texts)
+            {
+                text.text = message;
+            }
+        }
+        private void CheckWinners()
+        {
+            if (_playersAlive.Count > 1)
+            {
+                RpcBroadcastMatchNull();
+            }
+        }
+        
+        [ClientRpc]
+        private void RpcUpdatePreStartRoundTimer()
+        {
+            //if (_roundBreak) return;
+            var message = "Time\n" + m_preStartRoundTimer.ToString("F2");
+            ForEachTextType(message);
+        }
+        
+        [ClientRpc]
+        private void RpcUpdateRoundTimer()
+        {
+            if (_roundBreak) return;
+            var message = "Time\n" + m_currentRoundTime.ToString("F2");
+            ForEachTextType(message);
+        }
 
+        [ClientRpc]
+        private void RpcBroadcast(string message)
+        {
+            ForEachTextType(message);
+        }
+        
+        [ClientRpc]
+        private void RpcBroadcastMatchNull()
+        {
+            var message = "Match Null";
+            ForEachTextType(message);
+        }
         
         [ClientRpc]
         private void RpcBroadcastLoser(string loserName)
         {
             Debug.Log($"[CLIENT RPC] Broadcast loser: {loserName}");
-            foreach (var text in m_texts)
-            {
-                text.text = "Disconnected :\n" + loserName;
-            }
-            Invoke(nameof(ClearBreak),4f);
+            var message = "Disconnected :\n" + loserName;
+            ForEachTextType(message);
         }
 
 
         [ClientRpc]
         private void RpcBroadcastWinner(string winnerName)
         {
-            foreach (var text in m_texts)
-            {
-                text.text = "Winner \n" + winnerName;
-            }
+            var message = "Winner \n" + winnerName;
+            ForEachTextType(message);
         }
         
         [Client]
@@ -165,13 +249,15 @@ namespace Rounds.Runtime
             if(!_playersAlive.Contains(player)) _playersAlive.Add(player);
             
             string name;
-            for (int i = 0; i < _players.Count; i++)
-            {
-                if (i == 0) name = "Host";
-                else name = "Player Client " + i;
-                player.CmdSetPlayerName(name);
-            }
-            
+                if(_playersAlive.Count == 1)
+                  name = "Host";
+                else name = "Player Client " + (_playersAlive.Count - 1);
+                
+           //NetworkIdentity identity = player.GetComponent<NetworkIdentity>();
+           //player.RpcSetPlayerName(identity.connectionToClient,name);
+
+           player.m_playerName = name;
+
         }
 
         [Server]
@@ -186,11 +272,17 @@ namespace Rounds.Runtime
         #region Privates
         
         [SyncVar] private RoundPlayer _winnerPlayer;
+        [SyncVar] private RoundPlayer _matchWinner;
+
+        [SyncVar] private bool _isPreStartingRound = false;
+        [SyncVar] private float _preStartRoundTimer;
+        
         [SyncVar] private bool _roundStarted = false;
         [SyncVar] private bool _roundBreak = false;
+        [SyncVar] private float _roundTimer;
+        [SyncVar] private int _currentRound = 1;
         [SyncVar] private float _broadCastCurrentTimer;
-        [SyncVar(hook = nameof(UpdateRoundTimer))] private float _roundTimer;
-        [SyncVar] private float _broadCastTimer = 15f;
+        
         [SerializeField] private List<TMP_Text> m_texts;
 
         #endregion

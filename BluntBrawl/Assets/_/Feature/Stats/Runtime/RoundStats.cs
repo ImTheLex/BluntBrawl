@@ -4,7 +4,8 @@ using UnityEngine;
 public class RoundStats : ScriptableObject
 {
    public int m_maxRounds;
-   public float m_maxRountTime;
+   public float m_preStartRoundTimer;
+   public float m_maxRoundTime;
    public int m_requiredPlayers;
 
 

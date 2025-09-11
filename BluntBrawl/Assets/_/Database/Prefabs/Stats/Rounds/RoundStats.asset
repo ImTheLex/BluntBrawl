@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: RoundStats
   m_EditorClassIdentifier: 
   m_maxRounds: 3
-  m_maxRountTime: 120
+  m_preStartRoundTimer: 10
+  m_maxRoundTime: 180
   m_requiredPlayers: 2

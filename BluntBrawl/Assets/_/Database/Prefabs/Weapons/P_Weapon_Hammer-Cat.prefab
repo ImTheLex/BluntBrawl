@@ -470,8 +470,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3555998258140310378}
   - {fileID: 7544685602323295380}
+  - {fileID: 3555998258140310378}
   - {fileID: 4015132226681985527}
   - {fileID: 6492230668729129001}
   - {fileID: 4808531335564276715}
@@ -678,7 +678,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 23c9a0fb2b032ea47ae9ea26a4ddafb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23c9a0fb2b032ea47ae9ea26a4ddafb2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -719,6 +719,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 23c9a0fb2b032ea47ae9ea26a4ddafb2, type: 3}
       propertyPath: m_Name
       value: 3D_wpn_hammer-cat_V02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23c9a0fb2b032ea47ae9ea26a4ddafb2, type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

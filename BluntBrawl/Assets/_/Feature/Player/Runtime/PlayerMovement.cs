@@ -202,9 +202,10 @@ namespace Player.Runtime
         {
             if (!IsGrounded())
             {
-                _playerRigidbody.linearVelocity = Physics.gravity * _playerRigidbody.mass;
+                _playerRigidbody.linearVelocity += Physics.gravity * _playerRigidbody.mass;
                 return;
             }
+            
             
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y +
                                      _playerHead.right * _playerInputMovement.x;
@@ -215,7 +216,7 @@ namespace Player.Runtime
 
         private bool IsGrounded()
         {
-            return Physics.OverlapSphere(_XROrigin.transform.position,0.3f, _groundLayer).Length > 0;
+            return Physics.OverlapSphere(_XROrigin.transform.position + new Vector3(0f,0.3f,0f),0.3f, _groundLayer).Length > 0;
         }
         
         private bool DetectKillZ()

@@ -10,8 +10,8 @@ namespace Animation.Runtime
         
         #region Main methods
 
-
-        public void ChangeFace(string name) => _faceMaterial.mainTextureOffset = _offsets[name];
+        [TargetRpc]
+        public void ChangeFace(NetworkConnectionToClient target, string name) => _faceMaterial.mainTextureOffset = _offsets[name];
 
 
         #endregion

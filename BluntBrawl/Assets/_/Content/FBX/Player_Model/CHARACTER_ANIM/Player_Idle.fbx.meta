@@ -15,7 +15,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
-    motionNodeName: 
+    motionNodeName: <Root Transform>
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Player_Idle' has import animation warnings
       that might lower retargeting quality:\nNote: Activate translation DOF on avatar

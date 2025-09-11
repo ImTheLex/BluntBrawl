@@ -10,8 +10,14 @@ namespace Animation.Runtime
         
         #region Main methods
 
-        [TargetRpc]
-        public void ChangeFace(NetworkConnectionToClient target, string name) => _faceMaterial.mainTextureOffset = _offsets[name];
+        public void ChangeFace(string name)
+        {
+            MaterialPropertyBlock block = new MaterialPropertyBlock();
+            Vector2 offset = _offsets[name];
+            Vector4 face = new Vector4(1,1,offset.x,offset.y);
+            block.SetVector("_BaseMap_ST", face);
+            _faceMeshRenderer.SetPropertyBlock(block,1);
+        } 
 
 
         #endregion
@@ -33,7 +39,7 @@ namespace Animation.Runtime
         };
         
         [SerializeField] private SkinnedMeshRenderer _faceMeshRenderer;
-        private Material _faceMaterial => _faceMeshRenderer.sharedMaterials[1];
+        
 
         #endregion
     }

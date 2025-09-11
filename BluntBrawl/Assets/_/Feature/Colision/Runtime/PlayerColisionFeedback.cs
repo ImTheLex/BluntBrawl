@@ -13,14 +13,10 @@ namespace Colision.Runtime
         
         #region UnityAPI
 
-        public override void OnStartLocalPlayer()
-        {
-            base.OnStartLocalPlayer();
-            _identity = transform.root.GetComponent<NetworkIdentity>();
-        }
-
+        
         private void Update()
         {
+            if (!isLocalPlayer) return;
             if (!_isBumping) return;
             
             _bumpChrono -= Time.deltaTime;
@@ -29,10 +25,8 @@ namespace Colision.Runtime
             if (_bumpChrono <= 0)
             {
                 _isBumping = false;
-                
-                if (isLocalPlayer)
-                    _faceOffset.ChangeFace(_identity.connectionToClient,"normal");
                 _playerMovement.m_isBumping = false;
+                _faceOffset.ChangeFace("normal");
             }
         }
 
@@ -58,10 +52,8 @@ namespace Colision.Runtime
            _forceWeapon = force;
            _isBumping = true;
            _playerMovement.m_isBumping = true;
-           
-           if (isLocalPlayer)
-               _faceOffset.ChangeFace(_identity.connectionToClient,"hurt" + Random.Range(1,3));
-        }
+           _faceOffset.ChangeFace("hurt" + Random.Range(1,3));
+           }
         
         [TargetRpc]
         public void TargetPlayerBumpOnHit(NetworkConnectionToClient target, Vector3 direction, float force)
@@ -114,8 +106,6 @@ namespace Colision.Runtime
         [SerializeField]private FaceOffset _faceOffset;
         
         private bool _isFacingRight = false;
-        
-        private NetworkIdentity _identity;
 
 
 

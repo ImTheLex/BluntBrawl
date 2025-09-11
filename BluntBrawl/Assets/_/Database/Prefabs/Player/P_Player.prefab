@@ -659,9 +659,7 @@ PrefabInstance:
       propertyPath: _roundPlayer
       value: 
       objectReference: {fileID: 1767451311726051443}
-    m_RemovedComponents:
-    - {fileID: 103806253118431304, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-    - {fileID: 3352470732480931726, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

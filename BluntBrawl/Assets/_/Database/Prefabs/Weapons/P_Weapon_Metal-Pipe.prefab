@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40514b37f837f4fe380026fb965036e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speedRequired: 0
+  m_hasHit: 0
   m_owner: {fileID: 0}
   _localPositionReference: {fileID: 0}
   _weaponDamageCollider: {fileID: 2904616482782881500}
@@ -236,6 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2127f25dfdac4651a83987aa33d6001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   m_weaponBehaviour: {fileID: 6622204694922976869}
 --- !u!1 &2325724335061568971
 GameObject:
@@ -653,6 +656,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 32474bf56304f8a499a4cae03db33d61, type: 3}
       propertyPath: m_Name
       value: 3D_wpn_metal-pipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32474bf56304f8a499a4cae03db33d61, type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

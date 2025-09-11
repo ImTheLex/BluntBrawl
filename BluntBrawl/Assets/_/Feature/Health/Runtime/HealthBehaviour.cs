@@ -10,6 +10,7 @@ namespace Health.Runtime
 {
     public class HealthBehaviour : NetworkBehaviour, IDamageable
     {
+        private static readonly int Color1 = Shader.PropertyToID("_Color");
 
         #region Publics
 
@@ -48,10 +49,18 @@ namespace Health.Runtime
             private void Awake()
             {
                 _currentHealth = _maxHealth;
-                _maxBars = _bars.Count;
+                if (_isPlayer)
+                {
+                    _maxBars = _bars.Count;
+                    _notLocalPlayerSphereRenderer.material.color = GetColor();
+                    if (m_canvas) m_canvas.gameObject.SetActive(true);
+                    
+                }
+                else
+                {
+                    if(m_renderer != null) baseColor = m_renderer.material.color;
+                }
                 
-                if(m_renderer != null) baseColor = m_renderer.material.color;
-                if(m_canvas){m_canvas.gameObject.SetActive(true);}
             }
 
 
@@ -82,7 +91,7 @@ namespace Health.Runtime
                     }
                     _notLocalPlayerSphereRenderer.gameObject.SetActive(false);
                     
-                }
+                } 
             }
 
             private void Update()
@@ -160,8 +169,9 @@ namespace Health.Runtime
             [Command(requiresAuthority = false)]
             public void CmdHandleDamageableDeath()
             {
+                if(_isPlayer)_roundPlayer.CmdSetDefeat();
                 CmdResetHealth();
-                _roundPlayer.CmdSetDefeat();
+
             }
             
             
@@ -177,7 +187,11 @@ namespace Health.Runtime
             
             public void ResetColor()
             {
-                m_renderer.material.color = baseColor;
+                if (_isPlayer)
+                {
+                    _notLocalPlayerSphereRenderer.material.color = GetColor();
+                }
+                else m_renderer.material.color = baseColor;
             }
             
             public void ResetHealth()
@@ -211,6 +225,8 @@ namespace Health.Runtime
             public void DebugCmdTakeDamage()
             {
                 CmdTakeDamage(30);
+                //UpdateHealthColor();
+                
             }
             
             [ContextMenu("Debug TakeDamage")]
@@ -229,9 +245,9 @@ namespace Health.Runtime
             [ClientRpc]
             private void RpcFlash()
             {
-                if (m_renderer == null) return;
-                
-                m_renderer.material.color = Color.red;
+                if (m_renderer != null) m_renderer.material.color = Color.red;
+                if (_isPlayer) _notLocalPlayerSphereRenderer.material.color = Color.red;
+                Debug.Log("RPC Flash");
                 Invoke(nameof(ResetColor), 0.5f);
             }
             
@@ -243,31 +259,14 @@ namespace Health.Runtime
 
             private void HandleHealth()
             {
+                if (!_isPlayer) return;
                 //if (!isLocalPlayer) return;
                 float healthPercentage = (float)_currentHealth / (float)_maxHealth;
                 _activeBars = Mathf.CeilToInt(healthPercentage * _maxBars);
 
                 for (int i = 0; i < _bars.Count; i++)
                 {
-
                     _bars[i].gameObject.GetComponent<Renderer>().material.color = GetColor();
-                    
-                    /*if (_currentHealth <= (_maxHealth / 4) * 3)
-                    {
-                        
-                        _bars[i].gameObject.GetComponent<Renderer>().material.color = Color.yellow;
-                    }
-
-                    if (_currentHealth <= (_maxHealth / 2))
-                    {
-                        _bars[i].gameObject.GetComponent<Renderer>().material.color = Color.magenta;
-                        
-                    }
-                    if (_currentHealth <= (_maxHealth / 4))
-                    {
-                        _bars[i].gameObject.GetComponent<Renderer>().material.color = Color.red;
-                    }
-                    */
                     _bars[i].SetActive(i < _activeBars);
                 }
             }
@@ -288,10 +287,26 @@ namespace Health.Runtime
                 }
                 else                                       
                 {
-                    return Color.green;
+                   return Color.green;
                 }
             }
-            
+
+            // 
+            // 1) couldn't find how to set back the s to 1 and give it to the color.
+            // 2) Doesn't work on SkinnedMeshMaterial in our case cause its color is blank or some sort.
+            // 3) This was kinda working on the floating Sphere.
+            private void UpdateHealthColor()
+            {
+                float t = Mathf.Clamp01((float)_currentHealth / (float)_maxHealth);
+                
+                Color.RGBToHSV(_notLocalPlayerSphereRenderer.material.color, out float h, out float s, out float v);
+
+                float newSaturation = Mathf.Lerp(s, 0f, 1f - t); 
+                Color newColor = Color.HSVToRGB(h, newSaturation, v);
+
+                _notLocalPlayerSphereRenderer.material.color = newColor;
+                Debug.Log("Saturation: " + newSaturation + "T:"  + t + "New Color : " + newColor);
+            }
             
             private void UpdateHealth(int previousHealth, int currentHealth)
             {
@@ -299,7 +314,7 @@ namespace Health.Runtime
                 if (isLocalPlayer)
                 {
                     if(m_text){m_text.text = currentHealth.ToString();}
-                    _roundPlayer.CmdSetCurrentPlayerHealth(currentHealth);
+                    //_roundPlayer.m_playerCurrentHealth = currentHealth;
                     HandleHealth();
                     
                 }
@@ -338,6 +353,9 @@ namespace Health.Runtime
             
             [SerializeField] private Renderer _notLocalPlayerSphereRenderer;
             [SerializeField] private RoundPlayer _roundPlayer;
+            
+            [SerializeField] private bool _isPlayer;
+            
             
             #endregion
     }

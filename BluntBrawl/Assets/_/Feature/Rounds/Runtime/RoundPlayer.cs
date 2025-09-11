@@ -6,8 +6,20 @@ namespace Rounds.Runtime
 {
     public class RoundPlayer : NetworkBehaviour
     {
-        public int m_playerCurrentHealth;
-        public string m_playerName;
+        //public int m_playerCurrentHealth;
+        [SyncVar(hook = nameof(OnRoundWonChanged))] public int m_roundsWon;
+        [SyncVar(hook = nameof(OnNameChanged))] public string m_playerName;
+
+
+        private void OnNameChanged(string oldName, string newName)
+        {
+            Debug.Log($"Player Name: {newName}");
+        }
+        
+        private void OnRoundWonChanged(int oldRound, int newRound)
+        {
+            Debug.Log($"Round won: {newRound}");
+        }
         
         private RoundSystem roundSystem;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,31 +27,43 @@ namespace Rounds.Runtime
         {
              roundSystem = FindFirstObjectByType<RoundSystem>();
              if(roundSystem) CmdAddPlayer();
+             _spawnPosition = _xrPosition.transform.position;
         }
 
-        [Command(requiresAuthority = false)]
+        [ClientRpc]
+        public void InitializePlayer()
+        {
+            _xrPosition.transform.position = _spawnPosition;
+        }
+        
+        //[Command(requiresAuthority = false)]
         public void CmdAddPlayer()
         {
             roundSystem.RegisterPlayer(this);
         }
         
-        //[Command(requiresAuthority = false)]
+        [Command(requiresAuthority = false)]
         public void CmdSetDefeat()
         {
-            if(!isLocalPlayer) return;
-            //roundSystem.EndRound();
             roundSystem.SetRoundLoser(this);
         }
         
         public void CmdSetCurrentPlayerHealth(int currentHealth)
         {
-            m_playerCurrentHealth = currentHealth;
+            //m_playerCurrentHealth = currentHealth;
         }
 
-        [Command(requiresAuthority = false)]
-        public void CmdSetPlayerName(string name)
+        [TargetRpc]
+        public void RpcSetPlayerName(NetworkConnection target, string name)
         {
             m_playerName = name;
         }
+
+        #region Privates
+
+            [SyncVar] private Vector3 _spawnPosition;
+            [SerializeField] private GameObject _xrPosition;
+
+        #endregion
     }
 }

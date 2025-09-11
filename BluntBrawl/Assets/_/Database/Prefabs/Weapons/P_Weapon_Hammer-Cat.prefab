@@ -614,10 +614,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8348124228450394122}
     m_Modifications:
+    - target: {fileID: 1146584385668314313, guid: 1e232875398405e4d9db528627a836a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3486c6df0201954abfb797cf2acb16e, type: 2}
     - target: {fileID: 2719199770800939554, guid: 1e232875398405e4d9db528627a836a6, type: 3}
       propertyPath: m_Name
       value: P_Trinket
       objectReference: {fileID: 0}
+    - target: {fileID: 7051454817584410813, guid: 1e232875398405e4d9db528627a836a6, type: 3}
+      propertyPath: _lightRenderer
+      value: 
+      objectReference: {fileID: 5675686642299156189}
+    - target: {fileID: 7703584427557401454, guid: 1e232875398405e4d9db528627a836a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5241b89b1233fd842bc7747164870a3f, type: 2}
     - target: {fileID: 8103131393001990526, guid: 1e232875398405e4d9db528627a836a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -666,6 +678,11 @@ PrefabInstance:
 --- !u!4 &3555998258140310378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8103131393001990526, guid: 1e232875398405e4d9db528627a836a6, type: 3}
+  m_PrefabInstance: {fileID: 4696527095653679636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5675686642299156189 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1146584385668314313, guid: 1e232875398405e4d9db528627a836a6, type: 3}
   m_PrefabInstance: {fileID: 4696527095653679636}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8016023510705408895

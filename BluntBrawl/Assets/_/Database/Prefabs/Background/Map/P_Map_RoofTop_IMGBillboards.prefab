@@ -3807,6 +3807,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9132441986676749131}
     m_Modifications:
+    - target: {fileID: 1713857691532599100, guid: 01e5b7804dc2c304e9966aa7ceb2ef54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -21.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5705247717009717018, guid: 01e5b7804dc2c304e9966aa7ceb2ef54, type: 3}
       propertyPath: m_Name
       value: P_Billboard_12x7_img004 (1)
@@ -4241,6 +4245,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9132441986676749131}
     m_Modifications:
+    - target: {fileID: 285583465929877721, guid: 6fd4ad736a26dcc4eb3e72b82efbe169, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 36.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 285583465929877721, guid: 6fd4ad736a26dcc4eb3e72b82efbe169, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -21.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 285583465929877721, guid: 6fd4ad736a26dcc4eb3e72b82efbe169, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 285583465929877721, guid: 6fd4ad736a26dcc4eb3e72b82efbe169, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 285583465929877721, guid: 6fd4ad736a26dcc4eb3e72b82efbe169, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 285583465929877721, guid: 6fd4ad736a26dcc4eb3e72b82efbe169, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 2665574897512587954, guid: 6fd4ad736a26dcc4eb3e72b82efbe169, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.5
@@ -5520,6 +5548,10 @@ PrefabInstance:
     - target: {fileID: 909511742254789690, guid: ef6d9f6ccbd82f94ab372a51d66f4d9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352619378702732239, guid: ef6d9f6ccbd82f94ab372a51d66f4d9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.6
       objectReference: {fileID: 0}
     - target: {fileID: 3492479658938725699, guid: ef6d9f6ccbd82f94ab372a51d66f4d9f, type: 3}
       propertyPath: m_Name
@@ -7375,6 +7407,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9132441986676749131}
     m_Modifications:
+    - target: {fileID: 1713857691532599100, guid: 01e5b7804dc2c304e9966aa7ceb2ef54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -30.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5705247717009717018, guid: 01e5b7804dc2c304e9966aa7ceb2ef54, type: 3}
       propertyPath: m_Name
       value: P_Billboard_12x7_img004
@@ -8224,6 +8260,10 @@ PrefabInstance:
     - target: {fileID: 1946435771754993808, guid: 67d45937ed4eb854ead6cd571f1e89e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721985338444895897, guid: 67d45937ed4eb854ead6cd571f1e89e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.4
       objectReference: {fileID: 0}
     - target: {fileID: 6886512978938639924, guid: 67d45937ed4eb854ead6cd571f1e89e1, type: 3}
       propertyPath: m_Name

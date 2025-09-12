@@ -657,10 +657,6 @@ PrefabInstance:
       value: P_PlayerModel
       objectReference: {fileID: 0}
     - target: {fileID: 8655640130902121848, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-      propertyPath: _isPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8655640130902121848, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
       propertyPath: _roundPlayer
       value: 
       objectReference: {fileID: 1767451311726051443}

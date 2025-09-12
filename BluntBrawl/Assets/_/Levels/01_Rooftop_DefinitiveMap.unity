@@ -309,6 +309,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 4139709100620377146, guid: 3670189130a576449ba2dbd819c8a10c, type: 3}
     - target: {fileID: 6786390845849760935, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -545,10 +549,6 @@ PrefabInstance:
       propertyPath: sceneId
       value: 1533548598
       objectReference: {fileID: 0}
-    - target: {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
-      propertyPath: m_Name
-      value: P_WorldMetalPipe
-      objectReference: {fileID: 0}
     - target: {fileID: 1379783501357606790, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -588,6 +588,10 @@ PrefabInstance:
     - target: {fileID: 1379783501357606790, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
+      propertyPath: m_Name
+      value: P_WorldMetalPipe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -691,6 +695,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2452695239678141647, guid: 36d8c7095d57648c0b4db9e878378a49, type: 3}
+      propertyPath: sceneId
+      value: 2721839760
+      objectReference: {fileID: 0}
     - target: {fileID: 1379783501357606790, guid: 36d8c7095d57648c0b4db9e878378a49, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -734,10 +742,6 @@ PrefabInstance:
     - target: {fileID: 2350312154220774817, guid: 36d8c7095d57648c0b4db9e878378a49, type: 3}
       propertyPath: m_Name
       value: P_WorldSignalisation
-      objectReference: {fileID: 0}
-    - target: {fileID: -2452695239678141647, guid: 36d8c7095d57648c0b4db9e878378a49, type: 3}
-      propertyPath: sceneId
-      value: 2721839760
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

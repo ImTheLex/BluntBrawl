@@ -3,6 +3,7 @@ using Mirror;
 using Player.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 namespace Weapon.Runtime
 {
@@ -30,9 +31,16 @@ namespace Weapon.Runtime
                     }
                     damageable.CmdTakeDamage(amount);
                     m_weaponBehaviour.m_hasHit = true;
-                    
                 }
 
+                if (other.TryGetComponent<IHealProvider>(out var healProvider))
+                {
+                    var owner = m_weaponBehaviour.m_owner;
+                    var healable = owner.GetComponentInChildren<IHealable>();
+                    healable.CmdHeal(healProvider.m_healAmount);
+                    healProvider.DestroyProvider();
+                }
+                
                 if (other.TryGetComponent<IBumpable>(out var bumpable))
                 {
                     XROrigin xrOrigin = m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>().m_XROrigin;

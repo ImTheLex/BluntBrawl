@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Health.Runtime
 {
-    public class HealthBehaviour : NetworkBehaviour, IDamageable
+    public class HealthBehaviour : NetworkBehaviour, IDamageable,IHealable
     {
         private static readonly int Color1 = Shader.PropertyToID("_Color");
 
@@ -65,7 +65,7 @@ namespace Health.Runtime
 
             private void Start()
             {
-                Debug.Log("Local player : " + isLocalPlayer);
+                if (!_isPlayer) return;
                 if (isLocalPlayer == false)
                 {
                     if (_bars is not null)
@@ -259,7 +259,7 @@ namespace Health.Runtime
             private void HandleHealth()
             {
                 if (!_isPlayer) return;
-                //if (!isLocalPlayer) return;
+                if (!isLocalPlayer) return;
                 float healthPercentage = (float)_currentHealth / (float)_maxHealth;
                 _activeBars = Mathf.CeilToInt(healthPercentage * _maxBars);
 
@@ -363,6 +363,24 @@ namespace Health.Runtime
             [SerializeField] private bool _isPlayer;
             
             
-            #endregion
+        #endregion
+        
+        [Command(requiresAuthority = false)]
+        public void CmdHeal(int amount)
+        {
+            //m_text.text = "Amount = " + amount + "Current Health = "  + _currentHealth; 
+            //_currentHealth += amount;
+            Heal(amount);
+            
+        }
+
+        public void Heal(int amount)
+        {
+            _currentHealth += amount;
+            if(_currentHealth > _maxHealth)  _currentHealth = _maxHealth;
+        }
     }
+
+    
+    
 }

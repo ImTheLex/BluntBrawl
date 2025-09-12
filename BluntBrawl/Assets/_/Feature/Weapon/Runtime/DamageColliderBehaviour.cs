@@ -3,7 +3,7 @@ using Mirror;
 using Player.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
+using UnityEngine.XR;
 
 namespace Weapon.Runtime
 {
@@ -21,7 +21,10 @@ namespace Weapon.Runtime
                     var owner = m_weaponBehaviour.m_owner;
 
                     if (owner == other.gameObject.transform.root.gameObject) return;
-
+                    
+                    InputDeviceCharacteristics hand = InputDeviceCharacteristics.Right;
+                    NetworkIdentity identity = transform.root.gameObject.GetComponent<NetworkIdentity>();
+                    _ownPlayerMovement.TargetRPCHapticToController(identity.connectionToClient, hand,0.75f,.5f);
                     
                     var amount = m_weaponBehaviour.m_damage * m_weaponBehaviour.m_velocityDamage;
                     //damageable.CmdTakeDamage(amount);
@@ -56,9 +59,10 @@ namespace Weapon.Runtime
         
         
         [SerializeField] private WeaponBehaviour m_weaponBehaviour;
-        
-        
+        private PlayerMovement _ownPlayerMovement => m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>();
+
+
         #endregion
-       
+
     }
 }

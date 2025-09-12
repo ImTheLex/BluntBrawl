@@ -5,6 +5,7 @@ using Mirror;
 using Player.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace Colision.Runtime
 {
@@ -52,6 +53,10 @@ namespace Colision.Runtime
            _forceWeapon = force;
            _isBumping = true;
            _playerMovement.m_isBumping = true;
+           InputDeviceCharacteristics hand = InputDeviceCharacteristics.Left;
+           _playerMovement.SendHapticToController(hand,.8f,1f);
+           hand = InputDeviceCharacteristics.Right;
+           _playerMovement.SendHapticToController(hand,.8f,1f);
            _faceOffset.ChangeFace("hurt" + Random.Range(1,3));
            }
         

@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using InputSystem.BluntBrawl;
 using Item.Runtime;
 using Mirror;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using InputDevice = UnityEngine.XR.InputDevice;
 
 namespace Player.Runtime
 {
@@ -20,6 +23,8 @@ namespace Player.Runtime
         
         
         #endregion
+        
+        
         
         
         #region Unity API
@@ -189,6 +194,33 @@ namespace Player.Runtime
                 _itemGrabber.GrabItem();
             }
 
+        }
+
+        #endregion
+
+
+        #region Publics Methods
+        
+        
+        
+        public void SendHapticToController(InputDeviceCharacteristics hand, float amplitude, float duration)
+        {
+            List<InputDevice> devices = new List<InputDevice>();
+            InputDevices.GetDevicesWithCharacteristics(hand, devices);
+            foreach (var device in devices)
+            {
+                if (device.TryGetHapticCapabilities(out HapticCapabilities capabilities) && capabilities.supportsImpulse)
+                {
+                    device.SendHapticImpulse(0, amplitude, duration);
+                }
+            }
+        }
+
+        [TargetRpc]
+        public void TargetRPCHapticToController(NetworkConnectionToClient target, InputDeviceCharacteristics hand,
+            float amplitude, float duration)
+        {
+            SendHapticToController(hand, amplitude, duration);
         }
 
         #endregion

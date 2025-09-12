@@ -536,6 +536,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: 965d42681beb6ad418efbb171c6c4adf, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7750344384565769896, guid: 23c9a0fb2b032ea47ae9ea26a4ddafb2, type: 3}
     - target: {fileID: 919132149155446097, guid: 965d42681beb6ad418efbb171c6c4adf, type: 3}
       propertyPath: m_Name
       value: 3D_wpn_hammer-cat

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Animation.Runtime
 {
@@ -10,16 +11,16 @@ namespace Animation.Runtime
         
         #region Main methods
 
+        
         public void ChangeFace(string name)
         {
             MaterialPropertyBlock block = new MaterialPropertyBlock();
             Vector2 offset = _offsets[name];
-            Vector4 face = new Vector4(1,1,offset.x,offset.y);
-            block.SetVector("_BaseMap_ST", face);
+            block.SetVector("_Offset", offset);
             _faceMeshRenderer.SetPropertyBlock(block,1);
-        } 
+        }
 
-
+        
         #endregion
 
         

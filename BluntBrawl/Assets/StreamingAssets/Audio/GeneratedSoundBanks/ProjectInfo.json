@@ -1,0 +1,43 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "BluntBrawl_WwiseProject",
+   "GUID": "{F8059838-5DCF-49DC-9B90-E76383C75AFE}",
+   "Generator": "2024.1.7.8863"
+  },
+  "CacheRoot": "../../../../BluntBrawl_WwiseProject/.cache",
+  "Platforms": [
+   {
+    "Name": "Android",
+    "GUID": "{E7107246-FF39-4F94-9E69-57F63719E8C5}",
+    "BasePlatform": "Android",
+    "BasePlatformGUID": "{A2D401DE-B8B6-4FEB-8142-137C34D507CA}",
+    "Path": "../../../../BluntBrawl_WwiseProject/GeneratedSoundBanks/Android"
+   },
+   {
+    "Name": "Mac",
+    "GUID": "{5F28BAFB-2A12-456B-856E-C1779B6004A4}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "../../../../BluntBrawl_WwiseProject/GeneratedSoundBanks/Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{AD1B7A04-58F2-4F1D-A6C8-A9D822187D9E}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../BluntBrawl_WwiseProject/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{E5F96B94-EDA8-445B-969D-566C753D9D3A}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{2A1511F4-76E9-4BC4-79A9-99BDB43F1602}"
+ }
+}

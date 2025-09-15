@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using Health.Runtime;
 using InputSystem.BluntBrawl;
 using Item.Runtime;
 using Mirror;
+using Rounds.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -44,6 +46,7 @@ namespace Player.Runtime
             _playerRigidbody.maxLinearVelocity = 20f;
 
             _itemGrabber = _rightController.GetComponent<ItemGrabber>();
+            _roundSystem = RoundSystem.Instance;
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -58,7 +61,27 @@ namespace Player.Runtime
             TrackingPositionController();
             TrackingRotationController();
             
-            if (DetectKillZ()) _playerRigidbody.position = new Vector3(0, 5, 0);
+            if (_roundSystem.m_isPreStartingRound)
+            {
+                if (_playerInputActions.Player.enabled) 
+                    _playerInputActions.Player.Disable();
+            }
+            else
+            {
+                if (!_playerInputActions.Player.enabled) 
+                    _playerInputActions.Player.Enable();
+            }
+
+            if (DetectKillZ())
+            {
+              
+                _playerRigidbody.position = new Vector3(0, 5, 0);
+                if (_healthBehaviour.m_isDead)
+                {
+                    _healthBehaviour.CmdHandleDamageableDeath();
+                }
+                
+            }
             if (m_isBumping) return;
             
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
@@ -351,10 +374,13 @@ namespace Player.Runtime
         
         [SerializeField] private SpawnPrefabCube _spawnPrefabCube;
         
-        
+        private RoundSystem  _roundSystem;
+
+        [SerializeField] private RoundPlayer _roundPlayer;
+        [SerializeField] private HealthBehaviour _healthBehaviour;
 
         #endregion
 
-        
+
     }
 }

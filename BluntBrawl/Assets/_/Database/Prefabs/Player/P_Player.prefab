@@ -548,6 +548,8 @@ MonoBehaviour:
   _rightController: {fileID: 7522599289072299311}
   _itemGrabber: {fileID: 3605401159702284481}
   _spawnPrefabCube: {fileID: 0}
+  _roundPlayer: {fileID: 1767451311726051443}
+  _healthBehaviour: {fileID: 4193519195219618634}
 --- !u!114 &7876064452795065904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +691,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb718a26e98354c9db2fe830b13e1b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4193519195219618634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8655640130902121848, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+  m_PrefabInstance: {fileID: 4768570571888899634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8a60c4bcd2e4b4687860af4144b4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &7522599289072299311 stripped

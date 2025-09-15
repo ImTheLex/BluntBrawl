@@ -23,8 +23,9 @@ namespace Rounds.Runtime
         
         private RoundSystem roundSystem;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        public override void OnStartClient()
         {
+            base.OnStartClient();
              roundSystem = FindFirstObjectByType<RoundSystem>();
              if(roundSystem) CmdAddPlayer();
              _spawnPosition = _xrPosition.transform.position;

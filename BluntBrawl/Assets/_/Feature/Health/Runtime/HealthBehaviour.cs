@@ -10,6 +10,8 @@ namespace Health.Runtime
     public class HealthBehaviour : NetworkBehaviour, IDamageable,IHealable
     {
         private static readonly int Color1 = Shader.PropertyToID("_Color");
+        private static readonly int Saturation = Shader.PropertyToID("_Saturation");
+        private static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
 
         #region Publics
 
@@ -188,7 +190,7 @@ namespace Health.Runtime
             {
                 if (_isPlayer)
                 {
-                    _notLocalPlayerSphereRenderer.SetPropertyBlock(null,0);
+                    _jacketSkinRenderer.SetPropertyBlock(null,0);
                 }
                 else m_renderer.material.color = baseColor;
             }
@@ -245,7 +247,7 @@ namespace Health.Runtime
             private void RpcFlash()
             {
                 if (m_renderer != null) m_renderer.material.color = Color.red;
-                if (_isPlayer) _notLocalPlayerSphereRenderer.SetPropertyBlock(GetMaterialPropertyBlock(),0);
+                if (_isPlayer) _jacketSkinRenderer.SetPropertyBlock(GetMaterialPropertyBlock(),0);
                 Debug.Log("RPC Flash");
                 Invoke(nameof(ResetColor), 0.5f);
             }
@@ -270,30 +272,31 @@ namespace Health.Runtime
                 }
             }
 
+        
             private Color GetColor()
             {
                 if (_currentHealth <= _maxHealth / 4)
-                { 
-                    return Color.red;
+                {
+                    return _Healthbar25;
                 }
                 else if (_currentHealth <= _maxHealth / 2) 
                 {
-                    return Color.magenta;
+                    return _Healthbar50;
                 }
                 else if (_currentHealth <= (_maxHealth / 4) * 3)
                 {
-                    return Color.yellow;
+                    return _Healthbar75;
                 }
                 else                                       
                 {
-                   return Color.green;
+                   return _Healthbar100;
                 }
             }
 
             private MaterialPropertyBlock GetMaterialPropertyBlock()
             {
                 MaterialPropertyBlock block = new MaterialPropertyBlock();
-                block.SetColor("_BaseColor", Color.red);
+                block.SetColor(BaseColor, Color.red);
                 return block;
             }
 
@@ -303,20 +306,20 @@ namespace Health.Runtime
             // 3) This was kinda working on the floating Sphere.
             private void UpdateHealthColor()
             {
+                MaterialPropertyBlock block = new MaterialPropertyBlock();
                 float t = Mathf.Clamp01((float)_currentHealth / (float)_maxHealth);
+                block.SetFloat(Saturation,t);
                 
-                Color.RGBToHSV(_notLocalPlayerSphereRenderer.material.color, out float h, out float s, out float v);
-
-                float newSaturation = Mathf.Lerp(s, 0f, 1f - t); 
-                Color newColor = Color.HSVToRGB(h, newSaturation, v);
-
-                _notLocalPlayerSphereRenderer.material.color = newColor;
-                Debug.Log("Saturation: " + newSaturation + "T:"  + t + "New Color : " + newColor);
+                foreach (var mesh in _skinnedMeshRenderers)
+                {
+                    
+                    mesh.SetPropertyBlock(block);
+                }
+                
             }
             
             private void UpdateHealth(int previousHealth, int currentHealth)
             {
-                //if (!isLocalPlayer) return;
                 if (isLocalPlayer)
                 {
                     if(m_text){m_text.text = currentHealth.ToString();}
@@ -326,7 +329,7 @@ namespace Health.Runtime
                 }
                 else
                 {
-                    //_notLocalPlayerSphereRenderer.material.color = GetColor();
+                    UpdateHealthColor();
                 }
                
             }
@@ -355,12 +358,24 @@ namespace Health.Runtime
             [SyncVar] private bool _isInvincible;
             
         
+            
             private Color baseColor;
             
-            [SerializeField] private SkinnedMeshRenderer _notLocalPlayerSphereRenderer;
-            [SerializeField] private RoundPlayer _roundPlayer;
+            [Header("Personal Health Bars colors")]
+            [SerializeField] private Color _Healthbar25;
+            [SerializeField] private Color _Healthbar50;
+            [SerializeField] private Color _Healthbar75;
+            [SerializeField] private Color _Healthbar100;
             
-            [SerializeField] private bool _isPlayer;
+            [Header("Mesh to Desaturate")]
+            [SerializeField] private List<SkinnedMeshRenderer> _skinnedMeshRenderers;
+            [SerializeField] private SkinnedMeshRenderer _jacketSkinRenderer;
+            
+            [Header("RoundPlayer On Gameobject or Parent")]
+            [SerializeField] private RoundPlayer _roundPlayer;
+        
+            
+            [SerializeField,Tooltip("Tick if is a player or not.")] private bool _isPlayer;
             
             
         #endregion

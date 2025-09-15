@@ -15,6 +15,8 @@ namespace Rounds.Runtime
             public RoundStats m_roundStats;
             public float m_currentRoundTime => _roundTimer;
             public float m_preStartRoundTimer => _preStartRoundTimer;
+            
+            public bool m_isPreStartingRound => _isPreStartingRound;
 
         #endregion
 

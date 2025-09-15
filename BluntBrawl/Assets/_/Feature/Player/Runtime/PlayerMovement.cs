@@ -61,12 +61,14 @@ namespace Player.Runtime
             if (DetectKillZ()) _playerRigidbody.position = new Vector3(0, 5, 0);
             if (m_isBumping) return;
             
+            
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
             if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
             
             if (_isDashing)
             {
                 _dashChrono += Time.deltaTime;
+                _animator.SetBool("IsMoving", false);
                 Dash();
                 if (_dashChrono > _dashDuration)
                 {
@@ -96,6 +98,13 @@ namespace Player.Runtime
         {
             if (!isLocalPlayer) return;
             _playerInputMovement = context.ReadValue<Vector2>();
+            if (_playerInputMovement != Vector2.zero)
+            {
+                _animator.SetBool("IsMoving", true);
+                _animator.SetFloat("horizontal", _playerInputMovement.x);
+                _animator.SetFloat("vertical", _playerInputMovement.y);
+            }
+            else _animator.SetBool("IsMoving", false);
         }
 
         public void OnLook(InputAction.CallbackContext context)
@@ -235,6 +244,7 @@ namespace Player.Runtime
             if (!IsGrounded())
             {
                 _playerRigidbody.linearVelocity += Physics.gravity * _playerRigidbody.mass;
+                _animator.SetBool("IsMoving", false);
                 return;
             }
             
@@ -348,10 +358,7 @@ namespace Player.Runtime
         private Quaternion _rightControllerInputRotation;
         
         [SerializeField] private ItemGrabber _itemGrabber;
-        
-        [SerializeField] private SpawnPrefabCube _spawnPrefabCube;
-        
-        
+        [SerializeField] private Animator _animator;
 
         #endregion
 

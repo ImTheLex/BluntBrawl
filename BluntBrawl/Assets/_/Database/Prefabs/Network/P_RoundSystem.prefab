@@ -325,8 +325,6 @@ MonoBehaviour:
   m_texts:
   - {fileID: 4141942594850006523}
   - {fileID: 563999340726670551}
-  - {fileID: 9019325855788934764}
-  - {fileID: 8028837779747160538}
 --- !u!114 &6804951938725425386
 MonoBehaviour:
   m_ObjectHideFlags: 0

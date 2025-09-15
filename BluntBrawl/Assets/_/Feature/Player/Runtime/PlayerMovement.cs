@@ -68,7 +68,7 @@ namespace Player.Runtime
             if (_isDashing)
             {
                 _dashChrono += Time.deltaTime;
-                _animator.SetBool("IsMoving", false);
+                AnimatorMoving(_networkIdentity.connectionToClient, false);
                 Dash();
                 if (_dashChrono > _dashDuration)
                 {
@@ -100,11 +100,11 @@ namespace Player.Runtime
             _playerInputMovement = context.ReadValue<Vector2>();
             if (_playerInputMovement != Vector2.zero)
             {
-                _animator.SetBool("IsMoving", true);
-                _animator.SetFloat("horizontal", _playerInputMovement.x);
-                _animator.SetFloat("vertical", _playerInputMovement.y);
+                AnimatorMoving(_networkIdentity.connectionToClient, true);
+                AnimatorHorizontal(_networkIdentity.connectionToClient, _playerInputMovement.x);
+                AnimatorVertical(_networkIdentity.connectionToClient, _playerInputMovement.y);
             }
-            else _animator.SetBool("IsMoving", false);
+            else AnimatorMoving(_networkIdentity.connectionToClient, false);
         }
 
         public void OnLook(InputAction.CallbackContext context)
@@ -239,12 +239,30 @@ namespace Player.Runtime
         #region Utils
 
         
+        [TargetRpc]
+        private void AnimatorMoving(NetworkConnectionToClient target, bool move)
+        {
+            _animator.SetBool("IsMoving", move);
+        }
+
+        [TargetRpc]
+        private void AnimatorHorizontal(NetworkConnectionToClient target, float horizontal)
+        {
+            _animator.SetFloat("horizontal", horizontal);
+        }
+
+        [TargetRpc]
+        private void AnimatorVertical(NetworkConnectionToClient target, float vertical)
+        {
+            _animator.SetFloat("vertical", vertical);
+        }
+        
         private void Move()
         {
             if (!IsGrounded())
             {
                 _playerRigidbody.linearVelocity += Physics.gravity * _playerRigidbody.mass;
-                _animator.SetBool("IsMoving", false);
+                AnimatorMoving(_networkIdentity.connectionToClient, false);
                 return;
             }
             
@@ -359,6 +377,7 @@ namespace Player.Runtime
         
         [SerializeField] private ItemGrabber _itemGrabber;
         [SerializeField] private Animator _animator;
+        private NetworkIdentity _networkIdentity=> GetComponent<NetworkIdentity>();
 
         #endregion
 

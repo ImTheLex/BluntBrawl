@@ -35,7 +35,7 @@ namespace Weapon.Runtime
                     {
                         damageable.m_invincibilityDuration = m_weaponBehaviour.m_invincibilityDuration;
                     }
-                    damageable.CmdTakeDamage(amount);
+                    //damageable.CmdTakeDamage(amount);
                     m_weaponBehaviour.m_hasHit = true;
                 }
 

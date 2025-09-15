@@ -27,7 +27,7 @@ namespace Colision.Runtime
             {
                 _isBumping = false;
                 _playerMovement.m_isBumping = false;
-                _faceOffset.ChangeFace("normal");
+                //_faceOffset.ChangeFace("normal");
             }
         }
 
@@ -58,7 +58,7 @@ namespace Colision.Runtime
            hand = InputDeviceCharacteristics.Right;
            _playerMovement.SendHapticToController(hand,.8f,1f);
            
-           _faceOffset.ChangeFace("hurt" + Random.Range(1,3));
+           //_faceOffset.ChangeFace("hurt" + Random.Range(1,3));
            }
         
         [TargetRpc]

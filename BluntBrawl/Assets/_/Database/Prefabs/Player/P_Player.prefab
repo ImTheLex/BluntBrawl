@@ -548,6 +548,7 @@ MonoBehaviour:
   _rightController: {fileID: 7522599289072299311}
   _itemGrabber: {fileID: 3605401159702284481}
   _animator: {fileID: 6561005102795331197}
+  _networkAnimator: {fileID: 0}
 --- !u!114 &7876064452795065904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +613,10 @@ PrefabInstance:
       propertyPath: _playerOrigin
       value: 
       objectReference: {fileID: 187618716551820272}
+    - target: {fileID: 1294677619969461763, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+      propertyPath: clientAuthority
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4616998770259778628, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

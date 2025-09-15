@@ -377,6 +377,7 @@ namespace Player.Runtime
         
         [SerializeField] private ItemGrabber _itemGrabber;
         [SerializeField] private Animator _animator;
+        [SerializeField] private NetworkAnimator _networkAnimator;
         private NetworkIdentity _networkIdentity=> GetComponent<NetworkIdentity>();
 
         #endregion

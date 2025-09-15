@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Health.Runtime;
 using InputSystem.BluntBrawl;
 using Item.Runtime;
 using Mirror;
@@ -76,10 +75,6 @@ namespace Player.Runtime
             {
               
                 _playerRigidbody.position = new Vector3(0, 5, 0);
-                if (_healthBehaviour.m_isDead)
-                {
-                    _healthBehaviour.CmdHandleDamageableDeath();
-                }
                 
             }
             if (m_isBumping) return;
@@ -377,7 +372,6 @@ namespace Player.Runtime
         private RoundSystem  _roundSystem;
 
         [SerializeField] private RoundPlayer _roundPlayer;
-        [SerializeField] private HealthBehaviour _healthBehaviour;
 
         #endregion
 

@@ -16,7 +16,6 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
-BluntBrawl_WwiseProject/
 
 # Visual Studio cache directory
 .vs/
@@ -55,11 +54,11 @@ sysinfo.txt
 ## ---------------- ##
 
 # project stuff
-WWiseProject/.cache/
-WWiseProject/*.prof
-WWiseProject/*_WwiseProject.*.validationcache
-WWiseProject/*_WwiseProject.*.wsettings
-WWiseProject/**/*.akd
+BluntBrawl_WwiseProject/.cache/
+BluntBrawl_WwiseProject/*.prof
+BluntBrawl_WwiseProject/*_WwiseProject.*.validationcache
+BluntBrawl_WwiseProject/*_WwiseProject.*.wsettings
+BluntBrawl_WwiseProject/**/*.akd
 
 # build stuff (unsure?)
 # Assets/Wwise/Deployment/Plugins/Windows/**/*.meta

@@ -3,7 +3,6 @@ using Health.Runtime;
 using InputSystem.BluntBrawl;
 using Item.Runtime;
 using Mirror;
-using Rounds.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -46,7 +45,6 @@ namespace Player.Runtime
             _playerRigidbody.maxLinearVelocity = 20f;
 
             _itemGrabber = _rightController.GetComponent<ItemGrabber>();
-            _roundSystem = RoundSystem.Instance;
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -61,25 +59,9 @@ namespace Player.Runtime
             TrackingPositionController();
             TrackingRotationController();
             
-            if (_roundSystem.m_isPreStartingRound)
-            {
-                if (_playerInputActions.Player.enabled) 
-                    _playerInputActions.Player.Disable();
-            }
-            else
-            {
-                if (!_playerInputActions.Player.enabled) 
-                    _playerInputActions.Player.Enable();
-            }
-
-            if (DetectKillZ())
-            {
-              
-                _playerRigidbody.position = new Vector3(0, 5, 0);
-                _healthBehaviour.CmdTakeDamage(2000);
-
-            }
+            if (DetectKillZ()) _playerRigidbody.position = new Vector3(0, 5, 0);
             if (m_isBumping) return;
+            
             
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
             if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
@@ -87,6 +69,7 @@ namespace Player.Runtime
             if (_isDashing)
             {
                 _dashChrono += Time.deltaTime;
+                AnimatorMoving(_networkIdentity.connectionToClient, false);
                 Dash();
                 if (_dashChrono > _dashDuration)
                 {
@@ -116,6 +99,13 @@ namespace Player.Runtime
         {
             if (!isLocalPlayer) return;
             _playerInputMovement = context.ReadValue<Vector2>();
+            if (_playerInputMovement != Vector2.zero)
+            {
+                AnimatorMoving(_networkIdentity.connectionToClient, true);
+                AnimatorHorizontal(_networkIdentity.connectionToClient, _playerInputMovement.x);
+                AnimatorVertical(_networkIdentity.connectionToClient, _playerInputMovement.y);
+            }
+            else AnimatorMoving(_networkIdentity.connectionToClient, false);
         }
 
         public void OnLook(InputAction.CallbackContext context)
@@ -250,11 +240,30 @@ namespace Player.Runtime
         #region Utils
 
         
+        [TargetRpc]
+        private void AnimatorMoving(NetworkConnectionToClient target, bool move)
+        {
+            _animator.SetBool("IsMoving", move);
+        }
+
+        [TargetRpc]
+        private void AnimatorHorizontal(NetworkConnectionToClient target, float horizontal)
+        {
+            _animator.SetFloat("horizontal", horizontal);
+        }
+
+        [TargetRpc]
+        private void AnimatorVertical(NetworkConnectionToClient target, float vertical)
+        {
+            _animator.SetFloat("vertical", vertical);
+        }
+        
         private void Move()
         {
             if (!IsGrounded())
             {
                 _playerRigidbody.linearVelocity += Physics.gravity * _playerRigidbody.mass;
+                AnimatorMoving(_networkIdentity.connectionToClient, false);
                 return;
             }
             
@@ -368,17 +377,12 @@ namespace Player.Runtime
         private Quaternion _rightControllerInputRotation;
         
         [SerializeField] private ItemGrabber _itemGrabber;
-        
-        [SerializeField] private SpawnPrefabCube _spawnPrefabCube;
-        
-        private RoundSystem  _roundSystem;
-
-        [SerializeField] private RoundPlayer _roundPlayer;
-        
-        [SerializeField] private HealthBehaviour _healthBehaviour;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private NetworkAnimator _networkAnimator;
+        private NetworkIdentity _networkIdentity=> GetComponent<NetworkIdentity>();
 
         #endregion
 
-
+        
     }
 }

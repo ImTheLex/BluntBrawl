@@ -19,8 +19,11 @@ namespace Weapon.Runtime
                 if (other.TryGetComponent<IDamageable>(out var damageable))
                 {
                     var owner = m_weaponBehaviour.m_owner;
-
+                    
+                    //si owner => return
                     if (owner == other.gameObject.transform.root.gameObject) return;
+                    //si cd => return
+                    if (m_weaponBehaviour.m_hasHit) return;
                     
                     InputDeviceCharacteristics hand = InputDeviceCharacteristics.Right;
                     NetworkIdentity identity = transform.root.gameObject.GetComponent<NetworkIdentity>();
@@ -32,7 +35,7 @@ namespace Weapon.Runtime
                     {
                         damageable.m_invincibilityDuration = m_weaponBehaviour.m_invincibilityDuration;
                     }
-                    damageable.CmdTakeDamage(amount);
+                    //damageable.CmdTakeDamage(amount);
                     m_weaponBehaviour.m_hasHit = true;
                 }
 
@@ -49,7 +52,6 @@ namespace Weapon.Runtime
                     XROrigin xrOrigin = m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>().m_XROrigin;
                     NetworkIdentity identity = other.transform.root.GetComponent<NetworkIdentity>();
                     bumpable.TargetPlayerBumpOnHit(identity.connectionToClient, xrOrigin.transform.position, m_weaponBehaviour.m_force);
-                    
                 }
             }
         
@@ -60,7 +62,7 @@ namespace Weapon.Runtime
         
         [SerializeField] private WeaponBehaviour m_weaponBehaviour;
         private PlayerMovement _ownPlayerMovement => m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>();
-
+        
 
         #endregion
 

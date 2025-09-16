@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Interfaces.Runtime;
 using Mirror;
@@ -40,6 +41,7 @@ namespace Health.Runtime
                 // S'assurer que chaque client voit l'état actuel
                 //UpdateVulnerability(_vulnerability,_vulnerability);
                 UpdateHealth(_currentHealth, _currentHealth);
+                
             }
             
         #endregion
@@ -251,12 +253,6 @@ namespace Health.Runtime
                 Debug.Log("RPC Flash");
                 Invoke(nameof(ResetColor), 0.5f);
             }
-            
-            /*private void UpdateVulnerability(int previousVulnerability, int currentVulnerability)
-            { 
-                m_text.text = "Current Vulnerability: " + currentVulnerability;
-            }
-            */
 
             private void HandleHealth()
             {
@@ -271,8 +267,15 @@ namespace Health.Runtime
                     _bars[i].SetActive(i < _activeBars);
                 }
             }
+            
+            private void Reset()
+            {
+                Debug.Log("Reset");
+                HandleDamageableDeath();
+                //UpdateHealth(_currentHealth, _maxHealth);
+                UpdateHealthColor();
+            }
 
-        
             private Color GetColor()
             {
                 if (_currentHealth <= _maxHealth / 4)

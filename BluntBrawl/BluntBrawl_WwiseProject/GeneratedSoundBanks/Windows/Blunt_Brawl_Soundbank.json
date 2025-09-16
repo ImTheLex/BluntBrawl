@@ -1,0 +1,21 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1799184885",
+    "Type": "User",
+    "GUID": "{1CDAD5A3-9950-4914-8C65-28507C6434C4}",
+    "Language": "SFX",
+    "Hash": "{4530AD65-9486-77AA-30E0-376300948879}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Blunt_Brawl_Soundbank",
+    "ShortName": "Blunt_Brawl_Soundbank",
+    "Path": "Blunt_Brawl_Soundbank.bnk"
+   }
+  ],
+  "FileHash": "{0219A35F-A42C-F14F-0FAE-E5B3CDB6B2AC}"
+ }
+}

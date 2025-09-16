@@ -4,6 +4,7 @@ using System.Linq;
 using Mirror;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Rounds.Runtime
 {
@@ -17,6 +18,7 @@ namespace Rounds.Runtime
             public float m_preStartRoundTimer => _preStartRoundTimer;
             
             public bool m_isPreStartingRound => _isPreStartingRound;
+
 
         #endregion
 
@@ -163,7 +165,7 @@ namespace Rounds.Runtime
         
         private void ResetPlayers()
         {
-            foreach (var player in _playersAlive)
+            foreach (var player in _players)
             {
                 player.InitializePlayer();
             }

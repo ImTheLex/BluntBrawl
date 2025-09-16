@@ -1,4 +1,5 @@
 using System;
+using DeathCam.Runtime;
 using Mirror;
 using UnityEngine;
 
@@ -25,15 +26,20 @@ namespace Rounds.Runtime
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         public override void OnStartClient()
         {
-            base.OnStartClient();
-             roundSystem = FindFirstObjectByType<RoundSystem>();
-             if(roundSystem) CmdAddPlayer();
-             _spawnPosition = _xrPosition.transform.position;
+            base.OnStartClient(); 
+            roundSystem = RoundSystem.Instance;
+            deathCam = DeathCamSystem.Instance;
+            deathCam.RegisterPlayer(gameObject);
+            deathCam.RegisterCamera(_playerCam);
+             //roundSystem = FindFirstObjectByType<RoundSystem>();
+            if(roundSystem) CmdAddPlayer();
+            _spawnPosition = _xrPosition.transform.position;
         }
 
         [ClientRpc]
         public void InitializePlayer()
         {
+            deathCam.UnSwipeCam();
             _xrPosition.transform.position = _spawnPosition;
         }
         
@@ -46,6 +52,7 @@ namespace Rounds.Runtime
         [Command(requiresAuthority = false)]
         public void CmdSetDefeat()
         {
+            deathCam.SwipeCamera();
             roundSystem.SetRoundLoser(this);
         }
         
@@ -60,9 +67,16 @@ namespace Rounds.Runtime
             m_playerName = name;
         }
 
+        public Camera GetCam()
+        {
+            return _playerCam;
+        }
         #region Privates
 
+            
+            private DeathCamSystem deathCam;
             [SyncVar] private Vector3 _spawnPosition;
+            [SerializeField] private Camera _playerCam;
             [SerializeField] private GameObject _xrPosition;
 
         #endregion

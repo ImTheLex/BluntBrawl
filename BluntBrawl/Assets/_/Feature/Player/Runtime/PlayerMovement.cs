@@ -58,8 +58,13 @@ namespace Player.Runtime
             
             TrackingPositionController();
             TrackingRotationController();
-            
-            if (DetectKillZ()) _playerRigidbody.position = new Vector3(0, 5, 0);
+
+            if (DetectKillZ())
+            {
+                _playerRigidbody.position = new Vector3(0, 5, 0);
+                _healthBehaviour.CmdTakeDamage(2000);
+
+            }
             if (m_isBumping) return;
             
             
@@ -377,6 +382,7 @@ namespace Player.Runtime
         private Quaternion _rightControllerInputRotation;
         
         [SerializeField] private ItemGrabber _itemGrabber;
+        [SerializeField] private HealthBehaviour _healthBehaviour;
         [SerializeField] private Animator _animator;
         [SerializeField] private NetworkAnimator _networkAnimator;
         private NetworkIdentity _networkIdentity=> GetComponent<NetworkIdentity>();

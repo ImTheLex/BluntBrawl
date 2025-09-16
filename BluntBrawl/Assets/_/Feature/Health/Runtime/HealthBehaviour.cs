@@ -10,9 +10,6 @@ namespace Health.Runtime
 {
     public class HealthBehaviour : NetworkBehaviour, IDamageable,IHealable
     {
-        private static readonly int Color1 = Shader.PropertyToID("_Color");
-        private static readonly int Saturation = Shader.PropertyToID("_Saturation");
-        private static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
 
         #region Publics
 
@@ -299,7 +296,7 @@ namespace Health.Runtime
             private MaterialPropertyBlock GetMaterialPropertyBlock()
             {
                 MaterialPropertyBlock block = new MaterialPropertyBlock();
-                block.SetColor(BaseColor, Color.red);
+                block.SetColor("_BaseColor", Color.red);
                 return block;
             }
 
@@ -311,7 +308,7 @@ namespace Health.Runtime
             {
                 MaterialPropertyBlock block = new MaterialPropertyBlock();
                 float t = Mathf.Clamp01((float)_currentHealth / (float)_maxHealth);
-                block.SetFloat(Saturation,t);
+                block.SetFloat("_Saturation",t);
                 
                 foreach (var mesh in _skinnedMeshRenderers)
                 {

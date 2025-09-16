@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 2654449017
+  _assetId: 2488156854
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   _itemGrabber: {fileID: 3605401159702284481}
   _healthBehaviour: {fileID: 4193519195219618634}
   _animator: {fileID: 6561005102795331197}
-  _networkAnimator: {fileID: 0}
+  _networkAnimator: {fileID: 6042357097108879409}
 --- !u!114 &7876064452795065904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,10 +615,6 @@ PrefabInstance:
       propertyPath: _playerOrigin
       value: 
       objectReference: {fileID: 187618716551820272}
-    - target: {fileID: 1294677619969461763, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
-      propertyPath: clientAuthority
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4616998770259778628, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -707,6 +703,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad8a60c4bcd2e4b4687860af4144b4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6042357097108879409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1294677619969461763, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+  m_PrefabInstance: {fileID: 4768570571888899634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479249738238629565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &6561005102795331197 stripped

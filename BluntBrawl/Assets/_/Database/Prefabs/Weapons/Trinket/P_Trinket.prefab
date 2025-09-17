@@ -77,8 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fac32b6fb3a647e39117519bff488e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponBehaviour: {fileID: 0}
-  _lightRenderer: {fileID: 7703584427557401454}
+  _lightRenderer: {fileID: 1146584385668314313}
 --- !u!1001 &2510407511058826947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,22 +126,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5962838233235148278, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3486c6df0201954abfb797cf2acb16e, type: 2}
     - target: {fileID: 919132149155446097, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
       propertyPath: m_Name
       value: 3D_WeaponTrinket
       objectReference: {fileID: 0}
+    - target: {fileID: 5205707535195600301, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5241b89b1233fd842bc7747164870a3f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
+--- !u!23 &1146584385668314313 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5962838233235148278, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
+  m_PrefabInstance: {fileID: 2510407511058826947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2692162096986005800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
-  m_PrefabInstance: {fileID: 2510407511058826947}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &7703584427557401454 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5205707535195600301, guid: eea8372de31daec42b0e47cde3468e98, type: 3}
   m_PrefabInstance: {fileID: 2510407511058826947}
   m_PrefabAsset: {fileID: 0}

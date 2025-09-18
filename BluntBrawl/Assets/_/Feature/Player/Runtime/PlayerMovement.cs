@@ -74,7 +74,7 @@ namespace Player.Runtime
             if (_isDashing)
             {
                 _dashChrono += Time.deltaTime;
-                AnimatorMoving(_networkIdentity.connectionToClient, false);
+                TargetAnimatorMoving(false);
                 Dash();
                 if (_dashChrono > _dashDuration)
                 {
@@ -104,13 +104,6 @@ namespace Player.Runtime
         {
             if (!isLocalPlayer) return;
             _playerInputMovement = context.ReadValue<Vector2>();
-            if (_playerInputMovement != Vector2.zero)
-            {
-                AnimatorMoving(_networkIdentity.connectionToClient, true);
-                AnimatorHorizontal(_networkIdentity.connectionToClient, _playerInputMovement.x);
-                AnimatorVertical(_networkIdentity.connectionToClient, _playerInputMovement.y);
-            }
-            else AnimatorMoving(_networkIdentity.connectionToClient, false);
         }
 
         public void OnLook(InputAction.CallbackContext context)
@@ -237,6 +230,12 @@ namespace Player.Runtime
         {
             SendHapticToController(hand, amplitude, duration);
         }
+        
+        [Command(requiresAuthority = false)]
+        public void TargetAnimatorHit()
+        {
+            AnimatorHit();
+        }
 
         #endregion
 
@@ -245,30 +244,39 @@ namespace Player.Runtime
         #region Utils
 
         
-        [TargetRpc]
-        private void AnimatorMoving(NetworkConnectionToClient target, bool move)
+        [Command(requiresAuthority = false)]
+        private void TargetAnimatorMoving( bool move)
         {
-            _animator.SetBool("IsMoving", move);
-        }
-
-        [TargetRpc]
-        private void AnimatorHorizontal(NetworkConnectionToClient target, float horizontal)
-        {
-            _animator.SetFloat("horizontal", horizontal);
-        }
-
-        [TargetRpc]
-        private void AnimatorVertical(NetworkConnectionToClient target, float vertical)
-        {
-            _animator.SetFloat("vertical", vertical);
+            AnimatorMoving(move);
         }
         
+        private void AnimatorMoving(bool move) => _animator.SetBool("IsMoving", move);
+
+        [Command(requiresAuthority = false)]
+        private void TargetAnimatorHorizontal(float horizontal)
+        {
+            AnimatorHorizontal(horizontal);
+        }
+        
+        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("Horizontal", horizontal);
+
+        [Command(requiresAuthority = false)]
+        private void TargetAnimatorVertical(float vertical)
+        {
+            AnimatorVertical(vertical);
+        }
+        
+        private void AnimatorVertical(float vertical) => _animator.SetFloat("Vertical", vertical);
+
+        
+        
+        private void AnimatorHit() => _networkAnimator.SetTrigger("hit");
         private void Move()
         {
             if (!IsGrounded())
             {
                 _playerRigidbody.linearVelocity += Physics.gravity * _playerRigidbody.mass;
-                AnimatorMoving(_networkIdentity.connectionToClient, false);
+                TargetAnimatorMoving(false);
                 return;
             }
             
@@ -276,6 +284,14 @@ namespace Player.Runtime
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y +
                                      _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
+            
+            if (_playerInputMovement != Vector2.zero)
+            {
+                TargetAnimatorMoving(true);
+                TargetAnimatorHorizontal( _playerInputMovement.x);
+                TargetAnimatorVertical(_playerInputMovement.y);
+            }
+            else TargetAnimatorMoving( false);
             
             _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
         }
@@ -385,10 +401,10 @@ namespace Player.Runtime
         [SerializeField] private HealthBehaviour _healthBehaviour;
         [SerializeField] private Animator _animator;
         [SerializeField] private NetworkAnimator _networkAnimator;
-        private NetworkIdentity _networkIdentity=> GetComponent<NetworkIdentity>();
+        [SerializeField] private NetworkIdentity _networkIdentity;
 
         #endregion
 
-        
+
     }
 }

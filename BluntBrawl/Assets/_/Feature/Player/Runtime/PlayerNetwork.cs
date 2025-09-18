@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Interfaces.Runtime;
 using Mirror;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace Player.Runtime
         public override void OnStartLocalPlayer()
         {
             _playerOrigin.SetActive(true);
-            _playerAvatar.SetActive(false);
+            foreach(GameObject obj in _playerAvatarhead) obj.SetActive(false);
         }
 
         public override void OnStartClient()
@@ -17,7 +18,7 @@ namespace Player.Runtime
             if (!isLocalPlayer)
             {
                 _playerOrigin.SetActive(false);
-                _playerAvatar.SetActive(true);
+                foreach(GameObject obj in _playerAvatarhead) obj.SetActive(true);
             }
         }
 
@@ -25,7 +26,7 @@ namespace Player.Runtime
         
         
         [SerializeField] private GameObject _playerOrigin;
-        [SerializeField] private GameObject _playerAvatar;
+        [SerializeField] private List<GameObject> _playerAvatarhead;
         
 
         #endregion

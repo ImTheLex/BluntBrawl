@@ -50,6 +50,8 @@ namespace Weapon.Runtime
                 if (other.TryGetComponent<IBumpable>(out var bumpable))
                 {
                     XROrigin xrOrigin = m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>().m_XROrigin;
+                    PlayerMovement playerMovement = other.transform.root.GetComponent<PlayerMovement>();
+                    playerMovement.TargetAnimatorHit();
                     NetworkIdentity identity = other.transform.root.GetComponent<NetworkIdentity>();
                     bumpable.TargetPlayerBumpOnHit(identity.connectionToClient, xrOrigin.transform.position, m_weaponBehaviour.m_force);
                 }

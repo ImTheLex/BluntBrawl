@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8F3A1015-7AFE-402B-AA63-E16F833532E3}" SchemaVersion="123">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{8F3A1015-7AFE-402B-AA63-E16F833532E3}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8F3A1015-7AFE-402B-AA63-E16F833532E3}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="InMenu" ID="{1D0D0AFE-5CAE-4C78-A414-BD15E461AF1C}">
+					<ChildrenList>
+						<State Name="None" ID="{9E532144-173E-4921-89F5-5CE212C20E34}"/>
+						<State Name="InMenu" ID="{7FA9677C-D6A1-4846-B8D4-4A4091C2399C}"/>
+						<State Name="InWaitingRoom" ID="{51068766-F5C1-4B34-AABC-8C33DF6C1899}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="InMenu" ID="{7FA9677C-D6A1-4846-B8D4-4A4091C2399C}"/>
+							<EndState Name="InWaitingRoom" ID="{51068766-F5C1-4B34-AABC-8C33DF6C1899}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="InWaitingRoom" ID="{51068766-F5C1-4B34-AABC-8C33DF6C1899}"/>
+							<EndState Name="InMenu" ID="{7FA9677C-D6A1-4846-B8D4-4A4091C2399C}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+				<StateGroup Name="InGame" ID="{6EC3DF7A-A0C8-4168-9A08-B91BAFE74018}">
+					<ChildrenList>
+						<State Name="None" ID="{0C17B598-87AE-44C8-92DA-4C37F133864D}"/>
+						<State Name="InMenu" ID="{0BD18780-6B03-4032-ABAA-B80D9511FE3D}"/>
+						<State Name="InGame" ID="{071E5AEF-3226-4E21-B07C-CBCF0FE24D5F}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="InGame" ID="{071E5AEF-3226-4E21-B07C-CBCF0FE24D5F}"/>
+							<EndState Name="InMenu" ID="{0BD18780-6B03-4032-ABAA-B80D9511FE3D}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="InMenu" ID="{0BD18780-6B03-4032-ABAA-B80D9511FE3D}"/>
+							<EndState Name="InGame" ID="{071E5AEF-3226-4E21-B07C-CBCF0FE24D5F}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

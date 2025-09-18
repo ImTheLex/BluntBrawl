@@ -349,6 +349,8 @@ GameObject:
   - component: {fileID: 9172635520185891289}
   - component: {fileID: 2024815160966658913}
   - component: {fileID: -7397526795768840002}
+  - component: {fileID: -6614215406227782186}
+  - component: {fileID: -124670740279443257}
   m_Layer: 0
   m_Name: P_Weapon_Bat
   m_TagString: Untagged
@@ -505,6 +507,53 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &-6614215406227782186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446135580147635493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226949fd1d3392e4fa23911adbbac4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _SFXWeaponSlash: playerEventsSlash
+  _SwitchWeaponType: switcheWeaponsType
+  _WeaponType: switcheWeaponsTypeBat
+  _RTCPVelocity: rtpcSlashSoundPerVelocity
+  _SFXWeaponHit: playerWeaponsEventHits
+  _switchWeaponDrop: playerSwitchContainWeaponsTypeDrop
+  _weaponDropType: playerSwitchWeaponDropBat
+  _SFXWeaponDrop: playerWeaponsEventsDrop
+--- !u!114 &-124670740279443257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446135580147635493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac98523cdc6c50a42b56a15c0bf06080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &8930263131591569787
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
-using System;
-using UnityEngine;
 using Mirror;
 using Mirror.Discovery;
+using UnityEngine;
 
 namespace NetworkConnection.Runtime
 {
@@ -15,10 +14,10 @@ namespace NetworkConnection.Runtime
         #endregion
         private void Start()
         {
-            /*m_discovery.OnServerFound.AddListener(OnServerFound);
+            m_discovery.OnServerFound.AddListener(OnServerFound);
             Debug.Log("Searching for host");
             m_discovery.StartDiscovery();
-            Invoke(nameof(BecomeHost),5f);*/
+            Invoke(nameof(BecomeHost),5f);
         }
         
         #region Main Methods

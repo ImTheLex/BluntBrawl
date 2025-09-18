@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" SchemaVersion="123">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="playerEvents" ID="{605EF8C1-F88E-4597-9E60-FD1632B82510}" PersistMode="Reference"/>
+				<WorkUnit Name="enemyEvents" ID="{F3325955-0D62-42C4-B838-EC813ECDABA8}" PersistMode="Reference"/>
+				<WorkUnit Name="objectEvents" ID="{88F69884-5949-4270-9B16-017F97696933}" PersistMode="Reference"/>
+				<WorkUnit Name="backgroundEvents" ID="{163E87B2-3709-43DA-B079-601C48198454}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

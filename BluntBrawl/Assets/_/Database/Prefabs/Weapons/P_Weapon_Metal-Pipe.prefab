@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4024689622884512253}
   - component: {fileID: 743269222483576242}
   - component: {fileID: 7965394184124875883}
+  - component: {fileID: 8746876136585844021}
   m_Layer: 0
   m_Name: P_Weapon_Metal-Pipe
   m_TagString: Untagged
@@ -171,6 +172,29 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &8746876136585844021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919615289787293967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226949fd1d3392e4fa23911adbbac4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _SFXWeaponSlash: playerEventsSlash
+  _SwitchWeaponType: switcheWeaponsType
+  _WeaponType: switcheWeaponsTypePipe
+  _RTCPVelocity: rtpcSlashSoundPerVelocity
+  _SFXWeaponHit: playerWeaponsEventHits
+  _switchWeaponDrop: playerSwitchContainWeaponsTypeDrop
+  _weaponDropType: playerSwitchWeaponDropPipe
+  _SFXWeaponDrop: playerWeaponsEventsDrop
 --- !u!1 &2295903863930102876
 GameObject:
   m_ObjectHideFlags: 0

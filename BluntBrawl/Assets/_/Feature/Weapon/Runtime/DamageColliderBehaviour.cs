@@ -1,6 +1,7 @@
 using Interfaces.Runtime;
 using Mirror;
 using Player.Runtime;
+using Sounds.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR;
@@ -24,7 +25,9 @@ namespace Weapon.Runtime
                     if (owner == other.gameObject.transform.root.gameObject) return;
                     //si cd => return
                     if (m_weaponBehaviour.m_hasHit) return;
-                    
+
+                    _weaponSFX.WeaponHitSFX();
+
                     InputDeviceCharacteristics hand = InputDeviceCharacteristics.Right;
                     NetworkIdentity identity = transform.root.gameObject.GetComponent<NetworkIdentity>();
                     _ownPlayerMovement.TargetRPCHapticToController(identity.connectionToClient, hand,0.75f,.5f);
@@ -56,14 +59,22 @@ namespace Weapon.Runtime
                     bumpable.TargetPlayerBumpOnHit(identity.connectionToClient, xrOrigin.transform.position, m_weaponBehaviour.m_force);
                 }
             }
-        
+
         #endregion
-        
+
+        #region Main Method
+
+        public void GetWeaponSFX(WeaponSFX weaponSFX) => _weaponSFX = weaponSFX;
+
+        #endregion
+
         #region Privates and Protected
-        
-        
+
+
         [SerializeField] private WeaponBehaviour m_weaponBehaviour;
         private PlayerMovement _ownPlayerMovement => m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>();
+
+        private WeaponSFX _weaponSFX;
         
 
         #endregion

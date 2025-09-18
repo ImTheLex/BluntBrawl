@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 3383883131658040026}
   - component: {fileID: 2499136198511965711}
   - component: {fileID: -1042273184889028280}
+  - component: {fileID: -1919812247326129480}
   m_Layer: 0
   m_Name: P_Weapon_Hammer-Cat
   m_TagString: Untagged
@@ -606,6 +607,29 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &-1919812247326129480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375742226066822164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226949fd1d3392e4fa23911adbbac4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _SFXWeaponSlash: playerEventsSlash
+  _SwitchWeaponType: switcheWeaponsType
+  _WeaponType: switcheWeaponsTypeCathammer
+  _RTCPVelocity: rtpcSlashSoundPerVelocity
+  _SFXWeaponHit: playerWeaponsEventHits
+  _switchWeaponDrop: playerSwitchContainWeaponsTypeDrop
+  _weaponDropType: playerSwitchWeaponDropCathammer
+  _SFXWeaponDrop: playerWeaponsEventsDrop
 --- !u!1001 &4696527095653679636
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,16 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Bus Name="masterVrAudioBus" ID="{621F63B9-7E49-4B06-B12B-DA33231984F0}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="SystemVR" ID="{3A2A9D06-F4B8-40DC-A791-C92E8E85046B}" WorkUnitID="{7550B90B-9DA2-41B5-AA6A-6DBB7039B7BC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AuxBus Name="masterVrAuxBus" ID="{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"/>
+					</ChildrenList>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>

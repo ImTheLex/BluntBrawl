@@ -1,0 +1,1549 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3600579960",
+    "Type": "User",
+    "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
+    "Language": "SFX",
+    "Hash": "{6D77D1A9-63B9-F3CD-0CE2-3BEB53A3431B}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
+    "ShortName": "bluntBrawlSoundbanks",
+    "Path": "bluntBrawlSoundbanks.bnk",
+    "Media": [
+     {
+      "Id": "4507446",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Timer Buzz.wav",
+      "CachePath": "C6/{C67814A2-D2DB-20F2-C36D-BADACA8EFDCB}.wem"
+     },
+     {
+      "Id": "12393257",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Enemy_Fall02.wav",
+      "CachePath": "08/{0819356C-F261-2211-413F-B17586F21C24}.wem"
+     },
+     {
+      "Id": "44326190",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_slash.wav",
+      "CachePath": "99/{992A5DE6-1ECB-2861-71D2-94E8B95963D5}.wem"
+     },
+     {
+      "Id": "51345580",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_drop02.wav",
+      "CachePath": "2E/{2E96DAA1-4852-707F-11FE-452D065D7580}.wem"
+     },
+     {
+      "Id": "79736912",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_hit01.wav",
+      "CachePath": "D7/{D751B25B-7C4B-AC30-1E47-865E883D1046}.wem"
+     },
+     {
+      "Id": "137305741",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_hit03.wav",
+      "CachePath": "77/{773BBE4E-85E2-935C-3F3C-9A5162A3BE76}.wem"
+     },
+     {
+      "Id": "137412868",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_hit02.wav",
+      "CachePath": "27/{278A07B2-A322-BD10-C318-1B25B32641D8}.wem"
+     },
+     {
+      "Id": "141785005",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE2.wav",
+      "CachePath": "40/{4056A0C9-2CBA-772A-EBC5-F9F372ED15AC}.wem"
+     },
+     {
+      "Id": "151921897",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_on_Ground_04.wav",
+      "CachePath": "00/{00A9742B-F7F6-EF96-8049-2C562532EA24}.wem"
+     },
+     {
+      "Id": "153848155",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_hit02.wav",
+      "CachePath": "A5/{A50048D9-6234-E172-65F1-A9780665A4AF}.wem"
+     },
+     {
+      "Id": "164347721",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Die on Ground1.wav",
+      "CachePath": "9E/{9ED5719F-A98B-323F-B709-56958E71A743}.wem"
+     },
+     {
+      "Id": "191278258",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_hit03.wav",
+      "CachePath": "77/{77E38E17-647D-6166-158B-838AC011CCF2}.wem"
+     },
+     {
+      "Id": "220346169",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE3.wav",
+      "CachePath": "A2/{A2F10616-DFB6-BA5D-12F3-02F91EA200D2}.wem"
+     },
+     {
+      "Id": "226151222",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_slash.wav",
+      "CachePath": "53/{53167873-4F89-2655-FC18-938515DF42D8}.wem"
+     },
+     {
+      "Id": "241007217",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash3.wav",
+      "CachePath": "3F/{3F117421-A0F2-1F6F-CA33-7DCAF6033AAB}.wem"
+     },
+     {
+      "Id": "249458767",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_slash-003.wav",
+      "CachePath": "F3/{F36FE59E-86DF-B6EB-69DA-A0D979F038FE}.wem"
+     },
+     {
+      "Id": "283526458",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_slash-002.wav",
+      "CachePath": "CA/{CA391B92-551B-9410-81E9-FE038C984E27}.wem"
+     },
+     {
+      "Id": "288473920",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_drop03.wav",
+      "CachePath": "88/{883A8CCA-5B5C-F259-B803-67B47EE7D099}.wem"
+     },
+     {
+      "Id": "297134220",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "madame qui meurt.wav",
+      "CachePath": "FC/{FCA72CE7-BB0E-5449-61C6-DC0D6C4ABB6D}.wem"
+     },
+     {
+      "Id": "301619979",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Wood_Crate_Break.wav",
+      "CachePath": "2A/{2AB51CD9-5CCF-8346-22C6-F616534C0F01}.wem"
+     },
+     {
+      "Id": "308766780",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_hit03.wav",
+      "CachePath": "71/{7170A31B-8CA0-C29F-8703-A5A32CB1E1C6}.wem"
+     },
+     {
+      "Id": "312279409",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_drop02.wav",
+      "CachePath": "84/{84061262-AB16-BDB6-293D-95DD829844D4}.wem"
+     },
+     {
+      "Id": "317604382",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE4.wav",
+      "CachePath": "2E/{2E35AA92-A602-0D30-AAEA-2F2181B9F91A}.wem"
+     },
+     {
+      "Id": "320914977",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash2.wav",
+      "CachePath": "AB/{AB7D57E0-E73E-96DA-1AD2-39BB67233119}.wem"
+     },
+     {
+      "Id": "323207144",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_drop01.wav",
+      "CachePath": "43/{43F94FB9-D0A0-B24C-A636-1E2B75C7D288}.wem"
+     },
+     {
+      "Id": "325074488",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE2.wav",
+      "CachePath": "A5/{A52341AE-A1D9-C09D-998E-31FE0BD7840A}.wem"
+     },
+     {
+      "Id": "329663424",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_drop03.wav",
+      "CachePath": "6B/{6B7B6482-8E30-76A4-B3C2-3657DC076935}.wem"
+     },
+     {
+      "Id": "355899150",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "EndTimer.wav",
+      "CachePath": "6E/{6E84D14C-48E2-DBBC-052E-B9B2537BC8F4}.wem"
+     },
+     {
+      "Id": "356721906",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash3.wav",
+      "CachePath": "FE/{FE1B96B4-F289-09F4-8A74-29E4B409144E}.wem"
+     },
+     {
+      "Id": "385165414",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_drop01.wav",
+      "CachePath": "A6/{A68B691C-8D7C-9BDF-7C70-E371B26E2879}.wem"
+     },
+     {
+      "Id": "400855421",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_slash.wav",
+      "CachePath": "31/{3178779D-182E-0276-2E10-ABA4F0E03524}.wem"
+     },
+     {
+      "Id": "404556623",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_drop03.wav",
+      "CachePath": "C2/{C21446B7-9D84-F00E-D180-D0695479B14C}.wem"
+     },
+     {
+      "Id": "417454000",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE6.wav",
+      "CachePath": "BE/{BEEE5938-FCE8-1512-7174-8E5AE37A36F1}.wem"
+     },
+     {
+      "Id": "420542052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE1.wav",
+      "CachePath": "F1/{F17C5B68-8E91-44DE-6491-CB468EF28CA7}.wem"
+     },
+     {
+      "Id": "423590449",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_hit03.wav",
+      "CachePath": "0E/{0EF93F7F-9536-DA4E-6078-BE46334C13CF}.wem"
+     },
+     {
+      "Id": "427590629",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_hit03.wav",
+      "CachePath": "6C/{6C2608A5-0167-448C-B65D-C3BC5FDB1805}.wem"
+     },
+     {
+      "Id": "448353387",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_hit02.wav",
+      "CachePath": "BC/{BC723D56-B06F-8809-52FB-056E1D3E9649}.wem"
+     },
+     {
+      "Id": "461529915",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_hit02.wav",
+      "CachePath": "21/{219ED053-0B69-27F9-9536-2F5F801C46DD}.wem"
+     },
+     {
+      "Id": "480460483",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_hit01.wav",
+      "CachePath": "FB/{FB23D64D-D6E7-7F59-2520-06DE3B103173}.wem"
+     },
+     {
+      "Id": "504362398",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_on_Ground_01.wav",
+      "CachePath": "C5/{C57F543D-AFD3-549D-5941-FCBE0A1B2A5A}.wem"
+     },
+     {
+      "Id": "526840038",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_hit01.wav",
+      "CachePath": "AC/{AC027E78-66D5-C4AD-0A61-7A91DC635345}.wem"
+     },
+     {
+      "Id": "533120083",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_slash-003.wav",
+      "CachePath": "A5/{A5252FA1-B655-68D2-A6C3-3CBB24A3FF39}.wem"
+     },
+     {
+      "Id": "533754059",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_slash.wav",
+      "CachePath": "F7/{F791292D-D543-6781-430D-7BEFAEFB32E5}.wem"
+     },
+     {
+      "Id": "536097790",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_hit01.wav",
+      "CachePath": "01/{0129B7B3-DBAC-C4D8-8A45-BEC9E1AE7F1A}.wem"
+     },
+     {
+      "Id": "554938991",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Die on Ground2.wav",
+      "CachePath": "78/{781A7648-F22B-23FB-0812-17C9BAA36236}.wem"
+     },
+     {
+      "Id": "585960595",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_hit02.wav",
+      "CachePath": "AF/{AFFAC66C-71BF-CFAC-3C27-6FEBB26F7FB2}.wem"
+     },
+     {
+      "Id": "595811355",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE3.wav",
+      "CachePath": "3B/{3B7387BE-D380-8600-8E7A-8D7832595372}.wem"
+     },
+     {
+      "Id": "659657246",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_slash.wav",
+      "CachePath": "68/{68AA6B53-A953-0AED-BCFA-675CD66AAD3E}.wem"
+     },
+     {
+      "Id": "666466755",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_slash.wav",
+      "CachePath": "EB/{EB5C255E-F027-A3A5-378D-5E0D330D3C17}.wem"
+     },
+     {
+      "Id": "689026062",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE1.wav",
+      "CachePath": "13/{13C92269-F74B-96EC-7D76-062B1A53E60F}.wem"
+     },
+     {
+      "Id": "694358222",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_drop02.wav",
+      "CachePath": "22/{22D3139F-332C-B79E-6569-40D0F19D80F2}.wem"
+     },
+     {
+      "Id": "708196835",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_hit02.wav",
+      "CachePath": "E7/{E7FE202E-3B58-E6D2-25ED-3871732C88D4}.wem"
+     },
+     {
+      "Id": "735879190",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_drop01.wav",
+      "CachePath": "B7/{B7EDD1F4-F70E-6D92-264B-A7C2A7E88071}.wem"
+     },
+     {
+      "Id": "802974831",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_slash-001.wav",
+      "CachePath": "08/{08F4FBC1-016E-0D2F-FAE0-87834BAF354E}.wem"
+     },
+     {
+      "Id": "804610941",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_hit03.wav",
+      "CachePath": "45/{45981186-E6B6-FF53-7B9A-9DC6752D9105}.wem"
+     },
+     {
+      "Id": "815608219",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_hit01.wav",
+      "CachePath": "23/{239DC08D-A02B-D877-9AF6-693F89B00C84}.wem"
+     },
+     {
+      "Id": "827249237",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash1.wav",
+      "CachePath": "4E/{4E143B6D-9A43-91F3-B2B7-5B85753A00F1}.wem"
+     },
+     {
+      "Id": "833669022",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE5.wav",
+      "CachePath": "71/{7161F999-8655-AA5C-0807-20F70406C2B9}.wem"
+     },
+     {
+      "Id": "850661213",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE5.wav",
+      "CachePath": "3E/{3E5F3290-41AF-2EC4-B3FB-D4824F967050}.wem"
+     },
+     {
+      "Id": "858297072",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_hit01.wav",
+      "CachePath": "D7/{D74C8E51-5E9A-C499-A2BF-AB77F4860F37}.wem"
+     },
+     {
+      "Id": "860611879",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Healing_potion.wav",
+      "CachePath": "4C/{4CF54DC0-F1EF-CE49-D49A-12B6DB37AC89}.wem"
+     },
+     {
+      "Id": "863288916",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_hit03.wav",
+      "CachePath": "40/{40605260-34DF-0DDA-F9CB-4D79C25AC402}.wem"
+     },
+     {
+      "Id": "885670471",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash2.wav",
+      "CachePath": "A0/{A09FCA30-5A1B-5C90-0402-B6C877100780}.wem"
+     },
+     {
+      "Id": "885820958",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash4.wav",
+      "CachePath": "AC/{AC12EC2E-18B7-CFAB-AC73-849C210E2E8C}.wem"
+     },
+     {
+      "Id": "891732342",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_drop02.wav",
+      "CachePath": "C6/{C6C87613-46AD-7024-057C-1E62F1DF3F81}.wem"
+     },
+     {
+      "Id": "895217486",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Enemy_Fall03.wav",
+      "CachePath": "E2/{E26B0696-2E52-AB83-0DD5-67BE78C3D65B}.wem"
+     },
+     {
+      "Id": "904268600",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_slash-002.wav",
+      "CachePath": "00/{00814846-47A2-3396-E8C6-31D546B576EB}.wem"
+     },
+     {
+      "Id": "906329842",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_on_Ground_02.wav",
+      "CachePath": "54/{54221508-AFA9-9E10-AE71-6092B28B05C0}.wem"
+     },
+     {
+      "Id": "922102602",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE4.wav",
+      "CachePath": "9B/{9B867E98-E092-72EB-4C20-3BBDE7895F9B}.wem"
+     },
+     {
+      "Id": "929283431",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_pipe_drop01.wav",
+      "CachePath": "F3/{F3E88AEB-3D9B-4C40-A356-258207ED915A}.wem"
+     },
+     {
+      "Id": "947530693",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_on_Ground_03.wav",
+      "CachePath": "1F/{1FDAE8B1-B64F-E53B-7956-70F92CA9A682}.wem"
+     },
+     {
+      "Id": "959806962",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Die on Ground2.wav",
+      "CachePath": "A4/{A45A49A6-824C-DE3C-19AB-38D427852206}.wem"
+     },
+     {
+      "Id": "969473063",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_hit03.wav",
+      "CachePath": "74/{74807659-9E94-C60A-C795-F4B2B1DA9650}.wem"
+     },
+     {
+      "Id": "985593584",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FOOTSTEP CONCRETE6.wav",
+      "CachePath": "6F/{6F55D8FC-DAC4-2AD2-21BD-39CDC0C6CFDA}.wem"
+     },
+     {
+      "Id": "990842229",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash1.wav",
+      "CachePath": "21/{21D55628-A003-5E9B-0904-B19610465D59}.wem"
+     },
+     {
+      "Id": "994900148",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_hit01.wav",
+      "CachePath": "F7/{F7E8B2E0-3529-25C2-6871-5DD94233E5B2}.wem"
+     },
+     {
+      "Id": "1006049320",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Bat_drop03.wav",
+      "CachePath": "CA/{CAC8B540-8E67-5CC4-BB8E-FAD145C45431}.wem"
+     },
+     {
+      "Id": "1008767796",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BluntDash\\playerDash4.wav",
+      "CachePath": "0D/{0D41338E-819F-B1A1-88FF-93E5F077D530}.wem"
+     },
+     {
+      "Id": "1009836580",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Fence_Break.wav",
+      "CachePath": "EC/{EC6621B7-049B-A3A7-C82B-668D5FDD07B9}.wem"
+     },
+     {
+      "Id": "1013380495",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_hit01.wav",
+      "CachePath": "5D/{5DADDB33-C4C0-CD0F-8102-626260D0DFF8}.wem"
+     },
+     {
+      "Id": "1017108975",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_slash.wav",
+      "CachePath": "7C/{7C314224-C785-3D3A-0E6E-0BD4EDC8F100}.wem"
+     },
+     {
+      "Id": "1027563239",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Die on Ground1.wav",
+      "CachePath": "90/{90318C57-3BF1-2B1A-D964-B6BDF8741743}.wem"
+     },
+     {
+      "Id": "1042281802",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_CatHammer_hit02.wav",
+      "CachePath": "D3/{D3F87697-EA77-D743-B6BF-A696223737D6}.wem"
+     },
+     {
+      "Id": "1055204058",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Weapon_Sign_hit02.wav",
+      "CachePath": "C2/{C2770421-A47A-6F4C-EB3F-58255C40183B}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1500071851",
+      "Name": "AmbientTest",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\AmbientTest",
+      "GUID": "{5B8DCF4B-5261-43BB-92E0-747D9FBD9DBF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1816771275",
+      "Name": "backgroundsEventsSounds",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\backgroundsEventsSounds",
+      "GUID": "{C5C90984-FBB1-400E-8142-871EFA7CCC7A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "203100604",
+      "Name": "Buttons",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\Buttons",
+      "GUID": "{165E3CDB-44C4-49BC-83BC-1996CEB5A2B5}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3175741232",
+      "Name": "enemyEventsDash",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsDash",
+      "GUID": "{B46034F3-F530-4C23-A0D2-8970973CA549}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.5728413",
+      "DurationMax": "0.6632899",
+      "MediaRefs": [
+       {
+        "Id": "241007217"
+       },
+       {
+        "Id": "827249237"
+       },
+       {
+        "Id": "885670471"
+       },
+       {
+        "Id": "1008767796"
+       }
+      ]
+     },
+     {
+      "Id": "723260870",
+      "Name": "enemyEventsDie",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsDie",
+      "GUID": "{3ED1EFB7-F2D6-42B7-82F8-FAB136CFB3AF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.90542156",
+      "DurationMax": "0.972639",
+      "MediaRefs": [
+       {
+        "Id": "164347721"
+       },
+       {
+        "Id": "554938991"
+       }
+      ]
+     },
+     {
+      "Id": "2172152223",
+      "Name": "enemyEventsFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsFall",
+      "GUID": "{A5DF65E7-40A3-47BC-9627-D40BACB5E890}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.6386752",
+      "DurationMax": "4.532313",
+      "MediaRefs": [
+       {
+        "Id": "12393257"
+       },
+       {
+        "Id": "297134220"
+       },
+       {
+        "Id": "895217486"
+       }
+      ]
+     },
+     {
+      "Id": "2772879681",
+      "Name": "enemyEventsFootsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsFootsteps",
+      "GUID": "{CE0C1722-1699-4006-947E-D31763835FBA}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.13553432",
+      "DurationMax": "0.27377725",
+      "MediaRefs": [
+       {
+        "Id": "220346169"
+       },
+       {
+        "Id": "317604382"
+       },
+       {
+        "Id": "325074488"
+       },
+       {
+        "Id": "420542052"
+       },
+       {
+        "Id": "850661213"
+       },
+       {
+        "Id": "985593584"
+       }
+      ]
+     },
+     {
+      "Id": "3292113943",
+      "Name": "enemyEventsSlash",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsSlash",
+      "GUID": "{31560868-DFCE-4DE2-B316-886BCDBE45E0}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.24",
+      "DurationMax": "1.1379642",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3160374033",
+         "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "44326190"
+         },
+         {
+          "Id": "249458767"
+         },
+         {
+          "Id": "283526458"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3307155126",
+         "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "533120083"
+         },
+         {
+          "Id": "802974831"
+         },
+         {
+          "Id": "904268600"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "1444194542",
+         "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1017108975"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3771686185",
+         "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "666466755"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "526621624",
+      "Name": "enemyWeaponsEventHits",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyWeaponsEventHits",
+      "GUID": "{07CD507B-C1D7-4CE3-93E7-1C6AFCB3717E}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.5067614",
+      "DurationMax": "4.0020485",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3160374033",
+         "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "79736912"
+         },
+         {
+          "Id": "448353387"
+         },
+         {
+          "Id": "804610941"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3307155126",
+         "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "191278258"
+         },
+         {
+          "Id": "708196835"
+         },
+         {
+          "Id": "994900148"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "1444194542",
+         "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "423590449"
+         },
+         {
+          "Id": "526840038"
+         },
+         {
+          "Id": "1055204058"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3771686185",
+         "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "536097790"
+         },
+         {
+          "Id": "585960595"
+         },
+         {
+          "Id": "863288916"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "1389296758",
+      "Name": "enemyWeaponsEventsDrop",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyWeaponsEventsDrop",
+      "GUID": "{5629DCA9-63B1-4B09-9B63-027522AE9DDE}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.32605305",
+      "DurationMax": "1.1928744",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3160374033",
+         "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "329663424"
+         },
+         {
+          "Id": "694358222"
+         },
+         {
+          "Id": "929283431"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3307155126",
+         "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "735879190"
+         },
+         {
+          "Id": "891732342"
+         },
+         {
+          "Id": "1006049320"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "1444194542",
+         "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "288473920"
+         },
+         {
+          "Id": "312279409"
+         },
+         {
+          "Id": "323207144"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3771686185",
+         "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "51345580"
+         },
+         {
+          "Id": "385165414"
+         },
+         {
+          "Id": "404556623"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\Music",
+      "GUID": "{ED3FD758-538A-4F2B-A5D2-819CFA41444F}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2963827865",
+      "Name": "objectEventsCathammerOnGround",
+      "ObjectPath": "\\Events\\Default Work Unit\\objectEvents\\objectEventsCathammerOnGround",
+      "GUID": "{ADC40711-CD1C-4F69-9053-210B3ABAAE80}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "1.0936042",
+      "MediaRefs": [
+       {
+        "Id": "151921897"
+       },
+       {
+        "Id": "504362398"
+       },
+       {
+        "Id": "906329842"
+       },
+       {
+        "Id": "947530693"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1797866611",
+        "Name": "masterVrAuxBus",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
+        "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
+       }
+      ]
+     },
+     {
+      "Id": "2354176855",
+      "Name": "objectEventsCrateHit",
+      "ObjectPath": "\\Events\\Default Work Unit\\objectEvents\\objectEventsCrateHit",
+      "GUID": "{80BE123A-A692-4138-9056-49E8470D8F9C}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5510398",
+      "DurationMax": "1.5510398",
+      "MediaRefs": [
+       {
+        "Id": "301619979"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1797866611",
+        "Name": "masterVrAuxBus",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
+        "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
+       }
+      ]
+     },
+     {
+      "Id": "4263813725",
+      "Name": "objectEventsFenceHit",
+      "ObjectPath": "\\Events\\Default Work Unit\\objectEvents\\objectEventsFenceHit",
+      "GUID": "{E17F95FC-C9C5-4E0C-9FAD-06505F39E229}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3682813",
+      "DurationMax": "0.3682813",
+      "MediaRefs": [
+       {
+        "Id": "1009836580"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1797866611",
+        "Name": "masterVrAuxBus",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
+        "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
+       }
+      ]
+     },
+     {
+      "Id": "2381628217",
+      "Name": "objectEventsHeal",
+      "ObjectPath": "\\Events\\Default Work Unit\\objectEvents\\objectEventsHeal",
+      "GUID": "{93A904B8-DF95-46F6-8E91-CD71E4C716E4}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7549572",
+      "DurationMax": "0.7549572",
+      "MediaRefs": [
+       {
+        "Id": "860611879"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1797866611",
+        "Name": "masterVrAuxBus",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
+        "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
+       }
+      ]
+     },
+     {
+      "Id": "1505439485",
+      "Name": "playerEventsDash",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsDash",
+      "GUID": "{0A6E2A86-1C45-497B-B300-43A1CF016699}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.59042853",
+      "DurationMax": "0.61555314",
+      "MediaRefs": [
+       {
+        "Id": "320914977"
+       },
+       {
+        "Id": "356721906"
+       },
+       {
+        "Id": "885820958"
+       },
+       {
+        "Id": "990842229"
+       }
+      ]
+     },
+     {
+      "Id": "1082178505",
+      "Name": "playerEventsDie",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsDie",
+      "GUID": "{4F7F2C1F-E8B2-4908-A0A0-E764A987B373}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.96022916",
+      "DurationMax": "1.0993959",
+      "MediaRefs": [
+       {
+        "Id": "959806962"
+       },
+       {
+        "Id": "1027563239"
+       }
+      ]
+     },
+     {
+      "Id": "2509028246",
+      "Name": "playerEventsFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsFall",
+      "GUID": "{A1C22559-8CB0-496F-944E-8AB780E56F0C}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.6386752",
+      "DurationMax": "4.532313",
+      "MediaRefs": [
+       {
+        "Id": "12393257"
+       },
+       {
+        "Id": "297134220"
+       },
+       {
+        "Id": "895217486"
+       }
+      ]
+     },
+     {
+      "Id": "1744576738",
+      "Name": "playerEventsFootsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsFootsteps",
+      "GUID": "{AC5C9407-F363-43F6-AE64-72E8E6A55225}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.1348472",
+      "DurationMax": "0.27952084",
+      "MediaRefs": [
+       {
+        "Id": "141785005"
+       },
+       {
+        "Id": "417454000"
+       },
+       {
+        "Id": "595811355"
+       },
+       {
+        "Id": "689026062"
+       },
+       {
+        "Id": "833669022"
+       },
+       {
+        "Id": "922102602"
+       }
+      ]
+     },
+     {
+      "Id": "2607198388",
+      "Name": "playerEventsSlash",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsSlash",
+      "GUID": "{F0E25E2E-FF0C-4A1A-9A6F-F7A895FC2D6C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.24",
+      "DurationMax": "1.12359",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3160374033",
+         "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "659657246"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3307155126",
+         "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "226151222"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "1444194542",
+         "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "533754059"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3771686185",
+         "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "400855421"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "4152903161",
+      "Name": "playerWeaponsEventHits",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerWeaponsEventHits",
+      "GUID": "{92E1F9B0-F646-4375-A1C5-6301A113E188}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.51406723",
+      "DurationMax": "3.9919295",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3160374033",
+         "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "137305741"
+         },
+         {
+          "Id": "461529915"
+         },
+         {
+          "Id": "480460483"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3307155126",
+         "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "137412868"
+         },
+         {
+          "Id": "427590629"
+         },
+         {
+          "Id": "815608219"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "1444194542",
+         "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "153848155"
+         },
+         {
+          "Id": "969473063"
+         },
+         {
+          "Id": "1013380495"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3771686185",
+         "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "308766780"
+         },
+         {
+          "Id": "858297072"
+         },
+         {
+          "Id": "1042281802"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "1643626701",
+      "Name": "playerWeaponsEventsDrop",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerWeaponsEventsDrop",
+      "GUID": "{2BDC2E95-5F0E-4B66-9E6C-B01E8D7D4992}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.24",
+      "DurationMax": "1.12359",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3160374033",
+         "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "659657246"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3307155126",
+         "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "226151222"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "1444194542",
+         "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "533754059"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1861379221",
+         "Id": "3771686185",
+         "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "400855421"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "3486474161",
+      "Name": "TimerEndGame",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\TimerEndGame",
+      "GUID": "{C77DC6FF-5715-4AC4-B1B8-390DDF49C59B}",
+      "DurationType": "OneShot",
+      "DurationMin": "170.22734",
+      "DurationMax": "170.22734",
+      "MediaRefs": [
+       {
+        "Id": "4507446"
+       },
+       {
+        "Id": "355899150"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1797866611",
+        "Name": "masterVrAuxBus",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
+        "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "847161145",
+      "Name": "rtpcGameTimer",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcGameTimer",
+      "GUID": "{C367707A-E873-45C4-B025-1F4322846E2A}"
+     },
+     {
+      "Id": "3236278648",
+      "Name": "rtpcSlashSoundPerVelocity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcSlashSoundPerVelocity",
+      "GUID": "{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "1861379221",
+      "Name": "switcheWeaponsType",
+      "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType",
+      "GUID": "{74487858-523C-43CC-9CA8-3BE999ECEC11}",
+      "Switches": [
+       {
+        "Id": "1444194542",
+        "Name": "switcheWeaponsTypeSign",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypeSign",
+        "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+       },
+       {
+        "Id": "3160374033",
+        "Name": "switcheWeaponsTypePipe",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypePipe",
+        "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+       },
+       {
+        "Id": "3307155126",
+        "Name": "switcheWeaponsTypeBat",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypeBat",
+        "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}"
+       },
+       {
+        "Id": "3771686185",
+        "Name": "switcheWeaponsTypeCathammer",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypeCathammer",
+        "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{DECB6F1F-8675-9362-C48C-A7F5CC02E329}"
+ }
+}

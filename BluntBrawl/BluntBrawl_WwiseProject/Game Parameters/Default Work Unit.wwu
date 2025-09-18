@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}" SchemaVersion="123">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="rtpcPlayerVoicePerHealth" ID="{AD523224-D2A6-4CE7-BD63-92C43AFE34D8}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="rtpcGameTimer" ID="{C367707A-E873-45C4-B025-1F4322846E2A}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="180"/>
+						<Property Name="Max" Type="Real64" Value="180"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="rtpcWeaponInHand" ID="{BCD79F48-D5FE-4289-81FC-7E2DA81C27AF}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="4"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

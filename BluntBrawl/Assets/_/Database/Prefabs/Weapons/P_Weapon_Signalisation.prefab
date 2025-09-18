@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 384270418743110187}
   - component: {fileID: 5781596232966053381}
   - component: {fileID: -74561854404353769}
+  - component: {fileID: 2793861831970588432}
   m_Layer: 0
   m_Name: P_Weapon_Signalisation
   m_TagString: Untagged
@@ -247,6 +248,29 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &2793861831970588432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956511803332399994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226949fd1d3392e4fa23911adbbac4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _SFXWeaponSlash: playerEventsSlash
+  _SwitchWeaponType: switcheWeaponsType
+  _WeaponType: switcheWeaponsTypeSign
+  _RTCPVelocity: rtpcSlashSoundPerVelocity
+  _SFXWeaponHit: playerWeaponsEventHits
+  _switchWeaponDrop: playerSwitchContainWeaponsTypeDrop
+  _weaponDropType: playerSwitchWeaponDropSign
+  _SFXWeaponDrop: playerWeaponsEventsDrop
 --- !u!1 &2369209086424040040
 GameObject:
   m_ObjectHideFlags: 0

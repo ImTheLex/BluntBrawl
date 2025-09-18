@@ -3,6 +3,8 @@ using Health.Runtime;
 using InputSystem.BluntBrawl;
 using Item.Runtime;
 using Mirror;
+using Rounds.Runtime;
+using UINavigation.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -59,10 +61,11 @@ namespace Player.Runtime
             TrackingPositionController();
             TrackingRotationController();
 
-            if (DetectKillZ())
+            if (DetectKillZ() && _healthBehaviour.m_isDead == false)
             {
-                _playerRigidbody.position = new Vector3(0, 5, 0);
-                _healthBehaviour.CmdTakeDamage(2000);
+                if (RoundSystem.Instance.m_isPlayingRound)
+                    _healthBehaviour.CmdTakeDamage(_healthBehaviour.m_currentHealth);
+                else _roundPlayer.InitializePlayer();
 
             }
             if (m_isBumping) return;
@@ -145,8 +148,13 @@ namespace Player.Runtime
                 _dashDirection = _playerInputMovement.normalized;
             }
         }
-        
-        
+
+        public void OnInteractA(InputAction.CallbackContext context)
+        {
+            if(context.performed) _rightControllerInteractA.Interact();
+        }
+
+
         /*Dash method on double tap joystick
          
          public void OnDash(InputAction.CallbackContext context)
@@ -397,6 +405,9 @@ namespace Player.Runtime
         private Quaternion _leftControllerInputRotation;
         private Quaternion _rightControllerInputRotation;
         
+        private RightControllerInteract _rightControllerInteractA; 
+        
+        [SerializeField] private RoundPlayer _roundPlayer;
         [SerializeField] private ItemGrabber _itemGrabber;
         [SerializeField] private HealthBehaviour _healthBehaviour;
         [SerializeField] private Animator _animator;

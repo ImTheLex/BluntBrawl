@@ -138,6 +138,15 @@ namespace InputSystem.BluntBrawl
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InteractA"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c307909-733c-4be1-994e-cc175a3bd68a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -215,6 +224,17 @@ namespace InputSystem.BluntBrawl
                     ""processors"": """",
                     ""groups"": "";XR"",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2827a569-4d61-4a53-ac68-347ee41235a8"",
+                    ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InteractA"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1078,6 +1098,7 @@ namespace InputSystem.BluntBrawl
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_DebugPosition = m_Player.FindAction("DebugPosition", throwIfNotFound: true);
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+            m_Player_InteractA = m_Player.FindAction("InteractA", throwIfNotFound: true);
             // BB XRI UI
             m_BBXRIUI = asset.FindActionMap("BB XRI UI", throwIfNotFound: true);
             m_BBXRIUI_Navigate = m_BBXRIUI.FindAction("Navigate", throwIfNotFound: true);
@@ -1188,6 +1209,7 @@ namespace InputSystem.BluntBrawl
         private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_DebugPosition;
         private readonly InputAction m_Player_Dash;
+        private readonly InputAction m_Player_InteractA;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -1219,6 +1241,10 @@ namespace InputSystem.BluntBrawl
             /// Provides access to the underlying input action "Player/Dash".
             /// </summary>
             public InputAction @Dash => m_Wrapper.m_Player_Dash;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/InteractA".
+            /// </summary>
+            public InputAction @InteractA => m_Wrapper.m_Player_InteractA;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1260,6 +1286,9 @@ namespace InputSystem.BluntBrawl
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @InteractA.started += instance.OnInteractA;
+                @InteractA.performed += instance.OnInteractA;
+                @InteractA.canceled += instance.OnInteractA;
             }
 
             /// <summary>
@@ -1286,6 +1315,9 @@ namespace InputSystem.BluntBrawl
                 @Dash.started -= instance.OnDash;
                 @Dash.performed -= instance.OnDash;
                 @Dash.canceled -= instance.OnDash;
+                @InteractA.started -= instance.OnInteractA;
+                @InteractA.performed -= instance.OnInteractA;
+                @InteractA.canceled -= instance.OnInteractA;
             }
 
             /// <summary>
@@ -1909,6 +1941,13 @@ namespace InputSystem.BluntBrawl
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnDash(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "InteractA" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnInteractA(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BB XRI UI" which allows adding and removing callbacks.

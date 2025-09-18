@@ -12,6 +12,8 @@ namespace Rounds.Runtime
         [SyncVar(hook = nameof(OnNameChanged))] public string m_playerName;
 
 
+        public bool m_playerInitialized = false;
+        
         private void OnNameChanged(string oldName, string newName)
         {
             Debug.Log($"Player Name: {newName}");
@@ -26,12 +28,17 @@ namespace Rounds.Runtime
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         public override void OnStartClient()
         {
-            base.OnStartClient(); 
+            base.OnStartClient();
             roundSystem = RoundSystem.Instance;
-            deathCam = DeathCamSystem.Instance;
-            deathCam.RegisterPlayer(gameObject);
-            deathCam.RegisterCamera(_playerCam);
-             //roundSystem = FindFirstObjectByType<RoundSystem>();
+            if (isLocalPlayer)
+            {   
+                //deathCam = FindFirstObjectByType<DeathCamSystem>();
+                //deathCam = DeathCamSystem.Instance;
+                //_deathCamSystem.RegisterPlayer(gameObject);
+                //_deathCamSystem.RegisterCamera(_playerCam);
+            }
+           
+            //roundSystem = FindFirstObjectByType<RoundSystem>();
             if(roundSystem) CmdAddPlayer();
             _spawnPosition = _xrPosition.transform.position;
         }
@@ -39,8 +46,9 @@ namespace Rounds.Runtime
         [ClientRpc]
         public void InitializePlayer()
         {
-            deathCam.UnSwipeCam();
+            //deathCam.UnSwipeCam(connectionToClient);
             _xrPosition.transform.position = _spawnPosition;
+            m_playerInitialized = true;
         }
         
         //[Command(requiresAuthority = false)]
@@ -52,7 +60,7 @@ namespace Rounds.Runtime
         [Command(requiresAuthority = false)]
         public void CmdSetDefeat()
         {
-            deathCam.SwipeCamera();
+            //_deathCamSystem.SwipeCamera();
             roundSystem.SetRoundLoser(this);
         }
         
@@ -71,10 +79,11 @@ namespace Rounds.Runtime
         {
             return _playerCam;
         }
+        
         #region Privates
 
             
-            private DeathCamSystem deathCam;
+            [SerializeField]private DeathCamSystem _deathCamSystem;
             [SyncVar] private Vector3 _spawnPosition;
             [SerializeField] private Camera _playerCam;
             [SerializeField] private GameObject _xrPosition;

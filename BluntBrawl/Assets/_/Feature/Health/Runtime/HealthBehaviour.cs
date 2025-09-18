@@ -27,6 +27,8 @@ namespace Health.Runtime
             public int m_currentHealth => _currentHealth;
             public int m_maxHealth => _maxHealth;
 
+            [SyncVar]public bool m_isDead;
+
         #endregion
         
         
@@ -97,6 +99,11 @@ namespace Health.Runtime
             private void Update()
             {
                 if (_isInvincible) IFrame();
+                if (_roundPlayer.m_playerInitialized == true)
+                {
+                    CmdResetHealth();
+                    _roundPlayer.m_playerInitialized = false;
+                }
             }
 
             
@@ -149,7 +156,12 @@ namespace Health.Runtime
             {
                 RpcFlash();
                 _currentHealth -= damageAmount;
-                if(_currentHealth <= 0) {CmdHandleDamageableDeath();}
+                if(_currentHealth <= 0) 
+                {
+                    m_isDead = true;
+                    CmdHandleDamageableDeath();
+
+                }
             }
             
 
@@ -198,12 +210,15 @@ namespace Health.Runtime
             {
                 _currentHealth = _maxHealth;
                 HandleHealth();
+                m_isDead = false;
+                
             }
 
-            //[Command(requiresAuthority = false)]
+            [Command(requiresAuthority = false)]
             public void CmdResetHealth()
             {
                 ResetHealth();
+                
             }
             
             
@@ -376,6 +391,7 @@ namespace Health.Runtime
         
             
             [SerializeField,Tooltip("Tick if is a player or not.")] private bool _isPlayer;
+        
             
             
         #endregion

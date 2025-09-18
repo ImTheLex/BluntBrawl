@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c0f9612981845729415f60bb8cc151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isVerbose: 1
+  m_isVerbose: 0
   m_debugText: {fileID: 3624592225970618224}
   m_weaponBehaviour: {fileID: 7825915998965787887}
   m_debugCanvas: {fileID: 696515148235948738}

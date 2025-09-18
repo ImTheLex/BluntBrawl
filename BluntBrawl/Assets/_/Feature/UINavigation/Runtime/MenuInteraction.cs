@@ -12,8 +12,14 @@ namespace UINavigation.Runtime
         public void HideMenu()=> _gameObject.SetActive(false);
         public void StartGame(int buildIndex) => ChangeScene(buildIndex);
         public void QuitGame() => Application.Quit();
-        
 
+
+        [ContextMenu("DebugChangeScene")]
+        public void DebugChangeScene()
+        {
+            ChangeScene(1);
+        }
+        
         #endregion
 
         #region Utils

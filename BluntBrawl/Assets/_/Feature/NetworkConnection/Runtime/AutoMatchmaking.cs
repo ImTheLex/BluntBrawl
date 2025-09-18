@@ -15,11 +15,26 @@ namespace NetworkConnection.Runtime
         #endregion
         private void Start()
         {
+            /*m_discovery.OnServerFound.AddListener(OnServerFound);
+            Debug.Log("Searching for host");
+            m_discovery.StartDiscovery();
+            Invoke(nameof(BecomeHost),5f);*/
+        }
+        
+        #region Main Methods
+
+        [ContextMenu("Start Matchmaking")]
+        public void StartMatchmake()
+        {
             m_discovery.OnServerFound.AddListener(OnServerFound);
             Debug.Log("Searching for host");
             m_discovery.StartDiscovery();
-            Invoke(nameof(BecomeHost),1f);
+            Invoke(nameof(BecomeHost),5f);
+            
         }
+        
+        #endregion
+        
         
         #region Utils
 

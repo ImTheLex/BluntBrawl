@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c0f9612981845729415f60bb8cc151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isVerbose: 1
+  m_isVerbose: 0
   m_debugText: {fileID: 5412123317827315296}
   m_weaponBehaviour: {fileID: 3319744346761345788}
   m_debugCanvas: {fileID: 8454522048604022067}

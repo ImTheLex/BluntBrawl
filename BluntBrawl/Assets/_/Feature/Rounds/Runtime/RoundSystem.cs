@@ -19,6 +19,7 @@ namespace Rounds.Runtime
             
             public bool m_isPreStartingRound => _isPreStartingRound;
 
+            public bool m_isPlayingRound;
 
         #endregion
 
@@ -102,6 +103,7 @@ namespace Rounds.Runtime
         {
             Debug.Log("Round started!");
             _isPreStartingRound = false;
+            m_isPlayingRound = true;
             _roundStarted = true;
             _roundTimer = m_roundStats.m_maxRoundTime;
         }
@@ -112,6 +114,7 @@ namespace Rounds.Runtime
             Debug.Log("Round ended!");
             
             _roundStarted = false;
+            m_isPlayingRound = false;
             _roundBreak = true;
             CheckWinners();
             _currentRound++;

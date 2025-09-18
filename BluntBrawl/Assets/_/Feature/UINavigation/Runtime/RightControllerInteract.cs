@@ -34,10 +34,17 @@ namespace UINavigation.Runtime
             if (Physics.Raycast(start, direction, out RaycastHit hit, _rayLength))
             {
                 _button = hit.collider.GetComponent<Button>(); // toujours overwrite
+                if(_blb is null) _blb = _button.GetComponent<ButtonLayoutBehaviour>();
+                _blb.Swipe();
                 end = hit.point;
             }
             else
             {
+                if (_blb is not null)
+                {
+                    _blb.UnSwipe();
+                    _blb = null;    
+                }
                 _button = null;
             }
 
@@ -68,6 +75,7 @@ namespace UINavigation.Runtime
         }
 
         private Button _button;
+        private ButtonLayoutBehaviour _blb;
         [SerializeField] private Transform _rightController;
         [SerializeField] private float _rayLength = 100f;
         [SerializeField] private LineRenderer _lineRenderer;

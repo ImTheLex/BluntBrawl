@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 688012826983084114}
   - component: {fileID: 1187469852568611722}
   - component: {fileID: 8984994676687637865}
+  - component: {fileID: 1800488395301384664}
   m_Layer: 5
   m_Name: P_PlayButton
   m_TagString: Untagged
@@ -30,7 +31,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f815d7dbb7d9cbb4abec0b1cb29dacd4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4536f170a6e80d44d825aeccd7628500, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -96,8 +97,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.031423, y: 2.0241308, z: 1}
-  m_Center: {x: -0.0057881474, y: 0.100559235, z: 0}
+  m_Size: {x: 1.1262784, y: 0.82227314, z: 0.28608465}
+  m_Center: {x: -0.00382483, y: 0.078068435, z: 0.034608126}
 --- !u!114 &8984994676687637865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +144,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DeathCam.Runtime.DeathCamVignette, DeathCam.Runtime
+        m_MethodName: DisplayVignette
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NetworkConnection.Runtime.AutoMatchmaking, NetworkConnection.Runtime
         m_MethodName: StartMatchmake
         m_Mode: 1
@@ -154,3 +167,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1800488395301384664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3710642973533845152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70ae91df18b14fc5a4fbb1d862b7de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _newSprite: {fileID: 21300000, guid: f8d11d4ca8523c04b838bd33f4d6d0df, type: 3}

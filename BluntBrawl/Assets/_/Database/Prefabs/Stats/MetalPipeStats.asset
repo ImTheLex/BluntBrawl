@@ -17,8 +17,8 @@ MonoBehaviour:
   m_velocityDamageMultiplier: 1
   m_invincibilityDuration: 1.5
   m_force: 1
-  m_velocityMatchedColor: {r: 0, g: 0, b: 0, a: 0}
-  m_onCooldownColor: {r: 0, g: 0, b: 0, a: 0}
-  m_readyToUseColor: {r: 0, g: 0, b: 0, a: 0}
+  m_velocityMatchedColor: {r: 0.23529412, g: 0.7058824, b: 0.22352941, a: 0}
+  m_onCooldownColor: {r: 0.8666667, g: 0.3647059, b: 0.38431373, a: 0}
+  m_readyToUseColor: {r: 0.3882353, g: 0.65882355, b: 0.8862745, a: 0}
   m_inWorldPrefab: {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
   m_inHandPrefab: {fileID: 919615289787293967, guid: d06fe26c5dc65314da5065ccb03e2fc5, type: 3}

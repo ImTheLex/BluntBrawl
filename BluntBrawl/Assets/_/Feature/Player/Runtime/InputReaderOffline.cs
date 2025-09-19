@@ -1,4 +1,3 @@
-using System;
 using InputSystem.BluntBrawl;
 using UINavigation.Runtime;
 using Unity.XR.CoreUtils;
@@ -43,7 +42,7 @@ namespace Player.Runtime
             if (context.started)
             {
                 Vector2 direction = context.ReadValue<Vector2>();
-                MoveHead(direction);
+                //MoveHead(direction);
             }
         }
 
@@ -72,7 +71,7 @@ namespace Player.Runtime
             private void MoveHead(Vector2 direction)
             {
                 Vector3 xrRotation = _XROrigin.transform.rotation.eulerAngles;
-                Debug.Log(direction.x);
+                
                 if (direction.x >= 0.5f)
                 {
                     _XROrigin.transform.rotation = Quaternion.Euler(xrRotation.x,xrRotation.y + _rotateAngle,xrRotation.z);

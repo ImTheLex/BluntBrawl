@@ -23,7 +23,7 @@ namespace Player.Runtime
         {
             transform.position = _XRorigin.Origin.transform.position;
             transform.rotation = _XRorigin.Origin.transform.rotation;
-            _playerAvatar.rotation = Quaternion.Euler(RotateCharacterByHeadRotation(_XRorigin.Camera.transform));
+            //_playerAvatar.rotation = Quaternion.Euler(RotateCharacterByHeadRotation(_XRorigin.Camera.transform));
         }
 
         private Vector3 RotateCharacterByHeadRotation(Transform head)

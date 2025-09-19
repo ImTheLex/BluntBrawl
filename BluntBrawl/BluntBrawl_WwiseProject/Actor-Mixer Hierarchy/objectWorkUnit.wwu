@@ -18,9 +18,6 @@
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
 						</Reference>
-						<Reference Name="UserAuxSend0">
-							<ObjectRef Name="masterVrAuxBus" ID="{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
-						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<RandomSequenceContainer Name="objectHealSounds" ID="{0A9C30BE-AEBA-4FFD-B06A-4AC04FE67DC2}" ShortID="81645300">
@@ -170,7 +167,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="Weapon_CatHammer_on_Ground_01" ID="{9D73EFA2-2CDD-49DC-BF8B-9761B3757413}" ShortID="9636135">
+										<Sound Name="cathammerOnGround01" ID="{20719118-BEBC-41CD-B9B9-415D7A1ACAF6}" ShortID="47774048">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
@@ -180,12 +177,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Weapon_CatHammer_on_Ground_01" ID="{8694A634-3F7C-4971-A3DB-26E1369FD482}">
+												<AudioFileSource Name="Weapon_CatHammer_on_Ground_01" ID="{76EE253F-B1C4-4D92-A0CA-42D98D9D4F85}">
 													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.0116773688629882"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0323373291590441"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0345879125071096"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.026901709727752"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimEnd" Type="Real64" Value="0.756334189127569"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Weapon_CatHammer_on_Ground_01.wav</AudioFile>
@@ -195,10 +191,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Weapon_CatHammer_on_Ground_01" ID="{8694A634-3F7C-4971-A3DB-26E1369FD482}" Platform="Linked"/>
+												<ActiveSource Name="Weapon_CatHammer_on_Ground_01" ID="{76EE253F-B1C4-4D92-A0CA-42D98D9D4F85}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Weapon_CatHammer_on_Ground_02" ID="{0E7D19C5-93E0-4BCA-88DE-8BDD705D2F13}" ShortID="799790142">
+										<Sound Name="cathammerOnGround02" ID="{0478330E-0F65-4186-8329-10976EECAA22}" ShortID="979324495">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
@@ -208,11 +204,13 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Weapon_CatHammer_on_Ground_02" ID="{7B71468E-2A22-4D9B-95B0-F44535E3DD8D}">
+												<AudioFileSource Name="Weapon_CatHammer_on_Ground_02" ID="{CF1A37BF-DB85-420C-ADCB-AA3F8744F56D}">
 													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.014881920732864"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0251847889325391"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0391819293682392"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0134687882203323"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0685683763944186"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.979548229437608"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Weapon_CatHammer_on_Ground_02.wav</AudioFile>
@@ -222,10 +220,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Weapon_CatHammer_on_Ground_02" ID="{7B71468E-2A22-4D9B-95B0-F44535E3DD8D}" Platform="Linked"/>
+												<ActiveSource Name="Weapon_CatHammer_on_Ground_02" ID="{CF1A37BF-DB85-420C-ADCB-AA3F8744F56D}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Weapon_CatHammer_on_Ground_03" ID="{B74731E7-8168-4BC5-BE18-36E973D7CB45}" ShortID="422075199">
+										<Sound Name="cathammerOnGround03" ID="{B87AE1F8-C384-4176-A967-CF0ED592601C}" ShortID="1006547161">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
@@ -235,11 +233,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Weapon_CatHammer_on_Ground_03" ID="{E8057FAC-493E-4E17-9B0E-B8F4C88D9DCB}">
+												<AudioFileSource Name="Weapon_CatHammer_on_Ground_03" ID="{64CF8B5F-B147-4672-B9E5-C19E618CAC16}">
 													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.0139806889780036"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0109848270541457"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0245667993658483"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.013885582250262"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.859837962704846"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Weapon_CatHammer_on_Ground_03.wav</AudioFile>
@@ -249,10 +248,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Weapon_CatHammer_on_Ground_03" ID="{E8057FAC-493E-4E17-9B0E-B8F4C88D9DCB}" Platform="Linked"/>
+												<ActiveSource Name="Weapon_CatHammer_on_Ground_03" ID="{64CF8B5F-B147-4672-B9E5-C19E618CAC16}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Weapon_CatHammer_on_Ground_04" ID="{0993AE07-C28B-4892-A29B-35F8D31197EE}" ShortID="1024266951">
+										<Sound Name="cathammerOnGround04" ID="{857CBF59-6DF2-4C7D-B591-E3D7CBB50A3F}" ShortID="727925309">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
@@ -262,11 +261,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Weapon_CatHammer_on_Ground_04" ID="{7F964867-FF27-47B6-A26B-8D71A914E989}">
+												<AudioFileSource Name="Weapon_CatHammer_on_Ground_04" ID="{E27EDCAA-E28F-4843-AD64-667E9DBC44D7}">
 													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.0224713193227167"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.0149808795484779"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0534116828834618"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0520763908113752"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.0802512459458"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Weapon_CatHammer_on_Ground_04.wav</AudioFile>
@@ -276,7 +276,7 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Weapon_CatHammer_on_Ground_04" ID="{7F964867-FF27-47B6-A26B-8D71A914E989}" Platform="Linked"/>
+												<ActiveSource Name="Weapon_CatHammer_on_Ground_04" ID="{E27EDCAA-E28F-4843-AD64-667E9DBC44D7}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>

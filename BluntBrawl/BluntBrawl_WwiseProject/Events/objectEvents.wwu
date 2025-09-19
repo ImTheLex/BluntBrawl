@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{88F69884-5949-4270-9B16-017F97696933}" SchemaVersion="123" RootDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" ParentDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}">
 	<Events>
 		<WorkUnit Name="objectEvents" ID="{88F69884-5949-4270-9B16-017F97696933}" OwnerID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<Event Name="objectEventsCrateHit" ID="{80BE123A-A692-4138-9056-49E8470D8F9C}">
 					<ChildrenList>

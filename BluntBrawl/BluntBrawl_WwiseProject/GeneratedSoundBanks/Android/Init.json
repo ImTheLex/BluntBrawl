@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{1316BDAA-3BED-BBA7-FDF5-C339D6BCF8A2}",
+    "Hash": "{526DA86C-B8F6-1960-F79A-EE7A6A9A9052}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -90,60 +90,6 @@
       "GUID": "{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}"
      }
     ],
-    "StateGroups": [
-     {
-      "Id": "984691642",
-      "Name": "InGame",
-      "ObjectPath": "\\States\\Default Work Unit\\InGame",
-      "GUID": "{6EC3DF7A-A0C8-4168-9A08-B91BAFE74018}",
-      "States": [
-       {
-        "Id": "748895195",
-        "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\InGame\\None",
-        "GUID": "{0C17B598-87AE-44C8-92DA-4C37F133864D}"
-       },
-       {
-        "Id": "984691642",
-        "Name": "InGame",
-        "ObjectPath": "\\States\\Default Work Unit\\InGame\\InGame",
-        "GUID": "{071E5AEF-3226-4E21-B07C-CBCF0FE24D5F}"
-       },
-       {
-        "Id": "3374585465",
-        "Name": "InMenu",
-        "ObjectPath": "\\States\\Default Work Unit\\InGame\\InMenu",
-        "GUID": "{0BD18780-6B03-4032-ABAA-B80D9511FE3D}"
-       }
-      ]
-     },
-     {
-      "Id": "3374585465",
-      "Name": "InMenu",
-      "ObjectPath": "\\States\\Default Work Unit\\InMenu",
-      "GUID": "{1D0D0AFE-5CAE-4C78-A414-BD15E461AF1C}",
-      "States": [
-       {
-        "Id": "416437412",
-        "Name": "InWaitingRoom",
-        "ObjectPath": "\\States\\Default Work Unit\\InMenu\\InWaitingRoom",
-        "GUID": "{51068766-F5C1-4B34-AABC-8C33DF6C1899}"
-       },
-       {
-        "Id": "748895195",
-        "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\InMenu\\None",
-        "GUID": "{9E532144-173E-4921-89F5-5CE212C20E34}"
-       },
-       {
-        "Id": "3374585465",
-        "Name": "InMenu",
-        "ObjectPath": "\\States\\Default Work Unit\\InMenu\\InMenu",
-        "GUID": "{7FA9677C-D6A1-4846-B8D4-4A4091C2399C}"
-       }
-      ]
-     }
-    ],
     "SwitchGroups": [
      {
       "Id": "1861379221",
@@ -196,10 +142,39 @@
         "GUID": "{DE18B51B-EDFD-4366-B85B-A4596484DAD3}"
        }
       ]
+     },
+     {
+      "Id": "4139584672",
+      "Name": "switchHit",
+      "ObjectPath": "\\Switches\\Default Work Unit\\switchHit",
+      "GUID": "{C5CF4D29-D775-442F-9CA3-043F70190605}",
+      "GameParameterRef": {
+       "Id": "1693736946"
+      },
+      "Switches": [
+       {
+        "Id": "624013381",
+        "Name": "lowHP",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchHit\\lowHP",
+        "GUID": "{AFB9491D-D941-48AB-9A05-9C6BF0E8F599}"
+       },
+       {
+        "Id": "2639122072",
+        "Name": "mediumHP",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchHit\\mediumHP",
+        "GUID": "{F3D50634-FB38-4541-BD9B-032119D28659}"
+       },
+       {
+        "Id": "2942549062",
+        "Name": "fullHP",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchHit\\fullHP",
+        "GUID": "{FB3A2C26-AEB0-4514-BC6A-2F92E63C0249}"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{0F51D8AA-CF3A-711D-0EF9-66C2A94B8C57}"
+  "FileHash": "{13489EDF-AD37-C575-BE74-CC50C28CFA02}"
  }
 }

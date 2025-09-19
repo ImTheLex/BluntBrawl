@@ -28,7 +28,15 @@
 						<Value Platform="Android">GeneratedSoundBanks\Android\</Value>
 					</ValueList>
 				</Property>
-				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="GenerateSoundBankXML" Type="bool" Value="False" /><Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True" /><Property Name="SoundBankGenerateMaxAttenuationInfo" Type="bool" Value="True" /><Property Name="GenerateSoundBankJSON" Type="bool" Value="True" /><Property Name="SoundBankGeneratePrintGUID" Type="bool" Value="True" /><Property Name="SoundBankGeneratePrintPath" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="../../BluntBrawl/Assets/StreamingAssets/Audio/GeneratedSoundBanks" />
+				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
+					<ValueList>
+						<Value Platform="Mac">80</Value>
+						<Value Platform="Windows">80</Value>
+						<Value Platform="Android">80</Value>
+					</ValueList>
+				</Property>
+				<Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True" />
+				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="../../BluntBrawl/Assets/StreamingAssets/Audio/GeneratedSoundBanks" />
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
@@ -62,6 +70,13 @@
 						<Value Platform="Mac"></Value>
 						<Value Platform="Windows"></Value>
 						<Value Platform="Android"></Value>
+					</ValueList>
+				</Property>
+				<Property Name="VolumeThreshold" Type="Real64">
+					<ValueList>
+						<Value Platform="Mac">-80</Value>
+						<Value Platform="Windows">-80</Value>
+						<Value Platform="Android">-80</Value>
 					</ValueList>
 				</Property>
 				<Property Name="WwiseVersionWhenCreated" Type="string" Value="Branch=wwise_main|Build=8863|VersionName=v2024.1.7|Config=Release" />

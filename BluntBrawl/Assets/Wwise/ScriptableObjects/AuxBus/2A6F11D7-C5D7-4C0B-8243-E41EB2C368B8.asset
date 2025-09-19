@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 874a7495ac8a53e4aa95abb45258a00a, type: 3}
-  m_Name: 6EC3DF7A-A0C8-4168-9A08-B91BAFE74018
+  m_Script: {fileID: 11500000, guid: 19a369b4a314f9445829b12133907be9, type: 3}
+  m_Name: 2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8
   m_EditorClassIdentifier: 
-  objectName: InGame
-  id: 984691642
-  guid: 6EC3DF7A-A0C8-4168-9A08-B91BAFE74018
+  objectName: masterVrAuxBus
+  id: 1797866611
+  guid: 2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8

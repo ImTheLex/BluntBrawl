@@ -1,23 +1,15 @@
 Switch Group	ID	Name			Wwise Object Path	Notes
 	1861379221	switcheWeaponsType			\Default Work Unit\switcheWeaponsType	
+	4139584672	switchHit			\Default Work Unit\switchHit	
 
 Switch	ID	Name	Switch Group			Notes
 	1444194542	switcheWeaponsTypeSign	switcheWeaponsType			
 	3160374033	switcheWeaponsTypePipe	switcheWeaponsType			
 	3307155126	switcheWeaponsTypeBat	switcheWeaponsType			
 	3771686185	switcheWeaponsTypeCathammer	switcheWeaponsType			
-
-State Group	ID	Name			Wwise Object Path	Notes
-	984691642	InGame			\Default Work Unit\InGame	
-	3374585465	InMenu			\Default Work Unit\InMenu	
-
-State	ID	Name	State Group			Notes
-	748895195	None	InGame			
-	984691642	InGame	InGame			
-	3374585465	InMenu	InGame			
-	416437412	InWaitingRoom	InMenu			
-	748895195	None	InMenu			
-	3374585465	InMenu	InMenu			
+	624013381	lowHP	switchHit			
+	2639122072	mediumHP	switchHit			
+	2942549062	fullHP	switchHit			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

@@ -15,6 +15,7 @@ namespace Sounds.Runtime
             AkUnitySoundEngine.SetSwitch(_SwitchWeaponType, _WeaponType, this.gameObject);
         }
 
+        
         private void Update()
         {
             if (!_sfxSend) return;
@@ -69,6 +70,7 @@ namespace Sounds.Runtime
         [SerializeField] private string _switchWeaponDrop;
         [SerializeField] private string _weaponDropType;
         [SerializeField] private string _SFXWeaponDrop;
+
 
         private float _timer = 1f;
         private float _chrono;

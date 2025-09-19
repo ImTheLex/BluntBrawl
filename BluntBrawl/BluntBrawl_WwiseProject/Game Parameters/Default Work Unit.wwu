@@ -11,6 +11,7 @@
 				<GameParameter Name="rtpcPlayerVoicePerHealth" ID="{AD523224-D2A6-4CE7-BD63-92C43AFE34D8}">
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="2"/>
 					</PropertyList>
 				</GameParameter>
 				<GameParameter Name="rtpcGameTimer" ID="{C367707A-E873-45C4-B025-1F4322846E2A}">

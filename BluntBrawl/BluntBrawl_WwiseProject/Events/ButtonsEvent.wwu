@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{280FEFD8-38F3-4EDB-9908-99C8A9801F99}" SchemaVersion="123" RootDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" ParentDocumentID="{163E87B2-3709-43DA-B079-601C48198454}">
+	<Events>
+		<WorkUnit Name="ButtonsEvent" ID="{280FEFD8-38F3-4EDB-9908-99C8A9801F99}" OwnerID="{163E87B2-3709-43DA-B079-601C48198454}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="ButtonOver" ID="{165E3CDB-44C4-49BC-83BC-1996CEB5A2B5}">
+					<ChildrenList>
+						<Action Name="" ID="{26D51D65-FAE5-4FCF-A614-7F66108A3299}" ShortID="305872372">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttonOverSound" ID="{29753239-DEE6-411B-A7B0-C01E9739FBC4}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ButtonClick" ID="{7BC82B82-FB38-4FD7-8477-0DFC98808E02}">
+					<ChildrenList>
+						<Action Name="" ID="{AFA79411-6F0E-4FEB-83B3-8E7B5FBFAE05}" ShortID="952200262">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttonSoundBasic" ID="{A28C9E11-70EA-402E-A916-2047C0F8D9E9}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ButtonFancy" ID="{3F667429-AE88-4FB7-B35F-8D557C1B3409}">
+					<ChildrenList>
+						<Action Name="" ID="{012DF6FD-D0BB-483F-B776-349A97937F8F}" ShortID="911033193">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttonSoundFancy" ID="{C75DFDBA-75B5-4515-832F-45423BE20E0D}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ButtonLaunch" ID="{905E9E71-4952-4500-B46A-ABD8D38869B7}">
+					<ChildrenList>
+						<Action Name="" ID="{168DE8A5-BE0D-49EC-859B-3C8AAD2FC767}" ShortID="1041875793">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="buttonSoundLaunch" ID="{04A1BA57-41F7-48F5-9B0A-AD1F7831194B}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

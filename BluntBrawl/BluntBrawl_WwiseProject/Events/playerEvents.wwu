@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{605EF8C1-F88E-4597-9E60-FD1632B82510}" SchemaVersion="123" RootDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" ParentDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}">
 	<Events>
 		<WorkUnit Name="playerEvents" ID="{605EF8C1-F88E-4597-9E60-FD1632B82510}" OwnerID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="1"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<Event Name="playerEventsFootsteps" ID="{AC5C9407-F363-43F6-AE64-72E8E6A55225}">
 					<ChildrenList>
@@ -41,7 +45,7 @@
 						<Action Name="" ID="{02CDA853-5EC0-420D-BA6F-5170822D2B70}" ShortID="943672559">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="playerSwitchContainWeaponsSlash" ID="{37313E8E-5DB8-4FB8-AFBF-8A03A8406ADB}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+									<ObjectRef Name="playerSwitchSlash" ID="{37313E8E-5DB8-4FB8-AFBF-8A03A8406ADB}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -63,7 +67,7 @@
 						<Action Name="" ID="{FCCE06AC-805B-4A04-B0A0-F1484F9328EF}" ShortID="7899917">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="playerSwitchContainWeaponsTypeHit" ID="{56420B01-D61E-490A-96DA-98897B0DD92D}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+									<ObjectRef Name="playerSwitchHit" ID="{56420B01-D61E-490A-96DA-98897B0DD92D}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -74,7 +78,40 @@
 						<Action Name="" ID="{3542BC58-C24B-41CF-B52E-E3400471FEC6}" ShortID="864108936">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="playerSwitchContainWeaponsSlash" ID="{37313E8E-5DB8-4FB8-AFBF-8A03A8406ADB}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+									<ObjectRef Name="playerSwitchSlash" ID="{37313E8E-5DB8-4FB8-AFBF-8A03A8406ADB}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playerEventsTouched" ID="{EE1FFEBD-575A-4842-9DD2-26A3DB9489D3}">
+					<ChildrenList>
+						<Action Name="" ID="{A2B12B27-54AA-40FF-865D-8EAFE5F3356D}" ShortID="206465172">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="playerSwichTouched" ID="{E1400BA7-D117-4DD6-8F97-1583202D93B7}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playerDashCooldown" ID="{BF9CDDA2-71A6-4325-9F03-E81CDED396FF}">
+					<ChildrenList>
+						<Action Name="" ID="{66F8C8F9-58AB-4A1A-B3E6-9C73D37763B6}" ShortID="104754520">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="playerDashCooldown02" ID="{147DCEE9-5A5B-44BC-BAA3-E140DB6E3B0C}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="playerWeaponCooldown" ID="{5E72791E-B574-4143-91E5-C83F472D1AA6}">
+					<ChildrenList>
+						<Action Name="" ID="{FDF611FE-41AB-419C-9D22-D23E82E81A76}" ShortID="692561268">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="playerCooldownWeapon" ID="{D1594237-11FB-41B1-BA6D-B617878787CB}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

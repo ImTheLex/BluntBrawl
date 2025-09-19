@@ -107,8 +107,9 @@ MonoBehaviour:
   _cubeTransform: {fileID: 5457661105567237855}
   _healthTransform: {fileID: 139206633741530341}
   _oscillationRangeForParent: 0.25
-  _oscillationSpeed: 2
-  _rotationSpeed: 1
+  _oscillationSpeed: 3
+  _ease: 10
+  _rotationSpeed: 1.5
 --- !u!114 &8761264300620389431
 MonoBehaviour:
   m_ObjectHideFlags: 0

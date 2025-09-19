@@ -22,9 +22,9 @@ namespace Item.Runtime
         
         private void AnimateTheParent()
         {
-            Sequence.Create(cycles: -1,cycleMode: CycleMode.Rewind)
-                .Chain(Tween.PositionY(_transform, _oscillationRangeForParent/2, duration: _oscillationSpeed, Ease.Linear))
-                .Chain(Tween.PositionY(_transform, 0f, duration: _oscillationSpeed, Ease.Linear));
+            Sequence.Create(cycles: -1, cycleMode: CycleMode.Rewind)
+                .Chain(Tween.PositionY(_transform, _oscillationRangeForParent, duration: _oscillationSpeed,
+                    _ease));
         }
         
         
@@ -68,6 +68,7 @@ namespace Item.Runtime
         [Header("Animation Settings")] 
         [SerializeField] private float _oscillationRangeForParent;
         [SerializeField] private float _oscillationSpeed;
+        [SerializeField] private Ease _ease;
 
         [Header("Rotation Settings")] 
         [SerializeField] private float _rotationSpeed;

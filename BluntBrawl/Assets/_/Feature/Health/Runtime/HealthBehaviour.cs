@@ -27,7 +27,7 @@ namespace Health.Runtime
             public int m_currentHealth => _currentHealth;
             public int m_maxHealth => _maxHealth;
 
-            [SyncVar]public bool m_isDead;
+            [SyncVar] public bool m_isDead;
 
         #endregion
         
@@ -103,6 +103,7 @@ namespace Health.Runtime
                 {
                     CmdResetHealth();
                     _roundPlayer.m_playerInitialized = false;
+                    m_isDead = false;
                 }
             }
 
@@ -154,10 +155,12 @@ namespace Health.Runtime
             
             public void TakeDamage(int damageAmount)
             {
+                if(m_isDead) return;
                 RpcFlash();
                 _currentHealth -= damageAmount;
                 if(_currentHealth <= 0) 
                 {
+                    Debug.Log("IsDead : " + m_isDead);
                     m_isDead = true;
                     CmdHandleDamageableDeath();
 
@@ -210,7 +213,6 @@ namespace Health.Runtime
             {
                 _currentHealth = _maxHealth;
                 HandleHealth();
-                m_isDead = false;
                 
             }
 

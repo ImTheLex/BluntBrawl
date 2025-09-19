@@ -34,8 +34,12 @@ namespace UINavigation.Runtime
             if (Physics.Raycast(start, direction, out RaycastHit hit, _rayLength))
             {
                 _button = hit.collider.GetComponent<Button>(); // toujours overwrite
-                if(_blb is null) _blb = _button.GetComponent<ButtonLayoutBehaviour>();
-                _blb.Swipe();
+                if (_blb is null)
+                {
+                    _blb = _button.GetComponent<ButtonLayoutBehaviour>();
+                    _blb.Swipe();
+                    
+                }
                 end = hit.point;
             }
             else
@@ -70,7 +74,7 @@ namespace UINavigation.Runtime
         {
             if (_button != null)
             {
-                _button.onClick.Invoke(); // Simule un clic sur le bouton
+                _button.onClick.Invoke();
             }
         }
 

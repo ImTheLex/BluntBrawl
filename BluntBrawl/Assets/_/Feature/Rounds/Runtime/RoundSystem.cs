@@ -19,7 +19,7 @@ namespace Rounds.Runtime
             
             public bool m_isPreStartingRound => _isPreStartingRound;
 
-            public bool m_isPlayingRound;
+            [SyncVar] public bool m_isPlayingRound;
 
         #endregion
 

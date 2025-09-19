@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_/Levels/Lex/OfflineTest.unity
+    guid: 7fb5faeed8d434ae585d90a52539087d
+  - enabled: 1
     path: Assets/_/Levels/01_Rooftop_DefinitiveMap.unity
     guid: ffb554f0ff498d141b7b73cdaaaf9cb2
   m_configObjects:

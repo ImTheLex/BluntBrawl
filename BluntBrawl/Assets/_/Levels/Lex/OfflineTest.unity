@@ -345,7 +345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
       propertyPath: onlineScene
-      value: Assets/_/Levels/Lex/Lex.unity
+      value: Assets/_/Levels/01_Rooftop_DefinitiveMap.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
       propertyPath: offlineScene
@@ -354,7 +354,15 @@ PrefabInstance:
     - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
       propertyPath: playerPrefab
       value: 
-      objectReference: {fileID: 4139709100620377146, guid: b2057013f617be44aa7f1f4bd75469d9, type: 3}
+      objectReference: {fileID: 4139709100620377146, guid: 3670189130a576449ba2dbd819c8a10c, type: 3}
+    - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
+      propertyPath: 'spawnPrefabs.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1609735084523566696, guid: 6bacee67312c54f439ae857943658cdb, type: 3}
     - target: {fileID: 6786390845849760935, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -789,6 +797,10 @@ PrefabInstance:
     - target: {fileID: 1322660879541264550, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374650790946385399, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: _vignettePause
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4520230965136656194, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
       propertyPath: m_Enabled

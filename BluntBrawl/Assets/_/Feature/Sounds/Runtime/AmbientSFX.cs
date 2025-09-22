@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
+using Event = AK.Wwise.Event;
 
 namespace Sounds.Runtime
 {
-    public class AmbientSFX : MonoBehaviour
+    public class AmbientSFX : NetworkBehaviour
     {
         #region Public
 
@@ -26,7 +29,7 @@ namespace Sounds.Runtime
 
         private void Start()
         {
-            AkUnitySoundEngine.PostEvent(_menuMusic, gameObject);
+            AkUnitySoundEngine.PostEvent(_menuMusic.Id, gameObject);
         }
 
 
@@ -34,11 +37,11 @@ namespace Sounds.Runtime
 
         #region Main Methods
 
-
-        [ContextMenu("Set Combat Music")]
+        
+        
         public void SetCombatMusic()
         {
-            AkUnitySoundEngine.PostEvent(_ingameMusic, gameObject);
+            AkUnitySoundEngine.PostEvent(_ingameMusic.Id, gameObject);
         }
 
 
@@ -50,10 +53,12 @@ namespace Sounds.Runtime
 
 
 
-        [SerializeField] private string _menuMusic;
-        [SerializeField] private string _ingameMusic;
-
+        [SerializeField] private Event _menuMusic;
+        [SerializeField] private Event _ingameMusic;
+        
 
         #endregion
     }
+    
+    
 }

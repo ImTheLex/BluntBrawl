@@ -1,5 +1,7 @@
+using AK.Wwise;
 using Mirror;
 using UnityEngine;
+using Event = AK.Wwise.Event;
 
 namespace Sounds.Runtime
 {
@@ -12,7 +14,7 @@ namespace Sounds.Runtime
 
         private void Awake()
         {
-            AkUnitySoundEngine.SetSwitch(_SwitchWeaponType, _WeaponType, this.gameObject);
+            AkUnitySoundEngine.SetSwitch(_SwitchWeaponType.GroupId, _SwitchWeaponType.Id,gameObject);
         }
 
         
@@ -37,19 +39,19 @@ namespace Sounds.Runtime
         public void WeaponSlashSFX(float velocity)
         {
             if (_sfxSend) return;
-            AkUnitySoundEngine.SetRTPCValue(_RTCPVelocity, velocity);
-            AkUnitySoundEngine.PostEvent(_SFXWeaponSlash, this.gameObject);            
+            AkUnitySoundEngine.SetRTPCValue(_RTCPVelocity.ToString(), velocity);
+            AkUnitySoundEngine.PostEvent(_SFXWeaponSlash.ToString(), gameObject);            
             _sfxSend = true;
         }
 
         [ClientRpc]
-        public void WeaponHitSFX()=> AkUnitySoundEngine.PostEvent(_SFXWeaponHit, this.gameObject);
+        public void WeaponHitSFX()=> AkUnitySoundEngine.PostEvent(_SFXWeaponHit.ToString(), gameObject);
 
         [ClientRpc]
         public void WeaponDropSFX()
         {
-            AkUnitySoundEngine.SetSwitch(_switchWeaponDrop,_weaponDropType, this.gameObject);
-            AkUnitySoundEngine.PostEvent(_SFXWeaponDrop, this.gameObject);
+            AkUnitySoundEngine.SetSwitch(_switchWeaponDrop.GroupId,_switchWeaponDrop.Id, gameObject);
+            AkUnitySoundEngine.PostEvent(_SFXWeaponDrop.ToString(), gameObject);
         }
 
 
@@ -59,17 +61,15 @@ namespace Sounds.Runtime
         #region private and Protected
 
         [Header("Weapon slash")]
-        [SerializeField] private string _SFXWeaponSlash;
-        [SerializeField] private string _SwitchWeaponType;
-        [SerializeField] private string _WeaponType;
-        [SerializeField] private string _RTCPVelocity;
+        [SerializeField] private Switch _SwitchWeaponType;
+        [SerializeField] private Event _SFXWeaponSlash;
+        [SerializeField] private RTPC _RTCPVelocity;
         [Header("Weapon hit")]
-        [SerializeField] private string _SFXWeaponHit;
+        [SerializeField] private Event _SFXWeaponHit;
 
-        [Header("Weapon Drop")]
-        [SerializeField] private string _switchWeaponDrop;
-        [SerializeField] private string _weaponDropType;
-        [SerializeField] private string _SFXWeaponDrop;
+        private Switch _switchWeaponDrop => _SwitchWeaponType;
+        [Header("Weapon Drop")] 
+        [SerializeField] private Event _SFXWeaponDrop;
 
 
         private float _timer = 1f;

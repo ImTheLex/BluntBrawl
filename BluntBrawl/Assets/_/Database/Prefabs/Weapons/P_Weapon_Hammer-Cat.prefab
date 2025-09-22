@@ -622,14 +622,28 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _SFXWeaponSlash: playerEventsSlash
-  _SwitchWeaponType: switcheWeaponsType
-  _WeaponType: switcheWeaponsTypeCathammer
-  _RTCPVelocity: rtpcSlashSoundPerVelocity
-  _SFXWeaponHit: playerWeaponsEventHits
-  _switchWeaponDrop: playerSwitchContainWeaponsTypeDrop
-  _weaponDropType: playerSwitchWeaponDropCathammer
-  _SFXWeaponDrop: playerWeaponsEventsDrop
+  _SwitchWeaponType:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ffc350dc178ec154cb74e85d289b2ac8, type: 2}
+  _SFXWeaponSlash:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e311f3c73af2b6c41bc4509a04081a4c, type: 2}
+  _RTCPVelocity:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 83f514add076ac040892bd23854acf8c, type: 2}
+  _SFXWeaponHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1ffdf21eb98374040855ce1a4c5f293c, type: 2}
+  _SFXWeaponDrop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c9ace45e8fe45114ba64319fddeba27a, type: 2}
 --- !u!1001 &4696527095653679636
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -72,5 +72,7 @@ namespace DeathCam.Runtime
         [SerializeField] private float _vignetteFadeIn = 0.5f;
         [SerializeField] private float _vignettePause = 3f;
         [SerializeField] private Image _vignette;
+        
+        
     }
 }

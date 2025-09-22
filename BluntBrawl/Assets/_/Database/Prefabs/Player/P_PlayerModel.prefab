@@ -422,6 +422,7 @@ MonoBehaviour:
   m_renderer: {fileID: 0}
   m_canvas: {fileID: 8532469044168506398}
   m_text: {fileID: 348412528063664101}
+  m_isDead: 0
   _bars:
   - {fileID: 562326387665572250}
   - {fileID: 4890619128086221004}
@@ -864,6 +865,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: -204755637054070740, guid: 495351a1257f47e4ebaa3d67ca55ff35, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8132766166907988497, guid: 495351a1257f47e4ebaa3d67ca55ff35, type: 3}
     - target: {fileID: 120214439043909746, guid: 495351a1257f47e4ebaa3d67ca55ff35, type: 3}
       propertyPath: m_Layer
       value: 30

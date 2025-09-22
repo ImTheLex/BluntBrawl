@@ -78,7 +78,7 @@
 						<Action Name="" ID="{3542BC58-C24B-41CF-B52E-E3400471FEC6}" ShortID="864108936">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="playerSwitchSlash" ID="{37313E8E-5DB8-4FB8-AFBF-8A03A8406ADB}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+									<ObjectRef Name="playerSwitchDrop" ID="{D5E02430-EA8D-499E-A529-C382C264764A}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

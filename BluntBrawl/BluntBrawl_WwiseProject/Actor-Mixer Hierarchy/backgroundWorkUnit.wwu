@@ -336,6 +336,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="MUS_LOOP2_140bpm" ID="{7C4C6A39-8BCE-44C6-BA48-5E8D5FBBD816}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-16</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>MUS_LOOP2_140bpm.wav</AudioFile>
 									<MediaIDList>
@@ -350,6 +357,7 @@
 						<Sound Name="waitingStateElevator" ID="{5CA6658D-0741-426C-B5EC-4C2C90CB81AC}" ShortID="894843603">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -361,6 +369,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Elevator" ID="{E7BE72E3-B85E-4554-85DF-E5B338090628}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-24</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Elevator.wav</AudioFile>
 									<MediaIDList>

@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Mirror;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Rounds.Runtime
 {
@@ -96,6 +94,12 @@ namespace Rounds.Runtime
             ResetPlayers();
             _isPreStartingRound = true;
             _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
+
+            if (!_combatMusic)
+            {
+                Sounds.Runtime.AmbientSFX.instance.SetCombatMusic();
+                _combatMusic = true;
+            }
         }
         
         [Server]
@@ -291,6 +295,7 @@ namespace Rounds.Runtime
         [SyncVar] private float _broadCastCurrentTimer;
         
         [SerializeField] private List<TMP_Text> m_texts;
+        private bool _combatMusic = false;
 
         #endregion
     }

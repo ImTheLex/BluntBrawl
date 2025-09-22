@@ -44,5 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37f37768c58f9445823ec978264ff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuMusic: menuSound
-  _ingameMusic: combatSound
+  _menuMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 235662515cd589246acc4c7fc38b31a8, type: 2}
+  _ingameMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 17009ae6c67f6774c89617b52d703d52, type: 2}

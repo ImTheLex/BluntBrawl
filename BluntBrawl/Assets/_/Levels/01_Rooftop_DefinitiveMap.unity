@@ -681,6 +681,10 @@ PrefabInstance:
       propertyPath: _tweenSettings.duration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3766596889270540414, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
+      propertyPath: sceneId
+      value: 2891956917
+      objectReference: {fileID: 0}
     - target: {fileID: 3854308309645393225, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1

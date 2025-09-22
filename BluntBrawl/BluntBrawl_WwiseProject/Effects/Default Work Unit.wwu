@@ -14,6 +14,12 @@
 					</PropertyList>
 					<PluginData/>
 				</Effect>
+				<Effect Name="NoiseGate" ID="{BED00631-55AB-441F-B54F-56B6C6FB5471}" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+					<PropertyList>
+						<Property Name="OutputGain" Type="Real32" Value="-8"/>
+						<Property Name="Threshold" Type="Real32" Value="-16"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

@@ -263,14 +263,28 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _SFXWeaponSlash: playerEventsSlash
-  _SwitchWeaponType: switcheWeaponsType
-  _WeaponType: switcheWeaponsTypeSign
-  _RTCPVelocity: rtpcSlashSoundPerVelocity
-  _SFXWeaponHit: playerWeaponsEventHits
-  _switchWeaponDrop: playerSwitchContainWeaponsTypeDrop
-  _weaponDropType: playerSwitchWeaponDropSign
-  _SFXWeaponDrop: playerWeaponsEventsDrop
+  _SwitchWeaponType:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 011a5cec68256ec4db424be02aca8304, type: 2}
+  _SFXWeaponSlash:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e311f3c73af2b6c41bc4509a04081a4c, type: 2}
+  _RTCPVelocity:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 83f514add076ac040892bd23854acf8c, type: 2}
+  _SFXWeaponHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1ffdf21eb98374040855ce1a4c5f293c, type: 2}
+  _SFXWeaponDrop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c9ace45e8fe45114ba64319fddeba27a, type: 2}
 --- !u!1 &2369209086424040040
 GameObject:
   m_ObjectHideFlags: 0

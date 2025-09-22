@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{1B4884D5-137D-0702-4914-BCEBE48E2920}",
+    "Hash": "{DECCDA56-BECB-0900-8423-B98DB816F945}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -1770,8 +1770,8 @@
       "GUID": "{2BDC2E95-5F0E-4B66-9E6C-B01E8D7D4992}",
       "Color": "1",
       "DurationType": "OneShot",
-      "DurationMin": "0.18608059",
-      "DurationMax": "1.30806",
+      "DurationMin": "0.32605305",
+      "DurationMax": "1.1928744",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -1782,13 +1782,13 @@
         },
         "MediaRefs": [
          {
-          "Id": "44326190"
+          "Id": "329663424"
          },
          {
-          "Id": "249458767"
+          "Id": "694358222"
          },
          {
-          "Id": "283526458"
+          "Id": "929283431"
          }
         ]
        },
@@ -1802,13 +1802,13 @@
         },
         "MediaRefs": [
          {
-          "Id": "247561905"
+          "Id": "735879190"
          },
          {
-          "Id": "674206208"
+          "Id": "891732342"
          },
          {
-          "Id": "703433059"
+          "Id": "1006049320"
          }
         ]
        },
@@ -1821,13 +1821,13 @@
         },
         "MediaRefs": [
          {
-          "Id": "100483372"
+          "Id": "288473920"
          },
          {
-          "Id": "288311294"
+          "Id": "312279409"
          },
          {
-          "Id": "927732829"
+          "Id": "323207144"
          }
         ]
        },
@@ -1840,13 +1840,13 @@
         },
         "MediaRefs": [
          {
-          "Id": "29515173"
+          "Id": "51345580"
          },
          {
-          "Id": "60488332"
+          "Id": "385165414"
          },
          {
-          "Id": "756402074"
+          "Id": "404556623"
          }
         ]
        }
@@ -1968,6 +1968,6 @@
     ]
    }
   ],
-  "FileHash": "{42C7EECF-3FE1-E66E-EE09-67051DBB336D}"
+  "FileHash": "{5109B1C6-9F4F-FF13-E7EC-014896B9B940}"
  }
 }

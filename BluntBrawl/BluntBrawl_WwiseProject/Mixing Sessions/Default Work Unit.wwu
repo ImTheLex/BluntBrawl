@@ -3,7 +3,12 @@
 	<MixingSessions>
 		<WorkUnit Name="Default Work Unit" ID="{BA9F9F70-7D6E-4A76-A835-A96AE18031FC}" PersistMode="Standalone">
 			<ChildrenList>
-				<MixingSession Name="New Mixing Session" ID="{F310C0A7-C7B0-4AEC-A8F4-F17178A774F9}"/>
+				<MixingSession Name="New Mixing Session" ID="{F310C0A7-C7B0-4AEC-A8F4-F17178A774F9}">
+					<ObjectList>
+						<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+						<ObjectRef Name="waitingStateElevator" ID="{5CA6658D-0741-426C-B5EC-4C2C90CB81AC}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+					</ObjectList>
+				</MixingSession>
 			</ChildrenList>
 		</WorkUnit>
 	</MixingSessions>

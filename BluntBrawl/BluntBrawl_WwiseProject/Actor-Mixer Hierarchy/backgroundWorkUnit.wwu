@@ -325,6 +325,11 @@
 						<Sound Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" ShortID="207937187">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-29</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -336,13 +341,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="MUS_LOOP2_140bpm" ID="{7C4C6A39-8BCE-44C6-BA48-5E8D5FBBD816}">
-									<PropertyList>
-										<Property Name="VolumeOffset" Type="Real64">
-											<ValueList>
-												<Value>-16</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>MUS_LOOP2_140bpm.wav</AudioFile>
 									<MediaIDList>
@@ -358,6 +356,11 @@
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">

@@ -42,6 +42,7 @@ namespace Sounds.Runtime
         public void SetCombatMusic()
         {
             AkUnitySoundEngine.PostEvent(_ingameMusic.Id, gameObject);
+            Debug.Log("Send Combat music");
         }
 
 

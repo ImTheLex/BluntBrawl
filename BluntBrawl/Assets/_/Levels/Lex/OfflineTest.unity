@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_AnchorMax.x
@@ -300,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_AnchorMin.x
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_SizeDelta.x
@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 234541865018765542, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -371,13 +371,41 @@ PrefabInstance:
       value: P_btn_Play
       objectReference: {fileID: 0}
     - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1329806509}
+      objectReference: {fileID: 8067144803342453175}
     - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 8067144803342453175}
+      objectReference: {fileID: 1329806509}
+    - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayVignette
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartMatchmake
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DeathCam.Runtime.DeathCamVignette, DeathCam.Runtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: NetworkConnection.Runtime.AutoMatchmaking, NetworkConnection.Runtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984994676687637865, guid: dbb7d1257ef41b143b89924bd9ec7460, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

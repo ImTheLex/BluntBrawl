@@ -1,5 +1,5 @@
-using System;
 using Item.Runtime;
+using Mirror;
 using Sounds.Runtime;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ namespace Weapon.Runtime
 
 {
     [RequireComponent(typeof(ItemBehaviour))]
-    public class WeaponBehaviour : MonoBehaviour
+    public class WeaponBehaviour : NetworkBehaviour
     {
         #region Publics
 
@@ -76,7 +76,7 @@ namespace Weapon.Runtime
             if (velocity > _weaponData.m_velocityRequired)
             
             {
-                _weaponSFX.WeaponSlashSFX(100f);
+                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient,Mathf.Clamp(velocity*10f,0f,100f));
                 _weaponDamageCollider.enabled = true;
                 _weaponDamageCollider.isTrigger = true;
                 

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 using Event = AK.Wwise.Event;
@@ -38,11 +37,11 @@ namespace Sounds.Runtime
         #region Main Methods
 
         
-        
+        [ClientRpc]
         public void SetCombatMusic()
         {
+            _menuMusic.Stop(gameObject);
             AkUnitySoundEngine.PostEvent(_ingameMusic.Id, gameObject);
-            Debug.Log("Send Combat music");
         }
 
 

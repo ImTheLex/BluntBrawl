@@ -52,8 +52,8 @@ MonoBehaviour:
   headlessStartMode: 0
   editorAutoStart: 0
   sendRate: 60
-  offlineScene: 
-  onlineScene: 
+  offlineScene: Assets/_/Levels/Lex/OfflineTest.unity
+  onlineScene: Assets/_/Levels/01_Rooftop_DefinitiveMap.unity
   offlineSceneLoadDelay: 0
   transport: {fileID: 1878762495234780805}
   networkAddress: localhost
@@ -75,6 +75,7 @@ MonoBehaviour:
   - {fileID: 2350312154220774817, guid: e9004c861940c411a96a6cb923c9ff1e, type: 3}
   - {fileID: 2350312154220774817, guid: 71808fa00d301493c92436360a5e2b5f, type: 3}
   - {fileID: 2350312154220774817, guid: 36d8c7095d57648c0b4db9e878378a49, type: 3}
+  - {fileID: 1609735084523566696, guid: 6bacee67312c54f439ae857943658cdb, type: 3}
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2
@@ -138,19 +139,7 @@ MonoBehaviour:
   transport: {fileID: 1878762495234780805}
   OnServerFound:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Mirror.Discovery.NetworkDiscoveryHUD, Mirror.Components
-        m_MethodName: OnDiscoveredServer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   secretHandshake: 8623953361379444650
 --- !u!114 &-2515597523990358634
 MonoBehaviour:

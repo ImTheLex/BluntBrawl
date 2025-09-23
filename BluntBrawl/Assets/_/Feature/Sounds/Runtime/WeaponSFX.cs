@@ -35,8 +35,8 @@ namespace Sounds.Runtime
 
         #region Main Method
 
-        [ClientRpc]
-        public void WeaponSlashSFX(float velocity)
+        [TargetRpc]
+        public void WeaponSlashSFX(NetworkConnectionToClient target,float velocity)
         {
             if (_sfxSend) return;
             AkUnitySoundEngine.SetRTPCValue(_RTCPVelocity.ToString(), velocity);
@@ -44,11 +44,11 @@ namespace Sounds.Runtime
             _sfxSend = true;
         }
 
-        [ClientRpc]
-        public void WeaponHitSFX()=> AkUnitySoundEngine.PostEvent(_SFXWeaponHit.ToString(), gameObject);
+        [TargetRpc]
+        public void WeaponHitSFX(NetworkConnectionToClient target)=> AkUnitySoundEngine.PostEvent(_SFXWeaponHit.ToString(), gameObject);
 
-        [ClientRpc]
-        public void WeaponDropSFX()
+        [TargetRpc]
+        public void WeaponDropSFX(NetworkConnectionToClient target)
         {
             AkUnitySoundEngine.SetSwitch(_switchWeaponDrop.GroupId,_switchWeaponDrop.Id, gameObject);
             AkUnitySoundEngine.PostEvent(_SFXWeaponDrop.ToString(), gameObject);
@@ -72,7 +72,7 @@ namespace Sounds.Runtime
         [SerializeField] private Event _SFXWeaponDrop;
 
 
-        private float _timer = 1f;
+        private float _timer = 0.7f;
         private float _chrono;
         private bool _sfxSend;
 

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{DECCDA56-BECB-0900-8423-B98DB816F945}",
+    "Hash": "{A268054E-D194-0851-E30E-E092DADCA8B9}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -1968,6 +1968,6 @@
     ]
    }
   ],
-  "FileHash": "{5109B1C6-9F4F-FF13-E7EC-014896B9B940}"
+  "FileHash": "{D9A2ED0C-0509-70CD-7F5D-0B0F31DD45D9}"
  }
 }

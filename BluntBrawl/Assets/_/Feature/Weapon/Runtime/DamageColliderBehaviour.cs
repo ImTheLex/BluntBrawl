@@ -26,7 +26,7 @@ namespace Weapon.Runtime
                     //si cd => return
                     if (m_weaponBehaviour.m_hasHit) return;
 
-                    _weaponSFX.WeaponHitSFX();
+                    _weaponSFX.WeaponHitSFX(netIdentity.connectionToClient);
 
                     InputDeviceCharacteristics hand = InputDeviceCharacteristics.Right;
                     NetworkIdentity identity = transform.root.gameObject.GetComponent<NetworkIdentity>();

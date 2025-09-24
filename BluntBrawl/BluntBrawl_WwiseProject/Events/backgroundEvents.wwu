@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{163E87B2-3709-43DA-B079-601C48198454}" SchemaVersion="123" RootDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" ParentDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}">
+	<Events>
+		<WorkUnit Name="backgroundEvents" ID="{163E87B2-3709-43DA-B079-601C48198454}" OwnerID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="12"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="TimerTic" ID="{C77DC6FF-5715-4AC4-B1B8-390DDF49C59B}">
+					<ChildrenList>
+						<Action Name="" ID="{3DE9A925-1817-4573-A184-B4DE8F2A5717}" ShortID="352643478">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="endTimer" ID="{4DDEFE33-1DE1-4C8B-AB82-8EF3C51B3ACB}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="menuSound" ID="{C5C90984-FBB1-400E-8142-871EFA7CCC7A}">
+					<ChildrenList>
+						<Action Name="" ID="{082A3035-BC41-4A10-9444-F63B4FCD4F93}" ShortID="500984863">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{BBB95528-1318-4D91-8EC2-2A993DB6B2A1}" ShortID="753691711">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waitingStateElevator" ID="{5CA6658D-0741-426C-B5EC-4C2C90CB81AC}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TimerEndBuzz" ID="{EB3BB886-06A0-4907-90AA-7627640A5310}">
+					<ChildrenList>
+						<Action Name="" ID="{F0EF0264-E2E2-443C-81CD-0104C2442BB1}" ShortID="722747757">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="timerBuzz" ID="{7AC856C6-5263-4BE9-BB46-6A95A1EAD7E3}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<WorkUnit Name="ButtonsEvent" ID="{280FEFD8-38F3-4EDB-9908-99C8A9801F99}" PersistMode="Reference"/>
+				<Event Name="combatSound" ID="{A4F38569-9C49-42DB-8CAE-D6F75D0F70CD}">
+					<ChildrenList>
+						<Action Name="" ID="{036B024A-5439-4CD4-982C-9D4A70ECD982}" ShortID="193935147">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{F7DA50F5-4E03-4706-8AEC-9A823F53F4BE}" ShortID="540267710">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

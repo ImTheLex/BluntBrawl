@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F3325955-0D62-42C4-B838-EC813ECDABA8}" SchemaVersion="123" RootDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" ParentDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}">
+	<Events>
+		<WorkUnit Name="enemyEvents" ID="{F3325955-0D62-42C4-B838-EC813ECDABA8}" OwnerID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="10"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="enemyEventsDash" ID="{B46034F3-F530-4C23-A0D2-8970973CA549}">
+					<ChildrenList>
+						<Action Name="" ID="{1DB2B229-80F8-472C-A73A-A0CBE1C6A6DA}" ShortID="320005436">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemyDashSounds" ID="{CB877148-2C90-4E49-8130-EE234B286119}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyEventsDie" ID="{3ED1EFB7-F2D6-42B7-82F8-FAB136CFB3AF}">
+					<ChildrenList>
+						<Action Name="" ID="{030E1BA7-87DE-457A-9892-D6A4C31BA9C3}" ShortID="709450389">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemyDieSounds" ID="{FCB36AB8-2A79-4F65-9FA0-D16F954E264E}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyEventsFootsteps" ID="{CE0C1722-1699-4006-947E-D31763835FBA}">
+					<ChildrenList>
+						<Action Name="" ID="{EA618491-A6B7-4878-B01B-F6EED9DA408D}" ShortID="323461321">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemyRandomFootsteps" ID="{8B58C270-CDD3-4960-B2CD-596361AFFC6C}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyEventsSlash" ID="{31560868-DFCE-4DE2-B316-886BCDBE45E0}">
+					<ChildrenList>
+						<Action Name="" ID="{B0CD8337-89CA-4BDA-ABC4-A6F81EE1A6FE}" ShortID="834347591">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemySwitchSlash" ID="{1870EEB1-E0D9-43B8-8D07-7A2BDF58778A}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyEventsFall" ID="{A5DF65E7-40A3-47BC-9627-D40BACB5E890}">
+					<ChildrenList>
+						<Action Name="" ID="{8AFA5E9B-D2CA-4E4E-B295-DE7BB6FCD244}" ShortID="728026405">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemyFallSounds" ID="{F813E31C-1DC9-4DD3-8345-5ABA9EBB2C7D}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyWeaponsEventHits" ID="{07CD507B-C1D7-4CE3-93E7-1C6AFCB3717E}">
+					<ChildrenList>
+						<Action Name="" ID="{42A01052-B3B0-4CAC-B48A-7FB1FB1D94B7}" ShortID="82310179">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemySwitchHit" ID="{B17415EC-9380-4796-A2B4-C07DA77BF12A}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyWeaponsEventsDrop" ID="{5629DCA9-63B1-4B09-9B63-027522AE9DDE}">
+					<ChildrenList>
+						<Action Name="" ID="{BA79A2D6-100B-4128-89E3-57AF9887A9BC}" ShortID="35485523">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemySwitchDrop" ID="{8FDC85CE-FC27-42F6-8F60-DC4CB22431C3}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyEventsTouched" ID="{B013901A-A0EF-48AF-B65A-53F4B58D4DFC}">
+					<ChildrenList>
+						<Action Name="" ID="{FC46CD5D-8A91-4A61-ADB0-33FCBF577B3B}" ShortID="548242425">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemySwitchTouched" ID="{57B20F84-7E6F-4BB1-9597-2E77D79CCDF5}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyDashCooldown" ID="{4A7326D4-C2C0-4353-ADB6-B703AD9DC008}">
+					<ChildrenList>
+						<Action Name="" ID="{1297BEEF-D86B-418F-8ABD-95426D4C963B}" ShortID="581120542">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemyDashCooldown02" ID="{2FE1CA85-5D5B-442B-A343-86A53889D03C}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="enemyWeaponCooldown" ID="{70CECD38-4F4C-40F8-9E5B-AF9BFEB49C2F}">
+					<ChildrenList>
+						<Action Name="" ID="{07D29DCD-A4DD-4AA4-88EC-1ACDF3F60FC9}" ShortID="1011051714">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemyCooldownWeapon" ID="{3C5059D3-CF2E-4587-B6B9-058A1703BEBA}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

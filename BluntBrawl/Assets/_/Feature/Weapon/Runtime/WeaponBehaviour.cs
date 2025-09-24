@@ -1,12 +1,13 @@
-using System;
 using Item.Runtime;
+using Mirror;
+using Sounds.Runtime;
 using UnityEngine;
 
 namespace Weapon.Runtime
 
 {
     [RequireComponent(typeof(ItemBehaviour))]
-    public class WeaponBehaviour : MonoBehaviour
+    public class WeaponBehaviour : NetworkBehaviour
     {
         #region Publics
 
@@ -35,7 +36,7 @@ namespace Weapon.Runtime
             
             _itemGrabber = GetComponentInParent<ItemGrabber>();
             _debugTimer = m_invincibilityDuration;
-            //_itemGrabber.EquipStartingWeapon(gameObject, _weaponData);
+            _weaponDamageCollider.gameObject.GetComponent<DamageColliderBehaviour>().GetWeaponSFX(_weaponSFX);
         }
 
         private void Start()
@@ -71,11 +72,11 @@ namespace Weapon.Runtime
             var translation = _localPositionReference.transform.localPosition - _previousPos;
             var velocity = translation.magnitude / Time.deltaTime;
             _weaponVelocity = velocity;
-            //var velocity = Vector3.Magnitude(_weaponRb.linearVelocity);
+            
             if (velocity > _weaponData.m_velocityRequired)
-            //if (velocity > m_speedRequired)
+            
             {
-                //Debug.Log("Can damage because Velocity is : " + velocity.ToString("F2") + " And required is : " + m_speedRequired);
+                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient,Mathf.Clamp(velocity*10f,0f,100f));
                 _weaponDamageCollider.enabled = true;
                 _weaponDamageCollider.isTrigger = true;
                 
@@ -110,6 +111,8 @@ namespace Weapon.Runtime
             
             private float _debugTimer;
             private WeaponStats _weaponData => GetComponent<ItemBehaviour>().m_weaponData;
+
+            private WeaponSFX _weaponSFX => GetComponent<WeaponSFX>();
 
 
         #endregion

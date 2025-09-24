@@ -1,9 +1,15 @@
+using System.Collections.Generic;
+using Health.Runtime;
 using InputSystem.BluntBrawl;
 using Item.Runtime;
 using Mirror;
+using Rounds.Runtime;
+using UINavigation.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using InputDevice = UnityEngine.XR.InputDevice;
 
 namespace Player.Runtime
 {
@@ -17,9 +23,13 @@ namespace Player.Runtime
         [HideInInspector] public bool m_isBumping = false;
 
         [HideInInspector] public XROrigin m_XROrigin => _XROrigin;
+
+        public bool m_activeInput => RoundSystem.Instance.m_isPreStartingRound;
         
         
         #endregion
+        
+        
         
         
         #region Unity API
@@ -52,16 +62,41 @@ namespace Player.Runtime
             
             TrackingPositionController();
             TrackingRotationController();
+
+            if (m_activeInput)
+            {
+                _playerInputMovement = Vector2.zero;
+                Move();
+                return;
+            }
             
-            if (DetectKillZ()) _playerRigidbody.position = new Vector3(0, 5, 0);
+            if (DetectKillZ() && _healthBehaviour.m_isDead == false)
+            {
+                if (RoundSystem.Instance.m_isPlayingRound)
+                    _healthBehaviour.CmdTakeDamage(_healthBehaviour.m_currentHealth);
+                //else _roundPlayer.InitializePlayer();
+
+            }
             if (m_isBumping) return;
             
+            
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
-            if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
+            if (_dashCooldownChrono >= 0f)
+            {
+                if (_dashCooldownChrono <= 0.1f && _recoverDash)
+                {
+                    _recoverDash = false;
+                    _dashAnimator.SetBool("RecoverDash", true);
+                }  
+                
+                _dashCooldownChrono -= Time.deltaTime;
+            }
+            
             
             if (_isDashing)
             {
                 _dashChrono += Time.deltaTime;
+                TargetAnimatorMoving(false);
                 Dash();
                 if (_dashChrono > _dashDuration)
                 {
@@ -127,13 +162,19 @@ namespace Player.Runtime
             if (!isLocalPlayer) return;
             if (!_isDashing && context.started)
             {
-                if (_dashCooldownChrono >= 0f) return;
+                if (_dashCooldownChrono > 0f) return;
                 _isDashing = true;
+                _recoverDash = true;
                 _dashDirection = _playerInputMovement.normalized;
             }
         }
-        
-        
+
+        public void OnInteractA(InputAction.CallbackContext context)
+        {
+            if(context.performed) _rightControllerInteractA.Interact();
+        }
+
+
         /*Dash method on double tap joystick
          
          public void OnDash(InputAction.CallbackContext context)
@@ -194,15 +235,76 @@ namespace Player.Runtime
         #endregion
 
 
+        #region Publics Methods
+        
+        
+        
+        public void SendHapticToController(InputDeviceCharacteristics hand, float amplitude, float duration)
+        {
+            List<InputDevice> devices = new List<InputDevice>();
+            InputDevices.GetDevicesWithCharacteristics(hand, devices);
+            foreach (var device in devices)
+            {
+                if (device.TryGetHapticCapabilities(out HapticCapabilities capabilities) && capabilities.supportsImpulse)
+                {
+                    device.SendHapticImpulse(0, amplitude, duration);
+                }
+            }
+        }
+
+        [TargetRpc]
+        public void TargetRPCHapticToController(NetworkConnectionToClient target, InputDeviceCharacteristics hand,
+            float amplitude, float duration)
+        {
+            SendHapticToController(hand, amplitude, duration);
+        }
+        
+        [Command(requiresAuthority = false)]
+        public void TargetAnimatorHit()
+        {
+            AnimatorHit();
+        }
+
+        #endregion
+
+
 
         #region Utils
 
         
+        [Command(requiresAuthority = false)]
+        private void TargetAnimatorMoving( bool move)
+        {
+            AnimatorMoving(move);
+        }
+        
+        private void AnimatorMoving(bool move) => _animator.SetBool("IsMoving", move);
+
+        [Command(requiresAuthority = false)]
+        private void TargetAnimatorHorizontal(float horizontal)
+        {
+            AnimatorHorizontal(horizontal);
+        }
+        
+        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("Horizontal", horizontal);
+
+        [Command(requiresAuthority = false)]
+        private void TargetAnimatorVertical(float vertical)
+        {
+            AnimatorVertical(vertical);
+        }
+        
+        private void AnimatorVertical(float vertical) => _animator.SetFloat("Vertical", vertical);
+
+        
+        
+        private void AnimatorHit() => _networkAnimator.SetTrigger("hit");
         private void Move()
         {
             if (!IsGrounded())
             {
                 _playerRigidbody.linearVelocity += Physics.gravity * _playerRigidbody.mass;
+                TargetAnimatorMoving(false);
                 return;
             }
             
@@ -210,6 +312,14 @@ namespace Player.Runtime
             Vector3 inputDirection = _playerHead.forward * _playerInputMovement.y +
                                      _playerHead.right * _playerInputMovement.x;
             inputDirection.y = 0;
+            
+            if (_playerInputMovement != Vector2.zero)
+            {
+                TargetAnimatorMoving(true);
+                TargetAnimatorHorizontal( _playerInputMovement.x);
+                TargetAnimatorVertical(_playerInputMovement.y);
+            }
+            else TargetAnimatorMoving( false);
             
             _playerRigidbody.linearVelocity = inputDirection * _moveSpeed;
         }
@@ -292,8 +402,10 @@ namespace Player.Runtime
         [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashForce;
 
         [SerializeField, Tooltip("Time in seconds after a new Dash can be done")] private float _dashCooldown;
+        [SerializeField,Tooltip("Dash Animation reference")] private Animator _dashAnimator;
 
         private float _dashCooldownChrono;
+        private bool _recoverDash;
         
         
         
@@ -315,14 +427,17 @@ namespace Player.Runtime
         private Quaternion _leftControllerInputRotation;
         private Quaternion _rightControllerInputRotation;
         
+        private RightControllerInteract _rightControllerInteractA; 
+        
+        [SerializeField] private RoundPlayer _roundPlayer;
         [SerializeField] private ItemGrabber _itemGrabber;
-        
-        [SerializeField] private SpawnPrefabCube _spawnPrefabCube;
-        
-        
+        [SerializeField] private HealthBehaviour _healthBehaviour;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private NetworkAnimator _networkAnimator;
+        [SerializeField] private NetworkIdentity _networkIdentity;
 
         #endregion
 
-        
+
     }
 }

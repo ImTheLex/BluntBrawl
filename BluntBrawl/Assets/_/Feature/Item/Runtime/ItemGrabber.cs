@@ -1,5 +1,6 @@
 using Interfaces.Runtime;
 using Mirror;
+using Sounds.Runtime;
 using UnityEngine;
 
 namespace Item.Runtime
@@ -90,6 +91,7 @@ namespace Item.Runtime
         {
 	        GameObject obj = Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
 	        NetworkServer.Spawn(obj);
+            _inHandWeapon.GetComponent<WeaponSFX>().WeaponDropSFX(netIdentity.connectionToClient);
 	        NetworkServer.Destroy(_inHandWeapon);
 	        _inHandWeapon = null;
 	        _inHandWeaponData = null;	

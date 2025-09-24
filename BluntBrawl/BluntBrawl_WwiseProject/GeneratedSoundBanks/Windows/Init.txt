@@ -1,0 +1,25 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1861379221	switcheWeaponsType			\Default Work Unit\switcheWeaponsType	
+	4139584672	switchHit			\Default Work Unit\switchHit	
+
+Switch	ID	Name	Switch Group			Notes
+	1444194542	switcheWeaponsTypeSign	switcheWeaponsType			
+	3160374033	switcheWeaponsTypePipe	switcheWeaponsType			
+	3307155126	switcheWeaponsTypeBat	switcheWeaponsType			
+	3771686185	switcheWeaponsTypeCathammer	switcheWeaponsType			
+	624013381	lowHP	switchHit			
+	2639122072	mediumHP	switchHit			
+	2942549062	fullHP	switchHit			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	4032808771	masterVrAudioBus			\Default Work Unit\masterVrAudioBus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1797866611	masterVrAuxBus			\Default Work Unit\masterVrAudioBus\masterVrAuxBus	
+
+Audio Devices	ID	Name	Type				Notes
+	1998438890	SystemVR	System			
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

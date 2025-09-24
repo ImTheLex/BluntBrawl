@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{712A9839-C5CB-485C-B2F8-02792726FAE1}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{712A9839-C5CB-485C-B2F8-02792726FAE1}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="playerWorkUnit" ID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}" PersistMode="Reference"/>
+				<WorkUnit Name="enemyWorkUnit" ID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}" PersistMode="Reference"/>
+				<WorkUnit Name="backgroundWorkUnit" ID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}" PersistMode="Reference"/>
+				<WorkUnit Name="objectWorkUnit" ID="{F61E719C-8C8F-4038-8258-9442E662AF4B}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

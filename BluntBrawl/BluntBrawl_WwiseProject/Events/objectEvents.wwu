@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{88F69884-5949-4270-9B16-017F97696933}" SchemaVersion="123" RootDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" ParentDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}">
+	<Events>
+		<WorkUnit Name="objectEvents" ID="{88F69884-5949-4270-9B16-017F97696933}" OwnerID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="objectEventsCrateHit" ID="{80BE123A-A692-4138-9056-49E8470D8F9C}">
+					<ChildrenList>
+						<Action Name="" ID="{080D75A1-B371-4F5F-A845-041291A53286}" ShortID="22963895">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="woodCrateBreak" ID="{212FE10D-4E3D-4E80-BF8C-E09606754EDD}" WorkUnitID="{F61E719C-8C8F-4038-8258-9442E662AF4B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="objectEventsFenceHit" ID="{E17F95FC-C9C5-4E0C-9FAD-06505F39E229}">
+					<ChildrenList>
+						<Action Name="" ID="{D2A8C803-BE89-4603-AFFA-3CA2865B1406}" ShortID="135406889">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="fenceBreak" ID="{0553A1CE-D831-4816-8709-9F014954A159}" WorkUnitID="{F61E719C-8C8F-4038-8258-9442E662AF4B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="objectEventsHeal" ID="{93A904B8-DF95-46F6-8E91-CD71E4C716E4}">
+					<ChildrenList>
+						<Action Name="" ID="{DF29DDBF-E9F1-4770-A46B-259F374320D6}" ShortID="480649431">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="objectHealSounds" ID="{0A9C30BE-AEBA-4FFD-B06A-4AC04FE67DC2}" WorkUnitID="{F61E719C-8C8F-4038-8258-9442E662AF4B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="objectEventsCathammerOnGround" ID="{ADC40711-CD1C-4F69-9053-210B3ABAAE80}">
+					<ChildrenList>
+						<Action Name="" ID="{0AE8235F-A755-473E-994C-2490686A66CD}" ShortID="58500982">
+							<PropertyList>
+								<Property Name="Probability" Type="Real64" Value="20"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CatHammerOnGround" ID="{9E4B0A68-5776-4842-AACB-EC89B2FCB0D4}" WorkUnitID="{F61E719C-8C8F-4038-8258-9442E662AF4B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

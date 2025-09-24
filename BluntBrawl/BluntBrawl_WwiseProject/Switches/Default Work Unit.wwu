@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5EE0FA30-BA09-43C9-AF57-C59EB66128EC}" SchemaVersion="123">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{5EE0FA30-BA09-43C9-AF57-C59EB66128EC}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="switcheWeaponsType" ID="{74487858-523C-43CC-9CA8-3BE999ECEC11}">
+					<ChildrenList>
+						<Switch Name="switcheWeaponsTypeBat" ID="{4385F5C9-7900-4C83-A629-97660C926747}"/>
+						<Switch Name="switcheWeaponsTypePipe" ID="{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"/>
+						<Switch Name="switcheWeaponsTypeCathammer" ID="{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"/>
+						<Switch Name="switcheWeaponsTypeSign" ID="{98446ADA-721F-4FC9-A324-51CAE442B314}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="rtpcWeaponInHand" ID="{BCD79F48-D5FE-4289-81FC-7E2DA81C27AF}"/>
+						<Curve Name="" ID="{994E6C4C-9479-468C-85AE-1574AAB766AD}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>0</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.001</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>4</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="switchGameState" ID="{E0CE199A-6F79-454D-A4E4-8B277342565A}">
+					<ChildrenList>
+						<Switch Name="switchGameStateInGame" ID="{DE18B51B-EDFD-4366-B85B-A4596484DAD3}"/>
+						<Switch Name="switchGameStateWaiting" ID="{53F836B7-7C70-4BAC-B21B-2F64C2459B4F}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="switchHit" ID="{C5CF4D29-D775-442F-9CA3-043F70190605}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="lowHP" ID="{AFB9491D-D941-48AB-9A05-9C6BF0E8F599}"/>
+						<Switch Name="mediumHP" ID="{F3D50634-FB38-4541-BD9B-032119D28659}"/>
+						<Switch Name="fullHP" ID="{FB3A2C26-AEB0-4514-BC6A-2F92E63C0249}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="rtpcPlayerVoicePerHealth" ID="{AD523224-D2A6-4CE7-BD63-92C43AFE34D8}"/>
+						<Curve Name="" ID="{8927A473-CA9E-4F18-ADB9-DD49A0713A3B}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.67658</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1.33086</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

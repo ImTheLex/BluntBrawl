@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 9172635520185891289}
   - component: {fileID: 2024815160966658913}
   - component: {fileID: -7397526795768840002}
+  - component: {fileID: -6614215406227782186}
   m_Layer: 0
   m_Name: P_Weapon_Bat
   m_TagString: Untagged
@@ -450,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c0f9612981845729415f60bb8cc151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isVerbose: 1
+  m_isVerbose: 0
   m_debugText: {fileID: 5274835056726667804}
   m_weaponBehaviour: {fileID: 4364198369174661419}
   m_debugCanvas: {fileID: 3616058845196417025}
@@ -505,6 +506,47 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &-6614215406227782186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446135580147635493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226949fd1d3392e4fa23911adbbac4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _SwitchWeaponType:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 216e4ecdef07e3b4291979ddb5f5244d, type: 2}
+  _SFXWeaponSlash:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e311f3c73af2b6c41bc4509a04081a4c, type: 2}
+  _RTCPVelocity:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 83f514add076ac040892bd23854acf8c, type: 2}
+  _SFXWeaponHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1ffdf21eb98374040855ce1a4c5f293c, type: 2}
+  _SFXWeaponDrop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c9ace45e8fe45114ba64319fddeba27a, type: 2}
+  myEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &8930263131591569787
 GameObject:
   m_ObjectHideFlags: 0

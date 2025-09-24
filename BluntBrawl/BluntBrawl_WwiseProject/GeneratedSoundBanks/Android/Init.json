@@ -1,0 +1,180 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{526DA86C-B8F6-1960-F79A-EE7A6A9A9052}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "1998438890",
+       "Name": "SystemVR",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\SystemVR",
+       "GUID": "{3A2A9D06-F4B8-40DC-A791-C92E8E85046B}",
+       "LibName": "System",
+       "LibId": "11403271"
+      },
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\No_Output",
+       "GUID": "{71C2F853-4111-4299-8F89-21DD65A033C4}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\System",
+       "GUID": "{67C92263-2651-457E-AC39-93A9D4A533E9}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     },
+     {
+      "Id": "4032808771",
+      "Name": "masterVrAudioBus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus",
+      "GUID": "{621F63B9-7E49-4B06-B12B-DA33231984F0}"
+     }
+    ],
+    "AuxBusses": [
+     {
+      "Id": "1797866611",
+      "Name": "masterVrAuxBus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
+      "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "147779934",
+      "Name": "rtpcWeaponInHand",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcWeaponInHand",
+      "GUID": "{BCD79F48-D5FE-4289-81FC-7E2DA81C27AF}"
+     },
+     {
+      "Id": "847161145",
+      "Name": "rtpcGameTimer",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcGameTimer",
+      "GUID": "{C367707A-E873-45C4-B025-1F4322846E2A}"
+     },
+     {
+      "Id": "1693736946",
+      "Name": "rtpcPlayerVoicePerHealth",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcPlayerVoicePerHealth",
+      "GUID": "{AD523224-D2A6-4CE7-BD63-92C43AFE34D8}"
+     },
+     {
+      "Id": "3236278648",
+      "Name": "rtpcSlashSoundPerVelocity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcSlashSoundPerVelocity",
+      "GUID": "{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "1861379221",
+      "Name": "switcheWeaponsType",
+      "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType",
+      "GUID": "{74487858-523C-43CC-9CA8-3BE999ECEC11}",
+      "Switches": [
+       {
+        "Id": "1444194542",
+        "Name": "switcheWeaponsTypeSign",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypeSign",
+        "GUID": "{98446ADA-721F-4FC9-A324-51CAE442B314}"
+       },
+       {
+        "Id": "3160374033",
+        "Name": "switcheWeaponsTypePipe",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypePipe",
+        "GUID": "{AB8356A4-69A7-4A0F-B67D-1D178B332BA1}"
+       },
+       {
+        "Id": "3307155126",
+        "Name": "switcheWeaponsTypeBat",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypeBat",
+        "GUID": "{4385F5C9-7900-4C83-A629-97660C926747}"
+       },
+       {
+        "Id": "3771686185",
+        "Name": "switcheWeaponsTypeCathammer",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypeCathammer",
+        "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
+       }
+      ]
+     },
+     {
+      "Id": "3391824866",
+      "Name": "switchGameState",
+      "ObjectPath": "\\Switches\\Default Work Unit\\switchGameState",
+      "GUID": "{E0CE199A-6F79-454D-A4E4-8B277342565A}",
+      "Switches": [
+       {
+        "Id": "528386783",
+        "Name": "switchGameStateWaiting",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchGameState\\switchGameStateWaiting",
+        "GUID": "{53F836B7-7C70-4BAC-B21B-2F64C2459B4F}"
+       },
+       {
+        "Id": "3493037553",
+        "Name": "switchGameStateInGame",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchGameState\\switchGameStateInGame",
+        "GUID": "{DE18B51B-EDFD-4366-B85B-A4596484DAD3}"
+       }
+      ]
+     },
+     {
+      "Id": "4139584672",
+      "Name": "switchHit",
+      "ObjectPath": "\\Switches\\Default Work Unit\\switchHit",
+      "GUID": "{C5CF4D29-D775-442F-9CA3-043F70190605}",
+      "GameParameterRef": {
+       "Id": "1693736946"
+      },
+      "Switches": [
+       {
+        "Id": "624013381",
+        "Name": "lowHP",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchHit\\lowHP",
+        "GUID": "{AFB9491D-D941-48AB-9A05-9C6BF0E8F599}"
+       },
+       {
+        "Id": "2639122072",
+        "Name": "mediumHP",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchHit\\mediumHP",
+        "GUID": "{F3D50634-FB38-4541-BD9B-032119D28659}"
+       },
+       {
+        "Id": "2942549062",
+        "Name": "fullHP",
+        "ObjectPath": "\\Switches\\Default Work Unit\\switchHit\\fullHP",
+        "GUID": "{FB3A2C26-AEB0-4514-BC6A-2F92E63C0249}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{13489EDF-AD37-C575-BE74-CC50C28CFA02}"
+ }
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{89F0B037-1845-4F1B-B410-095970FC3745}" SchemaVersion="123">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{89F0B037-1845-4F1B-B410-095970FC3745}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{D48C8468-6D2C-4F8B-A7B7-76CF44CB352C}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="waitingStateElevator" ID="{5CA6658D-0741-426C-B5EC-4C2C90CB81AC}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyBatSlash" ID="{8F572E24-58D9-4A4C-8A27-2B16E99E9616}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyCathammerSlash" ID="{88762EE6-F63C-44BE-93F4-E10DCCC7B152}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyPipeSlash" ID="{7B01813D-954D-4CA4-AFC2-7340BAA3D7B6}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemySignSlash" ID="{C503F7F9-7974-465C-95C0-84EE6E4341CE}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyBatHit" ID="{FBE8B4D8-7B11-400E-A703-3623A3A786F6}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyCathammerHit" ID="{E13366DE-297B-4343-9778-285A9DF8D2D5}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyPipeHit" ID="{7AD16847-F155-4D37-9EAF-5CA6CF986DB2}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemySignHit" ID="{109D79D8-A1AC-482F-BD65-4E72713D3DF8}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyDropBat" ID="{67B8B3F1-D006-46B2-9776-7F0BCA224911}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyDropCathammer" ID="{B87555FE-94C2-4630-94B6-6D53D58BC494}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyDropPipe" ID="{0EEE7912-1670-4DAD-8816-59701C678C14}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyDropSign" ID="{73D78B4B-6949-4377-A52D-48A29A503BD6}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyDash1" ID="{21B93DD8-FCCB-488D-B516-F2F7819DF595}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="5" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyDash2" ID="{EF7920CC-BB39-4167-89A8-B1CEC3EF913C}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="5" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemyDash3" ID="{08B87815-BE59-44F1-A1DA-E2BCD7A57A94}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+							<Position X="5" Y="2"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

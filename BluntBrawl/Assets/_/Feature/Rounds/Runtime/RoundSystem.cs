@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Mirror;
@@ -15,6 +14,10 @@ namespace Rounds.Runtime
             public RoundStats m_roundStats;
             public float m_currentRoundTime => _roundTimer;
             public float m_preStartRoundTimer => _preStartRoundTimer;
+            
+            public bool m_isPreStartingRound => _isPreStartingRound;
+
+            [SyncVar] public bool m_isPlayingRound;
 
         #endregion
 
@@ -91,6 +94,7 @@ namespace Rounds.Runtime
             ResetPlayers();
             _isPreStartingRound = true;
             _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
+            Invoke(nameof(SendStartRoundAnim),2f);
         }
         
         [Server]
@@ -98,6 +102,7 @@ namespace Rounds.Runtime
         {
             Debug.Log("Round started!");
             _isPreStartingRound = false;
+            m_isPlayingRound = true;
             _roundStarted = true;
             _roundTimer = m_roundStats.m_maxRoundTime;
         }
@@ -108,11 +113,13 @@ namespace Rounds.Runtime
             Debug.Log("Round ended!");
             
             _roundStarted = false;
+            m_isPlayingRound = false;
             _roundBreak = true;
             CheckWinners();
             _currentRound++;
             RepopulatePlayers();
-            Invoke(nameof(ClearBreak), 3f); 
+            Invoke(nameof(ClearBreak), 3f);
+            SendEndRoundAnim();
 
         }
 
@@ -136,6 +143,8 @@ namespace Rounds.Runtime
             _roundBreak = true;
             RpcBroadcastLoser(player.m_playerName);
             _playersAlive.Remove(player);
+            SendLoserAnim(player.netIdentity.connectionToClient, player);
+            SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
             if (_playersAlive.Count == 1)
             {
                 _winnerPlayer = _playersAlive[0];
@@ -161,7 +170,7 @@ namespace Rounds.Runtime
         
         private void ResetPlayers()
         {
-            foreach (var player in _playersAlive)
+            foreach (var player in _players)
             {
                 player.InitializePlayer();
             }
@@ -232,6 +241,37 @@ namespace Rounds.Runtime
         {
             _roundBreak = false;
         }
+
+        
+        [ClientRpc]
+        private void SendStartRoundAnim()
+        {
+            foreach (var player in _players)
+            {
+                player.m_inGameUIAnimation.SendStartRound();
+            }
+        }
+        
+        [ClientRpc]
+        private void SendEndRoundAnim()
+        {
+            foreach (var player in _players)
+            {
+                player.m_inGameUIAnimation.SendEndRound();
+            }
+        }
+        
+        [TargetRpc]
+        private void SendWinnerAnim(NetworkConnectionToClient target,RoundPlayer player)
+        {
+                player.m_inGameUIAnimation.SendWin();
+        }
+        
+        [TargetRpc]
+        private void SendLoserAnim(NetworkConnectionToClient target,RoundPlayer player)
+        {
+                player.m_inGameUIAnimation.SendLose();
+        }
         
         #endregion
 
@@ -284,6 +324,8 @@ namespace Rounds.Runtime
         [SyncVar] private float _broadCastCurrentTimer;
         
         [SerializeField] private List<TMP_Text> m_texts;
+        private bool _combatMusic = false;
+        
 
         #endregion
     }

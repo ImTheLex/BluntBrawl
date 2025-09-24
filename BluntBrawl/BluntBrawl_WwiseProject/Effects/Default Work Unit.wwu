@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8DCDD035-5DBD-4D70-BDCC-0D286417E4BB}" SchemaVersion="123">
+	<Effects>
+		<WorkUnit Name="Default Work Unit" ID="{8DCDD035-5DBD-4D70-BDCC-0D286417E4BB}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Mastering_Suite_BluntBrawl" ID="{C63C97E5-EB79-40B1-8C1E-E83E2D7A39CB}" PluginName="Mastering Suite" CompanyID="0" PluginID="186" PluginType="3">
+					<PropertyList>
+						<Property Name="compressorBand4MakeupGain" Type="Real32" Value="-0.3333333"/>
+						<Property Name="moduleEnableMasterVolume" Type="bool" Value="False"/>
+						<Property Name="paramBand1Frequency" Type="Real32" Value="86.27033"/>
+						<Property Name="paramBand1Gain" Type="Real32" Value="1.399177"/>
+						<Property Name="paramBand4Frequency" Type="Real32" Value="5010.792"/>
+						<Property Name="paramBand4Gain" Type="Real32" Value="-3.703704"/>
+					</PropertyList>
+					<PluginData/>
+				</Effect>
+				<Effect Name="NoiseGate" ID="{BED00631-55AB-441F-B54F-56B6C6FB5471}" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+					<PropertyList>
+						<Property Name="OutputGain" Type="Real32" Value="-8"/>
+						<Property Name="Threshold" Type="Real32" Value="-16"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
+	</Effects>
+</WwiseDocument>

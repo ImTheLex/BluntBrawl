@@ -1,0 +1,18 @@
+{
+    "name": "Sounds.Runtime",
+    "rootNamespace": "Sounds.Runtime",
+    "references": [
+        "GUID:a02b79d86b71bdd49992bff880d36c92",
+        "GUID:30817c1a0e6d646d99c048fc403f5979",
+        "GUID:1be4e3b0fb7fddb41a3a75bc48b5f7d4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -23,6 +23,8 @@ namespace Player.Runtime
         [HideInInspector] public bool m_isBumping = false;
 
         [HideInInspector] public XROrigin m_XROrigin => _XROrigin;
+
+        public bool m_activeInput => RoundSystem.Instance.m_isPreStartingRound;
         
         
         #endregion
@@ -61,11 +63,18 @@ namespace Player.Runtime
             TrackingPositionController();
             TrackingRotationController();
 
+            if (m_activeInput)
+            {
+                _playerInputMovement = Vector2.zero;
+                Move();
+                return;
+            }
+            
             if (DetectKillZ() && _healthBehaviour.m_isDead == false)
             {
                 if (RoundSystem.Instance.m_isPlayingRound)
                     _healthBehaviour.CmdTakeDamage(_healthBehaviour.m_currentHealth);
-                else _roundPlayer.InitializePlayer();
+                //else _roundPlayer.InitializePlayer();
 
             }
             if (m_isBumping) return;
@@ -74,7 +83,7 @@ namespace Player.Runtime
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
             if (_dashCooldownChrono >= 0f)
             {
-                if (_dashCooldownChrono <= 0.01f && _recoverDash)
+                if (_dashCooldownChrono <= 0.1f && _recoverDash)
                 {
                     _recoverDash = false;
                     _dashAnimator.SetBool("RecoverDash", true);

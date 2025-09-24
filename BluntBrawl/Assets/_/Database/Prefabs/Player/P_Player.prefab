@@ -653,6 +653,7 @@ MonoBehaviour:
   _deathCamSystem: {fileID: 0}
   _playerCam: {fileID: 4331621373969296445}
   _xrPosition: {fileID: 3547495322754242636}
+  _inGameUIAnimation: {fileID: 4316820703730505751}
 --- !u!1001 &3332645694938509541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -949,6 +950,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4aa6e5f90a6ec459821f9d3a247b18, type: 3}
+--- !u!114 &4316820703730505751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7956446447872495976, guid: 9d4aa6e5f90a6ec459821f9d3a247b18, type: 3}
+  m_PrefabInstance: {fileID: 6161650437598693759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b6d8edf42f01b48b06342ab72d33f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6176857117566277777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 16341762885997038, guid: 9d4aa6e5f90a6ec459821f9d3a247b18, type: 3}

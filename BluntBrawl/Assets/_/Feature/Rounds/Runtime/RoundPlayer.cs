@@ -1,4 +1,4 @@
-using System;
+using Animation.Runtime;
 using DeathCam.Runtime;
 using Mirror;
 using UnityEngine;
@@ -10,6 +10,8 @@ namespace Rounds.Runtime
         //public int m_playerCurrentHealth;
         [SyncVar(hook = nameof(OnRoundWonChanged))] public int m_roundsWon;
         [SyncVar(hook = nameof(OnNameChanged))] public string m_playerName;
+        
+        public InGameUIAnimation m_inGameUIAnimation => _inGameUIAnimation;
 
 
         public bool m_playerInitialized = false;
@@ -87,6 +89,8 @@ namespace Rounds.Runtime
             [SyncVar] private Vector3 _spawnPosition;
             [SerializeField] private Camera _playerCam;
             [SerializeField] private GameObject _xrPosition;
+            
+            [SerializeField] private InGameUIAnimation _inGameUIAnimation;
 
         #endregion
     }

@@ -15,7 +15,7 @@ namespace Colision.Runtime
         #region UnityAPI
 
         
-        private void Update()
+        private void FixedUpdate()
         {
             if (!isLocalPlayer) return;
             if (!_isBumping) return;

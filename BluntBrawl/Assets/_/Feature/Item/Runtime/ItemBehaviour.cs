@@ -28,10 +28,7 @@ namespace Item.Runtime
         #endregion
 	
         #region Unity API
-        public void Awake()
-        {
-            _grabItemUIText = _grabItemUI.GetComponentInChildren<TMP_Text>();
-        }
+        
 
         private void OnDisable()
         {
@@ -45,7 +42,6 @@ namespace Item.Runtime
         public void DisplayGrabItemUI()
         {
             _grabItemUI.gameObject.SetActive(true);
-            _grabItemUIText.text = "Press trigger to grab";
             _canBeGrab = true;
         }
 	
@@ -64,7 +60,6 @@ namespace Item.Runtime
         [SerializeField] private Canvas _grabItemUI;
         [SerializeField] private WeaponStats _weaponData;
         
-        private TMP_Text _grabItemUIText;
 		
         #endregion
     }

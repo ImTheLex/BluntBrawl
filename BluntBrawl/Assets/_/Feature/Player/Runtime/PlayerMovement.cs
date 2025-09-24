@@ -72,7 +72,17 @@ namespace Player.Runtime
             
             
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
-            if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
+            if (_dashCooldownChrono >= 0f)
+            {
+                if (_dashCooldownChrono <= 0.01f && _recoverDash)
+                {
+                    _recoverDash = false;
+                    _dashAnimator.SetBool("RecoverDash", true);
+                }  
+                
+                _dashCooldownChrono -= Time.deltaTime;
+            }
+            
             
             if (_isDashing)
             {
@@ -143,8 +153,9 @@ namespace Player.Runtime
             if (!isLocalPlayer) return;
             if (!_isDashing && context.started)
             {
-                if (_dashCooldownChrono >= 0f) return;
+                if (_dashCooldownChrono > 0f) return;
                 _isDashing = true;
+                _recoverDash = true;
                 _dashDirection = _playerInputMovement.normalized;
             }
         }
@@ -382,8 +393,10 @@ namespace Player.Runtime
         [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashForce;
 
         [SerializeField, Tooltip("Time in seconds after a new Dash can be done")] private float _dashCooldown;
+        [SerializeField,Tooltip("Dash Animation reference")] private Animator _dashAnimator;
 
         private float _dashCooldownChrono;
+        private bool _recoverDash;
         
         
         

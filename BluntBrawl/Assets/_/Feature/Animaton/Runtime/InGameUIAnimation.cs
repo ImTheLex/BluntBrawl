@@ -19,6 +19,9 @@ namespace Animation.Runtime
         [ContextMenu("Send Lose")]
         public void SendLose() => _animator.SetBool("Lose", true);
         
+        [ContextMenu("Send RecoverDash")]
+        public void SendRecoverDash() => _animator.SetBool("RecoverDash", true);
+        
         #endregion
         
         

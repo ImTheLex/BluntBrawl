@@ -11,6 +11,7 @@ namespace Animation.Runtime
             animator.SetBool("EndRound",false);
             animator.SetBool("Win",false);
             animator.SetBool("Lose",false);
+            animator.SetBool("RecoverDash", false);
         }
     }
 }

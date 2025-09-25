@@ -9,6 +9,7 @@ using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
+using Event = AK.Wwise.Event;
 using InputDevice = UnityEngine.XR.InputDevice;
 
 namespace Player.Runtime
@@ -23,6 +24,8 @@ namespace Player.Runtime
         [HideInInspector] public bool m_isBumping = false;
 
         [HideInInspector] public XROrigin m_XROrigin => _XROrigin;
+
+        public bool m_activeInput => RoundSystem.Instance.m_isPreStartingRound;
         
         
         #endregion
@@ -61,18 +64,36 @@ namespace Player.Runtime
             TrackingPositionController();
             TrackingRotationController();
 
+            if (m_activeInput)
+            {
+                _playerInputMovement = Vector2.zero;
+                Move();
+                return;
+            }
+            
             if (DetectKillZ() && _healthBehaviour.m_isDead == false)
             {
                 if (RoundSystem.Instance.m_isPlayingRound)
                     _healthBehaviour.CmdTakeDamage(_healthBehaviour.m_currentHealth);
-                else _roundPlayer.InitializePlayer();
+                //else _roundPlayer.InitializePlayer();
 
             }
             if (m_isBumping) return;
             
             
             if (_doubleTapChrono >= 0f) _doubleTapChrono -= Time.deltaTime;
-            if (_dashCooldownChrono >= 0f) _dashCooldownChrono -= Time.deltaTime;
+            if (_dashCooldownChrono >= 0f)
+            {
+                if (_dashCooldownChrono <= 0.1f && _recoverDash)
+                {
+                    _recoverDash = false;
+                    _dashAnimator.SetBool("RecoverDash", true);
+                    AkUnitySoundEngine.PostEvent(_dashEvent.Id, gameObject);
+                }  
+                
+                _dashCooldownChrono -= Time.deltaTime;
+            }
+            
             
             if (_isDashing)
             {
@@ -143,8 +164,9 @@ namespace Player.Runtime
             if (!isLocalPlayer) return;
             if (!_isDashing && context.started)
             {
-                if (_dashCooldownChrono >= 0f) return;
+                if (_dashCooldownChrono > 0f) return;
                 _isDashing = true;
+                _recoverDash = true;
                 _dashDirection = _playerInputMovement.normalized;
             }
         }
@@ -266,7 +288,7 @@ namespace Player.Runtime
             AnimatorHorizontal(horizontal);
         }
         
-        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("Horizontal", horizontal);
+        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("horizontal", horizontal);
 
         [Command(requiresAuthority = false)]
         private void TargetAnimatorVertical(float vertical)
@@ -274,7 +296,7 @@ namespace Player.Runtime
             AnimatorVertical(vertical);
         }
         
-        private void AnimatorVertical(float vertical) => _animator.SetFloat("Vertical", vertical);
+        private void AnimatorVertical(float vertical) => _animator.SetFloat("vertical", vertical);
 
         
         
@@ -296,7 +318,7 @@ namespace Player.Runtime
             if (_playerInputMovement != Vector2.zero)
             {
                 TargetAnimatorMoving(true);
-                TargetAnimatorHorizontal( _playerInputMovement.x);
+                TargetAnimatorHorizontal(_playerInputMovement.x);
                 TargetAnimatorVertical(_playerInputMovement.y);
             }
             else TargetAnimatorMoving( false);
@@ -382,8 +404,11 @@ namespace Player.Runtime
         [SerializeField, Tooltip("Distance per 1 seconds")] private float _dashForce;
 
         [SerializeField, Tooltip("Time in seconds after a new Dash can be done")] private float _dashCooldown;
+        [SerializeField,Tooltip("Dash Animation reference")] private Animator _dashAnimator;
+        [SerializeField] private Event _dashEvent;
 
         private float _dashCooldownChrono;
+        private bool _recoverDash;
         
         
         

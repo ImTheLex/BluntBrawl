@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2345584270741929840
@@ -97,8 +97,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9258728, y: 0.6373749, z: 1}
-  m_Center: {x: 0.000015258789, y: 0.05014801, z: 0}
+  m_Size: {x: 1.9017906, y: 0.6373749, z: 0.4268582}
+  m_Center: {x: 0.002464652, y: 0.55, z: -0.0024491549}
 --- !u!114 &8984994676687637865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,4 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70ae91df18b14fc5a4fbb1d862b7de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _newSprite: {fileID: 21300000, guid: f815d7dbb7d9cbb4abec0b1cb29dacd4, type: 3}
+  _newSprite: {fileID: 21300000, guid: f8d11d4ca8523c04b838bd33f4d6d0df, type: 3}

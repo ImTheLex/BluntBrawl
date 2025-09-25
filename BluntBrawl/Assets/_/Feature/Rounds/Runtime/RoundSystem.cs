@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mirror;
+using Sounds.Runtime;
 using TMPro;
 using UnityEngine;
 
@@ -94,12 +95,12 @@ namespace Rounds.Runtime
             ResetPlayers();
             _isPreStartingRound = true;
             _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
-
-            if (!_combatMusic)
+            if (!_soundsWaitingRoom)
             {
-                Sounds.Runtime.AmbientSFX.instance.SetCombatMusic();
-                _combatMusic = true;
+                _soundsWaitingRoom = true;
+                ClearWaitingRoom();
             }
+            Invoke(nameof(SendStartRoundAnim),2f);
         }
         
         [Server]
@@ -123,7 +124,8 @@ namespace Rounds.Runtime
             CheckWinners();
             _currentRound++;
             RepopulatePlayers();
-            Invoke(nameof(ClearBreak), 3f); 
+            Invoke(nameof(ClearBreak), 3f);
+            SendEndRoundAnim();
 
         }
 
@@ -147,6 +149,8 @@ namespace Rounds.Runtime
             _roundBreak = true;
             RpcBroadcastLoser(player.m_playerName);
             _playersAlive.Remove(player);
+            SendLoserAnim(player.netIdentity.connectionToClient, player);
+            SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
             if (_playersAlive.Count == 1)
             {
                 _winnerPlayer = _playersAlive[0];
@@ -243,6 +247,45 @@ namespace Rounds.Runtime
         {
             _roundBreak = false;
         }
+
+        
+        [ClientRpc]
+        private void SendStartRoundAnim()
+        {
+            foreach (var player in _players)
+            {
+                player.m_inGameUIAnimation.SendStartRound();
+                player.GetComponent<CombatSounds>().StartCombatSounds(_currentRound-1);
+            }
+        }
+        
+        [ClientRpc]
+        private void SendEndRoundAnim()
+        {
+            foreach (var player in _players)
+            {
+                player.m_inGameUIAnimation.SendEndRound();
+                player.GetComponent<CombatSounds>().StopCombatSounds();
+            }
+        }
+        
+        [TargetRpc]
+        private void SendWinnerAnim(NetworkConnectionToClient target,RoundPlayer player)
+        {
+                player.m_inGameUIAnimation.SendWin();
+        }
+        
+        [TargetRpc]
+        private void SendLoserAnim(NetworkConnectionToClient target,RoundPlayer player)
+        {
+                player.m_inGameUIAnimation.SendLose();
+        }
+
+        [ClientRpc]
+        private void ClearWaitingRoom()
+        {
+            FindFirstObjectByType<WaitingRoomSounds>().DestroySingleton();
+        }
         
         #endregion
 
@@ -296,6 +339,8 @@ namespace Rounds.Runtime
         
         [SerializeField] private List<TMP_Text> m_texts;
         private bool _combatMusic = false;
+        private bool _soundsWaitingRoom = false;
+
 
         #endregion
     }

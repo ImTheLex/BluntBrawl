@@ -1,5 +1,5 @@
-using System;
 using Item.Runtime;
+using Mirror;
 using Sounds.Runtime;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ namespace Weapon.Runtime
 
 {
     [RequireComponent(typeof(ItemBehaviour))]
-    public class WeaponBehaviour : MonoBehaviour
+    public class WeaponBehaviour : NetworkBehaviour
     {
         #region Publics
 
@@ -25,6 +25,9 @@ namespace Weapon.Runtime
             public int m_velocityDamage => _weaponData.m_velocityDamageMultiplier;
             public GameObject m_owner;
             public float m_force => _weaponData.m_force;
+            
+            public float m_verticalForce => _weaponData.m_verticalForce;
+            public float m_horizontalForce => _weaponData.m_horizontalForce;
             
         #endregion
         
@@ -76,7 +79,7 @@ namespace Weapon.Runtime
             if (velocity > _weaponData.m_velocityRequired)
             
             {
-                _weaponSFX.WeaponSlashSFX(100f);
+                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient,Mathf.Clamp(velocity*10f,0f,100f));
                 _weaponDamageCollider.enabled = true;
                 _weaponDamageCollider.isTrigger = true;
                 

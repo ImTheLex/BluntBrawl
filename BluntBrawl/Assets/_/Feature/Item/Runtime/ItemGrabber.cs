@@ -8,7 +8,9 @@ namespace Item.Runtime
     public class ItemGrabber : NetworkBehaviour
     {
         #region Publics
-	
+
+
+        public WeaponStats m_inHandWeaponData => _inHandWeaponData;
 	
         #endregion
 	
@@ -91,7 +93,7 @@ namespace Item.Runtime
         {
 	        GameObject obj = Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
 	        NetworkServer.Spawn(obj);
-            _inHandWeapon.GetComponent<WeaponSFX>().WeaponDropSFX();
+            _inHandWeapon.GetComponent<WeaponSFX>().WeaponDropSFX(netIdentity.connectionToClient);
 	        NetworkServer.Destroy(_inHandWeapon);
 	        _inHandWeapon = null;
 	        _inHandWeaponData = null;	

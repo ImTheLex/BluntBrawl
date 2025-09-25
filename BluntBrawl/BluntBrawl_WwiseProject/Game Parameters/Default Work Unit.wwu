@@ -26,6 +26,12 @@
 						<Property Name="Max" Type="Real64" Value="4"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="AudioBus" ID="{1C049578-74DA-4397-9ED0-BC616F9EA7F6}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="2"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

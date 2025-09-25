@@ -17,6 +17,8 @@ MonoBehaviour:
   m_velocityDamageMultiplier: 1
   m_invincibilityDuration: 1
   m_force: 0.5
+  m_verticalForce: 0.2
+  m_horizontalForce: 1
   m_velocityMatchedColor: {r: 0.23684745, g: 0.7075472, b: 0.2236116, a: 0}
   m_onCooldownColor: {r: 0.8679245, g: 0.36436453, b: 0.38514584, a: 0}
   m_readyToUseColor: {r: 0.3890174, g: 0.6589423, b: 0.8867924, a: 0}

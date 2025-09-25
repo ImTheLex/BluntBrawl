@@ -26,6 +26,9 @@ namespace Weapon.Runtime
             public GameObject m_owner;
             public float m_force => _weaponData.m_force;
             
+            public float m_verticalForce => _weaponData.m_verticalForce;
+            public float m_horizontalForce => _weaponData.m_horizontalForce;
+            
         #endregion
         
         

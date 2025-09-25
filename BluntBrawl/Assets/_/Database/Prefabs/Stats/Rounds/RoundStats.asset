@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab8de64949d84fe6aa0456ee061b403, type: 3}
   m_Name: RoundStats
   m_EditorClassIdentifier: 
-  m_maxRounds: 90
+  m_maxRounds: 3
   m_preStartRoundTimer: 4
-  m_maxRoundTime: 180
+  m_maxRoundTime: 300
   m_requiredPlayers: 2

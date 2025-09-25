@@ -286,7 +286,7 @@ namespace Player.Runtime
             AnimatorHorizontal(horizontal);
         }
         
-        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("Horizontal", horizontal);
+        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("horizontal", horizontal);
 
         [Command(requiresAuthority = false)]
         private void TargetAnimatorVertical(float vertical)
@@ -294,7 +294,7 @@ namespace Player.Runtime
             AnimatorVertical(vertical);
         }
         
-        private void AnimatorVertical(float vertical) => _animator.SetFloat("Vertical", vertical);
+        private void AnimatorVertical(float vertical) => _animator.SetFloat("vertical", vertical);
 
         
         
@@ -316,7 +316,7 @@ namespace Player.Runtime
             if (_playerInputMovement != Vector2.zero)
             {
                 TargetAnimatorMoving(true);
-                TargetAnimatorHorizontal( _playerInputMovement.x);
+                TargetAnimatorHorizontal(_playerInputMovement.x);
                 TargetAnimatorVertical(_playerInputMovement.y);
             }
             else TargetAnimatorMoving( false);

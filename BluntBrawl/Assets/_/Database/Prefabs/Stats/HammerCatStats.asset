@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HammerCatStats
   m_EditorClassIdentifier: 
   m_damage: 8
-  m_velocityRequired: 4
+  m_velocityRequired: 5
   m_velocityDamageMultiplier: 1
   m_invincibilityDuration: 4
   m_force: 18

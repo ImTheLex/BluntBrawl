@@ -663,6 +663,7 @@ MonoBehaviour:
   _playerCam: {fileID: 4331621373969296445}
   _xrPosition: {fileID: 3547495322754242636}
   _inGameUIAnimation: {fileID: 4316820703730505751}
+  _itemGrabber: {fileID: 3605401159702284481}
 --- !u!114 &855805081205868607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,6 +830,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_PlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 8655640130902121848, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 6561005102795331197}
     - target: {fileID: 8655640130902121848, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
       propertyPath: _roundPlayer
       value: 

@@ -68,7 +68,6 @@ Effect plug-ins	ID	Name	Type				Notes
 	819943492	Fear_no_Evil	Wwise Harmonizer			
 	1674078407	Chorus_Like	Wwise Flanger			
 	3354577677	Fast_LF_Tremolo	Wwise Tremolo			
-	3796564934	Hard_Knee_Minus_3dB_RMS	Wwise Compressor			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	4507446	timerBuzz	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\E2\{E2AD88E1-9808-5026-BC13-BAE30C011A8B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\backgroundWorkUnit\backgroundSounds\backgroundSoundBuzz\timerBuzz		654464

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{B57F2219-0FBA-C1A9-F0A6-1D1640CC3BDA}",
+    "Hash": "{BAC737C6-9967-E7F7-B1CF-FF7410436FBE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -825,14 +825,6 @@
        "GUID": "{3B09A271-D9D4-4A4E-B545-F681E8313E5F}",
        "LibName": "Wwise Tremolo",
        "LibId": "8585219"
-      },
-      {
-       "Id": "3796564934",
-       "Name": "Hard_Knee_Minus_3dB_RMS",
-       "ObjectPath": "\\Effects\\Factory Effects\\Compressor\\Hard_Knee_Minus_3dB_RMS",
-       "GUID": "{D083BAE5-F9EF-426B-A311-D9DF8DFE8807}",
-       "LibName": "Wwise Compressor",
-       "LibId": "7077891"
       }
      ]
     },
@@ -1025,8 +1017,8 @@
       "GUID": "{31560868-DFCE-4DE2-B316-886BCDBE45E0}",
       "Color": "10",
       "DurationType": "OneShot",
-      "DurationMin": "0.19750915",
-      "DurationMax": "1.30806",
+      "DurationMin": "0.1811167",
+      "DurationMax": "1.4264497",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -1056,9 +1048,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1092,9 +1081,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1127,9 +1113,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1162,9 +1145,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1710,7 +1690,7 @@
       "GUID": "{F0E25E2E-FF0C-4A1A-9A6F-F7A895FC2D6C}",
       "Color": "1",
       "DurationType": "OneShot",
-      "DurationMin": "0.14348775",
+      "DurationMin": "0.17063665",
       "DurationMax": "1.4264497",
       "SwitchContainers": [
        {
@@ -1741,9 +1721,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1777,9 +1754,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1812,9 +1786,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1847,9 +1818,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -2359,6 +2327,6 @@
     ]
    }
   ],
-  "FileHash": "{5BEB5DFA-7125-3402-26EB-F1B048F6E4F5}"
+  "FileHash": "{4748F97C-BEAD-5C51-03B6-9A1E7E5CE9BE}"
  }
 }

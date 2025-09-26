@@ -83,9 +83,8 @@ namespace Weapon.Runtime
             _weaponVelocity = velocity;
             
             if (velocity > _weaponData.m_velocityRequired)
-            
             {
-                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient,Mathf.Clamp(velocity*10f,0f,100f));
+                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient, velocity);
                 _weaponDamageCollider.enabled = true;
                 _weaponDamageCollider.isTrigger = true;
                 

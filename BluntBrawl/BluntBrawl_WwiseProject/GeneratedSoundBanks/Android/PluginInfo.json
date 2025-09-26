@@ -4,13 +4,6 @@
   "BasePlatform": "Android",
   "PluginLibs": [
    {
-    "LibName": "Wwise Compressor",
-    "LibId": "7077891",
-    "Type": "Effect",
-    "DLL": "AkCompressor",
-    "StaticLib": "AkCompressorFX"
-   },
-   {
     "LibName": "Wwise Flanger",
     "LibId": "8192003",
     "Type": "Effect",
@@ -49,6 +42,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{F61D0453-2812-6B48-DE05-762353646782}"
+  "FileHash": "{382C1B5C-B89F-4CAF-28DD-8CCEBFC998C8}"
  }
 }

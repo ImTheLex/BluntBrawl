@@ -10,6 +10,11 @@
 				<ActorMixer Name="playerSounds" ID="{8DE3108F-A541-4376-943D-8503DEDD7702}" ShortID="503031067">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -1436,16 +1441,13 @@
 										<RandomSequenceContainer Name="playerBatSlash" ID="{FF531C4E-8E87-4546-855D-FD972B8778B6}" ShortID="850977891">
 											<PropertyList>
 												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>150</Value>
-													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{C30F2D13-1B93-4F34-B7D2-D1B5A56F0DC2}">
 																<PropertyList>
 																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="300"/>
-																	<Property Name="Min" Type="Real64" Value="-300"/>
+																	<Property Name="Max" Type="Real64" Value="150"/>
+																	<Property Name="Min" Type="Real64" Value="-150"/>
 																</PropertyList>
 															</Modifier>
 														</ModifierInfo>
@@ -1548,16 +1550,13 @@
 										<RandomSequenceContainer Name="playerCathammerSlash" ID="{2DBFB666-EEA1-44F7-973D-97934D3DB42B}" ShortID="896281062">
 											<PropertyList>
 												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>150</Value>
-													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{C9BAFEED-6E04-4E67-8CC3-C08F0CE34373}">
 																<PropertyList>
 																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="300"/>
-																	<Property Name="Min" Type="Real64" Value="-300"/>
+																	<Property Name="Max" Type="Real64" Value="150"/>
+																	<Property Name="Min" Type="Real64" Value="-150"/>
 																</PropertyList>
 															</Modifier>
 														</ModifierInfo>
@@ -1674,16 +1673,13 @@
 										<RandomSequenceContainer Name="playerPipeSlash" ID="{367C8E1A-AD35-4DF1-ABDD-708A7E95B05D}" ShortID="718541020">
 											<PropertyList>
 												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>150</Value>
-													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{2C4B1B83-3D3C-4DA3-A1A0-27804038C91B}">
 																<PropertyList>
 																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="300"/>
-																	<Property Name="Min" Type="Real64" Value="-300"/>
+																	<Property Name="Max" Type="Real64" Value="150"/>
+																	<Property Name="Min" Type="Real64" Value="-150"/>
 																</PropertyList>
 															</Modifier>
 														</ModifierInfo>
@@ -1798,16 +1794,13 @@
 										<RandomSequenceContainer Name="playerSignSlash" ID="{F96C8352-6175-48B9-B907-FBA5ADD985CF}" ShortID="241408794">
 											<PropertyList>
 												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>150</Value>
-													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{BBBF71F7-CCC6-4364-8793-F1FFE3198B34}">
 																<PropertyList>
 																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="300"/>
-																	<Property Name="Min" Type="Real64" Value="-300"/>
+																	<Property Name="Max" Type="Real64" Value="150"/>
+																	<Property Name="Min" Type="Real64" Value="-150"/>
 																</PropertyList>
 															</Modifier>
 														</ModifierInfo>
@@ -1957,62 +1950,11 @@
 													</EffectSlot>
 												</Local>
 											</Reference>
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{52CAC9CC-C8B3-4A88-A5BB-9ECE46CC1D46}" ShortID="94684956">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-																<ObjectRef Name="Hard_Knee_Minus_3dB_RMS" ID="{D083BAE5-F9EF-426B-A311-D9DF8DFE8807}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
 										</ObjectList>
 										<ObjectList Name="RTPC">
 											<Reference>
 												<Local>
-													<RTPC Name="" ID="{4D7827CA-CC52-4F3B-9581-10C50285BC56}" ShortID="1003009678">
-														<PropertyList>
-															<Property Name="PropertyName" Type="string" Value="MidiVelocityOffset"/>
-														</PropertyList>
-														<ReferenceList>
-															<Reference Name="ControlInput">
-																<ObjectRef Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}" WorkUnitID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}"/>
-															</Reference>
-															<Reference Name="Curve">
-																<Custom>
-																	<Curve Name="" ID="{3CB216D5-43CF-4E59-B153-6259D0FDC6D9}">
-																		<PropertyList>
-																			<Property Name="Flags" Type="int32" Value="65537"/>
-																		</PropertyList>
-																		<PointList>
-																			<Point>
-																				<XPos>0</XPos>
-																				<YPos>-254</YPos>
-																				<Flags>5</Flags>
-																			</Point>
-																			<Point>
-																				<XPos>20.46512</XPos>
-																				<YPos>-254</YPos>
-																				<Flags>0</Flags>
-																			</Point>
-																			<Point>
-																				<XPos>100</XPos>
-																				<YPos>254</YPos>
-																				<Flags>37</Flags>
-																			</Point>
-																		</PointList>
-																	</Curve>
-																</Custom>
-															</Reference>
-														</ReferenceList>
-													</RTPC>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<RTPC Name="" ID="{845362D3-66B3-423D-A989-0C1D6C42C0A4}" ShortID="133271388">
+													<RTPC Name="" ID="{42D08CA2-29FC-462B-8258-8C07D73D67F2}" ShortID="474113510">
 														<PropertyList>
 															<Property Name="PropertyName" Type="string" Value="Pitch"/>
 														</PropertyList>
@@ -2022,7 +1964,7 @@
 															</Reference>
 															<Reference Name="Curve">
 																<Custom>
-																	<Curve Name="" ID="{E04D45E8-C7F7-496C-A17F-B6E46E39A571}">
+																	<Curve Name="" ID="{C0AA68D2-834A-4159-99AB-54DE345FE773}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="65537"/>
 																		</PropertyList>
@@ -2034,7 +1976,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>100</XPos>
-																				<YPos>-571</YPos>
+																				<YPos>1590</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -2047,7 +1989,7 @@
 											</Reference>
 											<Reference>
 												<Local>
-													<RTPC Name="" ID="{91EF10A1-A4F9-4079-9EAD-D6C591AD1A26}" ShortID="956096816">
+													<RTPC Name="" ID="{034CA073-7275-476A-A590-0FD3302E4318}" ShortID="452955386">
 														<PropertyList>
 															<Property Name="PropertyName" Type="string" Value="Volume"/>
 														</PropertyList>
@@ -2057,7 +1999,7 @@
 															</Reference>
 															<Reference Name="Curve">
 																<Custom>
-																	<Curve Name="" ID="{DEB9D975-830E-4400-AEB6-0E68A90E0CBF}">
+																	<Curve Name="" ID="{5BD473F3-2BEC-469F-A091-B48032F801A7}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="3"/>
 																		</PropertyList>
@@ -2075,6 +2017,46 @@
 																			<Point>
 																				<XPos>100</XPos>
 																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{34D0D3F6-07F3-4F94-9C1E-2090B68351AA}" ShortID="434746585">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="MidiVelocityOffset"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}" WorkUnitID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{E7D3FFFB-1F6B-420F-BA12-1F4DB66E982D}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="65537"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-254</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>20.46512</XPos>
+																				<YPos>-254</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>254</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>

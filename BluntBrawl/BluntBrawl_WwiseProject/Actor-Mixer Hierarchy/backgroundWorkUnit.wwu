@@ -396,6 +396,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Elevator" ID="{D9D19D19-64A6-42D4-8A83-496DC62CD0EE}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Elevator.wav</AudioFile>
 									<MediaIDList>
@@ -421,6 +428,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="MUS_LOOP2_140bpm" ID="{7C4C6A39-8BCE-44C6-BA48-5E8D5FBBD816}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>MUS_LOOP2_140bpm.wav</AudioFile>
 									<MediaIDList>

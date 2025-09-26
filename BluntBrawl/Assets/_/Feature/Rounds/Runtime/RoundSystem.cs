@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using HealthBox.Runtime;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -92,6 +93,7 @@ namespace Rounds.Runtime
         public void PreStartRound()
         {
             ResetPlayers();
+            RespawnProps();
             _isPreStartingRound = true;
             _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
             Invoke(nameof(SendStartRoundAnim),2f);
@@ -160,6 +162,12 @@ namespace Rounds.Runtime
         #region Utils
 
 
+        private void RespawnProps()
+        {
+            _healthBoxSystem.Reset();
+            _healthBoxSystem.RestartCycle();
+        }
+        
         private void RepopulatePlayers()
         {
             foreach (var player in _players)
@@ -310,6 +318,8 @@ namespace Rounds.Runtime
         #endregion
 
         #region Privates
+        
+        [SerializeField] HealthBoxSystem _healthBoxSystem;
         
         [SyncVar] private RoundPlayer _winnerPlayer;
         [SyncVar] private RoundPlayer _matchWinner;

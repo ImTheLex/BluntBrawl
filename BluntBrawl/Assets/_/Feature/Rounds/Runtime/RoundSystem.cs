@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using HealthBox.Runtime;
 using Mirror;
+using Sounds.Runtime;
 using TMPro;
 using UnityEngine;
 
@@ -92,8 +94,14 @@ namespace Rounds.Runtime
         public void PreStartRound()
         {
             ResetPlayers();
+            //RespawnProps();
             _isPreStartingRound = true;
             _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
+            if (!_soundsWaitingRoom)
+            {
+                _soundsWaitingRoom = true;
+                ClearWaitingRoom();
+            }
             Invoke(nameof(SendStartRoundAnim),2f);
         }
         
@@ -105,6 +113,8 @@ namespace Rounds.Runtime
             m_isPlayingRound = true;
             _roundStarted = true;
             _roundTimer = m_roundStats.m_maxRoundTime;
+            StartCombatMusic();
+
         }
         
         [Server]
@@ -119,6 +129,7 @@ namespace Rounds.Runtime
             _currentRound++;
             RepopulatePlayers();
             Invoke(nameof(ClearBreak), 3f);
+            StopCombatMusic();
             SendEndRoundAnim();
 
         }
@@ -160,6 +171,12 @@ namespace Rounds.Runtime
         #region Utils
 
 
+        private void RespawnProps()
+        {
+            _healthBoxSystem.Reset();
+            _healthBoxSystem.RestartCycle();
+        }
+        
         private void RepopulatePlayers()
         {
             foreach (var player in _players)
@@ -168,11 +185,13 @@ namespace Rounds.Runtime
             }
         }
         
+        [Server]
         private void ResetPlayers()
         {
             foreach (var player in _players)
             {
                 player.InitializePlayer();
+                player.m_combatSFX.StopCombatMusic();
             }
         }
         
@@ -249,6 +268,7 @@ namespace Rounds.Runtime
             foreach (var player in _players)
             {
                 player.m_inGameUIAnimation.SendStartRound();
+                player.m_combatSFX.StartRoundSFX();
             }
         }
         
@@ -258,6 +278,7 @@ namespace Rounds.Runtime
             foreach (var player in _players)
             {
                 player.m_inGameUIAnimation.SendEndRound();
+                player.m_combatSFX.EndRoundSFX();
             }
         }
         
@@ -265,12 +286,38 @@ namespace Rounds.Runtime
         private void SendWinnerAnim(NetworkConnectionToClient target,RoundPlayer player)
         {
                 player.m_inGameUIAnimation.SendWin();
+                player.m_combatSFX.WinRoundSFX();
         }
         
         [TargetRpc]
         private void SendLoserAnim(NetworkConnectionToClient target,RoundPlayer player)
         {
                 player.m_inGameUIAnimation.SendLose();
+                player.m_combatSFX.LoseRoundSFX();
+        }
+
+        [ClientRpc]
+        private void ClearWaitingRoom()
+        {
+            FindFirstObjectByType<WaitingRoomSFX>().DestroyWaitingRoomSFX();
+        }
+
+        [ClientRpc]
+        private void StartCombatMusic()
+        {
+            foreach (var player in _players)
+            {
+                player.m_combatSFX.StartCombatMusic(_currentRound-1);
+            }
+        }
+
+        [ClientRpc]
+        private void StopCombatMusic()
+        {
+            foreach (var player in _players)
+            {
+                player.m_combatSFX.StopCombatMusic();
+            }
         }
         
         #endregion
@@ -311,6 +358,8 @@ namespace Rounds.Runtime
 
         #region Privates
         
+        [SerializeField] HealthBoxSystem _healthBoxSystem;
+        
         [SyncVar] private RoundPlayer _winnerPlayer;
         [SyncVar] private RoundPlayer _matchWinner;
 
@@ -324,8 +373,9 @@ namespace Rounds.Runtime
         [SyncVar] private float _broadCastCurrentTimer;
         
         [SerializeField] private List<TMP_Text> m_texts;
-        private bool _combatMusic = false;
         
+        private bool _soundsWaitingRoom = false;
+
 
         #endregion
     }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Interfaces.Runtime;
 using Mirror;
@@ -102,6 +101,7 @@ namespace Health.Runtime
                 if (_roundPlayer.m_playerInitialized == true)
                 {
                     CmdResetHealth();
+                    _animator.SetBool("death", false);
                     _roundPlayer.m_playerInitialized = false;
                     m_isDead = false;
                 }
@@ -163,6 +163,7 @@ namespace Health.Runtime
                     Debug.Log("IsDead : " + m_isDead);
                     m_isDead = true;
                     CmdHandleDamageableDeath();
+                    _animator.SetBool("death", true);
 
                 }
             }
@@ -274,10 +275,13 @@ namespace Health.Runtime
                 if (!isLocalPlayer) return;
                 float healthPercentage = (float)_currentHealth / (float)_maxHealth;
                 _activeBars = Mathf.CeilToInt(healthPercentage * _maxBars);
+                MaterialPropertyBlock block = new MaterialPropertyBlock();
+                block.SetColor("_BaseColor", GetColor());
 
                 for (int i = 0; i < _bars.Count; i++)
                 {
-                    _bars[i].gameObject.GetComponent<Renderer>().material.color = GetColor();
+                    //_bars[i].gameObject.GetComponent<Renderer>().material.color = GetColor();
+                    _bars[i].gameObject.GetComponent<MeshRenderer>().SetPropertyBlock(block);
                     _bars[i].SetActive(i < _activeBars);
                 }
             }
@@ -339,7 +343,11 @@ namespace Health.Runtime
             {
                 if (isLocalPlayer)
                 {
-                    if(m_text){m_text.text = currentHealth.ToString();}
+                    if (m_text)
+                    {
+                        //m_text.color = GetColor();
+                        m_text.text = currentHealth.ToString() + " HP";
+                    }
                     //_roundPlayer.m_playerCurrentHealth = currentHealth;
                     HandleHealth();
                     
@@ -393,6 +401,8 @@ namespace Health.Runtime
         
             
             [SerializeField,Tooltip("Tick if is a player or not.")] private bool _isPlayer;
+
+            [SerializeField] private Animator _animator;
         
             
             

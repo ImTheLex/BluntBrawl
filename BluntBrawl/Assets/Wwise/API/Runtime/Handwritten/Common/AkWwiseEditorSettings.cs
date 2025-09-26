@@ -66,6 +66,7 @@ public class WwiseSettings
 	public string WaapiPort = "8080";
 	public string WaapiIP = "127.0.0.1";
 
+	public bool InstallationWasRequested = false;
 	public bool UseGitRepository = true;
 	public string PackageSource = "";
 	public string AddressableBankFolder = "WwiseData/Bank";

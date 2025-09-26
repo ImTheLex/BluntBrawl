@@ -322,15 +322,7 @@
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
-						<Sound Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" ShortID="207937187">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-29</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
+						<Sound Name="321Start" ID="{73CC36EC-A04C-41C0-9F03-81722C233A8E}" ShortID="340006801">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
@@ -340,25 +332,54 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="MUS_LOOP2_140bpm" ID="{7C4C6A39-8BCE-44C6-BA48-5E8D5FBBD816}">
+								<AudioFileSource Name="321Start" ID="{DA836F25-A420-4A78-8D33-5E1C1B81BF5C}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-5.6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>MUS_LOOP2_140bpm.wav</AudioFile>
+									<AudioFile>321Start.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="916391135"/>
+										<MediaID ID="672671830"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="MUS_LOOP2_140bpm" ID="{7C4C6A39-8BCE-44C6-BA48-5E8D5FBBD816}" Platform="Linked"/>
+								<ActiveSource Name="321Start" ID="{DA836F25-A420-4A78-8D33-5E1C1B81BF5C}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="waitingStateElevator" ID="{5CA6658D-0741-426C-B5EC-4C2C90CB81AC}" ShortID="894843603">
+						<Sound Name="loser" ID="{69E68E4B-8AA4-46EE-A30E-A820EB03FEC0}" ShortID="590134949">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LOSER ANIM" ID="{6DA2C9B0-FDB3-4B54-A47C-EAD74A351B0C}">
+									<Language>SFX</Language>
+									<AudioFile>LOSER ANIM.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="182389558"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LOSER ANIM" ID="{6DA2C9B0-FDB3-4B54-A47C-EAD74A351B0C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="waitingRoom" ID="{A435AFB4-E647-41C2-BD5C-FE5CC921D55C}" ShortID="122226658">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -367,15 +388,18 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+									<ObjectRef Name="masterVrAudioBus" ID="{621F63B9-7E49-4B06-B12B-DA33231984F0}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="masterVrAuxBus" ID="{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Elevator" ID="{E7BE72E3-B85E-4554-85DF-E5B338090628}">
+								<AudioFileSource Name="Elevator" ID="{D9D19D19-64A6-42D4-8A83-496DC62CD0EE}">
 									<PropertyList>
 										<Property Name="VolumeOffset" Type="Real64">
 											<ValueList>
-												<Value>-24</Value>
+												<Value>-5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -387,7 +411,39 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Elevator" ID="{E7BE72E3-B85E-4554-85DF-E5B338090628}" Platform="Linked"/>
+								<ActiveSource Name="Elevator" ID="{D9D19D19-64A6-42D4-8A83-496DC62CD0EE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" ShortID="207937187">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MUS_LOOP2_140bpm" ID="{7C4C6A39-8BCE-44C6-BA48-5E8D5FBBD816}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>MUS_LOOP2_140bpm.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="916391135"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="MUS_LOOP2_140bpm" ID="{7C4C6A39-8BCE-44C6-BA48-5E8D5FBBD816}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

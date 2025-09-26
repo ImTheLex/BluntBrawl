@@ -18,23 +18,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="menuSound" ID="{C5C90984-FBB1-400E-8142-871EFA7CCC7A}">
-					<ChildrenList>
-						<Action Name="" ID="{082A3035-BC41-4A10-9444-F63B4FCD4F93}" ShortID="500984863">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
-							</PropertyList>
-							<ReferenceList/>
-						</Action>
-						<Action Name="" ID="{BBB95528-1318-4D91-8EC2-2A993DB6B2A1}" ShortID="753691711">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="waitingStateElevator" ID="{5CA6658D-0741-426C-B5EC-4C2C90CB81AC}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="TimerEndBuzz" ID="{EB3BB886-06A0-4907-90AA-7627640A5310}">
 					<ChildrenList>
 						<Action Name="" ID="{F0EF0264-E2E2-443C-81CD-0104C2442BB1}" ShortID="722747757">
@@ -47,15 +30,53 @@
 					</ChildrenList>
 				</Event>
 				<WorkUnit Name="ButtonsEvent" ID="{280FEFD8-38F3-4EDB-9908-99C8A9801F99}" PersistMode="Reference"/>
-				<Event Name="combatSound" ID="{A4F38569-9C49-42DB-8CAE-D6F75D0F70CD}">
+				<Event Name="startCount" ID="{242A59B6-ED19-400F-B481-9160E948C066}">
 					<ChildrenList>
-						<Action Name="" ID="{036B024A-5439-4CD4-982C-9D4A70ECD982}" ShortID="193935147">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
-							</PropertyList>
-							<ReferenceList/>
+						<Action Name="" ID="{2548DA43-F9B9-4B87-B7D3-E2D92D7FB0F6}" ShortID="822986727">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="321Start" ID="{73CC36EC-A04C-41C0-9F03-81722C233A8E}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{F7DA50F5-4E03-4706-8AEC-9A823F53F4BE}" ShortID="540267710">
+					</ChildrenList>
+				</Event>
+				<Event Name="Looser" ID="{C2703AD7-BA6B-4A52-9DCF-8B4F1A515E0E}">
+					<ChildrenList>
+						<Action Name="" ID="{A41504F5-45D5-450F-BE39-44BE824BD33F}" ShortID="245135788">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="loser" ID="{69E68E4B-8AA4-46EE-A30E-A820EB03FEC0}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="musicSound" ID="{6F88CF55-A4AB-4F42-874C-5AF6E2906598}">
+					<ChildrenList>
+						<Action Name="" ID="{9FE25D96-94B1-4AF7-95FD-64D89F63FDB3}" ShortID="878557377">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}">
+					<ChildrenList>
+						<Action Name="" ID="{F98C3F49-7440-4ED5-8314-A75BEFB016BF}" ShortID="227135044">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waitingRoom" ID="{A435AFB4-E647-41C2-BD5C-FE5CC921D55C}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}">
+					<ChildrenList>
+						<Action Name="" ID="{76B83DFB-2A8B-426F-A4A9-96E841F28832}" ShortID="1036008392">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>

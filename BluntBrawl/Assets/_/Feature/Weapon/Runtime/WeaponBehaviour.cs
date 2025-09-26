@@ -26,6 +26,9 @@ namespace Weapon.Runtime
             public GameObject m_owner;
             public float m_force => _weaponData.m_force;
             
+            public float m_verticalForce => _weaponData.m_verticalForce;
+            public float m_horizontalForce => _weaponData.m_horizontalForce;
+            
         #endregion
         
         
@@ -44,9 +47,9 @@ namespace Weapon.Runtime
             if(!_itemGrabber){_localPositionReference = gameObject.transform;}
             else {_localPositionReference = _itemGrabber.transform;}
             if(m_owner is null) m_owner =  transform.root.gameObject;
-
         }
 
+        
         private void Update()
         {
             HandleDamageColliderOnVelocity();
@@ -59,6 +62,7 @@ namespace Weapon.Runtime
                 m_hasHit = false;
                 _debugTimer = m_invincibilityDuration;
             }
+            
         }
         
         #endregion
@@ -74,9 +78,8 @@ namespace Weapon.Runtime
             _weaponVelocity = velocity;
             
             if (velocity > _weaponData.m_velocityRequired)
-            
             {
-                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient,Mathf.Clamp(velocity*10f,0f,100f));
+                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient, velocity);
                 _weaponDamageCollider.enabled = true;
                 _weaponDamageCollider.isTrigger = true;
                 

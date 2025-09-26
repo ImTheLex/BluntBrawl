@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{A268054E-D194-0851-E30E-E092DADCA8B9}",
+    "Hash": "{BAC737C6-9967-E7F7-B1CF-FF7410436FBE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -118,6 +118,14 @@
       "Location": "Memory",
       "ShortName": "Player Die on Ground1.wav",
       "CachePath": "9E/{9ED5719F-A98B-323F-B709-56958E71A743}.wem"
+     },
+     {
+      "Id": "182389558",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "LOSER ANIM.wav",
+      "CachePath": "94/{9466A8B7-0C1C-23C9-D46E-A933CDF1C743}.wem"
      },
      {
       "Id": "185614865",
@@ -430,6 +438,14 @@
       "Location": "Memory",
       "ShortName": "Weapon_CatHammer_hit01-001.wav",
       "CachePath": "4E/{4E33AEEA-87B3-B643-BEFD-86BA747A1DC2}.wem"
+     },
+     {
+      "Id": "672671830",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "321Start.wav",
+      "CachePath": "EA/{EA27FB04-F188-ADE3-BB02-09DC33733092}.wem"
      },
      {
       "Id": "674206208",
@@ -776,6 +792,42 @@
       "CachePath": "8A/{8ACB618C-A12A-138E-962D-4640F3CDC456}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "654807232",
+       "Name": "Chipmunk",
+       "ObjectPath": "\\Effects\\Factory Effects\\Pitch Shifter\\Transpose\\Chipmunk",
+       "GUID": "{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}",
+       "LibName": "Wwise Pitch Shifter",
+       "LibId": "8912899"
+      },
+      {
+       "Id": "819943492",
+       "Name": "Fear_no_Evil",
+       "ObjectPath": "\\Effects\\Factory Effects\\Harmonizer\\Fear_no_Evil",
+       "GUID": "{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}",
+       "LibName": "Wwise Harmonizer",
+       "LibId": "9043971"
+      },
+      {
+       "Id": "1674078407",
+       "Name": "Chorus_Like",
+       "ObjectPath": "\\Effects\\Factory Effects\\Flanger\\Chorus\\Chorus_Like",
+       "GUID": "{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      },
+      {
+       "Id": "3354577677",
+       "Name": "Fast_LF_Tremolo",
+       "ObjectPath": "\\Effects\\Factory Effects\\Tremolo\\Fast_LF_Tremolo",
+       "GUID": "{3B09A271-D9D4-4A4E-B545-F681E8313E5F}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "4051332235",
@@ -841,7 +893,7 @@
       "Id": "4069940938",
       "Name": "combatSound",
       "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\combatSound",
-      "GUID": "{A4F38569-9C49-42DB-8CAE-D6F75D0F70CD}",
+      "GUID": "{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}",
       "Color": "12",
       "DurationType": "Infinite",
       "MediaRefs": [
@@ -965,8 +1017,8 @@
       "GUID": "{31560868-DFCE-4DE2-B316-886BCDBE45E0}",
       "Color": "10",
       "DurationType": "OneShot",
-      "DurationMin": "0.19750915",
-      "DurationMax": "1.30806",
+      "DurationMin": "0.1811167",
+      "DurationMax": "1.4264497",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -985,7 +1037,20 @@
          {
           "Id": "283526458"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1005,7 +1070,20 @@
          {
           "Id": "904268600"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1024,7 +1102,20 @@
          {
           "Id": "927732829"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1043,7 +1134,20 @@
          {
           "Id": "756402074"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        }
       ]
      },
@@ -1159,7 +1263,23 @@
          {
           "Id": "480460483"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1179,7 +1299,23 @@
          {
           "Id": "815608219"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1198,7 +1334,23 @@
          {
           "Id": "969473063"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1217,7 +1369,23 @@
          {
           "Id": "1067511888"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        }
       ]
      },
@@ -1311,15 +1479,30 @@
       ]
      },
      {
-      "Id": "1197727813",
-      "Name": "menuSound",
-      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\menuSound",
-      "GUID": "{C5C90984-FBB1-400E-8142-871EFA7CCC7A}",
+      "Id": "598450249",
+      "Name": "Looser",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\Looser",
+      "GUID": "{C2703AD7-BA6B-4A52-9DCF-8B4F1A515E0E}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "3.1573334",
+      "DurationMax": "3.1573334",
+      "MediaRefs": [
+       {
+        "Id": "182389558"
+       }
+      ]
+     },
+     {
+      "Id": "2044738387",
+      "Name": "musicSound",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\musicSound",
+      "GUID": "{6F88CF55-A4AB-4F42-874C-5AF6E2906598}",
       "Color": "12",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "719854022"
+        "Id": "916391135"
        }
       ]
      },
@@ -1507,8 +1690,8 @@
       "GUID": "{F0E25E2E-FF0C-4A1A-9A6F-F7A895FC2D6C}",
       "Color": "1",
       "DurationType": "OneShot",
-      "DurationMin": "0.18608059",
-      "DurationMax": "1.30806",
+      "DurationMin": "0.17063665",
+      "DurationMax": "1.4264497",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -1527,7 +1710,20 @@
          {
           "Id": "283526458"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1547,7 +1743,20 @@
          {
           "Id": "703433059"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1566,7 +1775,20 @@
          {
           "Id": "927732829"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1585,7 +1807,20 @@
          {
           "Id": "756402074"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        }
       ]
      },
@@ -1701,7 +1936,23 @@
          {
           "Id": "480460483"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1721,7 +1972,23 @@
          {
           "Id": "815608219"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1740,7 +2007,23 @@
          {
           "Id": "969473063"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -1759,7 +2042,23 @@
          {
           "Id": "1067511888"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "ShareSets": [
+          {
+           "Id": "654807232"
+          },
+          {
+           "Id": "819943492"
+          },
+          {
+           "Id": "1674078407"
+          },
+          {
+           "Id": "3354577677"
+          }
+         ]
+        }
        }
       ]
      },
@@ -1853,6 +2152,53 @@
       ]
      },
      {
+      "Id": "1190501004",
+      "Name": "startCount",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\startCount",
+      "GUID": "{242A59B6-ED19-400F-B481-9160E948C066}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "3.1573334",
+      "DurationMax": "3.1573334",
+      "MediaRefs": [
+       {
+        "Id": "672671830"
+       }
+      ]
+     },
+     {
+      "Id": "3425412358",
+      "Name": "TestSystem",
+      "ObjectPath": "\\Events\\Default Work Unit\\TestEvent\\TestSystem",
+      "GUID": "{30942D44-7511-4EF5-BE17-E920EA624687}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "916391135"
+       }
+      ]
+     },
+     {
+      "Id": "1251401278",
+      "Name": "TestSystemVR",
+      "ObjectPath": "\\Events\\Default Work Unit\\TestEvent\\TestSystemVR",
+      "GUID": "{132804C4-7695-4710-9DAD-DC8473D97DAB}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "719854022"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1797866611",
+        "Name": "masterVrAuxBus",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
+        "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
+       }
+      ]
+     },
+     {
       "Id": "2134179288",
       "Name": "TimerEndBuzz",
       "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\TimerEndBuzz",
@@ -1879,6 +2225,19 @@
       "MediaRefs": [
        {
         "Id": "355899150"
+       }
+      ]
+     },
+     {
+      "Id": "688112595",
+      "Name": "waitingRoom",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\waitingRoom",
+      "GUID": "{FD651358-E0A5-462F-BA58-8F52B539398F}",
+      "Color": "12",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "719854022"
        }
       ]
      }
@@ -1968,6 +2327,6 @@
     ]
    }
   ],
-  "FileHash": "{35FAE238-B558-9382-AF2B-CC6ABB1276F3}"
+  "FileHash": "{BE616611-8D6C-559C-5A12-309D9FAF3B9E}"
  }
 }

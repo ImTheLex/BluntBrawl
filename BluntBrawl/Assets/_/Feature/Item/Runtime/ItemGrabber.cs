@@ -1,3 +1,4 @@
+using System;
 using Interfaces.Runtime;
 using Mirror;
 using Sounds.Runtime;
@@ -8,7 +9,9 @@ namespace Item.Runtime
     public class ItemGrabber : NetworkBehaviour
     {
         #region Publics
-	
+
+
+        public WeaponStats m_inHandWeaponData => _inHandWeaponData;
 	
         #endregion
 	
@@ -25,8 +28,24 @@ namespace Item.Runtime
 
 	        obj.transform.localPosition = Vector3.zero;
         }
+
+        [Command]
+        public void CmdResetWeapon()
+        {
+	        Debug.Log("Asked for a weapon reset");
+	        ResetWeapon();
+        }
         
-        
+        [Server]
+        public void ResetWeapon()
+        {
+	        GameObject obj = Instantiate(_startingWeapon.m_inHandPrefab, transform);
+	        NetworkServer.Spawn(obj, connectionToClient); 
+
+	        _inHandWeapon = obj;
+	        _inHandWeaponData = _startingWeapon;
+        }
+
         public void OnTriggerEnter(Collider collider)
         {
             
@@ -118,15 +137,16 @@ namespace Item.Runtime
 	
         #region Privates
 	
-        private string _grabOwner;
-        
-	    private WeaponStats _inHandWeaponData;
-	    [SyncVar(hook = nameof(OnWeaponChanged))]
-		private GameObject _inHandWeapon;
-        private WeaponStats _grabbableWeaponData;
-        private GameObject _grabbableObject;
+	        private string _grabOwner;
+	        
+		    private WeaponStats _inHandWeaponData;
+		    [SyncVar(hook = nameof(OnWeaponChanged))]
+			private GameObject _inHandWeapon;
+	        private WeaponStats _grabbableWeaponData;
+	        private GameObject _grabbableObject;
 
-        [SerializeField] private WeaponStats _startingWeapon;
+	        [SerializeField] private WeaponStats _startingWeapon;
+        
 
         #endregion
     }

@@ -46,12 +46,6 @@
 						</Curve>
 					</SwitchOnRTPC>
 				</SwitchGroup>
-				<SwitchGroup Name="switchGameState" ID="{E0CE199A-6F79-454D-A4E4-8B277342565A}">
-					<ChildrenList>
-						<Switch Name="switchGameStateInGame" ID="{DE18B51B-EDFD-4366-B85B-A4596484DAD3}"/>
-						<Switch Name="switchGameStateWaiting" ID="{53F836B7-7C70-4BAC-B21B-2F64C2459B4F}"/>
-					</ChildrenList>
-				</SwitchGroup>
 				<SwitchGroup Name="switchHit" ID="{C5CF4D29-D775-442F-9CA3-043F70190605}">
 					<PropertyList>
 						<Property Name="UseGameParameter" Type="bool" Value="True"/>
@@ -91,6 +85,12 @@
 							</PointList>
 						</Curve>
 					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="musicSwitch" ID="{883F927B-34F5-4971-BDE8-C31639331742}">
+					<ChildrenList>
+						<Switch Name="waiting" ID="{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"/>
+						<Switch Name="inGame" ID="{51ECADC8-5EF3-46FE-B42A-32F81AF5E787}"/>
+					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>

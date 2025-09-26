@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{526DA86C-B8F6-1960-F79A-EE7A6A9A9052}",
+    "Hash": "{FAC202BB-6377-A5E1-6FAE-FB25F16E1675}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -78,6 +78,12 @@
       "GUID": "{C367707A-E873-45C4-B025-1F4322846E2A}"
      },
      {
+      "Id": "1445131385",
+      "Name": "AudioBus",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\AudioBus",
+      "GUID": "{1C049578-74DA-4397-9ED0-BC616F9EA7F6}"
+     },
+     {
       "Id": "1693736946",
       "Name": "rtpcPlayerVoicePerHealth",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcPlayerVoicePerHealth",
@@ -90,7 +96,55 @@
       "GUID": "{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}"
      }
     ],
+    "StateGroups": [
+     {
+      "Id": "3103015060",
+      "Name": "musicStates",
+      "ObjectPath": "\\States\\Default Work Unit\\musicStates",
+      "GUID": "{3C9B9409-7303-40B5-AAA6-07CE27DDD143}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\musicStates\\None",
+        "GUID": "{EB2ABA34-AACA-4E17-B55F-0E0672C4EBEA}"
+       },
+       {
+        "Id": "984691642",
+        "Name": "inGame",
+        "ObjectPath": "\\States\\Default Work Unit\\musicStates\\inGame",
+        "GUID": "{79E2ABA5-9823-45FA-A840-91913544E366}"
+       },
+       {
+        "Id": "3862977292",
+        "Name": "Wainting",
+        "ObjectPath": "\\States\\Default Work Unit\\musicStates\\Wainting",
+        "GUID": "{579EBAB5-A84E-4BA8-BFE9-384127358410}"
+       }
+      ]
+     }
+    ],
     "SwitchGroups": [
+     {
+      "Id": "1445037870",
+      "Name": "musicSwitch",
+      "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch",
+      "GUID": "{883F927B-34F5-4971-BDE8-C31639331742}",
+      "Switches": [
+       {
+        "Id": "19135406",
+        "Name": "waiting",
+        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\waiting",
+        "GUID": "{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"
+       },
+       {
+        "Id": "984691642",
+        "Name": "inGame",
+        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\inGame",
+        "GUID": "{51ECADC8-5EF3-46FE-B42A-32F81AF5E787}"
+       }
+      ]
+     },
      {
       "Id": "1861379221",
       "Name": "switcheWeaponsType",
@@ -120,26 +174,6 @@
         "Name": "switcheWeaponsTypeCathammer",
         "ObjectPath": "\\Switches\\Default Work Unit\\switcheWeaponsType\\switcheWeaponsTypeCathammer",
         "GUID": "{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"
-       }
-      ]
-     },
-     {
-      "Id": "3391824866",
-      "Name": "switchGameState",
-      "ObjectPath": "\\Switches\\Default Work Unit\\switchGameState",
-      "GUID": "{E0CE199A-6F79-454D-A4E4-8B277342565A}",
-      "Switches": [
-       {
-        "Id": "528386783",
-        "Name": "switchGameStateWaiting",
-        "ObjectPath": "\\Switches\\Default Work Unit\\switchGameState\\switchGameStateWaiting",
-        "GUID": "{53F836B7-7C70-4BAC-B21B-2F64C2459B4F}"
-       },
-       {
-        "Id": "3493037553",
-        "Name": "switchGameStateInGame",
-        "ObjectPath": "\\Switches\\Default Work Unit\\switchGameState\\switchGameStateInGame",
-        "GUID": "{DE18B51B-EDFD-4366-B85B-A4596484DAD3}"
        }
       ]
      },
@@ -175,6 +209,6 @@
     ]
    }
   ],
-  "FileHash": "{13489EDF-AD37-C575-BE74-CC50C28CFA02}"
+  "FileHash": "{5DEF0BD1-5B57-F378-5669-19A390733259}"
  }
 }

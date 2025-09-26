@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID BUTTONFANCY = 911993200U;
         static const AkUniqueID BUTTONLAUNCH = 3389008624U;
         static const AkUniqueID BUTTONOVER = 927588791U;
+        static const AkUniqueID COMBATSOUND = 4069940938U;
         static const AkUniqueID ENEMYDASHCOOLDOWN = 4196958256U;
         static const AkUniqueID ENEMYEVENTSDASH = 3175741232U;
         static const AkUniqueID ENEMYEVENTSDIE = 723260870U;
@@ -48,6 +49,7 @@ namespace AK
         static const AkUniqueID TESTSYSTEMVR = 1251401278U;
         static const AkUniqueID TIMERENDBUZZ = 2134179288U;
         static const AkUniqueID TIMERTIC = 1964277448U;
+        static const AkUniqueID WAITINGROOM = 688112595U;
     } // namespace EVENTS
 
     namespace STATES

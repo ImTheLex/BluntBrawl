@@ -1972,82 +1972,7 @@
 										<ObjectList Name="RTPC">
 											<Reference>
 												<Local>
-													<RTPC Name="" ID="{7A291713-F244-44CE-B1CC-531AEDD1EF44}" ShortID="1056868755">
-														<PropertyList>
-															<Property Name="PropertyName" Type="string" Value="Volume"/>
-														</PropertyList>
-														<ReferenceList>
-															<Reference Name="ControlInput">
-																<ObjectRef Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}" WorkUnitID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}"/>
-															</Reference>
-															<Reference Name="Curve">
-																<Custom>
-																	<Curve Name="" ID="{DBF4FE55-91FA-4CB3-9406-2156390FA9DF}">
-																		<PropertyList>
-																			<Property Name="Flags" Type="int32" Value="3"/>
-																		</PropertyList>
-																		<PointList>
-																			<Point>
-																				<XPos>0</XPos>
-																				<YPos>-200</YPos>
-																				<Flags>5</Flags>
-																			</Point>
-																			<Point>
-																				<XPos>10.14025</XPos>
-																				<YPos>-13.70794</YPos>
-																				<Flags>0</Flags>
-																			</Point>
-																			<Point>
-																				<XPos>100</XPos>
-																				<YPos>0</YPos>
-																				<Flags>37</Flags>
-																			</Point>
-																		</PointList>
-																	</Curve>
-																</Custom>
-															</Reference>
-														</ReferenceList>
-													</RTPC>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<RTPC Name="" ID="{4980484D-A84D-4EEA-A14E-B39904028E31}" ShortID="330377317">
-														<PropertyList>
-															<Property Name="PropertyName" Type="string" Value="Pitch"/>
-														</PropertyList>
-														<ReferenceList>
-															<Reference Name="ControlInput">
-																<ObjectRef Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}" WorkUnitID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}"/>
-															</Reference>
-															<Reference Name="Curve">
-																<Custom>
-																	<Curve Name="" ID="{05BEB332-612A-4B96-A924-E543480C8EA8}">
-																		<PropertyList>
-																			<Property Name="Flags" Type="int32" Value="65537"/>
-																		</PropertyList>
-																		<PointList>
-																			<Point>
-																				<XPos>0</XPos>
-																				<YPos>-495</YPos>
-																				<Flags>5</Flags>
-																			</Point>
-																			<Point>
-																				<XPos>100</XPos>
-																				<YPos>-571</YPos>
-																				<Flags>37</Flags>
-																			</Point>
-																		</PointList>
-																	</Curve>
-																</Custom>
-															</Reference>
-														</ReferenceList>
-													</RTPC>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<RTPC Name="" ID="{000C703E-BBD7-4A2A-AB88-9C27C923F544}" ShortID="591496983">
+													<RTPC Name="" ID="{4D7827CA-CC52-4F3B-9581-10C50285BC56}" ShortID="1003009678">
 														<PropertyList>
 															<Property Name="PropertyName" Type="string" Value="MidiVelocityOffset"/>
 														</PropertyList>
@@ -2057,7 +1982,7 @@
 															</Reference>
 															<Reference Name="Curve">
 																<Custom>
-																	<Curve Name="" ID="{4B3D50ED-C446-4840-9031-30DA8E96FDDD}">
+																	<Curve Name="" ID="{3CB216D5-43CF-4E59-B153-6259D0FDC6D9}">
 																		<PropertyList>
 																			<Property Name="Flags" Type="int32" Value="65537"/>
 																		</PropertyList>
@@ -2075,6 +2000,81 @@
 																			<Point>
 																				<XPos>100</XPos>
 																				<YPos>254</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{845362D3-66B3-423D-A989-0C1D6C42C0A4}" ShortID="133271388">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Pitch"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}" WorkUnitID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{E04D45E8-C7F7-496C-A17F-B6E46E39A571}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="65537"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-41</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>-571</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{91EF10A1-A4F9-4079-9EAD-D6C591AD1A26}" ShortID="956096816">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}" WorkUnitID="{7B12F675-4DA4-4CCD-89C5-FE9C7650EDD2}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{DEB9D975-830E-4400-AEB6-0E68A90E0CBF}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>10.53395</XPos>
+																				<YPos>-0.0528799999999876</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>

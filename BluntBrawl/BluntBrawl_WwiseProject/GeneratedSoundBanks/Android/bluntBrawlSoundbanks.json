@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{873B93A7-D7E6-743F-9D87-98178B000FFE}",
+    "Hash": "{B57F2219-0FBA-C1A9-F0A6-1D1640CC3BDA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -898,6 +898,19 @@
       ]
      },
      {
+      "Id": "4069940938",
+      "Name": "combatSound",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\combatSound",
+      "GUID": "{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}",
+      "Color": "12",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "916391135"
+       }
+      ]
+     },
+     {
       "Id": "4196958256",
       "Name": "enemyDashCooldown",
       "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyDashCooldown",
@@ -1507,33 +1520,9 @@
       "GUID": "{6F88CF55-A4AB-4F42-874C-5AF6E2906598}",
       "Color": "12",
       "DurationType": "Infinite",
-      "SwitchContainers": [
+      "MediaRefs": [
        {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "1445037870",
-         "Id": "19135406",
-         "GUID": "{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "719854022"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "1445037870",
-         "Id": "984691642",
-         "GUID": "{51ECADC8-5EF3-46FE-B42A-32F81AF5E787}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "916391135"
-         }
-        ]
+        "Id": "916391135"
        }
       ]
      },
@@ -2270,6 +2259,19 @@
         "Id": "355899150"
        }
       ]
+     },
+     {
+      "Id": "688112595",
+      "Name": "waitingRoom",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\waitingRoom",
+      "GUID": "{FD651358-E0A5-462F-BA58-8F52B539398F}",
+      "Color": "12",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "719854022"
+       }
+      ]
      }
     ],
     "GameParameters": [
@@ -2293,26 +2295,6 @@
      }
     ],
     "SwitchGroups": [
-     {
-      "Id": "1445037870",
-      "Name": "musicSwitch",
-      "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch",
-      "GUID": "{883F927B-34F5-4971-BDE8-C31639331742}",
-      "Switches": [
-       {
-        "Id": "19135406",
-        "Name": "waiting",
-        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\waiting",
-        "GUID": "{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"
-       },
-       {
-        "Id": "984691642",
-        "Name": "inGame",
-        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\inGame",
-        "GUID": "{51ECADC8-5EF3-46FE-B42A-32F81AF5E787}"
-       }
-      ]
-     },
      {
       "Id": "1861379221",
       "Name": "switcheWeaponsType",
@@ -2377,6 +2359,6 @@
     ]
    }
   ],
-  "FileHash": "{879CA0EC-9BE7-862D-10E3-AE7784544AC4}"
+  "FileHash": "{20E3BFA5-B153-34A6-6322-8A85E118B2AC}"
  }
 }

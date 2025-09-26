@@ -54,20 +54,32 @@
 				</Event>
 				<Event Name="musicSound" ID="{6F88CF55-A4AB-4F42-874C-5AF6E2906598}">
 					<ChildrenList>
-						<Action Name="" ID="{AF8B8A15-ECCD-4FD7-A4FD-83A84AC3821A}" ShortID="650704460">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
+						<Action Name="" ID="{9FE25D96-94B1-4AF7-95FD-64D89F63FDB3}" ShortID="878557377">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="musicSwitch" ID="{91154D79-75A9-4D7D-B686-3968FE45EE5B}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{86B66872-8E8A-4522-9340-BCEFD5EBD277}" ShortID="645516404">
+					</ChildrenList>
+				</Event>
+				<Event Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}">
+					<ChildrenList>
+						<Action Name="" ID="{F98C3F49-7440-4ED5-8314-A75BEFB016BF}" ShortID="227135044">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="musicSwitch" ID="{91154D79-75A9-4D7D-B686-3968FE45EE5B}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+									<ObjectRef Name="waitingRoom" ID="{A435AFB4-E647-41C2-BD5C-FE5CC921D55C}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}">
+					<ChildrenList>
+						<Action Name="" ID="{76B83DFB-2A8B-426F-A4A9-96E841F28832}" ShortID="1036008392">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

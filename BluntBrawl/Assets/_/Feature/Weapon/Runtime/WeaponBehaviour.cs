@@ -47,8 +47,14 @@ namespace Weapon.Runtime
             if(!_itemGrabber){_localPositionReference = gameObject.transform;}
             else {_localPositionReference = _itemGrabber.transform;}
             if(m_owner is null) m_owner =  transform.root.gameObject;
-
         }
+
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+            _previousPos = _localPositionReference.transform.localPosition;
+        }
+
 
         private void Update()
         {

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Interfaces.Runtime;
 using Mirror;
@@ -102,6 +101,7 @@ namespace Health.Runtime
                 if (_roundPlayer.m_playerInitialized == true)
                 {
                     CmdResetHealth();
+                    _animator.SetBool("death", false);
                     _roundPlayer.m_playerInitialized = false;
                     m_isDead = false;
                 }
@@ -163,6 +163,7 @@ namespace Health.Runtime
                     Debug.Log("IsDead : " + m_isDead);
                     m_isDead = true;
                     CmdHandleDamageableDeath();
+                    _animator.SetBool("death", true);
 
                 }
             }
@@ -400,6 +401,8 @@ namespace Health.Runtime
         
             
             [SerializeField,Tooltip("Tick if is a player or not.")] private bool _isPlayer;
+
+            [SerializeField] private Animator _animator;
         
             
             

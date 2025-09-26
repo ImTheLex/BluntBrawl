@@ -397,9 +397,9 @@ namespace Health.Runtime
             
             [Header("RoundPlayer On Gameobject or Parent")]
             [SerializeField] private RoundPlayer _roundPlayer;
-        
-            
-            [SerializeField,Tooltip("Tick if is a player or not.")] private bool _isPlayer;
+
+
+            [SerializeField, Tooltip("Tick if is a player or not.")] private bool _isPlayer;
         
             
             

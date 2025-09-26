@@ -47,7 +47,7 @@ namespace Weapon.Runtime
                     var owner = m_weaponBehaviour.m_owner;
                     var healable = owner.GetComponentInChildren<IHealable>();
                     healable.CmdHeal(healProvider.m_healAmount);
-                    healProvider.DestroyProvider();
+                    healProvider.CmdDestroyProvider();
                 }
                 
                 if (other.TryGetComponent<IBumpable>(out var bumpable))

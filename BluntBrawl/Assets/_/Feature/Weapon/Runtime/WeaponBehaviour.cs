@@ -62,6 +62,7 @@ namespace Weapon.Runtime
                 m_hasHit = false;
                 _debugTimer = m_invincibilityDuration;
             }
+            
         }
         
         #endregion

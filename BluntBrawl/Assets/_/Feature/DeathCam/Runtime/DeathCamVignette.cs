@@ -52,6 +52,11 @@ namespace DeathCam.Runtime
             }
         }
 
+        public void DisplayBlackScreenAfterLoad()
+        {
+            Invoke(nameof(DisplayVignette),4f);
+        }
+        
         public void DisplayVignette()
         {
             _display = true;

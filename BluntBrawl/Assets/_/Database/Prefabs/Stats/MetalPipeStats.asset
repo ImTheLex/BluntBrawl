@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: MetalPipeStats
   m_EditorClassIdentifier: 
   m_damage: 7
-  m_velocityRequired: 2
+  m_velocityRequired: 5
   m_velocityDamageMultiplier: 1
   m_invincibilityDuration: 1.5
   m_force: 1
+  m_verticalForce: 0.2
+  m_horizontalForce: 1
   m_velocityMatchedColor: {r: 0.23529412, g: 0.7058824, b: 0.22352941, a: 0}
   m_onCooldownColor: {r: 0.8666667, g: 0.3647059, b: 0.38431373, a: 0}
   m_readyToUseColor: {r: 0.3882353, g: 0.65882355, b: 0.8862745, a: 0}

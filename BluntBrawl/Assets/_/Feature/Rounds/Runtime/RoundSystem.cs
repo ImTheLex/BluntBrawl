@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HealthBox.Runtime;
 using Mirror;
+using Sounds.Runtime;
 using TMPro;
 using UnityEngine;
 
@@ -96,6 +97,11 @@ namespace Rounds.Runtime
             RespawnProps();
             _isPreStartingRound = true;
             _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
+            if (!_soundsWaitingRoom)
+            {
+                _soundsWaitingRoom = true;
+                ClearWaitingRoom();
+            }
             Invoke(nameof(SendStartRoundAnim),2f);
         }
         
@@ -257,6 +263,7 @@ namespace Rounds.Runtime
             foreach (var player in _players)
             {
                 player.m_inGameUIAnimation.SendStartRound();
+                player.GetComponent<CombatSounds>().StartCombatSounds(_currentRound-1);
             }
         }
         
@@ -266,6 +273,7 @@ namespace Rounds.Runtime
             foreach (var player in _players)
             {
                 player.m_inGameUIAnimation.SendEndRound();
+                player.GetComponent<CombatSounds>().StopCombatSounds();
             }
         }
         
@@ -279,6 +287,12 @@ namespace Rounds.Runtime
         private void SendLoserAnim(NetworkConnectionToClient target,RoundPlayer player)
         {
                 player.m_inGameUIAnimation.SendLose();
+        }
+
+        [ClientRpc]
+        private void ClearWaitingRoom()
+        {
+            FindFirstObjectByType<WaitingRoomSounds>().DestroySingleton();
         }
         
         #endregion
@@ -335,7 +349,8 @@ namespace Rounds.Runtime
         
         [SerializeField] private List<TMP_Text> m_texts;
         private bool _combatMusic = false;
-        
+        private bool _soundsWaitingRoom = false;
+
 
         #endregion
     }

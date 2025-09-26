@@ -129,7 +129,7 @@ public static class AddressableAssetBuilder
         if (settings == null)
         {
             AddressableInstaller.LogError(Name,"AddressableAssetSettings not found. Ensure Addressables is set up in your project.");
-            return;
+            settings = AddressableAssetSettings.Create(AddressableAssetSettingsDefaultObject.kDefaultConfigFolder, AddressableAssetSettingsDefaultObject.kDefaultConfigAssetName, true, true);
         }
 
         // Load the custom build script asset

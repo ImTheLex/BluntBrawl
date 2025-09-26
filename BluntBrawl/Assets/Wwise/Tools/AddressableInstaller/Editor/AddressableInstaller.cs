@@ -44,11 +44,16 @@ public static class AddressableInstaller
     private static void OnPackagesRegistered(PackageRegistrationEventArgs args)
     {
 #if AK_WWISE_ADDRESSABLES && UNITY_ADDRESSABLES
-        foreach (var package in args.added)
+        if (AkWwiseEditorSettings.Instance.InstallationWasRequested)
         {
-            if (package.assetPath == "Packages/com.audiokinetic.wwise.addressables")
+            foreach (var package in args.added)
             {
-                AddressableSetup();
+                if (package.assetPath == "Packages/com.audiokinetic.wwise.addressables")
+                {
+                    AkWwiseEditorSettings.Instance.InstallationWasRequested = false;
+                    AkWwiseEditorSettings.Instance.SaveSettings();
+                    AddressableSetup();
+                }
             }
         }
 #else
@@ -171,6 +176,8 @@ public static class AddressableInstaller
     public static void InstallPackage()
     {
         ReadSettings();
+        AkWwiseEditorSettings.Instance.InstallationWasRequested = true;
+        AkWwiseEditorSettings.Instance.SaveSettings();
         var installationPathIsEmpty = string.IsNullOrEmpty(AkWwiseEditorSettings.Instance.WwiseInstallationPath);
         var waapiPortIsEmpty = string.IsNullOrEmpty(AkWwiseEditorSettings.Instance.WaapiPort);
         var waapiIPIsEmpty = string.IsNullOrEmpty(AkWwiseEditorSettings.Instance.WaapiIP);

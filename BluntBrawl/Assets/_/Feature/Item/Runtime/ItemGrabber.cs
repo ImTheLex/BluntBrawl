@@ -8,7 +8,9 @@ namespace Item.Runtime
     public class ItemGrabber : NetworkBehaviour
     {
         #region Publics
-	
+
+
+        public WeaponStats m_inHandWeaponData => _inHandWeaponData;
 	
         #endregion
 	

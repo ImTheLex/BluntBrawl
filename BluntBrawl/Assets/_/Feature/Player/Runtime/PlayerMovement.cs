@@ -9,6 +9,7 @@ using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
+using Event = AK.Wwise.Event;
 using InputDevice = UnityEngine.XR.InputDevice;
 
 namespace Player.Runtime
@@ -87,6 +88,7 @@ namespace Player.Runtime
                 {
                     _recoverDash = false;
                     _dashAnimator.SetBool("RecoverDash", true);
+                    AkUnitySoundEngine.PostEvent(_dashEvent.Id, gameObject);
                 }  
                 
                 _dashCooldownChrono -= Time.deltaTime;
@@ -286,7 +288,7 @@ namespace Player.Runtime
             AnimatorHorizontal(horizontal);
         }
         
-        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("Horizontal", horizontal);
+        private void AnimatorHorizontal(float horizontal) => _animator.SetFloat("horizontal", horizontal);
 
         [Command(requiresAuthority = false)]
         private void TargetAnimatorVertical(float vertical)
@@ -294,7 +296,7 @@ namespace Player.Runtime
             AnimatorVertical(vertical);
         }
         
-        private void AnimatorVertical(float vertical) => _animator.SetFloat("Vertical", vertical);
+        private void AnimatorVertical(float vertical) => _animator.SetFloat("vertical", vertical);
 
         
         
@@ -316,7 +318,7 @@ namespace Player.Runtime
             if (_playerInputMovement != Vector2.zero)
             {
                 TargetAnimatorMoving(true);
-                TargetAnimatorHorizontal( _playerInputMovement.x);
+                TargetAnimatorHorizontal(_playerInputMovement.x);
                 TargetAnimatorVertical(_playerInputMovement.y);
             }
             else TargetAnimatorMoving( false);
@@ -403,6 +405,7 @@ namespace Player.Runtime
 
         [SerializeField, Tooltip("Time in seconds after a new Dash can be done")] private float _dashCooldown;
         [SerializeField,Tooltip("Dash Animation reference")] private Animator _dashAnimator;
+        [SerializeField] private Event _dashEvent;
 
         private float _dashCooldownChrono;
         private bool _recoverDash;

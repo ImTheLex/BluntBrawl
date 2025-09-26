@@ -1169,6 +1169,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5804221042737455809, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 61.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804221042737455809, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.899998
+      objectReference: {fileID: 0}
     - target: {fileID: 6134113193336886789, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
       propertyPath: m_Name
       value: P_Map_RoofTop_Definitive

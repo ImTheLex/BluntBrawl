@@ -36,7 +36,7 @@ namespace Colision.Runtime
         #region Publics Methods
         
         
-        public void PlayerBumpOnHit(Vector3 hitPosition, float force)
+        public void PlayerBumpOnHit(Vector3 hitPosition, float force, float verticalForce, float horizontalForce)
         {
            if (_isBumping) return;
            
@@ -44,9 +44,9 @@ namespace Colision.Runtime
            
             float currentDamage = _playerHealth.m_maxHealth - _playerHealth.m_currentHealth;
            currentDamage = currentDamage <= 0f ? 1f : currentDamage;
-           direction.y = 1 * _vecticalForcePerDamage * currentDamage;
-           direction.x *= _horizontalForcePerDamage * force * currentDamage;
-           direction.z *= _horizontalForcePerDamage * force * currentDamage;
+           direction.y = 1 * verticalForce * currentDamage;
+           direction.x *= horizontalForce * force * currentDamage;
+           direction.z *= horizontalForce * force * currentDamage;
            
            _bumpDirection = direction.normalized;
            _bumpChrono = _bumpTimer;
@@ -62,9 +62,9 @@ namespace Colision.Runtime
            }
         
         [TargetRpc]
-        public void TargetPlayerBumpOnHit(NetworkConnectionToClient target, Vector3 direction, float force)
+        public void TargetPlayerBumpOnHit(NetworkConnectionToClient target, Vector3 direction, float force, float verticalForce, float horizontalForce)
         {
-            PlayerBumpOnHit(direction, force);
+            PlayerBumpOnHit(direction, force, verticalForce, horizontalForce);
         }
 
         
@@ -85,9 +85,7 @@ namespace Colision.Runtime
         private PlayerMovement _playerMovement => GetComponentInParent<PlayerMovement>();
         private XROrigin _xROrigin => _playerMovement.m_XROrigin;
         private Rigidbody _playerRigidbody => _xROrigin.GetComponent<Rigidbody>();
-        [SerializeField] private float _vecticalForcePerDamage;
-        [SerializeField] private float _horizontalForcePerDamage;
-        [SerializeField] private float _baseForce;
+        
         [SerializeField] private float _bumpTimer;
         private float _bumpChrono;
         
@@ -99,8 +97,7 @@ namespace Colision.Runtime
         [SerializeField]private FaceOffset _faceOffset;
         
         private bool _isFacingRight = false;
-
-
+        
 
         #endregion
 

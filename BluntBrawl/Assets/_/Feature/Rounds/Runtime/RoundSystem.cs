@@ -94,7 +94,7 @@ namespace Rounds.Runtime
         public void PreStartRound()
         {
             ResetPlayers();
-            //RespawnProps();
+            RespawnProps();
             _isPreStartingRound = true;
             _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
             if (!_soundsWaitingRoom)

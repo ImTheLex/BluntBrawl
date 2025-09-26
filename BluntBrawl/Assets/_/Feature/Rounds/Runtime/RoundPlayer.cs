@@ -2,6 +2,7 @@ using Animation.Runtime;
 using DeathCam.Runtime;
 using Item.Runtime;
 using Mirror;
+using Sounds.Runtime;
 using UnityEngine;
 
 namespace Rounds.Runtime
@@ -13,6 +14,8 @@ namespace Rounds.Runtime
         [SyncVar(hook = nameof(OnNameChanged))] public string m_playerName;
         
         public InGameUIAnimation m_inGameUIAnimation => _inGameUIAnimation;
+        
+        public CombatSFX m_combatSFX => GetComponent<CombatSFX>();
 
 
         public bool m_playerInitialized = false;

@@ -8,6 +8,7 @@ using UINavigation.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.XR;
 using Event = AK.Wwise.Event;
 using InputDevice = UnityEngine.XR.InputDevice;
@@ -88,7 +89,7 @@ namespace Player.Runtime
                 {
                     _recoverDash = false;
                     _dashAnimator.SetBool("RecoverDash", true);
-                    AkUnitySoundEngine.PostEvent(_dashEvent.Id, gameObject);
+                    AkUnitySoundEngine.PostEvent(_dashCooldownSFX.Id, gameObject);
                 }  
                 
                 _dashCooldownChrono -= Time.deltaTime;
@@ -168,6 +169,7 @@ namespace Player.Runtime
                 _isDashing = true;
                 _recoverDash = true;
                 _dashDirection = _playerInputMovement.normalized;
+                AkUnitySoundEngine.PostEvent(_dashSFX.Id, gameObject);
             }
         }
 
@@ -405,7 +407,8 @@ namespace Player.Runtime
 
         [SerializeField, Tooltip("Time in seconds after a new Dash can be done")] private float _dashCooldown;
         [SerializeField,Tooltip("Dash Animation reference")] private Animator _dashAnimator;
-        [SerializeField] private Event _dashEvent;
+        [SerializeField] private Event _dashSFX;
+        [SerializeField] private Event _dashCooldownSFX;
 
         private float _dashCooldownChrono;
         private bool _recoverDash;

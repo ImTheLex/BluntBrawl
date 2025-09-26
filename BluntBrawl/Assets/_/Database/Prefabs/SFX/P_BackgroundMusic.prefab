@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8585155301650563725}
-  - component: {fileID: 7208329975692238126}
+  - component: {fileID: 4913272402409051946}
   m_Layer: 0
   m_Name: P_BackgroundMusic
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7208329975692238126
+--- !u!114 &4913272402409051946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1457870749418084077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d37f37768c58f9445823ec978264ff68, type: 3}
+  m_Script: {fileID: 11500000, guid: e4a9af82509df644ca20f155e6e51708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuMusic:
+  _waitingRoomSounds:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 235662515cd589246acc4c7fc38b31a8, type: 2}
-  _ingameMusic:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 17009ae6c67f6774c89617b52d703d52, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 04a79976225b51e4a8ce13a0050543e4, type: 2}

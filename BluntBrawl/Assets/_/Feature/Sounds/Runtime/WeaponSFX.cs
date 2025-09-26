@@ -38,10 +38,9 @@ namespace Sounds.Runtime
         [TargetRpc]
         public void WeaponSlashSFX(NetworkConnectionToClient target,float velocity)
         {
-            if (_sfxSend) return;
             AkUnitySoundEngine.SetRTPCValue(_RTCPVelocity.ToString(), velocity);
-            AkUnitySoundEngine.PostEvent(_SFXWeaponSlash.ToString(), gameObject);            
-            _sfxSend = true;
+            if (_sfxSend) return;
+            SendSlashSFX();
         }
 
         [TargetRpc]
@@ -54,6 +53,16 @@ namespace Sounds.Runtime
             AkUnitySoundEngine.PostEvent(_SFXWeaponDrop.ToString(), gameObject);
         }
 
+
+        #endregion
+
+        #region Utils
+
+        private void SendSlashSFX()
+        {
+            AkUnitySoundEngine.PostEvent(_SFXWeaponSlash.ToString(), gameObject);            
+            _sfxSend = true;
+        }
 
         #endregion
 

@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 378834558803462490}
   - component: {fileID: 7876064452795065904}
   - component: {fileID: 1767451311726051443}
-  - component: {fileID: 2273361214849912291}
+  - component: {fileID: 855805081205868607}
   m_Layer: 0
   m_Name: P_Player
   m_TagString: Untagged
@@ -591,10 +591,14 @@ MonoBehaviour:
   _dashForce: 35
   _dashCooldown: 2.5
   _dashAnimator: {fileID: 2507582552531252569}
-  _dashEvent:
+  _dashSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 34c575ec7a8f50d4084777861e912d7c, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 7c354905bb831884ba913ff104dc3a60, type: 2}
+  _dashCooldownSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3e246f25f82305b478cbacc5488d492b, type: 2}
   _leftController: {fileID: 1018988536599595518}
   _rightController: {fileID: 7522599289072299311}
   _roundPlayer: {fileID: 1767451311726051443}
@@ -659,7 +663,7 @@ MonoBehaviour:
   _playerCam: {fileID: 4331621373969296445}
   _xrPosition: {fileID: 3547495322754242636}
   _inGameUIAnimation: {fileID: 4316820703730505751}
---- !u!114 &2273361214849912291
+--- !u!114 &855805081205868607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -668,37 +672,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4139709100620377146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e70d4f736c948347865d67365f10e8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 41851fa7856a4634a8bb2ae6fa7a4ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _firstCombatSound:
+  _combatSounds:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 269c668c3207c6a4588ef9e8094da083, type: 2}
+  _startRoundSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 17009ae6c67f6774c89617b52d703d52, type: 2}
-  _secondCombatSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 17009ae6c67f6774c89617b52d703d52, type: 2}
-  _thirdCombatSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 17009ae6c67f6774c89617b52d703d52, type: 2}
-  _startRound:
+    WwiseObjectReference: {fileID: 11400000, guid: 4e7c2dee81fb0f54d9b8200b1ed0d7af, type: 2}
+  _endRoundSFX:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  _endRound:
+  _loseRoundSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  _loseRound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  _winRound:
+    WwiseObjectReference: {fileID: 11400000, guid: 54fb5d6ce8ef7a641abe7b374d4525e1, type: 2}
+  _winRoundSFX:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}

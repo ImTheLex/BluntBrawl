@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	25254557	playerWeaponCooldown			\Default Work Unit\playerEvents\playerWeaponCooldown	
 	526621624	enemyWeaponsEventHits			\Default Work Unit\enemyEvents\enemyWeaponsEventHits	
 	598450249	Looser			\Default Work Unit\backgroundEvents\Looser	
+	688112595	waitingRoom			\Default Work Unit\backgroundEvents\waitingRoom	
 	723260870	enemyEventsDie			\Default Work Unit\enemyEvents\enemyEventsDie	
 	911993200	ButtonFancy			\Default Work Unit\backgroundEvents\ButtonsEvent\ButtonFancy	
 	927588791	ButtonOver			\Default Work Unit\backgroundEvents\ButtonsEvent\ButtonOver	
@@ -31,18 +32,16 @@ Event	ID	Name			Wwise Object Path	Notes
 	3389008624	ButtonLaunch			\Default Work Unit\backgroundEvents\ButtonsEvent\ButtonLaunch	
 	3425412358	TestSystem			\Default Work Unit\TestEvent\TestSystem	
 	4051332235	ButtonClick			\Default Work Unit\backgroundEvents\ButtonsEvent\ButtonClick	
+	4069940938	combatSound			\Default Work Unit\backgroundEvents\combatSound	
 	4152903161	playerWeaponsEventHits			\Default Work Unit\playerEvents\playerWeaponsEventHits	
 	4196958256	enemyDashCooldown			\Default Work Unit\enemyEvents\enemyDashCooldown	
 	4263813725	objectEventsFenceHit			\Default Work Unit\objectEvents\objectEventsFenceHit	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
-	1445037870	musicSwitch			\Default Work Unit\musicSwitch	
 	1861379221	switcheWeaponsType			\Default Work Unit\switcheWeaponsType	
 	4139584672	switchHit			\Default Work Unit\switchHit	
 
 Switch	ID	Name	Switch Group			Notes
-	19135406	waiting	musicSwitch			
-	984691642	inGame	musicSwitch			
 	1444194542	switcheWeaponsTypeSign	switcheWeaponsType			
 	3160374033	switcheWeaponsTypePipe	switcheWeaponsType			
 	3307155126	switcheWeaponsTypeBat	switcheWeaponsType			
@@ -69,7 +68,6 @@ Effect plug-ins	ID	Name	Type				Notes
 	819943492	Fear_no_Evil	Wwise Harmonizer			
 	1674078407	Chorus_Like	Wwise Flanger			
 	3354577677	Fast_LF_Tremolo	Wwise Tremolo			
-	3796564934	Hard_Knee_Minus_3dB_RMS	Wwise Compressor			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	4507446	timerBuzz	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\E2\{E2AD88E1-9808-5026-BC13-BAE30C011A8B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\backgroundWorkUnit\backgroundSounds\backgroundSoundBuzz\timerBuzz		654464
@@ -131,7 +129,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	694358222	pipeDrop02	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\22\{22D3139F-332C-B79E-6569-40D0F19D80F2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemyWorkUnit\enemySounds\enemyWeaponsSounds\enemySwitchDrop\enemyDropPipe\pipeDrop02		78820
 	703433059	playerBatSlash01	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\36\{36B9B02F-932D-5458-6D11-1A41F27D7711}.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerWorkUnit\playerSounds\playerWeaponsSounds\playerSwitchSlash\playerBatSlash\playerBatSlash01		46176
 	707275973	enemyFallSounds02	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\E1\{E1F06159-A746-5879-04FA-2CEDAF04A54B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemyWorkUnit\enemySounds\enemyFallSounds\enemyFallSounds02		293928
-	719854022	waitingStateElevator	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\C9\{C9D5C15E-A1CE-5971-7208-A3E20E8E496F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\backgroundWorkUnit\backgroundSounds\musicSwitch\waitingStateElevator		33375840
+	719854022	waitingRoom	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\C9\{C9D5C15E-A1CE-5971-7208-A3E20E8E496F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\backgroundWorkUnit\backgroundSounds\waitingRoom		33375840
 	719926177	playerCooldownWeapon	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\CA\{CAD18351-842A-EEF5-66CB-542F99790CD9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerWorkUnit\playerSounds\playerWeaponsSounds\playerCooldownWeapon		1068948
 	735879190	batDrop01	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\B7\{B7EDD1F4-F70E-6D92-264B-A7C2A7E88071}.wem		\Actor-Mixer Hierarchy\Default Work Unit\enemyWorkUnit\enemySounds\enemyWeaponsSounds\enemySwitchDrop\enemyDropBat\batDrop01		73452
 	756402074	playerCathammerSlash01	C:\U\BluntBrawl\BluntBrawl\BluntBrawl_WwiseProject\.cache\E8\{E8F6269B-2992-C28C-EEAD-5E97DE000B39}.wem		\Actor-Mixer Hierarchy\Default Work Unit\playerWorkUnit\playerSounds\playerWeaponsSounds\playerSwitchSlash\playerCathammerSlash\playerCathammerSlash01		219964

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{873B93A7-D7E6-743F-9D87-98178B000FFE}",
+    "Hash": "{BAC737C6-9967-E7F7-B1CF-FF7410436FBE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -825,14 +825,6 @@
        "GUID": "{3B09A271-D9D4-4A4E-B545-F681E8313E5F}",
        "LibName": "Wwise Tremolo",
        "LibId": "8585219"
-      },
-      {
-       "Id": "3796564934",
-       "Name": "Hard_Knee_Minus_3dB_RMS",
-       "ObjectPath": "\\Effects\\Factory Effects\\Compressor\\Hard_Knee_Minus_3dB_RMS",
-       "GUID": "{D083BAE5-F9EF-426B-A311-D9DF8DFE8807}",
-       "LibName": "Wwise Compressor",
-       "LibId": "7077891"
       }
      ]
     },
@@ -894,6 +886,19 @@
       "MediaRefs": [
        {
         "Id": "985327805"
+       }
+      ]
+     },
+     {
+      "Id": "4069940938",
+      "Name": "combatSound",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\combatSound",
+      "GUID": "{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}",
+      "Color": "12",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "916391135"
        }
       ]
      },
@@ -1012,8 +1017,8 @@
       "GUID": "{31560868-DFCE-4DE2-B316-886BCDBE45E0}",
       "Color": "10",
       "DurationType": "OneShot",
-      "DurationMin": "0.19750915",
-      "DurationMax": "1.30806",
+      "DurationMin": "0.1811167",
+      "DurationMax": "1.4264497",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -1043,9 +1048,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1079,9 +1081,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1114,9 +1113,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1149,9 +1145,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1507,33 +1500,9 @@
       "GUID": "{6F88CF55-A4AB-4F42-874C-5AF6E2906598}",
       "Color": "12",
       "DurationType": "Infinite",
-      "SwitchContainers": [
+      "MediaRefs": [
        {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "1445037870",
-         "Id": "19135406",
-         "GUID": "{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "719854022"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "1445037870",
-         "Id": "984691642",
-         "GUID": "{51ECADC8-5EF3-46FE-B42A-32F81AF5E787}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "916391135"
-         }
-        ]
+        "Id": "916391135"
        }
       ]
      },
@@ -1721,7 +1690,7 @@
       "GUID": "{F0E25E2E-FF0C-4A1A-9A6F-F7A895FC2D6C}",
       "Color": "1",
       "DurationType": "OneShot",
-      "DurationMin": "0.14348775",
+      "DurationMin": "0.17063665",
       "DurationMax": "1.4264497",
       "SwitchContainers": [
        {
@@ -1752,9 +1721,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1788,9 +1754,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1823,9 +1786,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -1858,9 +1818,6 @@
           },
           {
            "Id": "3354577677"
-          },
-          {
-           "Id": "3796564934"
           }
          ]
         }
@@ -2270,6 +2227,19 @@
         "Id": "355899150"
        }
       ]
+     },
+     {
+      "Id": "688112595",
+      "Name": "waitingRoom",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\waitingRoom",
+      "GUID": "{FD651358-E0A5-462F-BA58-8F52B539398F}",
+      "Color": "12",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "719854022"
+       }
+      ]
      }
     ],
     "GameParameters": [
@@ -2293,26 +2263,6 @@
      }
     ],
     "SwitchGroups": [
-     {
-      "Id": "1445037870",
-      "Name": "musicSwitch",
-      "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch",
-      "GUID": "{883F927B-34F5-4971-BDE8-C31639331742}",
-      "Switches": [
-       {
-        "Id": "19135406",
-        "Name": "waiting",
-        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\waiting",
-        "GUID": "{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"
-       },
-       {
-        "Id": "984691642",
-        "Name": "inGame",
-        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\inGame",
-        "GUID": "{51ECADC8-5EF3-46FE-B42A-32F81AF5E787}"
-       }
-      ]
-     },
      {
       "Id": "1861379221",
       "Name": "switcheWeaponsType",
@@ -2377,6 +2327,6 @@
     ]
    }
   ],
-  "FileHash": "{30B36100-6E6A-4847-F6ED-91CE898B818C}"
+  "FileHash": "{4748F97C-BEAD-5C51-03B6-9A1E7E5CE9BE}"
  }
 }

@@ -4,13 +4,6 @@
   "BasePlatform": "Windows",
   "PluginLibs": [
    {
-    "LibName": "Wwise Compressor",
-    "LibId": "7077891",
-    "Type": "Effect",
-    "DLL": "AkCompressor",
-    "StaticLib": "AkCompressorFX"
-   },
-   {
     "LibName": "Wwise Flanger",
     "LibId": "8192003",
     "Type": "Effect",
@@ -49,6 +42,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{67CE2896-E728-26F4-38E4-DF2BC49AD133}"
+  "FileHash": "{8002C5CD-A534-2B86-BBDC-1C881CA134C1}"
  }
 }

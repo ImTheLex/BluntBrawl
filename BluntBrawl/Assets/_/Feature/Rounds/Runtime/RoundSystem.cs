@@ -113,6 +113,8 @@ namespace Rounds.Runtime
             m_isPlayingRound = true;
             _roundStarted = true;
             _roundTimer = m_roundStats.m_maxRoundTime;
+            StartCombatMusic();
+
         }
         
         [Server]
@@ -127,6 +129,7 @@ namespace Rounds.Runtime
             _currentRound++;
             RepopulatePlayers();
             Invoke(nameof(ClearBreak), 3f);
+            StopCombatMusic();
             SendEndRoundAnim();
 
         }
@@ -188,6 +191,7 @@ namespace Rounds.Runtime
             foreach (var player in _players)
             {
                 player.InitializePlayer();
+                player.m_combatSFX.StopCombatMusic();
             }
         }
         
@@ -264,7 +268,7 @@ namespace Rounds.Runtime
             foreach (var player in _players)
             {
                 player.m_inGameUIAnimation.SendStartRound();
-                player.GetComponent<CombatSounds>().StartCombatSounds(_currentRound-1);
+                player.m_combatSFX.StartRoundSFX();
             }
         }
         
@@ -274,7 +278,7 @@ namespace Rounds.Runtime
             foreach (var player in _players)
             {
                 player.m_inGameUIAnimation.SendEndRound();
-                player.GetComponent<CombatSounds>().StopCombatSounds();
+                player.m_combatSFX.EndRoundSFX();
             }
         }
         
@@ -282,18 +286,38 @@ namespace Rounds.Runtime
         private void SendWinnerAnim(NetworkConnectionToClient target,RoundPlayer player)
         {
                 player.m_inGameUIAnimation.SendWin();
+                player.m_combatSFX.WinRoundSFX();
         }
         
         [TargetRpc]
         private void SendLoserAnim(NetworkConnectionToClient target,RoundPlayer player)
         {
                 player.m_inGameUIAnimation.SendLose();
+                player.m_combatSFX.LoseRoundSFX();
         }
 
         [ClientRpc]
         private void ClearWaitingRoom()
         {
-            FindFirstObjectByType<WaitingRoomSounds>().DestroySingleton();
+            FindFirstObjectByType<WaitingRoomSFX>().DestroyWaitingRoomSFX();
+        }
+
+        [ClientRpc]
+        private void StartCombatMusic()
+        {
+            foreach (var player in _players)
+            {
+                player.m_combatSFX.StartCombatMusic(_currentRound-1);
+            }
+        }
+
+        [ClientRpc]
+        private void StopCombatMusic()
+        {
+            foreach (var player in _players)
+            {
+                player.m_combatSFX.StopCombatMusic();
+            }
         }
         
         #endregion
@@ -349,7 +373,7 @@ namespace Rounds.Runtime
         [SyncVar] private float _broadCastCurrentTimer;
         
         [SerializeField] private List<TMP_Text> m_texts;
-        private bool _combatMusic = false;
+        
         private bool _soundsWaitingRoom = false;
 
 

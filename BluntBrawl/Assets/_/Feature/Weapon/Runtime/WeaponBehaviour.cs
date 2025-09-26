@@ -47,8 +47,14 @@ namespace Weapon.Runtime
             if(!_itemGrabber){_localPositionReference = gameObject.transform;}
             else {_localPositionReference = _itemGrabber.transform;}
             if(m_owner is null) m_owner =  transform.root.gameObject;
-
         }
+
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+            _previousPos = _localPositionReference.transform.localPosition;
+        }
+
 
         private void Update()
         {
@@ -78,9 +84,8 @@ namespace Weapon.Runtime
             _weaponVelocity = velocity;
             
             if (velocity > _weaponData.m_velocityRequired)
-            
             {
-                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient,Mathf.Clamp(velocity*10f,0f,100f));
+                _weaponSFX.WeaponSlashSFX(netIdentity.connectionToClient, velocity);
                 _weaponDamageCollider.enabled = true;
                 _weaponDamageCollider.isTrigger = true;
                 

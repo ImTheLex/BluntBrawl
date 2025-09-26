@@ -185,6 +185,7 @@ namespace Rounds.Runtime
             }
         }
         
+        [Server]
         private void ResetPlayers()
         {
             foreach (var player in _players)

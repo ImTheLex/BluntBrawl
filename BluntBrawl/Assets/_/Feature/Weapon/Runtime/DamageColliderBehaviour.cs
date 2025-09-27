@@ -58,6 +58,11 @@ namespace Weapon.Runtime
                     NetworkIdentity identity = other.transform.root.GetComponent<NetworkIdentity>();
                     bumpable.TargetPlayerBumpOnHit(identity.connectionToClient, xrOrigin.transform.position, m_weaponBehaviour.m_force, m_weaponBehaviour.m_verticalForce,m_weaponBehaviour.m_horizontalForce);
                 }
+
+                if (other.TryGetComponent<IMysteryBox>(out var mysteryBox))
+                {
+                    mysteryBox.CmdTakeDamage();
+                }
             }
 
         #endregion

@@ -1316,54 +1316,6 @@
 											</ChildrenList>
 										</RandomSequenceContainer>
 									</ChildrenList>
-									<ObjectLists>
-										<ObjectList Name="Effects">
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{83C44076-ABC4-4D0B-A017-5BD6C1D5D249}" ShortID="285894575">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
-																<ObjectRef Name="Chorus_Like" ID="{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{FE22815A-4818-4F10-A4FB-208D977E37AE}" ShortID="236651639">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
-																<ObjectRef Name="Fear_no_Evil" ID="{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{81F4A2AA-8E51-4016-A3BE-0FE7F03F1EFE}" ShortID="363329957">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
-																<ObjectRef Name="Fast_LF_Tremolo" ID="{3B09A271-D9D4-4A4E-B545-F681E8313E5F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{ECFD4121-4451-4E27-9B84-9CC8B5FDE521}" ShortID="1033333930">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
-																<ObjectRef Name="Chipmunk" ID="{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-										</ObjectList>
-									</ObjectLists>
 									<GroupingInfo>
 										<GroupingBehaviorList>
 											<GroupingBehavior>

@@ -2006,7 +2006,7 @@
 																		<PointList>
 																			<Point>
 																				<XPos>0</XPos>
-																				<YPos>-200</YPos>
+																				<YPos>-1.8</YPos>
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
@@ -2762,6 +2762,52 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="playerDashBack" ID="{4D669520-92F6-4AB1-832D-ABB076404447}" ShortID="693306595">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="SpeakerPanning" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="masterVrAudioBus" ID="{621F63B9-7E49-4B06-B12B-DA33231984F0}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="DASHBACK ANIM" ID="{8FE13637-B6C3-4533-8CB2-7E627D0DE52D}" ShortID="175491421">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DASHBACK ANIM" ID="{F6DC71BA-9B9D-4AA2-B6BF-84A389D497F3}">
+											<Language>SFX</Language>
+											<AudioFile>DASHBACK ANIM.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="375918527"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DASHBACK ANIM" ID="{F6DC71BA-9B9D-4AA2-B6BF-84A389D497F3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{A62434BA-B13B-41EB-BC21-EE8C1823BC89}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="24.283305227656"/>
+										<Property Name="PanY" Type="Real64" Value="10.4882459312839"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
 						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>

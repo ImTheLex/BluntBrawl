@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<MixingSession Name="New Mixing Session" ID="{F310C0A7-C7B0-4AEC-A8F4-F17178A774F9}">
 					<ObjectList>
-						<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+						<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
 					</ObjectList>
 				</MixingSession>
 			</ChildrenList>

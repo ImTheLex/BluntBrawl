@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}" SchemaVersion="123" RootDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" ParentDocumentID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}">
+	<Events>
+		<WorkUnit Name="Music" ID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}" OwnerID="{7845BE65-36F3-4BC7-BAA2-F3D02E98D7D3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="19"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="musicIntro01" ID="{CD66E785-5505-4BC0-89CB-F8790D65AEFB}">
+					<ChildrenList>
+						<Action Name="" ID="{EBABF687-380F-43ED-BA53-B0B293BD38A6}" ShortID="817279635">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_INTRO_LOOP" ID="{838773D2-E905-4E58-899A-2001457DC814}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}">
+					<ChildrenList>
+						<Action Name="" ID="{76B83DFB-2A8B-426F-A4A9-96E841F28832}" ShortID="1036008392">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}">
+					<ChildrenList>
+						<Action Name="" ID="{F98C3F49-7440-4ED5-8314-A75BEFB016BF}" ShortID="227135044">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waitingRoom" ID="{A435AFB4-E647-41C2-BD5C-FE5CC921D55C}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="musicIntro02" ID="{29D456D3-643C-4B91-91D5-C77601C1799E}">
+					<ChildrenList>
+						<Action Name="" ID="{CE2F9273-1821-4CB4-A616-4168BF414596}" ShortID="911019327">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_INTRO_LOOP2" ID="{16912D6B-6FF9-4042-A79E-93C10B446FEF}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

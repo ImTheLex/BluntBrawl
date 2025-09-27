@@ -7,7 +7,7 @@
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>
-				<Event Name="TimerTic" ID="{C77DC6FF-5715-4AC4-B1B8-390DDF49C59B}">
+				<Event Name="timerTic" ID="{C77DC6FF-5715-4AC4-B1B8-390DDF49C59B}">
 					<ChildrenList>
 						<Action Name="" ID="{3DE9A925-1817-4573-A184-B4DE8F2A5717}" ShortID="352643478">
 							<ReferenceList>
@@ -18,7 +18,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="TimerEndBuzz" ID="{EB3BB886-06A0-4907-90AA-7627640A5310}">
+				<Event Name="timerEndBuzz" ID="{EB3BB886-06A0-4907-90AA-7627640A5310}">
 					<ChildrenList>
 						<Action Name="" ID="{F0EF0264-E2E2-443C-81CD-0104C2442BB1}" ShortID="722747757">
 							<ReferenceList>
@@ -41,7 +41,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Looser" ID="{C2703AD7-BA6B-4A52-9DCF-8B4F1A515E0E}">
+				<Event Name="looser" ID="{C2703AD7-BA6B-4A52-9DCF-8B4F1A515E0E}">
 					<ChildrenList>
 						<Action Name="" ID="{A41504F5-45D5-450F-BE39-44BE824BD33F}" ShortID="245135788">
 							<ReferenceList>
@@ -52,34 +52,12 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="musicSound" ID="{6F88CF55-A4AB-4F42-874C-5AF6E2906598}">
+				<Event Name="winner" ID="{C5D4DAB1-8AC5-43F5-BDCA-7B6596BE80D4}">
 					<ChildrenList>
-						<Action Name="" ID="{9FE25D96-94B1-4AF7-95FD-64D89F63FDB3}" ShortID="878557377">
+						<Action Name="" ID="{340F9A09-395B-4F3A-828D-E6C0DD8B091D}" ShortID="46102651">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}">
-					<ChildrenList>
-						<Action Name="" ID="{F98C3F49-7440-4ED5-8314-A75BEFB016BF}" ShortID="227135044">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="waitingRoom" ID="{A435AFB4-E647-41C2-BD5C-FE5CC921D55C}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}">
-					<ChildrenList>
-						<Action Name="" ID="{76B83DFB-2A8B-426F-A4A9-96E841F28832}" ShortID="1036008392">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+									<ObjectRef Name="winner" ID="{73F9C400-12DC-45DA-9661-98F2B2194F06}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

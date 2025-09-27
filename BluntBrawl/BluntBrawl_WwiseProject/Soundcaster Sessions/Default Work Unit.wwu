@@ -6,19 +6,15 @@
 				<SoundcasterSession Name="New Soundcaster Session" ID="{D48C8468-6D2C-4F8B-A7B7-76CF44CB352C}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+							<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="musicSound" ID="{6F88CF55-A4AB-4F42-874C-5AF6E2906598}" WorkUnitID="{163E87B2-3709-43DA-B079-601C48198454}"/>
-							<Position X="0" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}" WorkUnitID="{163E87B2-3709-43DA-B079-601C48198454}"/>
+							<ObjectRef Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}" WorkUnitID="{163E87B2-3709-43DA-B079-601C48198454}"/>
+							<ObjectRef Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>

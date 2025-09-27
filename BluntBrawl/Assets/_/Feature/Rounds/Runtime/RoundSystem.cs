@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HealthBox.Runtime;
 using Mirror;
+using MisteryBox.Runtime;
 using Sounds.Runtime;
 using TMPro;
 using UnityEngine;
@@ -36,8 +37,9 @@ namespace Rounds.Runtime
                 {
                     Destroy(gameObject);
                 }
-                
-                
+
+                if (_mysteryBoxSystem is null) _mysteryBoxSystem = FindFirstObjectByType<MisteryBoxSystem>();
+
             }
 
         [ServerCallback]
@@ -173,8 +175,12 @@ namespace Rounds.Runtime
 
         private void RespawnProps()
         {
+            if (_safetyCounter > 10) return;
+            _safetyCounter++;
             _healthBoxSystem.Reset();
             _healthBoxSystem.RestartCycle();
+            _mysteryBoxSystem.Reset();
+            _mysteryBoxSystem.SpawnBox();
         }
         
         private void RepopulatePlayers()
@@ -359,6 +365,7 @@ namespace Rounds.Runtime
         #region Privates
         
         [SerializeField] HealthBoxSystem _healthBoxSystem;
+        [SerializeField] MisteryBoxSystem _mysteryBoxSystem;
         
         [SyncVar] private RoundPlayer _winnerPlayer;
         [SyncVar] private RoundPlayer _matchWinner;
@@ -376,6 +383,8 @@ namespace Rounds.Runtime
         
         private bool _soundsWaitingRoom = false;
 
+
+        private int _safetyCounter;
 
         #endregion
     }

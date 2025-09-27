@@ -1,6 +1,7 @@
 using System;
 using Interfaces.Runtime;
 using Mirror;
+using MisteryBox.Runtime;
 using Sounds.Runtime;
 using UnityEngine;
 
@@ -16,6 +17,11 @@ namespace Item.Runtime
         #endregion
 	
         #region Unity API
+
+        private void Awake()
+        {
+	        _misteryBoxSystem = FindFirstObjectByType<MisteryBoxSystem>();
+        }
 
         public override void OnStartServer()
         {
@@ -94,6 +100,7 @@ namespace Item.Runtime
             
             GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
             NetworkServer.Spawn(obj,connectionToClient);
+            _misteryBoxSystem.RemoveFromSpawnedWeapons(_grabbableObject);
             _inHandWeapon = obj;
             _inHandWeaponData = _grabbableWeaponData;
             NetworkServer.Destroy(_grabbableObject);
@@ -110,6 +117,8 @@ namespace Item.Runtime
         {
 	        GameObject obj = Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
 	        NetworkServer.Spawn(obj);
+            _misteryBoxSystem.AddToSpawnedWeapons(obj);
+	        
             _inHandWeapon.GetComponent<WeaponSFX>().WeaponDropSFX(netIdentity.connectionToClient);
 	        NetworkServer.Destroy(_inHandWeapon);
 	        _inHandWeapon = null;
@@ -144,6 +153,7 @@ namespace Item.Runtime
 			private GameObject _inHandWeapon;
 	        private WeaponStats _grabbableWeaponData;
 	        private GameObject _grabbableObject;
+	        private MisteryBoxSystem _misteryBoxSystem;
 
 	        [SerializeField] private WeaponStats _startingWeapon;
         

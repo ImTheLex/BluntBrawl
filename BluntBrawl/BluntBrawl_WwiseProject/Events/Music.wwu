@@ -51,6 +51,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="MusicLoop01" ID="{C58C6EFB-D80B-4F08-8687-A86E9F3F41C4}">
+					<ChildrenList>
+						<Action Name="" ID="{C9579C94-6010-41B1-B785-0922A8971E6B}" ShortID="1008209362">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_LOOP1" ID="{B9449F88-3A10-487B-A8F0-11A4D431CD06}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MusicLoop02" ID="{132ED500-CD76-4ECE-A825-88A35FD63414}">
+					<ChildrenList>
+						<Action Name="" ID="{C30826E9-8A45-4383-B0D5-6C327FC6E39D}" ShortID="515777533">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_LOOP2" ID="{9843CF5F-C132-4542-A57C-6910EE57590A}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

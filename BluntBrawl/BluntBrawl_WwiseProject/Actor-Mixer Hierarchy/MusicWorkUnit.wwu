@@ -235,6 +235,50 @@
 						<ActiveSource Name="MUS_INTRO_LOOP_140bpm" ID="{F241F100-9139-4934-AB3A-998CBA2D8187}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="MUS_LOOP1" ID="{B9449F88-3A10-487B-A8F0-11A4D431CD06}" ShortID="397843635">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="MUS_LOOP1_alt_140bpm" ID="{5794DB5B-CC4B-4EDC-82F5-1DB572B5D502}">
+							<Language>SFX</Language>
+							<AudioFile>MUS_LOOP1_alt_140bpm.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="307646932"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="MUS_LOOP1_alt_140bpm" ID="{5794DB5B-CC4B-4EDC-82F5-1DB572B5D502}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="MUS_LOOP2" ID="{9843CF5F-C132-4542-A57C-6910EE57590A}" ShortID="433547037">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="MUS_LOOP2_alt_140bpm" ID="{F700840A-93AC-43D1-A5A0-4852122D072C}">
+							<Language>SFX</Language>
+							<AudioFile>MUS_LOOP2_alt_140bpm.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="484646156"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="MUS_LOOP2_alt_140bpm" ID="{F700840A-93AC-43D1-A5A0-4852122D072C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

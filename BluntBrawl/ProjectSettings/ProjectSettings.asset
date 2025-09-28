@@ -17,7 +17,7 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
-  m_ShowUnitySplashScreen: 1
+  m_ShowUnitySplashScreen: 0
   m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
@@ -146,9 +146,6 @@ PlayerSettings:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   - {fileID: 11400000, guid: 250f46c0c463e4149ab3aba9d7d9564a, type: 2}
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  - {fileID: 11400000, guid: 0b649198f8576f64abce79dba12875b5, type: 2}
-  - {fileID: -3829803800934196022, guid: 28e87a6096fe1144cbca036a4a922079, type: 2}
-  - {fileID: -3424625345622959240, guid: ce40df35bace2e645af2fbf84a5fa1cf, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -262,7 +259,7 @@ PlayerSettings:
   clonedFromGUID: 3c72c65a16f0acb438eed22b8b16c24a
   templatePackageId: com.unity.template.urp-blank@17.0.11
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  useCustomMainManifest: 0
+  useCustomMainManifest: 1
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 0
   useCustomLauncherGradleManifest: 0
@@ -295,7 +292,14 @@ PlayerSettings:
   AndroidAppBundleSizeToValidate: 150
   AndroidReportGooglePlayAppDependencies: 1
   androidSymbolsSizeThreshold: 800
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: e39181b3d645d1e48abd6c96419f2f71, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: iPhone
     m_Icons:
@@ -396,35 +400,41 @@ PlayerSettings:
       m_SubKind: App Store
   - m_BuildTarget: Android
     m_Icons:
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 0
+    - m_Textures:
+      - {fileID: 2800000, guid: 1a611c5a50757d14697a12025ffc4abe, type: 3}
+      - {fileID: 2800000, guid: 6dce0ceba3787f145b4daa46a48d400a, type: 3}
+      m_Width: 432
+      m_Height: 432
+      m_Kind: 2
       m_SubKind: 
     - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
+      m_Width: 324
+      m_Height: 324
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      - {fileID: 2800000, guid: 3d59946fe7b7c9e4495eed4a3fad1710, type: 3}
+      m_Width: 216
+      m_Height: 216
+      m_Kind: 2
       m_SubKind: 
     - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 0
+      m_Width: 162
+      m_Height: 162
+      m_Kind: 2
       m_SubKind: 
     - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
+      m_Width: 108
+      m_Height: 108
+      m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
+    - m_Textures:
+      - {fileID: 0}
+      - {fileID: 2800000, guid: 0ac91e33f738dc74490fd88ad2d1c8dd, type: 3}
+      m_Width: 81
+      m_Height: 81
+      m_Kind: 2
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: e39181b3d645d1e48abd6c96419f2f71, type: 3}
@@ -458,38 +468,35 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
-      - {fileID: 2800000, guid: 6dce0ceba3787f145b4daa46a48d400a, type: 3}
-      m_Width: 432
-      m_Height: 432
-      m_Kind: 2
+      - {fileID: 2800000, guid: e39181b3d645d1e48abd6c96419f2f71, type: 3}
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
       m_SubKind: 
     - m_Textures: []
-      m_Width: 324
-      m_Height: 324
-      m_Kind: 2
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
       m_SubKind: 
     - m_Textures: []
-      m_Width: 216
-      m_Height: 216
-      m_Kind: 2
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
       m_SubKind: 
     - m_Textures: []
-      m_Width: 162
-      m_Height: 162
-      m_Kind: 2
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
       m_SubKind: 
     - m_Textures: []
-      m_Width: 108
-      m_Height: 108
-      m_Kind: 2
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
       m_SubKind: 
-    - m_Textures:
-      - {fileID: 0}
-      - {fileID: 2800000, guid: 0ac91e33f738dc74490fd88ad2d1c8dd, type: 3}
-      m_Width: 81
-      m_Height: 81
-      m_Kind: 2
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
       m_SubKind: 
   - m_BuildTarget: tvOS
     m_Icons:

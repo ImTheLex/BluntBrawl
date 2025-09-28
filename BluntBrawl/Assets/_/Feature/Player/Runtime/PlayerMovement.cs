@@ -8,7 +8,6 @@ using UINavigation.Runtime;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 using UnityEngine.XR;
 using Event = AK.Wwise.Event;
 using InputDevice = UnityEngine.XR.InputDevice;
@@ -75,7 +74,10 @@ namespace Player.Runtime
             if (DetectKillZ() && _healthBehaviour.m_isDead == false)
             {
                 if (RoundSystem.Instance.m_isPlayingRound)
-                    _healthBehaviour.CmdTakeDamage(_healthBehaviour.m_currentHealth);
+                {
+                    _healthBehaviour.CMDFallDamage();
+                    RPCDeathSFX();
+                }
                 //else _roundPlayer.InitializePlayer();
 
             }
@@ -372,6 +374,12 @@ namespace Player.Runtime
             _leftController.localRotation = _leftControllerInputRotation;
             _rightController.localRotation = _rightControllerInputRotation;
         }
+        
+        [ClientRpc]
+        private void RPCDeathSFX()
+        {
+            AkUnitySoundEngine.PostEvent(_fallDeathFeedback.Id,gameObject);
+        }
 
         #endregion
         
@@ -409,6 +417,9 @@ namespace Player.Runtime
         [SerializeField,Tooltip("Dash Animation reference")] private Animator _dashAnimator;
         [SerializeField] private Event _dashSFX;
         [SerializeField] private Event _dashCooldownSFX;
+        
+        [Header("FallDeath feedback")]
+        [SerializeField] private Event _fallDeathFeedback;
 
         private float _dashCooldownChrono;
         private bool _recoverDash;

@@ -819,6 +819,10 @@ PrefabInstance:
       propertyPath: sceneId
       value: 336420751
       objectReference: {fileID: 0}
+    - target: {fileID: 2214750828499958746, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
+      propertyPath: sceneId
+      value: 1430653260
+      objectReference: {fileID: 0}
     - target: {fileID: 4699203647732345568, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -862,6 +866,10 @@ PrefabInstance:
     - target: {fileID: 6134113193336886789, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
       propertyPath: m_Name
       value: P_Map_RoofTop_Definitive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372731807758189268, guid: 6c6a7cf1123b4a147a1c4f34ad319caf, type: 3}
+      propertyPath: sceneId
+      value: 1793517229
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

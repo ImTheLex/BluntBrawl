@@ -28,6 +28,7 @@ namespace Player.Runtime
         public bool m_activeInput => RoundSystem.Instance.m_isPreStartingRound;
         
         
+        
         #endregion
         
         
@@ -64,7 +65,7 @@ namespace Player.Runtime
             TrackingPositionController();
             TrackingRotationController();
 
-            if (m_activeInput || _healthBehaviour.m_isDead)
+            if (m_activeInput || !_roundPlayer.m_isInputActive)
             {
                 _playerInputMovement = Vector2.zero;
                 Move();
@@ -159,7 +160,7 @@ namespace Player.Runtime
         public void OnDebugPosition(InputAction.CallbackContext context)
         {
             if (!isLocalPlayer) return;
-            if (context.started) _playerRigidbody.position = new Vector3(0, 5, 0);
+            //if (context.started) _playerRigidbody.position = new Vector3(0, 5, 0);
         }
 
         public void OnDash(InputAction.CallbackContext context)
@@ -452,6 +453,8 @@ namespace Player.Runtime
         [SerializeField] private Animator _animator;
         [SerializeField] private NetworkAnimator _networkAnimator;
         [SerializeField] private NetworkIdentity _networkIdentity;
+        
+        
 
         #endregion
 

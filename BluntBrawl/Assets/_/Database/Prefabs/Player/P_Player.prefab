@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 2654449017
+  _assetId: 2488156854
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
@@ -1093,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 305412688907636509, guid: 639a49598839c4e3890826b178fa3d25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.379
+      value: 0.615
       objectReference: {fileID: 0}
     - target: {fileID: 305412688907636509, guid: 639a49598839c4e3890826b178fa3d25, type: 3}
       propertyPath: m_LocalRotation.w

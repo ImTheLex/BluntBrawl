@@ -12,10 +12,6 @@ public class WeaponStats : ScriptableObject
     public float m_verticalForce;
     public float m_horizontalForce;
 
-	public Color m_velocityMatchedColor;
-	public Color m_onCooldownColor;
-	public Color m_readyToUseColor;
-
-    public GameObject m_inWorldPrefab;
+	public GameObject m_inWorldPrefab;
     public GameObject m_inHandPrefab;
 }

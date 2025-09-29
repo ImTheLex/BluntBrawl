@@ -62,6 +62,8 @@ namespace DeathCam.Runtime
             _display = true;
             _timer = 0f;
         }
+        
+        public void RestoreVignette() => SetAlpha(0f);
 
         private void SetAlpha(float alpha)
         {

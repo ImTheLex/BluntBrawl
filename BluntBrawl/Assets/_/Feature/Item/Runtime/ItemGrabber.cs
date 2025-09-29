@@ -1,5 +1,7 @@
+using System;
 using Interfaces.Runtime;
 using Mirror;
+using MisteryBox.Runtime;
 using Sounds.Runtime;
 using UnityEngine;
 
@@ -16,6 +18,11 @@ namespace Item.Runtime
 	
         #region Unity API
 
+        private void Awake()
+        {
+	        _misteryBoxSystem = FindFirstObjectByType<MisteryBoxSystem>();
+        }
+
         public override void OnStartServer()
         {
 	        base.OnStartServer();
@@ -27,8 +34,24 @@ namespace Item.Runtime
 
 	        obj.transform.localPosition = Vector3.zero;
         }
+
+        [Command]
+        public void CmdResetWeapon()
+        {
+	        Debug.Log("Asked for a weapon reset");
+	        ResetWeapon();
+        }
         
-        
+        [Server]
+        public void ResetWeapon()
+        {
+	        GameObject obj = Instantiate(_startingWeapon.m_inHandPrefab, transform);
+	        NetworkServer.Spawn(obj, connectionToClient); 
+
+	        _inHandWeapon = obj;
+	        _inHandWeaponData = _startingWeapon;
+        }
+
         public void OnTriggerEnter(Collider collider)
         {
             
@@ -77,6 +100,7 @@ namespace Item.Runtime
             
             GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
             NetworkServer.Spawn(obj,connectionToClient);
+            _misteryBoxSystem.RemoveFromSpawnedWeapons(_grabbableObject);
             _inHandWeapon = obj;
             _inHandWeaponData = _grabbableWeaponData;
             NetworkServer.Destroy(_grabbableObject);
@@ -93,6 +117,8 @@ namespace Item.Runtime
         {
 	        GameObject obj = Instantiate(_inHandWeaponData.m_inWorldPrefab, _grabbableObject.transform.position, Quaternion.identity);
 	        NetworkServer.Spawn(obj);
+            _misteryBoxSystem.AddToSpawnedWeapons(obj);
+	        
             _inHandWeapon.GetComponent<WeaponSFX>().WeaponDropSFX(netIdentity.connectionToClient);
 	        NetworkServer.Destroy(_inHandWeapon);
 	        _inHandWeapon = null;
@@ -120,15 +146,17 @@ namespace Item.Runtime
 	
         #region Privates
 	
-        private string _grabOwner;
-        
-	    private WeaponStats _inHandWeaponData;
-	    [SyncVar(hook = nameof(OnWeaponChanged))]
-		private GameObject _inHandWeapon;
-        private WeaponStats _grabbableWeaponData;
-        private GameObject _grabbableObject;
+	        private string _grabOwner;
+	        
+		    private WeaponStats _inHandWeaponData;
+		    [SyncVar(hook = nameof(OnWeaponChanged))]
+			private GameObject _inHandWeapon;
+	        private WeaponStats _grabbableWeaponData;
+	        private GameObject _grabbableObject;
+	        private MisteryBoxSystem _misteryBoxSystem;
 
-        [SerializeField] private WeaponStats _startingWeapon;
+	        [SerializeField] private WeaponStats _startingWeapon;
+        
 
         #endregion
     }

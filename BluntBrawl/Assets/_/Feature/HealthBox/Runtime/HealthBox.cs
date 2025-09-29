@@ -15,13 +15,21 @@ namespace HealthBox.Runtime
         {
             _healthSystem = FindFirstObjectByType<HealthBoxSystem>();
         }
+        
 
+        [ContextMenu("Decrease Health Server"), Server]
         public void DestroyProvider()
         {
-            _healthSystem.DecreaseCurrentHealthBoxes();
-            NetworkServer.Destroy(gameObject);
+            _healthSystem.DecreaseCurrentHealthBoxes(gameObject);
+            //NetworkServer.Destroy(gameObject);
         }
 
+        [ContextMenu("Decrease Health Command"),Command(requiresAuthority = false)]
+        public void CmdDestroyProvider()
+        {
+            DestroyProvider();
+        }
+        
         [SerializeField] private int _healValue;
 
         [Server]

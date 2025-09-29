@@ -49,13 +49,7 @@ namespace Weapon.Runtime
             if(m_owner is null) m_owner =  transform.root.gameObject;
         }
 
-        public override void OnStartClient()
-        {
-            base.OnStartClient();
-            _previousPos = _localPositionReference.transform.localPosition;
-        }
-
-
+        
         private void Update()
         {
             HandleDamageColliderOnVelocity();
@@ -68,6 +62,7 @@ namespace Weapon.Runtime
                 m_hasHit = false;
                 _debugTimer = m_invincibilityDuration;
             }
+            
         }
         
         #endregion

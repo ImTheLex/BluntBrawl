@@ -47,16 +47,20 @@ namespace Weapon.Runtime
                     var owner = m_weaponBehaviour.m_owner;
                     var healable = owner.GetComponentInChildren<IHealable>();
                     healable.CmdHeal(healProvider.m_healAmount);
-                    healProvider.DestroyProvider();
+                    healProvider.CmdDestroyProvider();
                 }
                 
                 if (other.TryGetComponent<IBumpable>(out var bumpable))
                 {
                     XROrigin xrOrigin = m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>().m_XROrigin;
-                    PlayerMovement playerMovement = other.transform.root.GetComponent<PlayerMovement>();
-                    playerMovement.TargetAnimatorHit();
+                    
                     NetworkIdentity identity = other.transform.root.GetComponent<NetworkIdentity>();
                     bumpable.TargetPlayerBumpOnHit(identity.connectionToClient, xrOrigin.transform.position, m_weaponBehaviour.m_force, m_weaponBehaviour.m_verticalForce,m_weaponBehaviour.m_horizontalForce);
+                }
+
+                if (other.TryGetComponent<IMysteryBox>(out var mysteryBox))
+                {
+                    mysteryBox.CmdTakeDamage();
                 }
             }
 

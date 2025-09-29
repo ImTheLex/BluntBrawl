@@ -1,5 +1,6 @@
 using Animation.Runtime;
 using DeathCam.Runtime;
+using Item.Runtime;
 using Mirror;
 using Sounds.Runtime;
 using UnityEngine;
@@ -51,9 +52,12 @@ namespace Rounds.Runtime
         [ClientRpc]
         public void InitializePlayer()
         {
+            Debug.Log($"Player Initialized at " + m_playerName);
             //deathCam.UnSwipeCam(connectionToClient);
             _xrPosition.transform.position = _spawnPosition;
             m_playerInitialized = true;
+            _itemGrabber.CmdResetWeapon();
+            
         }
         
         //[Command(requiresAuthority = false)]
@@ -95,6 +99,8 @@ namespace Rounds.Runtime
             
             [SerializeField] private InGameUIAnimation _inGameUIAnimation;
 
+            [SerializeField] private ItemGrabber _itemGrabber; 
+            
         #endregion
     }
 }

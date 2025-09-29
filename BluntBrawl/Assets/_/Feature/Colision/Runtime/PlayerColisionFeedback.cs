@@ -44,11 +44,12 @@ namespace Colision.Runtime
            
             float currentDamage = _playerHealth.m_maxHealth - _playerHealth.m_currentHealth;
            currentDamage = currentDamage <= 0f ? 1f : currentDamage;
-           direction.y = 1 * verticalForce * currentDamage;
-           direction.x *= horizontalForce * force * currentDamage;
-           direction.z *= horizontalForce * force * currentDamage;
+           direction.y = 1  * currentDamage;
+           direction.x *= force * currentDamage;
+           direction.z *= force * currentDamage;
            
            _bumpDirection = direction.normalized;
+           _bumpDirection = new Vector3(_bumpDirection.x * horizontalForce, _bumpDirection.y * verticalForce, _bumpDirection.z * horizontalForce);
            _bumpChrono = _bumpTimer;
            _forceWeapon = force;
            _isBumping = true;

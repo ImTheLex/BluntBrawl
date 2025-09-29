@@ -15,4 +15,5 @@ MonoBehaviour:
   m_maxRounds: 3
   m_preStartRoundTimer: 4
   m_maxRoundTime: 300
+  m_waitForPlayerTimer: 20
   m_requiredPlayers: 2

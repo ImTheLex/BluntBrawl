@@ -64,7 +64,7 @@ namespace Player.Runtime
             TrackingPositionController();
             TrackingRotationController();
 
-            if (m_activeInput)
+            if (m_activeInput || _healthBehaviour.m_isDead)
             {
                 _playerInputMovement = Vector2.zero;
                 Move();

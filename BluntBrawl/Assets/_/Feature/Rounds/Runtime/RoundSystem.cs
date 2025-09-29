@@ -3,8 +3,10 @@ using System.Linq;
 using HealthBox.Runtime;
 using Mirror;
 using MisteryBox.Runtime;
+using PrimeTween;
 using Sounds.Runtime;
 using TMPro;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 namespace Rounds.Runtime
@@ -47,6 +49,7 @@ namespace Rounds.Runtime
         {
             // Initialisé uniquement côté serveur
             _roundTimer = m_roundStats.m_maxRoundTime;
+            _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
         }
 
         [ServerCallback]
@@ -59,7 +62,17 @@ namespace Rounds.Runtime
                 return;
             }
 
-            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted)
+            if (_playersAlive.Count > 0 && _isWaitingForPlayers)
+            {
+                _waitForPlayerTimer -= Time.deltaTime;
+                RpcBroadcast($"Waiting For Players: {_waitForPlayerTimer:F2}");
+                if (_waitForPlayerTimer <= 0)
+                {
+                    _isWaitingForPlayers = false;
+                }
+            }
+
+            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted && !_isWaitingForPlayers)
             {
                 PreStartRound();
             }
@@ -157,9 +170,10 @@ namespace Rounds.Runtime
             RpcBroadcastLoser(player.m_playerName);
             _playersAlive.Remove(player);
             SendLoserAnim(player.netIdentity.connectionToClient, player);
-            SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
+            Tween.Delay(1.5f,onComplete: () => TargetRpcSendLoserToSpectate(player.netIdentity.connectionToClient,player));
             if (_playersAlive.Count == 1)
             {
+                SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
                 _winnerPlayer = _playersAlive[0];
                 _winnerPlayer.m_roundsWon++;
                 Invoke(nameof(SetRoundWinner),3f);
@@ -330,7 +344,6 @@ namespace Rounds.Runtime
 
         #region Player Management
 
-        // Liste des joueurs maintenue par le serveur
         private readonly SyncList<RoundPlayer> _players = new SyncList<RoundPlayer>();
         private SyncList<RoundPlayer> _playersAlive = new SyncList<RoundPlayer>();
 
@@ -339,7 +352,9 @@ namespace Rounds.Runtime
         public void RegisterPlayer(RoundPlayer player)
         {
             if (!_players.Contains(player)) _players.Add(player);
-            if(!_playersAlive.Contains(player)) _playersAlive.Add(player);
+            if (!_playersAlive.Contains(player)) _playersAlive.Add(player);
+            _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
+            _isWaitingForPlayers = true;
             
             string name;
                 if(_playersAlive.Count == 1)
@@ -359,17 +374,31 @@ namespace Rounds.Runtime
             if (_players.Contains(player))
                 _players.Remove(player);
         }
-
+        
+        [TargetRpc]
+        public void TargetRpcSendLoserToSpectate(NetworkConnectionToClient target,RoundPlayer player)
+        {
+            var playerXr = player.gameObject.GetComponentInChildren<XROrigin>();
+            playerXr.transform.position = _spectateArea.position;
+            player.RestoreVision();
+            
+        }
+        
+        
         #endregion
 
         #region Privates
         
         [SerializeField] HealthBoxSystem _healthBoxSystem;
         [SerializeField] MisteryBoxSystem _mysteryBoxSystem;
+        [SerializeField] Transform _spectateArea;
         
         [SyncVar] private RoundPlayer _winnerPlayer;
         [SyncVar] private RoundPlayer _matchWinner;
 
+        [SyncVar] private bool _isWaitingForPlayers = true;
+        [SyncVar] private float _waitForPlayerTimer;
+        
         [SyncVar] private bool _isPreStartingRound = false;
         [SyncVar] private float _preStartRoundTimer;
         

@@ -41,6 +41,18 @@ namespace Item.Runtime
 	        Debug.Log("Asked for a weapon reset");
 	        ResetWeapon();
         }
+
+        [Command(requiresAuthority = false)]
+        public void CmdDropWeapon()
+        {
+	        DropWeapon();
+        }
+
+        public void DropWeapon()
+        {
+	        NetworkServer.Destroy(_inHandWeapon);
+	        _inHandWeapon = null;
+        }
         
         [Server]
         public void ResetWeapon()

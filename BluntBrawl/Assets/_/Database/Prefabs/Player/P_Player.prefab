@@ -684,6 +684,8 @@ MonoBehaviour:
   m_playerName: 
   m_playerInitialized: 0
   _deathCamSystem: {fileID: 0}
+  _deathCamVignette: {fileID: 741509062012226636}
+  _playerAnimator: {fileID: 6561005102795331197}
   _playerCam: {fileID: 4331621373969296445}
   _xrPosition: {fileID: 3547495322754242636}
   _inGameUIAnimation: {fileID: 4316820703730505751}

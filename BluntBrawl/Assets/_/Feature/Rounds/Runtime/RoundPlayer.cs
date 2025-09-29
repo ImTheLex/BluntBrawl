@@ -70,6 +70,7 @@ namespace Rounds.Runtime
         public void CmdSetDefeat()
         {
             //_deathCamSystem.SwipeCamera();
+            _itemGrabber.CmdDropWeapon();
             roundSystem.SetRoundLoser(this);
         }
         
@@ -88,11 +89,20 @@ namespace Rounds.Runtime
         {
             return _playerCam;
         }
+
+        public void RestoreVision()
+        {
+            _playerAnimator.SetBool("death",false);
+            _deathCamVignette.RestoreVignette();
+        }
         
         #region Privates
 
             
-            [SerializeField]private DeathCamSystem _deathCamSystem;
+            [SerializeField] private DeathCamSystem _deathCamSystem;
+            [SerializeField] private DeathCamVignette _deathCamVignette;
+            [SerializeField] private Animator _playerAnimator;
+            
             [SyncVar] private Vector3 _spawnPosition;
             [SerializeField] private Camera _playerCam;
             [SerializeField] private GameObject _xrPosition;

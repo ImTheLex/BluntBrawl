@@ -165,7 +165,7 @@ namespace Health.Runtime
                 {
                     Debug.Log("IsDead : " + m_isDead);
                     m_isDead = true;
-                    _deathCamVignette.DisplayVignette();
+                    RpcDisplayVignette(netIdentity.connectionToClient);
                     _netAnimator.animator.SetBool("death", true);
                     if (!isFalling) AkUnitySoundEngine.PostEvent(_deathSFX.Id, gameObject);
                     CmdHandleDamageableDeath();
@@ -203,7 +203,13 @@ namespace Health.Runtime
                 CmdResetHealth();
 
             }
-            
+
+            [TargetRpc]
+            public void RpcDisplayVignette(NetworkConnectionToClient target)
+            {
+                    _deathCamVignette.DisplayVignette();
+                
+            }
             
             public void IFrame()
             {

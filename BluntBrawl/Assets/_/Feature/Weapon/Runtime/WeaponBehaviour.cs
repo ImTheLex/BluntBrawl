@@ -44,7 +44,7 @@ namespace Weapon.Runtime
         {
             if(!_itemGrabber){_localPositionReference = gameObject.transform;}
             else {_localPositionReference = _itemGrabber.transform;}
-            if(m_owner is null) m_owner =  transform.root.gameObject;
+            m_owner =  transform.root.gameObject;
         }
 
         

@@ -412,6 +412,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="END OF ROUND ANIM" ID="{F002BE85-C522-4AE7-B825-E4A1DE365BC5}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>3.1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>END OF ROUND ANIM.wav</AudioFile>
 									<MediaIDList>

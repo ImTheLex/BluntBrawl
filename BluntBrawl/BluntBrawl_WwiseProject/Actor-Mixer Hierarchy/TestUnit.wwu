@@ -31,31 +31,6 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
-					<StateInfo>
-						<StateGroupList>
-							<StateGroupInfo>
-								<StateGroupRef Name="musicStates" ID="{3C9B9409-7303-40B5-AAA6-07CE27DDD143}"/>
-							</StateGroupInfo>
-						</StateGroupList>
-						<CustomStateList>
-							<CustomState>
-								<StateRef Name="inGame" ID="{79E2ABA5-9823-45FA-A840-91913544E366}"/>
-								<CustomState Name="" ID="{B564CAFE-29D9-4F83-890A-38F016921700}" ShortID="431418363"/>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="Wainting" ID="{579EBAB5-A84E-4BA8-BFE9-384127358410}"/>
-								<CustomState Name="" ID="{6D8107B4-66A1-4E73-98C7-26B780058D6F}" ShortID="1003809472">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64" Value="-108"/>
-									</PropertyList>
-								</CustomState>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="None" ID="{EB2ABA34-AACA-4E17-B55F-0E0672C4EBEA}"/>
-								<CustomState Name="" ID="{42A6B5A0-0245-4DA8-8790-7284190A1253}" ShortID="84390799"/>
-							</CustomState>
-						</CustomStateList>
-					</StateInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="MUS_LOOP2_140bpm" ID="{6D1FA00D-DDBF-435B-8E2E-4BE54DB25C24}" Platform="Linked"/>
 					</ActiveSourceList>
@@ -85,31 +60,6 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
-					<StateInfo>
-						<StateGroupList>
-							<StateGroupInfo>
-								<StateGroupRef Name="musicStates" ID="{3C9B9409-7303-40B5-AAA6-07CE27DDD143}"/>
-							</StateGroupInfo>
-						</StateGroupList>
-						<CustomStateList>
-							<CustomState>
-								<StateRef Name="inGame" ID="{79E2ABA5-9823-45FA-A840-91913544E366}"/>
-								<CustomState Name="" ID="{150877AF-6497-46EA-900D-5DB560150E79}" ShortID="362506218">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64" Value="-108"/>
-									</PropertyList>
-								</CustomState>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="Wainting" ID="{579EBAB5-A84E-4BA8-BFE9-384127358410}"/>
-								<CustomState Name="" ID="{424958DE-89F9-4E8A-B6D8-7EF3CFC18181}" ShortID="1038993412"/>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="None" ID="{EB2ABA34-AACA-4E17-B55F-0E0672C4EBEA}"/>
-								<CustomState Name="" ID="{AE9CB33A-1EF8-45F4-A08A-1C1ED890DCDB}" ShortID="166126397"/>
-							</CustomState>
-						</CustomStateList>
-					</StateInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="Elevator" ID="{459D6C06-5072-4637-9A87-1752DA4BB4A1}" Platform="Linked"/>
 					</ActiveSourceList>

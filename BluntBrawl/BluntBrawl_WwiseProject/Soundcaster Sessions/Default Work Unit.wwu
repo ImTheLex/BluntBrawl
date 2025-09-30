@@ -76,10 +76,34 @@
 						<CurrentSwitchRef Name="switcheWeaponsTypeBat" ID="{4385F5C9-7900-4C83-A629-97660C926747}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
-				<SoundcasterSession Name="New Soundcaster Session_01" ID="{3DADA8D0-9AB7-41E5-B879-C3941DC9C031}">
+				<SoundcasterSession Name="Music" ID="{3DADA8D0-9AB7-41E5-B879-C3941DC9C031}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="roundOne" ID="{4C9FAB62-80E8-4EB4-BA6D-9D9B747492A6}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="roundThree" ID="{815CC30A-14F7-41D2-8EC5-93BB03151A42}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="roundTwo" ID="{4A1E80A0-065E-4292-8F96-DF4F4A2050B3}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
-					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="switcheWeaponsTypeBat" ID="{4385F5C9-7900-4C83-A629-97660C926747}"/>
+						<CurrentSwitchRef Name="fullHP" ID="{FB3A2C26-AEB0-4514-BC6A-2F92E63C0249}"/>
+						<CurrentSwitchRef Name="inIntro" ID="{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

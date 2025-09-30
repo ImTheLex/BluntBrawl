@@ -9,10 +9,30 @@
 			<ChildrenList>
 				<Event Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}">
 					<ChildrenList>
-						<Action Name="" ID="{8798B88E-0F4C-4607-9CB0-1C979D12A54E}" ShortID="527161886">
+						<Action Name="" ID="{CFAB79DF-BA9B-4E1E-864D-0D10E234C6BC}" ShortID="564949897">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_INTRO_LOOP_140bpm" ID="{6B6EEAF6-EFD2-4D2B-97D8-A4FCD933E78A}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E5F5A124-1B00-4B47-82E9-AA128EE70C5B}" ShortID="1066726322">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="waiting" ID="{5902116C-A752-4795-BA72-BAC3B260ED5F}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C04FEF2E-378D-418D-ACE8-59553054B107}" ShortID="1026200866">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -20,10 +40,30 @@
 				</Event>
 				<Event Name="roundOne" ID="{4C9FAB62-80E8-4EB4-BA6D-9D9B747492A6}">
 					<ChildrenList>
-						<Action Name="" ID="{9FC9D218-8BCD-41C3-B9E5-57AFBA582E49}" ShortID="147884368">
+						<Action Name="" ID="{2D1B3C36-B8C0-44FF-BF20-559B0080CD55}" ShortID="705501165">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_LOOP1_alt_140bpm" ID="{FD25B85E-D9FC-474A-9613-B4804DF7FA7D}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{23A0974C-A87F-4E3B-81DB-DC518FA689AE}" ShortID="315035014">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="roundOne" ID="{57C8F57E-EC42-40F6-85D6-F15EF9811F18}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{18D7A512-57DC-49FB-B080-FD8A14DE704C}" ShortID="898179352">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -31,10 +71,30 @@
 				</Event>
 				<Event Name="roundTwo" ID="{4A1E80A0-065E-4292-8F96-DF4F4A2050B3}">
 					<ChildrenList>
-						<Action Name="" ID="{6D31D197-193C-453A-9414-F4D94E6AD1A3}" ShortID="210098707">
+						<Action Name="" ID="{07B7FB9F-EBB1-4029-B8BA-7FA6973F34AF}" ShortID="1024265346">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_LOOP2_alt_140bpm" ID="{D38BFD1A-4C7A-460F-BECD-0AB7A580391E}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{88799275-DE0B-4E54-A918-B0247E875450}" ShortID="203378096">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="roundTwo" ID="{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{74B84681-7277-4573-8ECA-4D257B46437B}" ShortID="362588915">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -42,10 +102,30 @@
 				</Event>
 				<Event Name="roundThree" ID="{815CC30A-14F7-41D2-8EC5-93BB03151A42}">
 					<ChildrenList>
-						<Action Name="" ID="{1C707B4F-3927-4A74-9FB6-E6F2B158F75B}" ShortID="717722787">
+						<Action Name="" ID="{4A15879B-4536-43EB-A799-94EC74EC4B20}" ShortID="1028239447">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_LOOP4_140bpm" ID="{D0C10522-93B2-4D3E-A10F-1F66557E1B39}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B31B849E-AD12-4A67-9441-678BC4434857}" ShortID="40187423">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2C187FC2-CB4C-45FB-86F8-9F52BF9CFD15}" ShortID="1022368701">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music Game Switch" ID="{8516D65C-6C3F-464C-B1AF-97F72C390FC2}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

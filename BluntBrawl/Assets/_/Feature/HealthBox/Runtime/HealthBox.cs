@@ -1,7 +1,7 @@
-using System;
 using Interfaces.Runtime;
 using Mirror;
 using UnityEngine;
+using Event = AK.Wwise.Event;
 
 namespace HealthBox.Runtime
 {
@@ -10,6 +10,7 @@ namespace HealthBox.Runtime
 
         public int m_healAmount => _healValue;
         private HealthBoxSystem _healthSystem;
+        [SerializeField] private Event _healthSFX;
 
         public void Awake()
         {
@@ -28,6 +29,12 @@ namespace HealthBox.Runtime
         public void CmdDestroyProvider()
         {
             DestroyProvider();
+        }
+        
+        
+        public void HealthSFX()
+        {
+            AkUnitySoundEngine.PostEvent(_healthSFX.Id,gameObject);
         }
         
         [SerializeField] private int _healValue;

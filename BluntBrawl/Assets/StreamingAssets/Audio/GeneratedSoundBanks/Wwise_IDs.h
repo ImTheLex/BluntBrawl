@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID BUTTONLAUNCH = 3389008624U;
         static const AkUniqueID BUTTONOVER = 927588791U;
         static const AkUniqueID COMBATSOUND = 4069940938U;
+        static const AkUniqueID ENEMYDASHBACK = 2987073838U;
         static const AkUniqueID ENEMYDASHCOOLDOWN = 4196958256U;
         static const AkUniqueID ENEMYEVENTSDASH = 3175741232U;
         static const AkUniqueID ENEMYEVENTSDIE = 723260870U;
@@ -29,11 +30,13 @@ namespace AK
         static const AkUniqueID ENEMYWEAPONSEVENTHITS = 526621624U;
         static const AkUniqueID ENEMYWEAPONSEVENTSDROP = 1389296758U;
         static const AkUniqueID LOOSER = 598450249U;
-        static const AkUniqueID MUSICSOUND = 2044738387U;
+        static const AkUniqueID MUSICINTRO01 = 2849182501U;
+        static const AkUniqueID MUSICINTRO02 = 2849182502U;
         static const AkUniqueID OBJECTEVENTSCATHAMMERONGROUND = 2963827865U;
         static const AkUniqueID OBJECTEVENTSCRATEHIT = 2354176855U;
         static const AkUniqueID OBJECTEVENTSFENCEHIT = 4263813725U;
         static const AkUniqueID OBJECTEVENTSHEAL = 2381628217U;
+        static const AkUniqueID PLAYERDASHBACK = 234843287U;
         static const AkUniqueID PLAYERDASHCOOLDOWN = 1317595701U;
         static const AkUniqueID PLAYEREVENTSDASH = 1505439485U;
         static const AkUniqueID PLAYEREVENTSDIE = 1082178505U;
@@ -50,6 +53,7 @@ namespace AK
         static const AkUniqueID TIMERENDBUZZ = 2134179288U;
         static const AkUniqueID TIMERTIC = 1964277448U;
         static const AkUniqueID WAITINGROOM = 688112595U;
+        static const AkUniqueID WINNER = 3035999688U;
     } // namespace EVENTS
 
     namespace STATES
@@ -77,7 +81,7 @@ namespace AK
             namespace SWITCH
             {
                 static const AkUniqueID INGAME = 984691642U;
-                static const AkUniqueID WAITING = 19135406U;
+                static const AkUniqueID ININTRO = 741355794U;
             } // namespace SWITCH
         } // namespace MUSICSWITCH
 

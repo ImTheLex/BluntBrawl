@@ -1,0 +1,17 @@
+{
+    "name": "MisteryBox.Runtime",
+    "rootNamespace": "MisteryBox.Runtime",
+    "references": [
+        "GUID:30817c1a0e6d646d99c048fc403f5979",
+        "GUID:9be71c5015e914bcdbe5700a4053c8d1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

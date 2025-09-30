@@ -22,7 +22,7 @@ namespace DeathCam.Runtime
                 _pauseTimer += Time.deltaTime;
                 if (m_onPausedEvent is null)
                 {
-                    m_onPausedEvent.Invoke();
+                    //m_onPausedEvent.Invoke();
                 }
                 if (_pauseTimer < _vignettePause) return;
                 m_onPausedEvent = null;
@@ -61,6 +61,12 @@ namespace DeathCam.Runtime
         {
             _display = true;
             _timer = 0f;
+        }
+
+        public void RestoreVignette()
+        {
+            _display = false;
+            SetAlpha(0f);
         }
 
         private void SetAlpha(float alpha)

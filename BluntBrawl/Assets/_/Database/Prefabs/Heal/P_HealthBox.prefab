@@ -71,6 +71,10 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  _healthSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1aff01e61f5fc774d9a2d4e64cd4baea, type: 2}
   _healValue: 20
 --- !u!114 &3529623893367718713
 MonoBehaviour:

@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using DeathCam.Runtime;
 using Interfaces.Runtime;
 using Mirror;
 using Rounds.Runtime;
 using TMPro;
 using UnityEngine;
+using Event = AK.Wwise.Event;
 
 namespace Health.Runtime
 {
@@ -101,7 +103,8 @@ namespace Health.Runtime
                 if (_roundPlayer.m_playerInitialized == true)
                 {
                     CmdResetHealth();
-                    _animator.SetBool("death", false);
+                    _netAnimator.animator.SetBool("death", false);
+                    _deathCamVignette.RestoreVignette();
                     _roundPlayer.m_playerInitialized = false;
                     m_isDead = false;
                 }
@@ -153,7 +156,7 @@ namespace Health.Runtime
             }
             */
             
-            public void TakeDamage(int damageAmount)
+            public void TakeDamage(int damageAmount, bool isFalling = false)
             {
                 if(m_isDead) return;
                 RpcFlash();
@@ -162,12 +165,23 @@ namespace Health.Runtime
                 {
                     Debug.Log("IsDead : " + m_isDead);
                     m_isDead = true;
+                    RpcDisplayVignette(netIdentity.connectionToClient);
+                    _netAnimator.animator.SetBool("death", true);
+                    if (!isFalling) AkUnitySoundEngine.PostEvent(_deathSFX.Id, gameObject);
                     CmdHandleDamageableDeath();
-                    _animator.SetBool("death", true);
-
+                }
+                else
+                {
+                    _netAnimator.SetTrigger("hit");
+                    AkUnitySoundEngine.PostEvent(_hitSFX.Id, gameObject);
                 }
             }
-            
+
+            [Command(requiresAuthority = false)]
+            public void CMDFallDamage()
+            {
+                TakeDamage(_currentHealth,true);
+            }
 
             [Command(requiresAuthority = false)]
             public void CmdTakeDamage(int damageAmount)
@@ -189,7 +203,13 @@ namespace Health.Runtime
                 CmdResetHealth();
 
             }
-            
+
+            [TargetRpc]
+            public void RpcDisplayVignette(NetworkConnectionToClient target)
+            {
+                    _deathCamVignette.DisplayVignette();
+                
+            }
             
             public void IFrame()
             {
@@ -401,8 +421,13 @@ namespace Health.Runtime
         
             
             [SerializeField,Tooltip("Tick if is a player or not.")] private bool _isPlayer;
+            
+            [Header("Feedback for hit and death")]
+            [SerializeField] private NetworkAnimator _netAnimator;
 
-            [SerializeField] private Animator _animator;
+            [SerializeField] private Event _hitSFX;
+            [SerializeField] private Event _deathSFX;
+            [SerializeField] private DeathCamVignette _deathCamVignette;
         
             
             
@@ -423,7 +448,6 @@ namespace Health.Runtime
             if(_currentHealth > _maxHealth)  _currentHealth = _maxHealth;
         }
     }
-
     
     
 }

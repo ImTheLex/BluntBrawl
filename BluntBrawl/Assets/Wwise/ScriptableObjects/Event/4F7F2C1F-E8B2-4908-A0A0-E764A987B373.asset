@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dae6bfa523cf7442be17f01b7f68b1a, type: 3}
+  m_Name: 4F7F2C1F-E8B2-4908-A0A0-E764A987B373
+  m_EditorClassIdentifier: 
+  objectName: playerEventsDie
+  id: 1082178505
+  guid: 4F7F2C1F-E8B2-4908-A0A0-E764A987B373
+  IsInUserDefinedSoundBank: 1

@@ -88,7 +88,7 @@
 				</SwitchGroup>
 				<SwitchGroup Name="musicSwitch" ID="{883F927B-34F5-4971-BDE8-C31639331742}">
 					<ChildrenList>
-						<Switch Name="waiting" ID="{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"/>
+						<Switch Name="inIntro" ID="{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"/>
 						<Switch Name="inGame" ID="{51ECADC8-5EF3-46FE-B42A-32F81AF5E787}"/>
 					</ChildrenList>
 				</SwitchGroup>

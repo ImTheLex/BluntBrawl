@@ -444,6 +444,15 @@ MonoBehaviour:
   _jacketSkinRenderer: {fileID: 4535318968606948929}
   _roundPlayer: {fileID: 0}
   _isPlayer: 1
+  _netAnimator: {fileID: 8624633040949094468}
+  _hitSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a4e1e196e8d55b442ae86c903e6c0269, type: 2}
+  _deathSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e62c2ea700bcfea4e857cc5dced2d8a8, type: 2}
 --- !u!136 &8433804418781626802
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -482,9 +491,6 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _vecticalForcePerDamage: 0.1
-  _horizontalForcePerDamage: 0.5
-  _baseForce: 5
   _bumpTimer: 0.25
   _faceOffset: {fileID: 4544941505908294589}
 --- !u!114 &4544941505908294589
@@ -627,6 +633,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4616998770259778628}
     m_Modifications:
+    - target: {fileID: 2261003290161185941, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175998751492634237, guid: d7da9bed3881e144ea5916c254eb640c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

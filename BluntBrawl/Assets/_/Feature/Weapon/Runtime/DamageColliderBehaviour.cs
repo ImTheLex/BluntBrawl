@@ -40,6 +40,7 @@ namespace Weapon.Runtime
                     }
                     damageable.CmdTakeDamage(amount);
                     m_weaponBehaviour.m_hasHit = true;
+                    m_weaponBehaviour.ColorFeedback(netIdentity.connectionToClient);
                 }
 
                 if (other.TryGetComponent<IHealProvider>(out var healProvider))
@@ -48,15 +49,21 @@ namespace Weapon.Runtime
                     var healable = owner.GetComponentInChildren<IHealable>();
                     healable.CmdHeal(healProvider.m_healAmount);
                     healProvider.CmdDestroyProvider();
+                    _weaponSFX.HealthBoxSFX();
                 }
                 
                 if (other.TryGetComponent<IBumpable>(out var bumpable))
                 {
                     XROrigin xrOrigin = m_weaponBehaviour.m_owner.GetComponent<PlayerMovement>().m_XROrigin;
-                    PlayerMovement playerMovement = other.transform.root.GetComponent<PlayerMovement>();
-                    playerMovement.TargetAnimatorHit();
+                    
                     NetworkIdentity identity = other.transform.root.GetComponent<NetworkIdentity>();
                     bumpable.TargetPlayerBumpOnHit(identity.connectionToClient, xrOrigin.transform.position, m_weaponBehaviour.m_force, m_weaponBehaviour.m_verticalForce,m_weaponBehaviour.m_horizontalForce);
+                }
+
+                if (other.TryGetComponent<IMysteryBox>(out var mysteryBox))
+                {
+                    mysteryBox.CmdTakeDamage();
+                    _weaponSFX.MysteryBoxSFX();
                 }
             }
 

@@ -117,6 +117,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="enemyDashBack" ID="{271CDFC0-CF7E-440D-A3A4-DC716DEDDA31}">
+					<ChildrenList>
+						<Action Name="" ID="{CDC7EFC6-F655-4B1B-846C-B6E39473A7C9}" ShortID="207677907">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DASHBACK ANIM" ID="{E9BBEDDF-BDE9-4F2E-9729-243DB0E74C75}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

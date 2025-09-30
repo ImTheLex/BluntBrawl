@@ -1,4 +1,3 @@
-using System;
 using Interfaces.Runtime;
 using Mirror;
 using UnityEngine;
@@ -17,18 +16,20 @@ namespace HealthBox.Runtime
         }
         
 
-        [ContextMenu("Decrease Health"), Server]
+        [ContextMenu("Decrease Health Server"), Server]
         public void DestroyProvider()
         {
             _healthSystem.DecreaseCurrentHealthBoxes(gameObject);
             //NetworkServer.Destroy(gameObject);
         }
 
-        [Command]
+        [ContextMenu("Decrease Health Command"),Command(requiresAuthority = false)]
         public void CmdDestroyProvider()
         {
             DestroyProvider();
         }
+        
+        
         [SerializeField] private int _healValue;
 
         [Server]

@@ -1316,54 +1316,6 @@
 											</ChildrenList>
 										</RandomSequenceContainer>
 									</ChildrenList>
-									<ObjectLists>
-										<ObjectList Name="Effects">
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{83C44076-ABC4-4D0B-A017-5BD6C1D5D249}" ShortID="285894575">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
-																<ObjectRef Name="Chorus_Like" ID="{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{FE22815A-4818-4F10-A4FB-208D977E37AE}" ShortID="236651639">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
-																<ObjectRef Name="Fear_no_Evil" ID="{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{81F4A2AA-8E51-4016-A3BE-0FE7F03F1EFE}" ShortID="363329957">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
-																<ObjectRef Name="Fast_LF_Tremolo" ID="{3B09A271-D9D4-4A4E-B545-F681E8313E5F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-											<Reference>
-												<Local>
-													<EffectSlot Name="" ID="{ECFD4121-4451-4E27-9B84-9CC8B5FDE521}" ShortID="1033333930">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
-																<ObjectRef Name="Chipmunk" ID="{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</Local>
-											</Reference>
-										</ObjectList>
-									</ObjectLists>
 									<GroupingInfo>
 										<GroupingBehaviorList>
 											<GroupingBehavior>
@@ -2006,7 +1958,7 @@
 																		<PointList>
 																			<Point>
 																				<XPos>0</XPos>
-																				<YPos>-200</YPos>
+																				<YPos>-1.8</YPos>
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
@@ -2762,6 +2714,52 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="playerDashBack" ID="{4D669520-92F6-4AB1-832D-ABB076404447}" ShortID="693306595">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="SpeakerPanning" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="masterVrAudioBus" ID="{621F63B9-7E49-4B06-B12B-DA33231984F0}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="DASHBACK ANIM" ID="{8FE13637-B6C3-4533-8CB2-7E627D0DE52D}" ShortID="175491421">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DASHBACK ANIM" ID="{F6DC71BA-9B9D-4AA2-B6BF-84A389D497F3}">
+											<Language>SFX</Language>
+											<AudioFile>DASHBACK ANIM.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="375918527"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DASHBACK ANIM" ID="{F6DC71BA-9B9D-4AA2-B6BF-84A389D497F3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{A62434BA-B13B-41EB-BC21-EE8C1823BC89}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="24.283305227656"/>
+										<Property Name="PanY" Type="Real64" Value="10.4882459312839"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
 						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>

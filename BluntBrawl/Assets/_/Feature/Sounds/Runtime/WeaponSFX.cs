@@ -52,6 +52,10 @@ namespace Sounds.Runtime
             AkUnitySoundEngine.SetSwitch(_switchWeaponDrop.GroupId,_switchWeaponDrop.Id, gameObject);
             AkUnitySoundEngine.PostEvent(_SFXWeaponDrop.ToString(), gameObject);
         }
+        
+        public void HealthBoxSFX() => AkUnitySoundEngine.PostEvent(_healthBoxSFX.Id, gameObject);
+        
+        public void MysteryBoxSFX() => AkUnitySoundEngine.PostEvent(_mysteryBoxSFX.Id, gameObject);
 
 
         #endregion
@@ -79,6 +83,9 @@ namespace Sounds.Runtime
         private Switch _switchWeaponDrop => _SwitchWeaponType;
         [Header("Weapon Drop")] 
         [SerializeField] private Event _SFXWeaponDrop;
+
+        [SerializeField] private Event _healthBoxSFX;
+        [SerializeField] private Event _mysteryBoxSFX;
 
 
         private float _timer = 0.7f;

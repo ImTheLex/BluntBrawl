@@ -107,6 +107,10 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  _destroyBoxSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2200b347bd763094c986216ec6dc037e, type: 2}
 --- !u!65 &4431054391475049785
 BoxCollider:
   m_ObjectHideFlags: 0

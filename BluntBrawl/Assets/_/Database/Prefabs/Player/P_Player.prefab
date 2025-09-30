@@ -683,6 +683,7 @@ MonoBehaviour:
   m_roundsWon: 0
   m_playerName: 
   m_playerInitialized: 0
+  m_isInputActive: 1
   _deathCamSystem: {fileID: 0}
   _deathCamVignette: {fileID: 741509062012226636}
   _playerAnimator: {fileID: 6561005102795331197}

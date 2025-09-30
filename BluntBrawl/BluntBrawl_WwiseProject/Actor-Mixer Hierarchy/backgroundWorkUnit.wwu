@@ -336,7 +336,7 @@
 									<PropertyList>
 										<Property Name="VolumeOffset" Type="Real64">
 											<ValueList>
-												<Value>-5.6</Value>
+												<Value>-1.6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -399,6 +399,28 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="WINNER ANIM" ID="{FC8A7916-DBE4-441F-8DF1-254C8C4CB131}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="endOfRound" ID="{9F8ED853-0FC4-4AC6-B40B-863E42FA726F}" ShortID="427639755">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="END OF ROUND ANIM" ID="{F002BE85-C522-4AE7-B825-E4A1DE365BC5}">
+									<Language>SFX</Language>
+									<AudioFile>END OF ROUND ANIM.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="435988077"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="END OF ROUND ANIM" ID="{F002BE85-C522-4AE7-B825-E4A1DE365BC5}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

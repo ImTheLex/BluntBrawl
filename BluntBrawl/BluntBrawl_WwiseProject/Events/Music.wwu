@@ -7,67 +7,45 @@
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>
-				<Event Name="musicIntro01" ID="{CD66E785-5505-4BC0-89CB-F8790D65AEFB}">
-					<ChildrenList>
-						<Action Name="" ID="{EBABF687-380F-43ED-BA53-B0B293BD38A6}" ShortID="817279635">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="MUS_INTRO_LOOP" ID="{838773D2-E905-4E58-899A-2001457DC814}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}">
-					<ChildrenList>
-						<Action Name="" ID="{76B83DFB-2A8B-426F-A4A9-96E841F28832}" ShortID="1036008392">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}">
 					<ChildrenList>
-						<Action Name="" ID="{F98C3F49-7440-4ED5-8314-A75BEFB016BF}" ShortID="227135044">
+						<Action Name="" ID="{8798B88E-0F4C-4607-9CB0-1C979D12A54E}" ShortID="527161886">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="waitingRoom" ID="{A435AFB4-E647-41C2-BD5C-FE5CC921D55C}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="MUS_INTRO_LOOP_140bpm" ID="{6B6EEAF6-EFD2-4D2B-97D8-A4FCD933E78A}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="musicIntro02" ID="{29D456D3-643C-4B91-91D5-C77601C1799E}">
+				<Event Name="roundOne" ID="{4C9FAB62-80E8-4EB4-BA6D-9D9B747492A6}">
 					<ChildrenList>
-						<Action Name="" ID="{CE2F9273-1821-4CB4-A616-4168BF414596}" ShortID="911019327">
+						<Action Name="" ID="{9FC9D218-8BCD-41C3-B9E5-57AFBA582E49}" ShortID="147884368">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_INTRO_LOOP2" ID="{16912D6B-6FF9-4042-A79E-93C10B446FEF}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="MUS_LOOP1_alt_140bpm" ID="{FD25B85E-D9FC-474A-9613-B4804DF7FA7D}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="MusicLoop01" ID="{C58C6EFB-D80B-4F08-8687-A86E9F3F41C4}">
+				<Event Name="roundTwo" ID="{4A1E80A0-065E-4292-8F96-DF4F4A2050B3}">
 					<ChildrenList>
-						<Action Name="" ID="{C9579C94-6010-41B1-B785-0922A8971E6B}" ShortID="1008209362">
+						<Action Name="" ID="{6D31D197-193C-453A-9414-F4D94E6AD1A3}" ShortID="210098707">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_LOOP1" ID="{B9449F88-3A10-487B-A8F0-11A4D431CD06}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="MUS_LOOP2_alt_140bpm" ID="{D38BFD1A-4C7A-460F-BECD-0AB7A580391E}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="MusicLoop02" ID="{132ED500-CD76-4ECE-A825-88A35FD63414}">
+				<Event Name="roundThree" ID="{815CC30A-14F7-41D2-8EC5-93BB03151A42}">
 					<ChildrenList>
-						<Action Name="" ID="{C30826E9-8A45-4383-B0D5-6C327FC6E39D}" ShortID="515777533">
+						<Action Name="" ID="{1C707B4F-3927-4A74-9FB6-E6F2B158F75B}" ShortID="717722787">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_LOOP2" ID="{9843CF5F-C132-4542-A57C-6910EE57590A}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="MUS_LOOP4_140bpm" ID="{D0C10522-93B2-4D3E-A10F-1F66557E1B39}" WorkUnitID="{055F0FF0-6A5F-499D-82C1-B3124125CED2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -17,7 +17,7 @@ namespace AK
         static const AkUniqueID BUTTONFANCY = 911993200U;
         static const AkUniqueID BUTTONLAUNCH = 3389008624U;
         static const AkUniqueID BUTTONOVER = 927588791U;
-        static const AkUniqueID COMBATSOUND = 4069940938U;
+        static const AkUniqueID ENDOFROUND = 2242007041U;
         static const AkUniqueID ENEMYDASHBACK = 2987073838U;
         static const AkUniqueID ENEMYDASHCOOLDOWN = 4196958256U;
         static const AkUniqueID ENEMYEVENTSDASH = 3175741232U;
@@ -30,8 +30,6 @@ namespace AK
         static const AkUniqueID ENEMYWEAPONSEVENTHITS = 526621624U;
         static const AkUniqueID ENEMYWEAPONSEVENTSDROP = 1389296758U;
         static const AkUniqueID LOOSER = 598450249U;
-        static const AkUniqueID MUSICINTRO01 = 2849182501U;
-        static const AkUniqueID MUSICINTRO02 = 2849182502U;
         static const AkUniqueID OBJECTEVENTSCATHAMMERONGROUND = 2963827865U;
         static const AkUniqueID OBJECTEVENTSCRATEHIT = 2354176855U;
         static const AkUniqueID OBJECTEVENTSFENCEHIT = 4263813725U;
@@ -47,6 +45,9 @@ namespace AK
         static const AkUniqueID PLAYERWEAPONCOOLDOWN = 25254557U;
         static const AkUniqueID PLAYERWEAPONSEVENTHITS = 4152903161U;
         static const AkUniqueID PLAYERWEAPONSEVENTSDROP = 1643626701U;
+        static const AkUniqueID ROUNDONE = 3275667245U;
+        static const AkUniqueID ROUNDTHREE = 1502067097U;
+        static const AkUniqueID ROUNDTWO = 3156796827U;
         static const AkUniqueID STARTCOUNT = 1190501004U;
         static const AkUniqueID TESTSYSTEM = 3425412358U;
         static const AkUniqueID TESTSYSTEMVR = 1251401278U;

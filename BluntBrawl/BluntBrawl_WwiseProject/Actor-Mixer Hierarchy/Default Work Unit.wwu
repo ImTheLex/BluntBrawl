@@ -8,7 +8,6 @@
 				<WorkUnit Name="backgroundWorkUnit" ID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}" PersistMode="Reference"/>
 				<WorkUnit Name="objectWorkUnit" ID="{F61E719C-8C8F-4038-8258-9442E662AF4B}" PersistMode="Reference"/>
 				<WorkUnit Name="TestUnit" ID="{B9019786-BA4B-4A8B-AB72-92D40F3D492B}" PersistMode="Reference"/>
-				<WorkUnit Name="MusicWorkUnit" ID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

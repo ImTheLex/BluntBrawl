@@ -2,7 +2,6 @@ using Interfaces.Runtime;
 using Mirror;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Item.Runtime
 {
@@ -42,22 +41,12 @@ namespace Item.Runtime
 	
         public void DisplayGrabItemUI()
         {
-            if (_grabItemUI == null)
-            {
-                Assert.IsNull(_grabItemUI + " is null, so no UI display");
-                return;
-            }
             _grabItemUI.gameObject.SetActive(true);
             _canBeGrab = true;
         }
 	
         public void HideGrabItemUI()
         {
-            if (_grabItemUI == null)
-            {
-                Assert.IsNull(_grabItemUI + " is null, so no UI hide");
-                return;
-            }
             _grabItemUI.gameObject.SetActive(false);
             _canBeGrab = false;
         }

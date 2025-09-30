@@ -40,7 +40,6 @@ namespace Weapon.Runtime
                     }
                     damageable.CmdTakeDamage(amount);
                     m_weaponBehaviour.m_hasHit = true;
-                    m_weaponBehaviour.ColorFeedback(netIdentity.connectionToClient);
                 }
 
                 if (other.TryGetComponent<IHealProvider>(out var healProvider))

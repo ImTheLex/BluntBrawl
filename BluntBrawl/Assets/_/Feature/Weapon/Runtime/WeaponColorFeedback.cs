@@ -1,49 +1,68 @@
+using System;
 using Mirror;
-using PrimeTween;
 using UnityEngine;
 
 namespace Weapon.Runtime
 {
     public class WeaponColorFeedback : NetworkBehaviour
     {
-
-        #region Unity API
+        private WeaponBehaviour _weaponBehaviour => GetComponentInParent<WeaponBehaviour>();
         
+        [SerializeField] private Renderer _lightRenderer;
+        private MaterialPropertyBlock _materialPropertyBlock;
 
         private void Awake()
         {
             _materialPropertyBlock = new MaterialPropertyBlock();
         }
         
-        #endregion
-
-
-        #region Main Method
-
-        public void SetRedWeapon(float duration)
+        private void Update()
         {
-            Tween.Custom(Color.red, Color.white, duration,
-                color => ColorFeedbackWeapon(color), Ease.Linear);
+            
+            if (_weaponBehaviour.m_velocity >= _weaponBehaviour.m_requiredVelocity)
+            {
+                //_lightRenderer.material.color = _weaponBehaviour.m_velocityMatchedColor;
+                _materialPropertyBlock.SetColor("_BaseColor", _weaponBehaviour.m_velocityMatchedColor);
+                _lightRenderer.SetPropertyBlock(_materialPropertyBlock);
+                
+            }
+            else if (_weaponBehaviour.m_hasHit == true)
+            {
+               // _lightRenderer.material.color = _weaponBehaviour.m_onCooldownColor;
+               _materialPropertyBlock.SetColor("_BaseColor", _weaponBehaviour.m_onCooldownColor);
+               _lightRenderer.SetPropertyBlock(_materialPropertyBlock);
+            }
+            else
+            {
+                //_lightRenderer.material.color = _weaponBehaviour.m_readyToUseColor;
+                _materialPropertyBlock.SetColor("_BaseColor", _weaponBehaviour.m_readyToUseColor);
+                _lightRenderer.SetPropertyBlock(_materialPropertyBlock);
+                
+            }
         }
 
-        #endregion
 
-        #region Utils
-
-        private void ColorFeedbackWeapon(Vector4 color)
+        [ContextMenu("Debug Cooldowns")]
+        public void RpcDebugCooldownColor()
         {
-            _materialPropertyBlock.SetColor("_BaseColor",color);
-            _meshRenderer.SetPropertyBlock(_materialPropertyBlock);
+            _materialPropertyBlock.SetColor("_BaseColor", _weaponBehaviour.m_onCooldownColor);
+            _lightRenderer.SetPropertyBlock(_materialPropertyBlock);
         }
 
-        #endregion
-
-        #region Private and protected
-
+        [ContextMenu("Debug Cooldowns")]
         
-        private Renderer _meshRenderer => GetComponent<MeshRenderer>();
-        private MaterialPropertyBlock _materialPropertyBlock;
+        public void RpcDebugReadyColor()
+        {
+            _materialPropertyBlock.SetColor("_BaseColor", _weaponBehaviour.m_velocityMatchedColor);
+            _lightRenderer.SetPropertyBlock(_materialPropertyBlock);
+        }
 
-        #endregion
+        [ContextMenu("Debug Has Hit")]
+        public void RpcDebugHasHit()
+        {
+            Debug.Log("Has Hit : " + _weaponBehaviour.m_hasHit);
+            _weaponBehaviour.m_hasHit = true;
+            Debug.Log("Has Hit : " + _weaponBehaviour.m_hasHit);
+        }
     }
 }

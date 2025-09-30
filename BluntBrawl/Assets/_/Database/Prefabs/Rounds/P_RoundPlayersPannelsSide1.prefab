@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 9.299999, z: -16.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2296511189770979415}
@@ -63,15 +63,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2834809006836436483, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Sprite
@@ -119,23 +119,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7769909960825616956, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Name
       value: P_RoundPlayerScorePannel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769909960825616956, guid: a769b3f079eb74c549751c377cd42574, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -166,6 +170,10 @@ PrefabInstance:
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431592930757017428, guid: a769b3f079eb74c549751c377cd42574, type: 3}
+      propertyPath: m_text
+      value: Text
       objectReference: {fileID: 0}
     - target: {fileID: 2834809006836436483, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Sprite
@@ -251,15 +259,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4558747598631246385, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_LocalPosition.x
@@ -303,23 +311,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7769909960825616956, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Name
       value: P_RoundPlayerScorePannel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769909960825616956, guid: a769b3f079eb74c549751c377cd42574, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -341,15 +353,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297254438301983607, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2834809006836436483, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Sprite
@@ -397,23 +409,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7667545432758168810, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7769909960825616956, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Name
       value: P_RoundPlayerScorePannel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769909960825616956, guid: a769b3f079eb74c549751c377cd42574, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

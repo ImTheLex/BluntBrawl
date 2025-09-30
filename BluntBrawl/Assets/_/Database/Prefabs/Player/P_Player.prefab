@@ -682,7 +682,10 @@ MonoBehaviour:
   syncInterval: 0
   m_roundsWon: 0
   m_playerName: 
+  m_skinIndex: 0
+  m_skinBehaviour: {fileID: 0}
   m_playerInitialized: 0
+  m_isInputActive: 1
   _deathCamSystem: {fileID: 0}
   _deathCamVignette: {fileID: 741509062012226636}
   _playerAnimator: {fileID: 6561005102795331197}
@@ -690,6 +693,7 @@ MonoBehaviour:
   _xrPosition: {fileID: 3547495322754242636}
   _inGameUIAnimation: {fileID: 4316820703730505751}
   _itemGrabber: {fileID: 3605401159702284481}
+  _skinBehaviour: {fileID: 989342878878792891}
 --- !u!114 &855805081205868607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,13 +712,13 @@ MonoBehaviour:
   _combatSounds:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c0a952208fbe52544b3be37d3f64a3c5, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: d5acd0b18d00ea4479871ad740fd70fb, type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 456251a1159621b47a8575982304e0d5, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 3d301dbaf7ec03d46bb7242b3974d5b2, type: 2}
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c3ab9771c74e7794691de4b990751d8c, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: efef53aa3feaefb48bd8e0e399d7d399, type: 2}
   _startRoundSFX:
     idInternal: 0
     valueGuidInternal: 
@@ -722,7 +726,7 @@ MonoBehaviour:
   _endRoundSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 1bc93e7062ad56a47a27891881920793, type: 2}
   _loseRoundSFX:
     idInternal: 0
     valueGuidInternal: 
@@ -877,6 +881,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4692407009539715294, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
   m_PrefabInstance: {fileID: 4768570571888899634}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &989342878878792891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5735201843809634953, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}
+  m_PrefabInstance: {fileID: 4768570571888899634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936f0d88920d243828785663cbdb980e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1018988536599595518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5479034697992863692, guid: 03ddace9afb14e64c8aef6e01f33f650, type: 3}

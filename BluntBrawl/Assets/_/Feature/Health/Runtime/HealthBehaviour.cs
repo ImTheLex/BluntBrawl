@@ -448,7 +448,6 @@ namespace Health.Runtime
             if(_currentHealth > _maxHealth)  _currentHealth = _maxHealth;
         }
     }
-
     
     
 }

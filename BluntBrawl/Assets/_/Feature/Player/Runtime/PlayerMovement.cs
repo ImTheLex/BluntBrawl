@@ -28,7 +28,6 @@ namespace Player.Runtime
         public bool m_activeInput => RoundSystem.Instance.m_isPreStartingRound;
         
         
-        
         #endregion
         
         
@@ -453,8 +452,6 @@ namespace Player.Runtime
         [SerializeField] private Animator _animator;
         [SerializeField] private NetworkAnimator _networkAnimator;
         [SerializeField] private NetworkIdentity _networkIdentity;
-        
-        
 
         #endregion
 

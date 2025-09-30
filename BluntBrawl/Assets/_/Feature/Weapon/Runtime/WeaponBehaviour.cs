@@ -16,7 +16,6 @@ namespace Weapon.Runtime
             public float m_requiredVelocity => _weaponData.m_velocityRequired;
 
             [HideInInspector] public bool m_hasHit;
-            
             public int m_damage => _weaponData.m_damage;
             
             public float m_invincibilityDuration => _weaponData.m_invincibilityDuration;
@@ -44,7 +43,7 @@ namespace Weapon.Runtime
         {
             if(!_itemGrabber){_localPositionReference = gameObject.transform;}
             else {_localPositionReference = _itemGrabber.transform;}
-            m_owner =  transform.root.gameObject;
+            if(m_owner is null) m_owner =  transform.root.gameObject;
         }
 
         
@@ -66,8 +65,7 @@ namespace Weapon.Runtime
         #endregion
 
         #region Main Method
-        
-        
+
         [TargetRpc]
         public void ColorFeedback(NetworkConnectionToClient target)
         {
@@ -101,8 +99,8 @@ namespace Weapon.Runtime
             }
             _previousPos = _localPositionReference.transform.localPosition;
         }
+
         
-       
         #endregion
         
         
@@ -118,12 +116,12 @@ namespace Weapon.Runtime
             
             private float _debugTimer;
             private WeaponStats _weaponData => GetComponent<ItemBehaviour>().m_weaponData;
+            
+            [SerializeField]private WeaponColorFeedback _weaponColorFeedback;
 
             private WeaponSFX _weaponSFX => GetComponent<WeaponSFX>();
 
-            [SerializeField]private WeaponColorFeedback _weaponColorFeedback;
 
-
-            #endregion
+        #endregion
     }
 }

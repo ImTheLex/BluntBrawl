@@ -49,6 +49,7 @@ namespace Weapon.Runtime
                     var healable = owner.GetComponentInChildren<IHealable>();
                     healable.CmdHeal(healProvider.m_healAmount);
                     healProvider.CmdDestroyProvider();
+                    _weaponSFX.HealthBoxSFX();
                 }
                 
                 if (other.TryGetComponent<IBumpable>(out var bumpable))
@@ -62,6 +63,7 @@ namespace Weapon.Runtime
                 if (other.TryGetComponent<IMysteryBox>(out var mysteryBox))
                 {
                     mysteryBox.CmdTakeDamage();
+                    _weaponSFX.MysteryBoxSFX();
                 }
             }
 

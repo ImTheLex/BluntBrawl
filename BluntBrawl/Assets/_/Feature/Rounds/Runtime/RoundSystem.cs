@@ -175,8 +175,8 @@ namespace Rounds.Runtime
             _roundBreak = true;
             RpcBroadcastLoser(player.m_playerName);
             _playersAlive.Remove(player);
-            player.m_isInputActive = false;
             SendLoserAnim(player.netIdentity.connectionToClient, player);
+            player.m_isInputActive = false;
             Tween.Delay(1.5f,onComplete: () => TargetRpcSendLoserToSpectate(player.netIdentity.connectionToClient,player));
             if (_playersAlive.Count == 1)
             {
@@ -486,7 +486,7 @@ namespace Rounds.Runtime
             playerXr.transform.position = _spectateArea.position;
             player.RestoreVision();
             player.m_isInputActive = true;
-
+            
         }
         
         #endregion

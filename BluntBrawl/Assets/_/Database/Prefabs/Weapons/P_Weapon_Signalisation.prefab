@@ -105,7 +105,7 @@ MonoBehaviour:
   _weaponDamageCollider: {fileID: 8182257692355353054}
   _weaponRb: {fileID: 610458410164907398}
   _itemGrabber: {fileID: 0}
-  _weaponColorFeedback: {fileID: 7949899145294317176}
+  _weaponColorFeedback: {fileID: 986915646807328886}
 --- !u!114 &5781596232966053381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +194,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c9ace45e8fe45114ba64319fddeba27a, type: 2}
+  _healthBoxSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  _mysteryBoxSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &2369209086424040040
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,14 +365,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d72d9c336b95b564ab6a8614a565cba8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7949899145294317176}
+      addedObject: {fileID: 986915646807328886}
   m_SourcePrefab: {fileID: 100100000, guid: d72d9c336b95b564ab6a8614a565cba8, type: 3}
 --- !u!1 &7203426505938306092 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d72d9c336b95b564ab6a8614a565cba8, type: 3}
   m_PrefabInstance: {fileID: 8013838791659436413}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7949899145294317176
+--- !u!114 &986915646807328886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,4 +1,3 @@
-using System;
 using Interfaces.Runtime;
 using Mirror;
 using UnityEngine;
@@ -45,6 +44,9 @@ namespace MisteryBox.Runtime
             _misteryBoxSystem.AddToSpawnedWeapons(mystery);
             NetworkServer.Destroy(gameObject);
         }
+        
+        
+        
     
         [ContextMenu("Drop Item Command"),Command(requiresAuthority = false)]
         public void CmdDropItem()

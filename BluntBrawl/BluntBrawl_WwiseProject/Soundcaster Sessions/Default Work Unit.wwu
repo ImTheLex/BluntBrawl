@@ -6,16 +6,8 @@
 				<SoundcasterSession Name="New Soundcaster Session" ID="{D48C8468-6D2C-4F8B-A7B7-76CF44CB352C}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
-							<Position X="0" Y="0"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
 							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
-							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="enemyBatSlash" ID="{8F572E24-58D9-4A4C-8A27-2B16E99E9616}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
@@ -78,6 +70,13 @@
 							<Position X="5" Y="2"/>
 						</Module>
 					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="switcheWeaponsTypeBat" ID="{4385F5C9-7900-4C83-A629-97660C926747}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="New Soundcaster Session_01" ID="{3DADA8D0-9AB7-41E5-B879-C3941DC9C031}">
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>

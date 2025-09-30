@@ -1,4 +1,3 @@
-using System;
 using Interfaces.Runtime;
 using Mirror;
 using UnityEngine;
@@ -29,6 +28,7 @@ namespace HealthBox.Runtime
         {
             DestroyProvider();
         }
+        
         
         [SerializeField] private int _healValue;
 

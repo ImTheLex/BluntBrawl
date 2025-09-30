@@ -7,6 +7,5 @@ namespace Interfaces.Runtime
         public int m_healAmount { get; }
         public void DestroyProvider();
         public void CmdDestroyProvider();
-        public void HealthSFX();
     }
 }

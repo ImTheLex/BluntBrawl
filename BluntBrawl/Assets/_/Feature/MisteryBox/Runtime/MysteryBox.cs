@@ -1,7 +1,6 @@
 using Interfaces.Runtime;
 using Mirror;
 using UnityEngine;
-using Event = AK.Wwise.Event;
 
 namespace MisteryBox.Runtime
 {
@@ -10,7 +9,6 @@ namespace MisteryBox.Runtime
         public int m_currentHealth => _currentHealth;
         private GameObject _mysteryBoxData;
         private MisteryBoxSystem _misteryBoxSystem;
-        [SerializeField]private Event _destroyBoxSFX;
 
         private void Awake()
         {
@@ -48,10 +46,7 @@ namespace MisteryBox.Runtime
         }
         
         
-        public void MysteryBoxSFX()
-        {
-            AkUnitySoundEngine.PostEvent(_destroyBoxSFX.Id, gameObject);
-        }
+        
     
         [ContextMenu("Drop Item Command"),Command(requiresAuthority = false)]
         public void CmdDropItem()

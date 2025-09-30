@@ -40,6 +40,7 @@ namespace Weapon.Runtime
                     }
                     damageable.CmdTakeDamage(amount);
                     m_weaponBehaviour.m_hasHit = true;
+                    m_weaponBehaviour.ColorFeedback(netIdentity.connectionToClient);
                 }
 
                 if (other.TryGetComponent<IHealProvider>(out var healProvider))
@@ -48,7 +49,7 @@ namespace Weapon.Runtime
                     var healable = owner.GetComponentInChildren<IHealable>();
                     healable.CmdHeal(healProvider.m_healAmount);
                     healProvider.CmdDestroyProvider();
-                    healProvider.HealthSFX();
+                    _weaponSFX.HealthBoxSFX();
                 }
                 
                 if (other.TryGetComponent<IBumpable>(out var bumpable))
@@ -62,7 +63,7 @@ namespace Weapon.Runtime
                 if (other.TryGetComponent<IMysteryBox>(out var mysteryBox))
                 {
                     mysteryBox.CmdTakeDamage();
-                    mysteryBox.MysteryBoxSFX();
+                    _weaponSFX.MysteryBoxSFX();
                 }
             }
 

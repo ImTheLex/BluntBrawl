@@ -20,6 +20,7 @@ namespace Rounds.Runtime
 
         public bool m_playerInitialized = false;
         
+        public bool m_isInputActive = true;
         private void OnNameChanged(string oldName, string newName)
         {
             Debug.Log($"Player Name: {newName}");

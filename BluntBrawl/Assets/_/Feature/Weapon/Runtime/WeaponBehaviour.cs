@@ -16,9 +16,6 @@ namespace Weapon.Runtime
             public float m_requiredVelocity => _weaponData.m_velocityRequired;
 
             [HideInInspector] public bool m_hasHit;
-            public Color m_velocityMatchedColor => _weaponData.m_velocityMatchedColor;
-            public Color m_onCooldownColor => _weaponData.m_onCooldownColor;
-            public Color m_readyToUseColor => _weaponData.m_readyToUseColor;
             public int m_damage => _weaponData.m_damage;
             
             public float m_invincibilityDuration => _weaponData.m_invincibilityDuration;
@@ -66,6 +63,16 @@ namespace Weapon.Runtime
         }
         
         #endregion
+
+        #region Main Method
+
+        [TargetRpc]
+        public void ColorFeedback(NetworkConnectionToClient target)
+        {
+            _weaponColorFeedback.SetRedWeapon(m_invincibilityDuration);
+        }
+
+        #endregion
         
         
         #region Utils
@@ -93,12 +100,7 @@ namespace Weapon.Runtime
             _previousPos = _localPositionReference.transform.localPosition;
         }
 
-        private void HandleCooldownOnHit()
-        {
-            
-            
-        }
-       
+        
         #endregion
         
         
@@ -114,6 +116,8 @@ namespace Weapon.Runtime
             
             private float _debugTimer;
             private WeaponStats _weaponData => GetComponent<ItemBehaviour>().m_weaponData;
+            
+            [SerializeField]private WeaponColorFeedback _weaponColorFeedback;
 
             private WeaponSFX _weaponSFX => GetComponent<WeaponSFX>();
 

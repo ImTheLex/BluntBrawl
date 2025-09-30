@@ -242,9 +242,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
-      propertyPath: playerPrefab
+      propertyPath: spawnPrefabs.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581962715668036509, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
+      propertyPath: 'spawnPrefabs.Array.data[14]'
       value: 
-      objectReference: {fileID: 4139709100620377146, guid: 3670189130a576449ba2dbd819c8a10c, type: 3}
+      objectReference: {fileID: 4144592648066740406, guid: 60fb0e1fcabca496988975d329443876, type: 3}
     - target: {fileID: 6786390845849760935, guid: b9150e3c3b74c4d218d90489eae9a4c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -450,6 +454,22 @@ PrefabInstance:
     - target: {fileID: 4520230965136656194, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[3]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5228376823124744048, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
       propertyPath: m_LocalPosition.x

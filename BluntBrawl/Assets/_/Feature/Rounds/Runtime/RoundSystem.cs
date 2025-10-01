@@ -71,6 +71,7 @@ namespace Rounds.Runtime
                 if (_waitForPlayerTimer <= 0)
                 {
                     RpcBroadcastSkin();
+                    RpcActivePlayerPanels(_playersAlive.Count);
                     _isWaitingForPlayers = false;
                    
                 }
@@ -178,6 +179,7 @@ namespace Rounds.Runtime
             SendLoserAnim(player.netIdentity.connectionToClient, player);
             player.m_isInputActive = false;
             Tween.Delay(1.5f,onComplete: () => TargetRpcSendLoserToSpectate(player.netIdentity.connectionToClient,player));
+            Tween.Delay(2.5f, onComplete: player.CancelDeathAnimation);
             if (_playersAlive.Count == 1)
             {
                 SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
@@ -229,7 +231,6 @@ namespace Rounds.Runtime
                 player.m_combatSFX.StopCombatMusic();
             }
         }
-        
         private void ForEachTimerText(string message)
         {
             foreach (var text in m_roundPanelTimer)
@@ -454,9 +455,10 @@ namespace Rounds.Runtime
             playerPanels.Add(panel2);
 
             m_roundPlayerPanelsLink[player] = playerPanels;
+            /*
             RpcActivePannels(index);
             RpcActivePannels(index + 4);
-            
+            */
         }
 
         [Server]
@@ -471,7 +473,16 @@ namespace Rounds.Runtime
         {
             m_roundPlayerPanels[index].SetActive(true);
         }
-        
+
+        [ClientRpc]
+        public void RpcActivePlayerPanels(int numberOfPlayers)
+        {
+            for (int i = 0; i < numberOfPlayers; i++)
+            {
+                m_roundPlayerPanels[i].SetActive(true);
+                m_roundPlayerPanels[i+4].SetActive(true);
+            }
+        }
         [Server]
         public void UnregisterPlayer(RoundPlayer player)
         {

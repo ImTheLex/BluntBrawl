@@ -641,6 +641,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6769479870725419239, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975876280115024450, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975876280115024450, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.4
+      objectReference: {fileID: 0}
     - target: {fileID: 9072926390193016116, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
       propertyPath: m_Name
       value: P_UI_Flowchart

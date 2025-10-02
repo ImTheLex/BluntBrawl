@@ -105,7 +105,8 @@ namespace Health.Runtime
                     CmdResetHealth();
                     _netAnimator.animator.SetBool("death", false);
                     _deathCamVignette.RestoreVignette();
-                    _roundPlayer.m_playerInitialized = false;
+                    //_roundPlayer.m_playerInitialized = false;
+                    _roundPlayer.UnsetInitialize();
                     m_isDead = false;
                 }
             }
@@ -161,6 +162,7 @@ namespace Health.Runtime
                 if(m_isDead) return;
                 RpcFlash();
                 _currentHealth -= damageAmount;
+                Debug.Log("Damage : " + damageAmount);
                 if(_currentHealth <= 0) 
                 {
                     Debug.Log("IsDead : " + m_isDead);
@@ -301,6 +303,7 @@ namespace Health.Runtime
                 for (int i = 0; i < _bars.Count; i++)
                 {
                     //_bars[i].gameObject.GetComponent<Renderer>().material.color = GetColor();
+                    _bars[i].gameObject.GetComponent<MeshRenderer>().GetPropertyBlock(block);
                     _bars[i].gameObject.GetComponent<MeshRenderer>().SetPropertyBlock(block);
                     _bars[i].SetActive(i < _activeBars);
                 }
@@ -349,11 +352,12 @@ namespace Health.Runtime
             {
                 MaterialPropertyBlock block = new MaterialPropertyBlock();
                 float t = Mathf.Clamp01((float)_currentHealth / (float)_maxHealth);
-                block.SetFloat("_Saturation",t);
+                //block.SetFloat("_Saturation",t);
                 
                 foreach (var mesh in _skinnedMeshRenderers)
                 {
-                    
+                    mesh.GetPropertyBlock(block);
+                    block.SetFloat("_Saturation",t);
                     mesh.SetPropertyBlock(block);
                 }
                 

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3567521546989615872}
-  - component: {fileID: -8746521311814493009}
   m_Layer: 0
   m_Name: P_RoundPlayersPannelsSide1
   m_TagString: Untagged
@@ -36,23 +35,6 @@ Transform:
   - {fileID: 1127353684079059505}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8746521311814493009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144592648066740406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  _assetId: 1629489426
-  serverOnly: 0
-  visibility: 0
-  hasSpawned: 0
 --- !u!1001 &2035685896089457029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 2834809006836436483, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f8f05026a52c0e49b4753d592501d8c, type: 3}
+      objectReference: {fileID: 21300000, guid: 22a18809666b98c4184485aec9234496, type: 3}
     - target: {fileID: 4558747598631246385, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -269,6 +251,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2834809006836436483, guid: a769b3f079eb74c549751c377cd42574, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: da5e7fb61c8916548b29392d26c5b95d, type: 3}
     - target: {fileID: 4558747598631246385, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -366,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 2834809006836436483, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: da5e7fb61c8916548b29392d26c5b95d, type: 3}
+      objectReference: {fileID: 21300000, guid: 2f8f05026a52c0e49b4753d592501d8c, type: 3}
     - target: {fileID: 4558747598631246385, guid: a769b3f079eb74c549751c377cd42574, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1

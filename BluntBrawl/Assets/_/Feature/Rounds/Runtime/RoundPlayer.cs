@@ -23,7 +23,7 @@ namespace Rounds.Runtime
 
         public SkinBehaviour m_skinBehaviour;
 
-        public bool m_playerInitialized = false;
+        [SyncVar] public bool m_playerInitialized = false;
         
         public bool m_isInputActive = true;
         private void OnNameChanged(string oldName, string newName)
@@ -39,7 +39,7 @@ namespace Rounds.Runtime
         private void OnSkinIndexChanged(int oldSkinIndex, int newSkinIndex)
         {
             m_skinBehaviour.m_skinIndex = newSkinIndex;
-            m_skinBehaviour.ApplySkin();
+            //m_skinBehaviour.ApplySkin();
         }
 
         private void Awake()
@@ -77,6 +77,18 @@ namespace Rounds.Runtime
             
         }
         
+        public void UnsetInitialize()
+        {
+            m_playerInitialized = false;
+        }
+        
+        [ClientRpc]
+        public void CancelDeathAnimation()
+        {
+            Debug.Log($"Player cancelled death animation at " + m_playerName);
+            _playerAnimator.SetBool("death", false);
+        }
+        
         //[Command(requiresAuthority = false)]
         public void CmdAddPlayer()
         {
@@ -89,6 +101,7 @@ namespace Rounds.Runtime
             //_deathCamSystem.SwipeCamera();
             _itemGrabber.CmdDropWeapon();
             roundSystem.SetRoundLoser(this);
+            //UnsetInitialize();
         }
         
         public void CmdSetCurrentPlayerHealth(int currentHealth)
@@ -109,7 +122,7 @@ namespace Rounds.Runtime
 
         public void RestoreVision()
         {
-            _playerAnimator.SetBool("death",false);
+            //_playerAnimator.SetBool("death",false);
             _deathCamVignette.RestoreVignette();
         }
         

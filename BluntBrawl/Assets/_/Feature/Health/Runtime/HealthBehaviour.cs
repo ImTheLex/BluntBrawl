@@ -72,19 +72,21 @@ namespace Health.Runtime
                 if (!_isPlayer) return;
                 if (isLocalPlayer == false)
                 {
+                    /*
                     if (_bars is not null)
                     {
                         foreach (var bar in _bars)
                         {
                             bar.SetActive(false);
                         }
-                    }
-                    
+                    }*/
+                    _healthPlus.SetActive(false);
                     //_notLocalPlayerSphereRenderer.gameObject.SetActive(true);
                 }
 
                 if (isLocalPlayer == true)
                 {
+                    /*
                     if (_bars is not null)
                     {
                         foreach (var bar in _bars)
@@ -92,6 +94,9 @@ namespace Health.Runtime
                             bar.GetComponent<Renderer>().material.color = Color.green;
                         }
                     }
+                    */
+                    _healthPlus.SetActive(true);
+
                     //_notLocalPlayerSphereRenderer.gameObject.SetActive(false);
                     
                 } 
@@ -295,11 +300,17 @@ namespace Health.Runtime
             {
                 if (!_isPlayer) return;
                 if (!isLocalPlayer) return;
-                float healthPercentage = (float)_currentHealth / (float)_maxHealth;
-                _activeBars = Mathf.CeilToInt(healthPercentage * _maxBars);
+                //_activeBars = Mathf.CeilToInt(healthPercentage * _maxBars);
+                float t = Mathf.Clamp01((float)_currentHealth / (float)_maxHealth);
                 MaterialPropertyBlock block = new MaterialPropertyBlock();
-                block.SetColor("_BaseColor", GetColor());
+                
+                //block.SetColor("_BaseColor", GetColor());
 
+                var healthRenderer = _healthPlus.GetComponent<MeshRenderer>();
+                healthRenderer.GetPropertyBlock(block);
+                block.SetFloat("_Saturation",t);
+                healthRenderer.SetPropertyBlock(block);
+                /*
                 for (int i = 0; i < _bars.Count; i++)
                 {
                     //_bars[i].gameObject.GetComponent<Renderer>().material.color = GetColor();
@@ -307,6 +318,7 @@ namespace Health.Runtime
                     _bars[i].gameObject.GetComponent<MeshRenderer>().SetPropertyBlock(block);
                     _bars[i].SetActive(i < _activeBars);
                 }
+                */
             }
             
             private void Reset()
@@ -398,7 +410,8 @@ namespace Health.Runtime
             [SyncVar(hook = nameof(UpdateHealth))] private int _currentHealth;
             private int _activeBars;
             private int _maxBars;
-            
+
+            [SerializeField] private GameObject _healthPlus;
             [SerializeField] private List<GameObject> _bars;
             [SerializeField] private int _maxHealth = 100;
             

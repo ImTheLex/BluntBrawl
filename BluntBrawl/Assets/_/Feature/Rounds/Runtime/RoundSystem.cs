@@ -51,13 +51,14 @@ namespace Rounds.Runtime
             // Initialisé uniquement côté serveur
             _roundTimer = m_roundStats.m_maxRoundTime;
             _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
+            _quitMatchTimer = m_roundStats.m_quitMatchTimer;
         }
 
         [ServerCallback]
         private void Update()
         {
             
-            if (_currentRound > m_roundStats.m_maxRounds)
+            if (_currentRound > m_roundStats.m_maxRounds && !_endMatch)
             {
                 EndMatch();
                 return;
@@ -77,7 +78,7 @@ namespace Rounds.Runtime
                 }
             }
 
-            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted && !_isWaitingForPlayers)
+            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted && !_isWaitingForPlayers && !_endMatch)
             {
                 PreStartRound();
             }
@@ -101,6 +102,18 @@ namespace Rounds.Runtime
                 if (_roundTimer <= 0)
                 {
                     EndRound();
+                }
+            }
+
+            if (_endMatch == true)
+            {
+                _quitMatchTimer -= Time.deltaTime;
+                RpcBroadcastCommunication("Quit match in");
+                RpcBroadcastTimer($"{_quitMatchTimer:F2}");
+                if (_quitMatchTimer <= 0)
+                {
+                    QuitMatch();
+                    _endMatch = false;
                 }
             }
         }
@@ -155,9 +168,10 @@ namespace Rounds.Runtime
         }
 
         public void EndMatch()
-        {
-           _matchWinner = _playersAlive.OrderByDescending(p => p.m_roundsWon).First();
-           RpcBroadcastCommunication($"Match won by {_matchWinner.m_playerName}");
+        { 
+            _endMatch = true;
+            _matchWinner = _playersAlive.OrderByDescending(p => p.m_roundsWon).First();
+            RpcBroadcastCommunication($"Match won by {_matchWinner.m_playerName}");
         }
         
         [Server]
@@ -195,6 +209,22 @@ namespace Rounds.Runtime
 
         #region Utils
 
+        
+        private void QuitMatch()
+        {
+            /*
+            for (int i = _players.Count - 1; i < 0; i--)
+            {
+                _players[i].QuitGame();
+            }
+            */
+            NetworkManager.singleton.StopClient();
+            NetworkManager.singleton.StopHost();
+            Application.Quit();
+          
+        }
+        
+        
         [Server]
         public void RpcBroadcastSkin()
         {
@@ -522,6 +552,9 @@ namespace Rounds.Runtime
         [SyncVar] private float _roundTimer;
         [SyncVar] private int _currentRound = 1;
         [SyncVar] private float _broadCastCurrentTimer;
+        
+        [SyncVar] private bool _endMatch = false;
+        [SyncVar] private float _quitMatchTimer;
         
         [SerializeField] private List<TMP_Text> m_roundPanelCommunication;
         [SerializeField] private List<TMP_Text> m_roundPanelTimer;

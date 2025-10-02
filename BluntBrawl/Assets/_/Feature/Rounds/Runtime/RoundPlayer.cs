@@ -76,6 +76,16 @@ namespace Rounds.Runtime
             _itemGrabber.CmdResetWeapon();
             
         }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+        
+        public void ResetPosition()
+        {
+            _xrPosition.transform.position = _spawnPosition;
+        }
         
         public void UnsetInitialize()
         {

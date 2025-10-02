@@ -17,3 +17,4 @@ MonoBehaviour:
   m_maxRoundTime: 300
   m_waitForPlayerTimer: 20
   m_requiredPlayers: 2
+  m_quitMatchTimer: 20

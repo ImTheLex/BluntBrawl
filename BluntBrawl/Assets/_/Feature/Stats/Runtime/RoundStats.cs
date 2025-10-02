@@ -8,6 +8,7 @@ public class RoundStats : ScriptableObject
    public float m_maxRoundTime;
    public float m_waitForPlayerTimer;
    public int m_requiredPlayers;
+   public float m_quitMatchTimer;
 
 
 }

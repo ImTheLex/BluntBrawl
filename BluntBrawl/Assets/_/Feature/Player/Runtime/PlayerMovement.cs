@@ -78,7 +78,7 @@ namespace Player.Runtime
                     _healthBehaviour.CMDFallDamage();
                     RPCDeathSFX();
                 }
-                //else _roundPlayer.InitializePlayer();
+                else ResetPlayerPosition();
 
             }
             if (m_isBumping) return;
@@ -302,7 +302,11 @@ namespace Player.Runtime
         
         private void AnimatorVertical(float vertical) => _animator.SetFloat("vertical", vertical);
 
-        
+       
+        private void ResetPlayerPosition()
+        {
+            _roundPlayer.ResetPosition();
+        }
         
         private void AnimatorHit() => _networkAnimator.SetTrigger("hit");
         private void Move()

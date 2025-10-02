@@ -7,7 +7,7 @@
 				<WorkUnit Name="enemyWorkUnit" ID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}" PersistMode="Reference"/>
 				<WorkUnit Name="backgroundWorkUnit" ID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}" PersistMode="Reference"/>
 				<WorkUnit Name="objectWorkUnit" ID="{F61E719C-8C8F-4038-8258-9442E662AF4B}" PersistMode="Reference"/>
-				<WorkUnit Name="TestUnit" ID="{B9019786-BA4B-4A8B-AB72-92D40F3D492B}" PersistMode="Reference"/>
+				<WorkUnit Name="Music" ID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

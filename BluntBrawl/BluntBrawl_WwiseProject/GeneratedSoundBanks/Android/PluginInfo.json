@@ -4,34 +4,6 @@
   "BasePlatform": "Android",
   "PluginLibs": [
    {
-    "LibName": "Wwise Flanger",
-    "LibId": "8192003",
-    "Type": "Effect",
-    "DLL": "AkFlanger",
-    "StaticLib": "AkFlangerFX"
-   },
-   {
-    "LibName": "Wwise Tremolo",
-    "LibId": "8585219",
-    "Type": "Effect",
-    "DLL": "AkTremolo",
-    "StaticLib": "AkTremoloFX"
-   },
-   {
-    "LibName": "Wwise Pitch Shifter",
-    "LibId": "8912899",
-    "Type": "Effect",
-    "DLL": "AkPitchShifter",
-    "StaticLib": "AkPitchShifterFX"
-   },
-   {
-    "LibName": "Wwise Harmonizer",
-    "LibId": "9043971",
-    "Type": "Effect",
-    "DLL": "AkHarmonizer",
-    "StaticLib": "AkHarmonizerFX"
-   },
-   {
     "LibName": "System",
     "LibId": "11403271",
     "Type": "AudioDevice"
@@ -42,6 +14,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{382C1B5C-B89F-4CAF-28DD-8CCEBFC998C8}"
+  "FileHash": "{18CD9949-654D-326A-2A68-3AA18E1D7FC0}"
  }
 }

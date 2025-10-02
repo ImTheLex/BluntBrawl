@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{BAC737C6-9967-E7F7-B1CF-FF7410436FBE}",
+    "Hash": "{E1B689DD-22F1-39B2-7557-AFC9802E395D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -70,6 +70,14 @@
       "Location": "Memory",
       "ShortName": "Weapon_Sign_slash-003.wav",
       "CachePath": "88/{889D01BA-123A-6F01-97DA-68D6675926DE}.wem"
+     },
+     {
+      "Id": "113016683",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_INTRO_LOOP_140bpm.wav",
+      "CachePath": "B9/{B99D3841-C877-82E9-A4A9-2D44DF3CA93F}.wem"
      },
      {
       "Id": "124598845",
@@ -296,6 +304,14 @@
       "CachePath": "FE/{FE1B96B4-F289-09F4-8A74-29E4B409144E}.wem"
      },
      {
+      "Id": "375918527",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "DASHBACK ANIM.wav",
+      "CachePath": "DA/{DA598BAE-59EC-AEA8-7510-8AC0FB5F58B1}.wem"
+     },
+     {
       "Id": "385165414",
       "Language": "SFX",
       "Streaming": "false",
@@ -336,12 +352,28 @@
       "CachePath": "9D/{9DBF4BB0-C187-9D58-FB11-F95EBF52622A}.wem"
      },
      {
+      "Id": "435988077",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "END OF ROUND ANIM.wav",
+      "CachePath": "FF/{FF20BF9D-4794-EA4C-712C-94B266B4FB23}.wem"
+     },
+     {
       "Id": "441431724",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "hit02b.wav",
       "CachePath": "3B/{3B450CC0-600F-459E-FBF7-1DB317282E28}.wem"
+     },
+     {
+      "Id": "448634472",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_LOOP4_140bpm.wav",
+      "CachePath": "85/{85CA6EF1-CEA5-5B44-A3FB-C2DBCFCB95E9}.wem"
      },
      {
       "Id": "461529915",
@@ -366,6 +398,22 @@
       "Location": "Memory",
       "ShortName": "Weapon_pipe_hit01.wav",
       "CachePath": "C5/{C5F197D6-B3F8-B877-D08D-E0D2E4A0412B}.wem"
+     },
+     {
+      "Id": "484646156",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_LOOP2_alt_140bpm.wav",
+      "CachePath": "8A/{8A120ED0-51AE-3669-581E-C0A9CFFC089F}.wem"
+     },
+     {
+      "Id": "490947544",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WINNER ANIM.wav",
+      "CachePath": "B1/{B1486BAC-1EB4-5E56-29FA-128264C74CB3}.wem"
      },
      {
       "Id": "504362398",
@@ -488,14 +536,6 @@
       "CachePath": "E1/{E1F06159-A746-5879-04FA-2CEDAF04A54B}.wem"
      },
      {
-      "Id": "719854022",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Elevator.wav",
-      "CachePath": "C9/{C9D5C15E-A1CE-5971-7208-A3E20E8E496F}.wem"
-     },
-     {
       "Id": "719926177",
       "Language": "SFX",
       "Streaming": "false",
@@ -526,6 +566,14 @@
       "Location": "Memory",
       "ShortName": "hit01a.wav",
       "CachePath": "D6/{D66F85D0-154D-F5A5-ACF7-8C261BC49BE0}.wem"
+     },
+     {
+      "Id": "795986345",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_LOOP1_alt_140bpm.wav",
+      "CachePath": "E9/{E9B6F1D7-71CE-FA9D-ACA4-1D636BCA66BD}.wem"
      },
      {
       "Id": "802974831",
@@ -622,14 +670,6 @@
       "Location": "Memory",
       "ShortName": "Weapon_CatHammer_on_Ground_02.wav",
       "CachePath": "78/{78B4C0B9-8506-55C4-FF7E-4B60EA098061}.wem"
-     },
-     {
-      "Id": "916391135",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "MUS_LOOP2_140bpm.wav",
-      "CachePath": "74/{74EB9DEB-F6A4-A546-9F8D-E4CDAB406331}.wem"
      },
      {
       "Id": "920945660",
@@ -795,14 +835,6 @@
     "Plugins": {
      "ShareSets": [
       {
-       "Id": "654807232",
-       "Name": "Chipmunk",
-       "ObjectPath": "\\Effects\\Factory Effects\\Pitch Shifter\\Transpose\\Chipmunk",
-       "GUID": "{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}",
-       "LibName": "Wwise Pitch Shifter",
-       "LibId": "8912899"
-      },
-      {
        "Id": "819943492",
        "Name": "Fear_no_Evil",
        "ObjectPath": "\\Effects\\Factory Effects\\Harmonizer\\Fear_no_Evil",
@@ -890,15 +922,33 @@
       ]
      },
      {
-      "Id": "4069940938",
-      "Name": "combatSound",
-      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\combatSound",
-      "GUID": "{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}",
+      "Id": "2242007041",
+      "Name": "endOfRound",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\endOfRound",
+      "GUID": "{73C0A8EA-83B4-4E20-A92D-CCCEF91ADB46}",
       "Color": "12",
-      "DurationType": "Infinite",
+      "DurationType": "OneShot",
+      "DurationMin": "3.1573334",
+      "DurationMax": "3.1573334",
       "MediaRefs": [
        {
-        "Id": "916391135"
+        "Id": "435988077"
+       }
+      ]
+     },
+     {
+      "Id": "2987073838",
+      "Name": "enemyDashBack",
+      "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyDashBack",
+      "GUID": "{271CDFC0-CF7E-440D-A3A4-DC716DEDDA31}",
+      "Color": "10",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "3.1573334",
+      "DurationMax": "3.1573334",
+      "MediaRefs": [
+       {
+        "Id": "375918527"
        }
       ]
      },
@@ -908,6 +958,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyDashCooldown",
       "GUID": "{4A7326D4-C2C0-4353-ADB6-B703AD9DC008}",
       "Color": "10",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.4236459",
       "DurationMax": "1.4236459",
@@ -923,6 +974,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsDash",
       "GUID": "{B46034F3-F530-4C23-A0D2-8970973CA549}",
       "Color": "10",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.5728413",
       "DurationMax": "0.6632899",
@@ -947,6 +999,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsDie",
       "GUID": "{3ED1EFB7-F2D6-42B7-82F8-FAB136CFB3AF}",
       "Color": "10",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.90542156",
       "DurationMax": "0.972639",
@@ -965,6 +1018,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsFall",
       "GUID": "{A5DF65E7-40A3-47BC-9627-D40BACB5E890}",
       "Color": "10",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.6657219",
       "DurationMax": "2.0188718",
@@ -986,6 +1040,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsFootsteps",
       "GUID": "{CE0C1722-1699-4006-947E-D31763835FBA}",
       "Color": "10",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.13553432",
       "DurationMax": "0.27377725",
@@ -1157,6 +1212,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\enemyEvents\\enemyEventsTouched",
       "GUID": "{B013901A-A0EF-48AF-B65A-53F4B58D4DFC}",
       "Color": "10",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.14363778",
       "DurationMax": "0.64568204",
@@ -1263,23 +1319,7 @@
          {
           "Id": "480460483"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        },
        {
         "SwitchValue": {
@@ -1299,23 +1339,7 @@
          {
           "Id": "815608219"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        },
        {
         "SwitchValue": {
@@ -1334,23 +1358,7 @@
          {
           "Id": "969473063"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        },
        {
         "SwitchValue": {
@@ -1369,23 +1377,7 @@
          {
           "Id": "1067511888"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        }
       ]
      },
@@ -1480,8 +1472,8 @@
      },
      {
       "Id": "598450249",
-      "Name": "Looser",
-      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\Looser",
+      "Name": "looser",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\looser",
       "GUID": "{C2703AD7-BA6B-4A52-9DCF-8B4F1A515E0E}",
       "Color": "12",
       "DurationType": "OneShot",
@@ -1490,19 +1482,6 @@
       "MediaRefs": [
        {
         "Id": "182389558"
-       }
-      ]
-     },
-     {
-      "Id": "2044738387",
-      "Name": "musicSound",
-      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\musicSound",
-      "GUID": "{6F88CF55-A4AB-4F42-874C-5AF6E2906598}",
-      "Color": "12",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "916391135"
        }
       ]
      },
@@ -1536,6 +1515,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\objectEvents\\objectEventsCrateHit",
       "GUID": "{80BE123A-A692-4138-9056-49E8470D8F9C}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.5510398",
       "DurationMax": "1.5510398",
@@ -1551,6 +1531,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\objectEvents\\objectEventsFenceHit",
       "GUID": "{E17F95FC-C9C5-4E0C-9FAD-06505F39E229}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.3682813",
       "DurationMax": "0.3682813",
@@ -1566,6 +1547,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\objectEvents\\objectEventsHeal",
       "GUID": "{93A904B8-DF95-46F6-8E91-CD71E4C716E4}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.7549572",
       "DurationMax": "0.7549572",
@@ -1576,11 +1558,28 @@
       ]
      },
      {
+      "Id": "234843287",
+      "Name": "playerDashBack",
+      "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerDashBack",
+      "GUID": "{9D6F117B-88AE-4E5D-A3D3-DFE8514D8091}",
+      "Color": "1",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "3.1573334",
+      "DurationMax": "3.1573334",
+      "MediaRefs": [
+       {
+        "Id": "375918527"
+       }
+      ]
+     },
+     {
       "Id": "1317595701",
       "Name": "playerDashCooldown",
       "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerDashCooldown",
       "GUID": "{BF9CDDA2-71A6-4325-9F03-E81CDED396FF}",
       "Color": "1",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.4236459",
       "DurationMax": "1.4236459",
@@ -1596,6 +1595,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsDash",
       "GUID": "{0A6E2A86-1C45-497B-B300-43A1CF016699}",
       "Color": "1",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.59042853",
       "DurationMax": "0.61555314",
@@ -1620,6 +1620,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsDie",
       "GUID": "{4F7F2C1F-E8B2-4908-A0A0-E764A987B373}",
       "Color": "1",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.96022916",
       "DurationMax": "1.0993959",
@@ -1638,6 +1639,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsFall",
       "GUID": "{A1C22559-8CB0-496F-944E-8AB780E56F0C}",
       "Color": "1",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "2.6386752",
       "DurationMax": "4.532313",
@@ -1659,6 +1661,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsFootsteps",
       "GUID": "{AC5C9407-F363-43F6-AE64-72E8E6A55225}",
       "Color": "1",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.1348472",
       "DurationMax": "0.27952084",
@@ -1830,6 +1833,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\playerEvents\\playerEventsTouched",
       "GUID": "{EE1FFEBD-575A-4842-9DD2-26A3DB9489D3}",
       "Color": "1",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.14363778",
       "DurationMax": "0.64568204",
@@ -1936,23 +1940,7 @@
          {
           "Id": "480460483"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        },
        {
         "SwitchValue": {
@@ -1972,23 +1960,7 @@
          {
           "Id": "815608219"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        },
        {
         "SwitchValue": {
@@ -2007,23 +1979,7 @@
          {
           "Id": "969473063"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        },
        {
         "SwitchValue": {
@@ -2042,23 +1998,7 @@
          {
           "Id": "1067511888"
          }
-        ],
-        "PluginRefs": {
-         "ShareSets": [
-          {
-           "Id": "654807232"
-          },
-          {
-           "Id": "819943492"
-          },
-          {
-           "Id": "1674078407"
-          },
-          {
-           "Id": "3354577677"
-          }
-         ]
-        }
+        ]
        }
       ]
      },
@@ -2152,6 +2092,72 @@
       ]
      },
      {
+      "Id": "3275667245",
+      "Name": "roundOne",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\roundOne",
+      "GUID": "{4C9FAB62-80E8-4EB4-BA6D-9D9B747492A6}",
+      "Color": "19",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "795986345"
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "3103015060",
+        "Id": "3275667245",
+        "Name": "roundOne",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundOne",
+        "GUID": "{57C8F57E-EC42-40F6-85D6-F15EF9811F18}"
+       }
+      ]
+     },
+     {
+      "Id": "1502067097",
+      "Name": "roundThree",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\roundThree",
+      "GUID": "{815CC30A-14F7-41D2-8EC5-93BB03151A42}",
+      "Color": "19",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "448634472"
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "3103015060",
+        "Id": "1502067097",
+        "Name": "roundThree",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundThree",
+        "GUID": "{681B9674-EE53-4436-BB57-44C10327970E}"
+       }
+      ]
+     },
+     {
+      "Id": "3156796827",
+      "Name": "roundTwo",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\roundTwo",
+      "GUID": "{4A1E80A0-065E-4292-8F96-DF4F4A2050B3}",
+      "Color": "19",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "484646156"
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "3103015060",
+        "Id": "3156796827",
+        "Name": "roundTwo",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundTwo",
+        "GUID": "{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}"
+       }
+      ]
+     },
+     {
       "Id": "1190501004",
       "Name": "startCount",
       "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\startCount",
@@ -2171,37 +2177,25 @@
       "Name": "TestSystem",
       "ObjectPath": "\\Events\\Default Work Unit\\TestEvent\\TestSystem",
       "GUID": "{30942D44-7511-4EF5-BE17-E920EA624687}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "916391135"
-       }
-      ]
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "1251401278",
       "Name": "TestSystemVR",
       "ObjectPath": "\\Events\\Default Work Unit\\TestEvent\\TestSystemVR",
       "GUID": "{132804C4-7695-4710-9DAD-DC8473D97DAB}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "719854022"
-       }
-      ],
-      "AuxBusRefs": [
-       {
-        "Id": "1797866611",
-        "Name": "masterVrAuxBus",
-        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\masterVrAudioBus\\masterVrAuxBus",
-        "GUID": "{2A6F11D7-C5D7-4C0B-8243-E41EB2C368B8}"
-       }
-      ]
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "2134179288",
-      "Name": "TimerEndBuzz",
-      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\TimerEndBuzz",
+      "Name": "timerEndBuzz",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\timerEndBuzz",
       "GUID": "{EB3BB886-06A0-4907-90AA-7627640A5310}",
       "Color": "12",
       "DurationType": "OneShot",
@@ -2215,8 +2209,8 @@
      },
      {
       "Id": "1964277448",
-      "Name": "TimerTic",
-      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\TimerTic",
+      "Name": "timerTic",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\timerTic",
       "GUID": "{C77DC6FF-5715-4AC4-B1B8-390DDF49C59B}",
       "Color": "12",
       "DurationType": "OneShot",
@@ -2231,13 +2225,37 @@
      {
       "Id": "688112595",
       "Name": "waitingRoom",
-      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\waitingRoom",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\waitingRoom",
       "GUID": "{FD651358-E0A5-462F-BA58-8F52B539398F}",
-      "Color": "12",
+      "Color": "19",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "719854022"
+        "Id": "113016683"
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "3103015060",
+        "Id": "19135406",
+        "Name": "waiting",
+        "ObjectPath": "\\States\\Music\\musicStates\\waiting",
+        "GUID": "{5902116C-A752-4795-BA72-BAC3B260ED5F}"
+       }
+      ]
+     },
+     {
+      "Id": "3035999688",
+      "Name": "winner",
+      "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\winner",
+      "GUID": "{C5D4DAB1-8AC5-43F5-BDCA-7B6596BE80D4}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0629835",
+      "DurationMax": "2.0629835",
+      "MediaRefs": [
+       {
+        "Id": "490947544"
        }
       ]
      }
@@ -2260,6 +2278,46 @@
       "Name": "rtpcSlashSoundPerVelocity",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\rtpcSlashSoundPerVelocity",
       "GUID": "{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "3103015060",
+      "Name": "musicStates",
+      "ObjectPath": "\\States\\Music\\musicStates",
+      "GUID": "{0F596A80-325B-4F11-B246-B11AB61AA7B2}",
+      "States": [
+       {
+        "Id": "19135406",
+        "Name": "waiting",
+        "ObjectPath": "\\States\\Music\\musicStates\\waiting",
+        "GUID": "{5902116C-A752-4795-BA72-BAC3B260ED5F}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Music\\musicStates\\None",
+        "GUID": "{B7161368-F11C-41D4-8F5E-A4E85DD383CD}"
+       },
+       {
+        "Id": "1502067097",
+        "Name": "roundThree",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundThree",
+        "GUID": "{681B9674-EE53-4436-BB57-44C10327970E}"
+       },
+       {
+        "Id": "3156796827",
+        "Name": "roundTwo",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundTwo",
+        "GUID": "{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}"
+       },
+       {
+        "Id": "3275667245",
+        "Name": "roundOne",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundOne",
+        "GUID": "{57C8F57E-EC42-40F6-85D6-F15EF9811F18}"
+       }
+      ]
      }
     ],
     "SwitchGroups": [
@@ -2327,6 +2385,6 @@
     ]
    }
   ],
-  "FileHash": "{4748F97C-BEAD-5C51-03B6-9A1E7E5CE9BE}"
+  "FileHash": "{F0DD63B2-CA30-E2BB-1D9E-4F97A10C83F4}"
  }
 }

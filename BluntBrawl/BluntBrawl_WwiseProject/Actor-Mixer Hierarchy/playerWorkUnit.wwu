@@ -1554,7 +1554,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_CatHammer_slash-001.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="756402074"/>
+																<MediaID ID="167231452"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1583,7 +1583,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_CatHammer_slash-002.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="29515173"/>
+																<MediaID ID="555217635"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1612,7 +1612,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_CatHammer_slash-003.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="60488332"/>
+																<MediaID ID="1063579010"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1666,7 +1666,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_pipe_slash-001.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="358704046"/>
+																<MediaID ID="873178178"/>
 															</MediaIDList>
 														</AudioFileSource>
 														<AudioFileSource Name="Weapon_pipe_slash" ID="{CC02DA56-DF4B-48B3-8424-4B4D8D662159}">
@@ -1679,7 +1679,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_pipe_slash.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="44326190"/>
+																<MediaID ID="752212412"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1706,7 +1706,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_pipe_slash-002.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="283526458"/>
+																<MediaID ID="56456659"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1733,7 +1733,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_pipe_slash-003.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="249458767"/>
+																<MediaID ID="922274170"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1798,7 +1798,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_Sign_slash-001.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="927732829"/>
+																<MediaID ID="618164815"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1827,7 +1827,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_Sign_slash-002.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="288311294"/>
+																<MediaID ID="534503076"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1856,7 +1856,7 @@
 															<Language>SFX</Language>
 															<AudioFile>Weapon_Sign_slash-003.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="100483372"/>
+																<MediaID ID="45263272"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -1872,6 +1872,9 @@
 											<Reference>
 												<Local>
 													<EffectSlot Name="" ID="{9B297977-FB90-4A5D-9EC4-964AF43DEDEA}" ShortID="344226807">
+														<PropertyList>
+															<Property Name="Render" Type="bool" Value="True"/>
+														</PropertyList>
 														<ReferenceList>
 															<Reference Name="Effect" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
 																<ObjectRef Name="Chorus_Like" ID="{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
@@ -1883,6 +1886,9 @@
 											<Reference>
 												<Local>
 													<EffectSlot Name="" ID="{6021778F-E1B2-4239-9975-6FF4A5F8CFEF}" ShortID="844818604">
+														<PropertyList>
+															<Property Name="Render" Type="bool" Value="True"/>
+														</PropertyList>
 														<ReferenceList>
 															<Reference Name="Effect" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
 																<ObjectRef Name="Fear_no_Evil" ID="{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
@@ -1894,6 +1900,9 @@
 											<Reference>
 												<Local>
 													<EffectSlot Name="" ID="{455E8A62-88BC-4CB1-B86E-70B809C1A82B}" ShortID="799173879">
+														<PropertyList>
+															<Property Name="Render" Type="bool" Value="True"/>
+														</PropertyList>
 														<ReferenceList>
 															<Reference Name="Effect" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
 																<ObjectRef Name="Fast_LF_Tremolo" ID="{3B09A271-D9D4-4A4E-B545-F681E8313E5F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
@@ -1958,7 +1967,7 @@
 																		<PointList>
 																			<Point>
 																				<XPos>0</XPos>
-																				<YPos>-1.8</YPos>
+																				<YPos>-1.2</YPos>
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
@@ -2002,7 +2011,7 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>20.46512</XPos>
+																				<XPos>10</XPos>
 																				<YPos>-254</YPos>
 																				<Flags>0</Flags>
 																			</Point>

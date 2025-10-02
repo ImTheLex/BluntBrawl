@@ -49,8 +49,6 @@ namespace AK
         static const AkUniqueID ROUNDTHREE = 1502067097U;
         static const AkUniqueID ROUNDTWO = 3156796827U;
         static const AkUniqueID STARTCOUNT = 1190501004U;
-        static const AkUniqueID TESTSYSTEM = 3425412358U;
-        static const AkUniqueID TESTSYSTEMVR = 1251401278U;
         static const AkUniqueID TIMERENDBUZZ = 2134179288U;
         static const AkUniqueID TIMERTIC = 1964277448U;
         static const AkUniqueID WAITINGROOM = 688112595U;
@@ -65,9 +63,11 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID INGAME = 984691642U;
                 static const AkUniqueID NONE = 748895195U;
-                static const AkUniqueID WAINTING = 3862977292U;
+                static const AkUniqueID ROUNDONE = 3275667245U;
+                static const AkUniqueID ROUNDTHREE = 1502067097U;
+                static const AkUniqueID ROUNDTWO = 3156796827U;
+                static const AkUniqueID WAITING = 19135406U;
             } // namespace STATE
         } // namespace MUSICSTATES
 

@@ -3,7 +3,7 @@
   "Platform": {
    "Name": "Android",
    "BasePlatform": "Android",
-   "Generator": "2024.1.7.8863"
+   "Generator": "2024.1.8.8893"
   },
   "RootPaths": {
    "ProjectRoot": "../..",
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{221DD2C3-7B4D-71D6-11BF-AFA0979209CD}"
+  "FileHash": "{99DF50A5-C967-23F8-BD94-EE5B74E089AE}"
  }
 }

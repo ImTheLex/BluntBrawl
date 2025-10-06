@@ -3,7 +3,7 @@
   "Project": {
    "Name": "BluntBrawl_WwiseProject",
    "GUID": "{F8059838-5DCF-49DC-9B90-E76383C75AFE}",
-   "Generator": "2024.1.7.8863"
+   "Generator": "2024.1.8.8893"
   },
   "CacheRoot": "../../../../BluntBrawl_WwiseProject/.cache",
   "Platforms": [
@@ -38,6 +38,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{2A1511F4-76E9-4BC4-79A9-99BDB43F1602}"
+  "FileHash": "{8C6F42B4-5A2A-506A-8C50-8D72CF9D2F9C}"
  }
 }

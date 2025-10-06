@@ -197,11 +197,11 @@ MonoBehaviour:
   _healthBoxSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c5d6ea686773a664ba4154018eb4d947, type: 2}
   _mysteryBoxSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 75ca0d2938cb55e48b24ab2cb504d010, type: 2}
 --- !u!1 &2295903863930102876
 GameObject:
   m_ObjectHideFlags: 0

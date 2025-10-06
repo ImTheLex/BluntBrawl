@@ -91,6 +91,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="TestMusicLoop" ID="{4CA5EE57-DF99-4BCB-B718-B5A29D3C266E}">
+					<ChildrenList>
+						<Action Name="" ID="{8958DFC2-788F-4BF8-85EC-733FEA247462}" ShortID="248892839">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_LOOP2_alt_140bpm" ID="{E069E275-268B-4A47-AE3B-165FF71D8FCE}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -13,6 +13,7 @@ namespace Item.Runtime
 
 
         public WeaponStats m_inHandWeaponData => _inHandWeaponData;
+        public WeaponStats m_inHandThrowableData => _inHandThrowableData;
 	
         #endregion
 	
@@ -71,10 +72,14 @@ namespace Item.Runtime
             {
                 _grabbableWeaponData = grabbable.m_weaponData;
                 _grabbableObject = collider.gameObject;
-                grabbable.DisplayGrabItemUI();
+                //grabbable.DisplayGrabItemUI(transform.root.gameObject);
+                //grabbable.TargetDisplayGrabItemUI(netIdentity.connectionToClient, gameObject);
+                grabbable.CmdDisplayUI(transform.root.gameObject,netIdentity);
             }
         }
 		
+        
+        
         public void OnTriggerExit(Collider collider)
         {
             
@@ -82,7 +87,7 @@ namespace Item.Runtime
             {
 	            _grabbableWeaponData = null;
                 _grabbableObject = null;
-                grabbable.HideGrabItemUI();
+                grabbable.CmdHideUI(gameObject, netIdentity);
             }
         }
 		
@@ -105,17 +110,33 @@ namespace Item.Runtime
 		{
 
             if(_grabbableWeaponData == null || _grabbableObject == null) return;
-            if (_inHandWeaponData != null)
+            if (_inHandWeaponData != null && _grabbableWeaponData.m_isThrowable == false)
             {
 	            UngrabItem();
             }
-            
-            GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
-            NetworkServer.Spawn(obj,connectionToClient);
-            _misteryBoxSystem.RemoveFromSpawnedWeapons(_grabbableObject);
-            _inHandWeapon = obj;
-            _inHandWeaponData = _grabbableWeaponData;
-            NetworkServer.Destroy(_grabbableObject);
+
+            if (_grabbableWeaponData.m_isThrowable == true)
+            {
+	            Debug.Log("In Throwable");
+	            GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, _itemThrowerTransform.transform);
+	            NetworkServer.Spawn(obj, connectionToClient);
+	            //_misteryBoxSystem.RemoveFromSpawnedWeapons(_grabbableObject);
+	            _itemThrower.SetThrowable(obj);
+	            _itemThrower.SetThrowableData(_grabbableWeaponData);
+	            
+	            Debug.Log("Item Thrower: " + _itemThrowerTransform);
+	            
+	            NetworkServer.Destroy(_grabbableObject);
+            }
+            else
+            {
+	            GameObject obj = Instantiate(_grabbableWeaponData.m_inHandPrefab, transform);
+	            NetworkServer.Spawn(obj, connectionToClient);
+	            _misteryBoxSystem.RemoveFromSpawnedWeapons(_grabbableObject);
+	            _inHandWeapon = obj;
+	            _inHandWeaponData = _grabbableWeaponData;
+	            NetworkServer.Destroy(_grabbableObject);
+            }
 
 		}
 	
@@ -153,14 +174,16 @@ namespace Item.Runtime
 		        newWeapon.transform.localRotation = Quaternion.identity;
 	        }
         }
+
+        
         
         #endregion
 	
         #region Privates
-	
-	        private string _grabOwner;
-	        
+        
 		    private WeaponStats _inHandWeaponData;
+		    private WeaponStats _inHandThrowableData;
+		    
 		    [SyncVar(hook = nameof(OnWeaponChanged))]
 			private GameObject _inHandWeapon;
 	        private WeaponStats _grabbableWeaponData;
@@ -168,6 +191,9 @@ namespace Item.Runtime
 	        private MisteryBoxSystem _misteryBoxSystem;
 
 	        [SerializeField] private WeaponStats _startingWeapon;
+	        [SerializeField] private Transform _itemThrowerTransform;
+	        
+	        [SerializeField] private ItemThrower _itemThrower;
         
 
         #endregion

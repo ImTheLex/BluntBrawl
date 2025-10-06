@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: RoundStats
   m_EditorClassIdentifier: 
   m_maxRounds: 3
-  m_preStartRoundTimer: 4
   m_maxRoundTime: 300
-  m_waitForPlayerTimer: 20
+  m_waitForPlayerTimer: 10
+  m_preStartRoundTimer: 4
+  m_preRoundBreakTimer: 4
+  m_preEndRoundTimer: 4
+  m_preEndMatchTimer: 4
+  m_preQuitMatchTimer: 10
   m_requiredPlayers: 2

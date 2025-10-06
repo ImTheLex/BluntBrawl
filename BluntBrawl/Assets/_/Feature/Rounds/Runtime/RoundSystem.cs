@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using HealthBox.Runtime;
@@ -16,14 +17,36 @@ namespace Rounds.Runtime
     {
         #region Publics
 
+            public enum RoundState
+            {
+                WaitingForPlayers,
+                BeginPreStartRound,
+                PreStartRound,
+                StartRound,
+                RoundLive,
+                BeginPreRoundBreak,
+                PreRoundBreak,
+                RoundBreak,
+                BeginPreEndRound,
+                PreEndRound,
+                EndRound,
+                BeginPreEndMatch,
+                PreEndMatch,
+                EndMatch,
+                BeginPreQuitMatch,
+                PreQuitMatch,
+                QuitMatch,
+            }
+            
+            [SyncVar] public RoundState m_roundState = RoundState.WaitingForPlayers;
             public static RoundSystem Instance;
             public RoundStats m_roundStats;
             public float m_currentRoundTime => _roundTimer;
             public float m_preStartRoundTimer => _preStartRoundTimer;
             
-            public bool m_isPreStartingRound => _isPreStartingRound;
+            //public bool m_isPreStartingRound => _isPreStartingRound;
 
-            [SyncVar] public bool m_isPlayingRound;
+            //[SyncVar] public bool m_isPlayingRound;
 
         #endregion
 
@@ -45,222 +68,377 @@ namespace Rounds.Runtime
 
             }
 
-        [ServerCallback]
-        private void Start()
-        {
-            // Initialisé uniquement côté serveur
-            _roundTimer = m_roundStats.m_maxRoundTime;
-            _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
-            _quitMatchTimer = m_roundStats.m_quitMatchTimer;
-        }
-
-        [ServerCallback]
-        private void Update()
-        {
-            
-            if (_currentRound > m_roundStats.m_maxRounds && !_endMatch)
+            [ServerCallback]
+            private void Start()
             {
-                EndMatch();
-                return;
-            }
-
-            if (_playersAlive.Count > 0 && _isWaitingForPlayers)
-            {
-                _waitForPlayerTimer -= Time.deltaTime;
-                RpcBroadcastCommunication($"Waiting For Players");
-                RpcBroadcastTimer($"{_waitForPlayerTimer:F2}");
-                if (_waitForPlayerTimer <= 0)
-                {
-                    RpcBroadcastSkin();
-                    RpcActivePlayerPanels(_playersAlive.Count);
-                    _isWaitingForPlayers = false;
-                   
-                }
-            }
-
-            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted && !_isWaitingForPlayers && !_endMatch)
-            {
-                PreStartRound();
+                // Initialisé uniquement côté serveur
+                _roundTimer = m_roundStats.m_maxRoundTime;
+                _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
+                _preRoundBreakTimer = m_roundStats.m_preRoundBreakTimer;
+                _preQuitMatchTimer = m_roundStats.m_preQuitMatchTimer;
+                _preEndRoundTimer = m_roundStats.m_preStartRoundTimer;
             }
             
-            if (_isPreStartingRound)
-            {
-                
-                _preStartRoundTimer -= Time.deltaTime;
-                RpcUpdatePreStartRoundTimer();
-                
-                if (_preStartRoundTimer <= 0)
-                {
-                    StartRound();
-                }
-            }
-            
-            if (_roundStarted && !_roundBreak)
-            {
-                _roundTimer -= Time.deltaTime;
-                RpcUpdateRoundTimer();
-                if (_roundTimer <= 0)
-                {
-                    EndRound();
-                }
-            }
 
-            if (_endMatch == true)
+            [ServerCallback]
+            private void Update()
             {
-                _quitMatchTimer -= Time.deltaTime;
-                RpcBroadcastCommunication("Quit match in");
-                RpcBroadcastTimer($"{_quitMatchTimer:F2}");
-                if (_quitMatchTimer <= 0)
+
+                switch (m_roundState)
                 {
-                    QuitMatch();
-                    _endMatch = false;
+                    case RoundState.WaitingForPlayers:
+                        WaitForPlayers();
+                        break;
+                    case RoundState.BeginPreStartRound:
+                        BeginPreStartRound();
+                        break;
+                    case RoundState.PreStartRound:
+                        PreStartRound();
+                        break;
+                    case RoundState.StartRound:
+                        StartRound();
+                        break;
+                    case RoundState.RoundLive:
+                        RoundLive();
+                        break;
+                    case RoundState.BeginPreRoundBreak:
+                        BeginPreRoundBreak();
+                        break;
+                    case RoundState.PreRoundBreak:
+                        PreRoundBreak();
+                        break;
+                    case RoundState.RoundBreak:
+                        RoundBreak();
+                        break;
+                    case RoundState.BeginPreEndRound:
+                        BeginPreEndRound();
+                        break;
+                    case RoundState.PreEndRound:
+                        PreEndRound();
+                        break;
+                    case RoundState.EndRound:
+                        EndRound();
+                        break;
+                    case RoundState.BeginPreEndMatch:
+                        BeginPreEndMatch();
+                        break;
+                    case RoundState.PreEndMatch:
+                        PreEndMatch();
+                        break;
+                    case RoundState.EndMatch:
+                        EndMatch();
+                        break;
+                    case RoundState.BeginPreQuitMatch:
+                        BeginPreQuitMatch();
+                        break;
+                    case RoundState.PreQuitMatch:
+                        PreQuitMatch();
+                        break;
+                    case RoundState.QuitMatch:
+                        QuitMatch();
+                        break;
+                    default:
+                        break;
                 }
             }
-        }
 
         #endregion
 
         #region Main Methods
-
-
-        [Server]
-        public void PreStartRound()
-        {
-            ResetPlayers();
-            RespawnProps();
-            _isPreStartingRound = true;
-            _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
-            if (!_soundsWaitingRoom)
-            {
-                _soundsWaitingRoom = true;
-                ClearWaitingRoom();
-            }
-            Invoke(nameof(SendStartRoundAnim),2f);
-        }
-        
-        [Server]
-        public void StartRound()
-        {
-            Debug.Log("Round started!");
-            _isPreStartingRound = false;
-            m_isPlayingRound = true;
-            _roundStarted = true;
-            _roundTimer = m_roundStats.m_maxRoundTime;
-            StartCombatMusic();
-
-        }
-        
-        [Server]
-        public void EndRound()
-        {
-            Debug.Log("Round ended!");
-            
-            _roundStarted = false;
-            m_isPlayingRound = false;
-            _roundBreak = true;
-            CheckWinners();
-            _currentRound++;
-            RepopulatePlayers();
-            Invoke(nameof(ClearBreak), 3f);
-            StopCombatMusic();
-            SendEndRoundAnim();
-
-        }
-
-        public void EndMatch()
-        { 
-            _endMatch = true;
-            _matchWinner = _playersAlive.OrderByDescending(p => p.m_roundsWon).First();
-            RpcBroadcastCommunication($"Match won by {_matchWinner.m_playerName}");
-        }
         
         [Server]
         public void SetRoundWinner()
         {
+            _winnerPlayer = _playersAlive[0];
+            _winnerPlayer.m_roundsWon++;
+            
             RpcBroadcastWinner(_winnerPlayer.m_playerName);
+            RpcBroadcastTimer("");
             List<int> indexes = GetPanelIndexesForPlayer(_winnerPlayer);
             RpcBroadcastWinnerPoints(indexes.ToArray(),_winnerPlayer.m_roundsWon);
-            Invoke(nameof(EndRound), 3f);
+            SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
+            
+            m_roundState = RoundState.BeginPreEndRound;
+
         }
-        
-        
+
+        private void OnDisable()
+        {
+            Destroy(_mysteryBoxSystem.gameObject);
+            Destroy(gameObject);
+        }
+
         [Server]
         public void SetRoundLoser(RoundPlayer player)
         {
-            _roundBreak = true;
             RpcBroadcastLoser(player.m_playerName);
+            RpcBroadcastTimer("");
             _playersAlive.Remove(player);
             SendLoserAnim(player.netIdentity.connectionToClient, player);
             player.m_isInputActive = false;
             Tween.Delay(1.5f,onComplete: () => TargetRpcSendLoserToSpectate(player.netIdentity.connectionToClient,player));
             Tween.Delay(2.5f, onComplete: player.CancelDeathAnimation);
-            if (_playersAlive.Count == 1)
-            {
-                SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
-                _winnerPlayer = _playersAlive[0];
-                _winnerPlayer.m_roundsWon++;
-                Invoke(nameof(SetRoundWinner),3f);
-            }
-            Invoke(nameof(ClearBreak),6f);
+            
+            m_roundState = RoundState.BeginPreRoundBreak;
+            
+
         }
         
         
         #endregion
 
+        #region Round Flow
+        
+            [Server]
+            private void WaitForPlayers()
+            {
+                _waitForPlayerTimer -= Time.deltaTime;
+                RpcBroadcastCommunication($"Waiting for players ({_players.Count}/{m_roundStats.m_requiredPlayers})");
+                RpcBroadcastTimer($"{_waitForPlayerTimer:F2}");
+                
+                if (_waitForPlayerTimer <= 0)
+                {
+                    if (_players.Count < m_roundStats.m_requiredPlayers)
+                    {
+                        _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
+                        return;
+                    }
+                    
+                    m_roundState = RoundState.BeginPreStartRound;
+                }
+            }
+            
+            [Server]
+            private void BeginPreStartRound()
+            {
+                _preStartRoundTimer = m_roundStats.m_preStartRoundTimer;
+                
+                ResetPlayers();
+                RepopulatePlayers();
+                RespawnProps();
+                RpcBroadcastSkin();
+                RpcActivePlayerPanels(_playersAlive.Count);
+                
+                if (!_soundsWaitingRoom)
+                {
+                    _soundsWaitingRoom = true;
+                    ClearWaitingRoom();
+                }
+                Invoke(nameof(SendStartRoundAnim),2f);
+                
+                m_roundState = RoundState.PreStartRound;
+            }
+            
+            [Server]
+            private void PreStartRound()
+            {
+                _preStartRoundTimer -= Time.deltaTime;
+                RpcBroadcastCommunication("Round begins in:");
+                RpcBroadcastTimer($"{_preStartRoundTimer:F2}");
+                if (_preStartRoundTimer <= 0)
+                {
+                    m_roundState = RoundState.StartRound;
+                }
+            }
+            
+            [Server]
+            public void StartRound()
+            {
+                _currentRound++;
+                _roundTimer = m_roundStats.m_maxRoundTime;
+                StartCombatMusic();
+                
+                m_roundState = RoundState.RoundLive;
+
+            }
+            
+            
+            [Server]
+            public void RoundLive()
+            {
+                _roundTimer -= Time.deltaTime;
+                RpcBroadcastCommunication($"Round {_currentRound} ends in");
+                RpcBroadcastTimer($"{_roundTimer:F2}");
+                CheckWinners();
+            
+                if (_roundTimer <= 0)
+                {
+                    m_roundState = RoundState.BeginPreEndRound;
+                }
+            }
+            
+            [Server]
+            public void BeginPreRoundBreak()
+            {
+                _preRoundBreakTimer = m_roundStats.m_preRoundBreakTimer;
+                m_roundState = RoundState.PreRoundBreak;
+            }
+
+            [Server]
+            public void PreRoundBreak()
+            {
+                _preRoundBreakTimer -= Time.deltaTime;
+                if (_preRoundBreakTimer <= 0)
+                {
+                    m_roundState = RoundState.RoundBreak;
+                }
+                    
+            }
+            
+            [Server]
+            public void RoundBreak()
+            {
+                m_roundState = RoundState.RoundLive;
+            }
+
+            [Server]
+            private void BeginPreEndRound()
+            {
+                _preEndRoundTimer = m_roundStats.m_preEndRoundTimer;
+
+                if (_playersAlive.Count > 1)
+                {
+                    RpcBroadcastMatchNull();
+                    RpcBroadcastTimer("");
+                }
+                
+                StopCombatMusic();
+                SendEndRoundAnim();
+                m_roundState = RoundState.PreEndRound;
+
+            }
+            
+            [Server]
+            private void PreEndRound()
+            {
+                _preEndRoundTimer -= Time.deltaTime;
+                if (_preEndRoundTimer <= 0)
+                {
+                    m_roundState = RoundState.EndRound;
+                }
+            }
+            
+            
+            [Server]
+            public void EndRound()
+            {
+                Debug.Log("Round ended!");
+                
+                if (_currentRound >= m_roundStats.m_maxRounds)
+                {
+                    m_roundState = RoundState.BeginPreEndMatch;
+                    return;
+                }
+
+                m_roundState = RoundState.BeginPreStartRound;
+            }
+
+            [Server]
+            public void BeginPreEndMatch()
+            {
+                _preEndMatchTimer = m_roundStats.m_preEndMatchTimer;
+                _matchWinner = _playersAlive.OrderByDescending(p => p.m_roundsWon).First();
+                m_roundState = RoundState.PreEndMatch;
+            }
+
+            [Server]
+            public void PreEndMatch()
+            {
+                _preEndMatchTimer -= Time.deltaTime;
+                RpcBroadcastCommunication($"Match won by {_matchWinner.m_playerName}");
+                RpcBroadcastTimer("");
+                
+                if (_preEndMatchTimer <= 0)
+                {
+                    m_roundState = RoundState.EndMatch;
+                }
+            }
+
+            public void EndMatch()
+            {
+                Reset();
+                m_roundState = RoundState.BeginPreQuitMatch;
+            }
+            
+            [Server]
+            public void BeginPreQuitMatch()
+            {
+                _preQuitMatchTimer = m_roundStats.m_preQuitMatchTimer;
+                m_roundState = RoundState.PreQuitMatch;
+            }
+            
+            [Server]
+            public void PreQuitMatch()
+            {
+                _preQuitMatchTimer -= Time.deltaTime;
+                RpcBroadcastCommunication("Quit match in");
+                RpcBroadcastTimer($"{_preQuitMatchTimer:F2}");
+                if (_preQuitMatchTimer <= 0)
+                {
+                    m_roundState = RoundState.QuitMatch;
+                }
+            }
+        
+            
+            [Server]
+            private void QuitMatch()
+            {
+                
+                NetworkManager.singleton.StopHost();
+            }
+            
+        #endregion
+        
+        
         #region Utils
+        
+            [Server]
+            private void RpcBroadcastSkin()
+            {
+                foreach (var player in _players)
+                {
+                    player.m_skinBehaviour.ApplySkin();
+                }
+            }
 
-        
-        private void QuitMatch()
-        {
-            /*
-            for (int i = _players.Count - 1; i < 0; i--)
+            [Server]
+            private void RespawnProps()
             {
-                _players[i].QuitGame();
+                if (_safetyCounter > 10) return;
+                _safetyCounter++;
+                _healthBoxSystem.Reset();
+                _healthBoxSystem.RestartCycle();
+                _mysteryBoxSystem.Reset();
+                _mysteryBoxSystem.SpawnBox();
             }
-            */
-            NetworkManager.singleton.StopClient();
-            NetworkManager.singleton.StopHost();
-            Application.Quit();
-          
-        }
         
-        
-        [Server]
-        public void RpcBroadcastSkin()
-        {
-            foreach (var player in _players)
+            [Server]
+            private void RepopulatePlayers()
             {
-                player.m_skinBehaviour.ApplySkin();
+                foreach (var player in _players)
+                {
+                    if(!_playersAlive.Contains(player)) _playersAlive.Add(player);
+                }
             }
-        }
+        
+            [Server]
+            private void ResetPlayers()
+            {
+                foreach (var player in _players)
+                {
+                    player.InitializePlayer();
+                    player.m_combatSFX.StopCombatMusic();
+                }
+            }
 
-        private void RespawnProps()
-        {
-            if (_safetyCounter > 10) return;
-            _safetyCounter++;
-            _healthBoxSystem.Reset();
-            _healthBoxSystem.RestartCycle();
-            _mysteryBoxSystem.Reset();
-            _mysteryBoxSystem.SpawnBox();
-        }
-        
-        private void RepopulatePlayers()
-        {
-            foreach (var player in _players)
+            private void Reset()
             {
-                if(!_playersAlive.Contains(player)) _playersAlive.Add(player);
+                _currentRound = 0;
+                _players.Clear();
+                _playersAlive.Clear();
             }
-        }
         
-        [Server]
-        private void ResetPlayers()
-        {
-            foreach (var player in _players)
-            {
-                player.InitializePlayer();
-                player.m_combatSFX.StopCombatMusic();
-            }
-        }
+        
         private void ForEachTimerText(string message)
         {
             foreach (var text in m_roundPanelTimer)
@@ -277,28 +455,11 @@ namespace Rounds.Runtime
         }
         private void CheckWinners()
         {
-            if (_playersAlive.Count > 1)
+            if (_playersAlive.Count == 1)
             {
-                RpcBroadcastMatchNull();
+                SetRoundWinner();
+                //RpcBroadcastMatchNull();
             }
-        }
-        
-        [ClientRpc]
-        private void RpcUpdatePreStartRoundTimer()
-        {
-            //if (_roundBreak) return;
-            var message = "Time";
-            ForEachCommText(message);
-            ForEachTimerText(m_preStartRoundTimer.ToString("F2"));
-        }
-        
-        [ClientRpc]
-        private void RpcUpdateRoundTimer()
-        {
-            if (_roundBreak) return;
-            var message = "Time";
-            ForEachCommText(message);
-            ForEachTimerText( m_currentRoundTime.ToString("F2"));
         }
 
         [ClientRpc]
@@ -370,10 +531,11 @@ namespace Rounds.Runtime
             return indexes;
         }
         
+        
         [Client]
         private void ClearBreak()
         {
-            _roundBreak = false;
+            //_roundBreak = false;
         }
 
         
@@ -422,7 +584,7 @@ namespace Rounds.Runtime
         {
             foreach (var player in _players)
             {
-                player.m_combatSFX.StartCombatMusic(_currentRound-1);
+                //player.m_combatSFX.StartCombatMusic(_currentRound-1);
             }
         }
 
@@ -456,7 +618,7 @@ namespace Rounds.Runtime
                 _playersAlive.Add(player);
             }
             _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
-            _isWaitingForPlayers = true;
+            //_isWaitingForPlayers = true;
             
             string name;
                 if(_playersAlive.Count == 1)
@@ -541,20 +703,26 @@ namespace Rounds.Runtime
         [SyncVar] private RoundPlayer _winnerPlayer;
         [SyncVar] private RoundPlayer _matchWinner;
 
-        [SyncVar] private bool _isWaitingForPlayers = true;
+        //[SyncVar] private bool _isWaitingForPlayers = true;
         [SyncVar] private float _waitForPlayerTimer;
         
-        [SyncVar] private bool _isPreStartingRound = false;
+        //[SyncVar] private bool _isPreStartingRound = false;
         [SyncVar] private float _preStartRoundTimer;
         
-        [SyncVar] private bool _roundStarted = false;
-        [SyncVar] private bool _roundBreak = false;
+        [SyncVar] private float _preRoundBreakTimer;
+        [SyncVar] private float _preEndRoundTimer;
+        
+        [SyncVar] private float _preEndMatchTimer;
+        
+        
+        //[SyncVar] private bool _roundStarted = false;
+        //[SyncVar] private bool _roundBreak = false;
         [SyncVar] private float _roundTimer;
-        [SyncVar] private int _currentRound = 1;
+        [SyncVar] private int _currentRound = 0;
         [SyncVar] private float _broadCastCurrentTimer;
         
-        [SyncVar] private bool _endMatch = false;
-        [SyncVar] private float _quitMatchTimer;
+        //[SyncVar] private bool _endMatch = false;
+        [SyncVar] private float _preQuitMatchTimer;
         
         [SerializeField] private List<TMP_Text> m_roundPanelCommunication;
         [SerializeField] private List<TMP_Text> m_roundPanelTimer;

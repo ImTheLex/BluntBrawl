@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003084dab50154bf188a37d1c11290bb, type: 3}
+  m_Name: DuckStats
+  m_EditorClassIdentifier: 
+  m_damage: 2
+  m_velocityRequired: 1
+  m_velocityDamageMultiplier: 1
+  m_invincibilityDuration: 3
+  m_force: 1
+  m_verticalForce: 0.2
+  m_horizontalForce: 0.5
+  m_isThrowable: 1
+  m_inWorldPrefab: {fileID: 1214308972754104509, guid: 6fea774a3124247648a881772eafd467, type: 3}
+  m_inHandPrefab: {fileID: 151582655750843290, guid: 322b343e689814810bbcd89ab8bf58b1, type: 3}

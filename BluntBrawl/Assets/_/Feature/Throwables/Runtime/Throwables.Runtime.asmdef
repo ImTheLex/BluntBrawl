@@ -1,0 +1,14 @@
+{
+    "name": "Throwables.Runtime",
+    "rootNamespace": "Throwables.Runtime",
+    "references": ["GUID:30817c1a0e6d646d99c048fc403f5979","GUID:9a14b54b2306c47c7a10175f3bd4a7a3","GUID:16ce5d3f9e35b443a9915c12318409ea","GUID:9be71c5015e914bcdbe5700a4053c8d1"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

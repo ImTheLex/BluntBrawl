@@ -16,7 +16,7 @@ namespace Player.Runtime
 {
     public class PlayerMovement : NetworkBehaviour, BluntBrawlInputActions.IPlayerActions,
         BluntBrawlInputActions.IBBXRILeftActions, BluntBrawlInputActions.IBBXRIRightActions,
-        BluntBrawlInputActions.IBBXRIRightInteractionActions
+        BluntBrawlInputActions.IBBXRIRightInteractionActions, BluntBrawlInputActions.IBBXRILeftInteractionActions
     {
 
         #region Publics
@@ -25,7 +25,7 @@ namespace Player.Runtime
 
         [HideInInspector] public XROrigin m_XROrigin => _XROrigin;
 
-        public bool m_activeInput => RoundSystem.Instance.m_isPreStartingRound;
+        public bool m_activeInput => RoundSystem.Instance.m_roundState == RoundSystem.RoundState.PreStartRound;
         
         
         #endregion
@@ -43,6 +43,7 @@ namespace Player.Runtime
             _playerInputActions.BBXRILeft.SetCallbacks(this);
             _playerInputActions.BBXRIRight.SetCallbacks(this);
             _playerInputActions.BBXRIRightInteraction.SetCallbacks(this);
+            _playerInputActions.BBXRILeftInteraction.SetCallbacks(this);
 
             _XROrigin = _playerOrigin.GetComponent<XROrigin>();
             _playerHead = _XROrigin.Camera.transform;
@@ -50,6 +51,7 @@ namespace Player.Runtime
             _playerRigidbody.maxLinearVelocity = 20f;
 
             _itemGrabber = _rightController.GetComponent<ItemGrabber>();
+            _itemThrower = _leftController.GetComponent<ItemThrower>();
         }
 
         private void OnEnable() => _playerInputActions.Enable();
@@ -66,14 +68,15 @@ namespace Player.Runtime
 
             if (m_activeInput || !_roundPlayer.m_isInputActive)
             {
+                Debug.Log("Can move");
                 _playerInputMovement = Vector2.zero;
                 Move();
-                return;
+                //return;
             }
             
             if (DetectKillZ() && _healthBehaviour.m_isDead == false)
             {
-                if (RoundSystem.Instance.m_isPlayingRound)
+                if (RoundSystem.Instance.m_roundState == RoundSystem.RoundState.RoundLive)
                 {
                     _healthBehaviour.CMDFallDamage();
                     RPCDeathSFX();
@@ -180,7 +183,7 @@ namespace Player.Runtime
             if(context.performed) _rightControllerInteractA.Interact();
         }
 
-
+        
         /*Dash method on double tap joystick
          
          public void OnDash(InputAction.CallbackContext context)
@@ -236,6 +239,15 @@ namespace Player.Runtime
                 _itemGrabber.GrabItem();
             }
 
+        }
+
+        public void OnLeftSelect(InputAction.CallbackContext context)
+        {
+            if (!isLocalPlayer) return;
+            if (context.performed)
+            {
+                _itemThrower.Throw();
+            }
         }
 
         #endregion
@@ -449,6 +461,7 @@ namespace Player.Runtime
         private Quaternion _rightControllerInputRotation;
         
         private RightControllerInteract _rightControllerInteractA; 
+        private ItemThrower _itemThrower;
         
         [SerializeField] private RoundPlayer _roundPlayer;
         [SerializeField] private ItemGrabber _itemGrabber;
@@ -460,5 +473,6 @@ namespace Player.Runtime
         #endregion
 
 
+        
     }
 }

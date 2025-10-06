@@ -12,6 +12,9 @@ public class WeaponStats : ScriptableObject
     public float m_verticalForce;
     public float m_horizontalForce;
 
+    public bool m_isThrowable;
+    public bool m_isRespawnable;
+    
 	public GameObject m_inWorldPrefab;
     public GameObject m_inHandPrefab;
 }

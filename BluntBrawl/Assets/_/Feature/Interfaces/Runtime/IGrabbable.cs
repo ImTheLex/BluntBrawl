@@ -1,3 +1,4 @@
+using Mirror;
 using UnityEngine;
 
 namespace Interfaces.Runtime
@@ -6,7 +7,9 @@ namespace Interfaces.Runtime
     {
         public WeaponStats m_weaponData=> new WeaponStats();
         Transform m_grabTransform { get; }
-        public void DisplayGrabItemUI();
-        public void HideGrabItemUI();
+        public void CmdHideUI(GameObject grabber, NetworkIdentity identity);
+
+        public void CmdDisplayUI(GameObject grabber, NetworkIdentity identity);
+
     }
 }

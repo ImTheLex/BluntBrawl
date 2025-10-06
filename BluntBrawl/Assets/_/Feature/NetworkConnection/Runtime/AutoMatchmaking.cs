@@ -1,10 +1,12 @@
 using Mirror;
 using Mirror.Discovery;
+using MisteryBox.Runtime;
+using Rounds.Runtime;
 using UnityEngine;
 
 namespace NetworkConnection.Runtime
 {
-    public class AutoMatchmaking : MonoBehaviour
+    public class AutoMatchmaking : NetworkManager
     {
         #region Publics
 
@@ -12,10 +14,13 @@ namespace NetworkConnection.Runtime
         
         
         #endregion
-        private void Start()
-        {
-           // StartMatchmake();
-        }
+      
+        
+        #region Mirror API
+        
+
+        #endregion
+        
         
         #region Main Methods
 

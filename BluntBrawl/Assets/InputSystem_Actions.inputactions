@@ -960,6 +960,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "BB XRI Left Interaction",
+            "id": "61d3f1c4-3eb0-4c5f-8d27-62c9b2de0b0f",
+            "actions": [
+                {
+                    "name": "LeftSelect",
+                    "type": "Button",
+                    "id": "db003c85-4e7a-4c20-a593-b17f66915105",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ebdfe55e-79ca-4b85-8c37-cc06e2c70045",
+                    "path": "<XRController>{LeftHand}/{GripButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

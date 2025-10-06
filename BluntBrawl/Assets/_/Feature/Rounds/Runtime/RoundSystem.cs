@@ -427,7 +427,7 @@ namespace Rounds.Runtime
                 foreach (var player in _players)
                 {
                     player.InitializePlayer();
-                    player.m_combatSFX.StopCombatMusic();
+                    player.m_combatSFX.StopCombatMusic(player.netIdentity.connectionToClient);
                 }
             }
 
@@ -579,21 +579,22 @@ namespace Rounds.Runtime
             FindFirstObjectByType<WaitingRoomSFX>().DestroyWaitingRoomSFX();
         }
 
-        [ClientRpc]
+        [Server]
         private void StartCombatMusic()
         {
             foreach (var player in _players)
             {
-                //player.m_combatSFX.StartCombatMusic(_currentRound-1);
+                
+                player.m_combatSFX.StartCombatMusic(player.netIdentity.connectionToClient,_currentRound-1);
             }
         }
 
-        [ClientRpc]
+        [Server]
         private void StopCombatMusic()
         {
             foreach (var player in _players)
             {
-                player.m_combatSFX.StopCombatMusic();
+                player.m_combatSFX.StopCombatMusic(player.netIdentity.connectionToClient);
             }
         }
         

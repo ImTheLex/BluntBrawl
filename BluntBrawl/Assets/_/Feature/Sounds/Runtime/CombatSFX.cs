@@ -10,14 +10,16 @@ namespace Sounds.Runtime
         #region Main Methods
         
         //Combat Music behaviour
-        public void StartCombatMusic(int stage)
+        [TargetRpc]
+        public void StartCombatMusic(NetworkConnectionToClient target, int stage)
         {
             if (stage > _combatSounds.Count - 1) stage = 0;
             AkUnitySoundEngine.PostEvent(_combatSounds[stage].Id, gameObject);
             _soundPlayingIndex = stage;
         }
-
-        public void StopCombatMusic()
+        
+        [TargetRpc]
+        public void StopCombatMusic(NetworkConnectionToClient target)
         {
             if (_soundPlayingIndex == -1) return;
             _combatSounds[_soundPlayingIndex].Stop(gameObject);

@@ -1048,6 +1048,34 @@ namespace InputSystem.BluntBrawl
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""BB XRI Left Interaction"",
+            ""id"": ""61d3f1c4-3eb0-4c5f-8d27-62c9b2de0b0f"",
+            ""actions"": [
+                {
+                    ""name"": ""LeftSelect"",
+                    ""type"": ""Button"",
+                    ""id"": ""db003c85-4e7a-4c20-a593-b17f66915105"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ebdfe55e-79ca-4b85-8c37-cc06e2c70045"",
+                    ""path"": ""<XRController>{LeftHand}/{GripButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1142,6 +1170,9 @@ namespace InputSystem.BluntBrawl
             // BB XRI Right Interaction
             m_BBXRIRightInteraction = asset.FindActionMap("BB XRI Right Interaction", throwIfNotFound: true);
             m_BBXRIRightInteraction_Select = m_BBXRIRightInteraction.FindAction("Select", throwIfNotFound: true);
+            // BB XRI Left Interaction
+            m_BBXRILeftInteraction = asset.FindActionMap("BB XRI Left Interaction", throwIfNotFound: true);
+            m_BBXRILeftInteraction_LeftSelect = m_BBXRILeftInteraction.FindAction("LeftSelect", throwIfNotFound: true);
         }
 
         ~@BluntBrawlInputActions()
@@ -1151,6 +1182,7 @@ namespace InputSystem.BluntBrawl
             UnityEngine.Debug.Assert(!m_BBXRILeft.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRILeft.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_BBXRIRight.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRIRight.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_BBXRIRightInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRIRightInteraction.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_BBXRILeftInteraction.enabled, "This will cause a leak and performance issues, BluntBrawlInputActions.BBXRILeftInteraction.Disable() has not been called.");
         }
 
         /// <summary>
@@ -1856,6 +1888,102 @@ namespace InputSystem.BluntBrawl
         /// Provides a new <see cref="BBXRIRightInteractionActions" /> instance referencing this action map.
         /// </summary>
         public BBXRIRightInteractionActions @BBXRIRightInteraction => new BBXRIRightInteractionActions(this);
+
+        // BB XRI Left Interaction
+        private readonly InputActionMap m_BBXRILeftInteraction;
+        private List<IBBXRILeftInteractionActions> m_BBXRILeftInteractionActionsCallbackInterfaces = new List<IBBXRILeftInteractionActions>();
+        private readonly InputAction m_BBXRILeftInteraction_LeftSelect;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "BB XRI Left Interaction".
+        /// </summary>
+        public struct BBXRILeftInteractionActions
+        {
+            private @BluntBrawlInputActions m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public BBXRILeftInteractionActions(@BluntBrawlInputActions wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "BBXRILeftInteraction/LeftSelect".
+            /// </summary>
+            public InputAction @LeftSelect => m_Wrapper.m_BBXRILeftInteraction_LeftSelect;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_BBXRILeftInteraction; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="BBXRILeftInteractionActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(BBXRILeftInteractionActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="BBXRILeftInteractionActions" />
+            public void AddCallbacks(IBBXRILeftInteractionActions instance)
+            {
+                if (instance == null || m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Add(instance);
+                @LeftSelect.started += instance.OnLeftSelect;
+                @LeftSelect.performed += instance.OnLeftSelect;
+                @LeftSelect.canceled += instance.OnLeftSelect;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="BBXRILeftInteractionActions" />
+            private void UnregisterCallbacks(IBBXRILeftInteractionActions instance)
+            {
+                @LeftSelect.started -= instance.OnLeftSelect;
+                @LeftSelect.performed -= instance.OnLeftSelect;
+                @LeftSelect.canceled -= instance.OnLeftSelect;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BBXRILeftInteractionActions.UnregisterCallbacks(IBBXRILeftInteractionActions)" />.
+            /// </summary>
+            /// <seealso cref="BBXRILeftInteractionActions.UnregisterCallbacks(IBBXRILeftInteractionActions)" />
+            public void RemoveCallbacks(IBBXRILeftInteractionActions instance)
+            {
+                if (m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="BBXRILeftInteractionActions.AddCallbacks(IBBXRILeftInteractionActions)" />
+            /// <seealso cref="BBXRILeftInteractionActions.RemoveCallbacks(IBBXRILeftInteractionActions)" />
+            /// <seealso cref="BBXRILeftInteractionActions.UnregisterCallbacks(IBBXRILeftInteractionActions)" />
+            public void SetCallbacks(IBBXRILeftInteractionActions instance)
+            {
+                foreach (var item in m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_BBXRILeftInteractionActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="BBXRILeftInteractionActions" /> instance referencing this action map.
+        /// </summary>
+        public BBXRILeftInteractionActions @BBXRILeftInteraction => new BBXRILeftInteractionActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         /// <summary>
         /// Provides access to the input control scheme.
@@ -2093,6 +2221,21 @@ namespace InputSystem.BluntBrawl
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnSelect(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BB XRI Left Interaction" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="BBXRILeftInteractionActions.AddCallbacks(IBBXRILeftInteractionActions)" />
+        /// <seealso cref="BBXRILeftInteractionActions.RemoveCallbacks(IBBXRILeftInteractionActions)" />
+        public interface IBBXRILeftInteractionActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "LeftSelect" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnLeftSelect(InputAction.CallbackContext context);
         }
     }
 }

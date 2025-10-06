@@ -79,6 +79,7 @@ namespace Rounds.Runtime
 
         public void QuitGame()
         {
+            Debug.Log("Player name : "  + m_playerName + " QuitGame");
             Application.Quit();
         }
         

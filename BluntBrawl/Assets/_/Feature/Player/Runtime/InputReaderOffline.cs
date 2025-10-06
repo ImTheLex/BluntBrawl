@@ -65,6 +65,7 @@ namespace Player.Runtime
         {
             if(context.performed) _rightControllerInteractA.Interact();
         }
+        
 
         #region Utils
 

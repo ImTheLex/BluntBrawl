@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dae6bfa523cf7442be17f01b7f68b1a, type: 3}
   m_Name: C2703AD7-BA6B-4A52-9DCF-8B4F1A515E0E
   m_EditorClassIdentifier: 
-  objectName: Looser
+  objectName: looser
   id: 598450249
   guid: C2703AD7-BA6B-4A52-9DCF-8B4F1A515E0E
   IsInUserDefinedSoundBank: 1

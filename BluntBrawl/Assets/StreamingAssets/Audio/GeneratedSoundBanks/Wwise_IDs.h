@@ -49,6 +49,7 @@ namespace AK
         static const AkUniqueID ROUNDTHREE = 1502067097U;
         static const AkUniqueID ROUNDTWO = 3156796827U;
         static const AkUniqueID STARTCOUNT = 1190501004U;
+        static const AkUniqueID TESTMUSICLOOP = 837658052U;
         static const AkUniqueID TIMERENDBUZZ = 2134179288U;
         static const AkUniqueID TIMERTIC = 1964277448U;
         static const AkUniqueID WAITINGROOM = 688112595U;

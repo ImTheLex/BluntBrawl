@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{E3C4377C-CCB8-4EEF-8FCC-C6F269088F07}",
     "Language": "SFX",
-    "Hash": "{F04ADF93-A38F-D8B6-C569-CCCB04396854}",
+    "Hash": "{A6F058AB-03A6-01D3-9E03-A89A9819ACB7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bluntBrawlSoundbanks",
     "ShortName": "bluntBrawlSoundbanks",
     "Path": "bluntBrawlSoundbanks.bnk",
@@ -2024,6 +2024,19 @@
       ]
      },
      {
+      "Id": "837658052",
+      "Name": "TestMusicLoop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\TestMusicLoop",
+      "GUID": "{4CA5EE57-DF99-4BCB-B718-B5A29D3C266E}",
+      "Color": "19",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "484646156"
+       }
+      ]
+     },
+     {
       "Id": "2134179288",
       "Name": "timerEndBuzz",
       "ObjectPath": "\\Events\\Default Work Unit\\backgroundEvents\\timerEndBuzz",
@@ -2216,6 +2229,6 @@
     ]
    }
   ],
-  "FileHash": "{2BDF29CC-EAA3-AB0A-E087-A545BD947462}"
+  "FileHash": "{19ED4BAC-7079-F553-CBBE-7F1EA6F27DE9}"
  }
 }

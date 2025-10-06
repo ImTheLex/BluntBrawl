@@ -7,7 +7,6 @@
 				<WorkUnit Name="enemyEvents" ID="{F3325955-0D62-42C4-B838-EC813ECDABA8}" PersistMode="Reference"/>
 				<WorkUnit Name="objectEvents" ID="{88F69884-5949-4270-9B16-017F97696933}" PersistMode="Reference"/>
 				<WorkUnit Name="backgroundEvents" ID="{163E87B2-3709-43DA-B079-601C48198454}" PersistMode="Reference"/>
-				<WorkUnit Name="TestEvent" ID="{00453CC6-E80D-4239-BA6C-848A1F428F21}" PersistMode="Reference"/>
 				<WorkUnit Name="Music" ID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>

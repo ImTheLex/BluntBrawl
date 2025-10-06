@@ -12,12 +12,14 @@ Switch	ID	Name	Switch Group			Notes
 	2942549062	fullHP	switchHit			
 
 State Group	ID	Name			Wwise Object Path	Notes
-	3103015060	musicStates			\Default Work Unit\musicStates	
+	3103015060	musicStates			\Music\musicStates	
 
 State	ID	Name	State Group			Notes
+	19135406	waiting	musicStates			
 	748895195	None	musicStates			
-	984691642	inGame	musicStates			
-	3862977292	Wainting	musicStates			
+	1502067097	roundThree	musicStates			
+	3156796827	roundTwo	musicStates			
+	3275667245	roundOne	musicStates			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

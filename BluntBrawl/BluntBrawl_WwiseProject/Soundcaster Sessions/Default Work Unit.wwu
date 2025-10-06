@@ -6,16 +6,8 @@
 				<SoundcasterSession Name="New Soundcaster Session" ID="{D48C8468-6D2C-4F8B-A7B7-76CF44CB352C}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
-							<Position X="0" Y="0"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
 							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
-							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="enemyBatSlash" ID="{8F572E24-58D9-4A4C-8A27-2B16E99E9616}" WorkUnitID="{5DC0061C-C1B2-4DD8-B0A9-B68F9F3212F0}"/>
@@ -80,7 +72,67 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="switcheWeaponsTypeBat" ID="{4385F5C9-7900-4C83-A629-97660C926747}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Music" ID="{3DADA8D0-9AB7-41E5-B879-C3941DC9C031}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MUS_INTRO_LOOP_140bpm" ID="{B7D635C0-EFC3-433D-8C02-13B89B03E629}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="playerSwitchSlash" ID="{37313E8E-5DB8-4FB8-AFBF-8A03A8406ADB}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="roundOne" ID="{4C9FAB62-80E8-4EB4-BA6D-9D9B747492A6}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MUS_LOOP1_alt_140bpm" ID="{60D6A171-5363-41AD-8C38-3A711A871CB0}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="playerSwitchHit" ID="{56420B01-D61E-490A-96DA-98897B0DD92D}" WorkUnitID="{E33F34F7-832E-4FBA-9C07-329906D84AF2}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="roundThree" ID="{815CC30A-14F7-41D2-8EC5-93BB03151A42}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MUS_LOOP2_alt_140bpm" ID="{E069E275-268B-4A47-AE3B-165FF71D8FCE}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="roundTwo" ID="{4A1E80A0-065E-4292-8F96-DF4F4A2050B3}" WorkUnitID="{6C286046-0795-4CEB-B2E4-9FE98DA9CE3F}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MUS_LOOP4_140bpm" ID="{4F0456A1-F4CF-47B0-A6EA-35AA1F8D15D4}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="rtpcSlashSoundPerVelocity" ID="{74111CC3-C6FD-4CDC-A02D-E94D8B3F9E7C}"/>
+							<Value>57</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="switcheWeaponsTypeCathammer" ID="{6532EBFD-3BC6-47B3-ADC8-FF8B62C43DD8}"/>
+						<CurrentSwitchRef Name="fullHP" ID="{FB3A2C26-AEB0-4514-BC6A-2F92E63C0249}"/>
+						<CurrentSwitchRef Name="inIntro" ID="{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

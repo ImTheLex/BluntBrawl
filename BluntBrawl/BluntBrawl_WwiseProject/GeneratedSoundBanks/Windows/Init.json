@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{87712D70-3360-98A9-B5CC-6FFF0B40E35E}",
+    "Hash": "{EEC9A699-6E86-9CCA-27B2-F52BF686953C}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -100,26 +100,38 @@
      {
       "Id": "3103015060",
       "Name": "musicStates",
-      "ObjectPath": "\\States\\Default Work Unit\\musicStates",
-      "GUID": "{3C9B9409-7303-40B5-AAA6-07CE27DDD143}",
+      "ObjectPath": "\\States\\Music\\musicStates",
+      "GUID": "{0F596A80-325B-4F11-B246-B11AB61AA7B2}",
       "States": [
+       {
+        "Id": "19135406",
+        "Name": "waiting",
+        "ObjectPath": "\\States\\Music\\musicStates\\waiting",
+        "GUID": "{5902116C-A752-4795-BA72-BAC3B260ED5F}"
+       },
        {
         "Id": "748895195",
         "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\musicStates\\None",
-        "GUID": "{EB2ABA34-AACA-4E17-B55F-0E0672C4EBEA}"
+        "ObjectPath": "\\States\\Music\\musicStates\\None",
+        "GUID": "{B7161368-F11C-41D4-8F5E-A4E85DD383CD}"
        },
        {
-        "Id": "984691642",
-        "Name": "inGame",
-        "ObjectPath": "\\States\\Default Work Unit\\musicStates\\inGame",
-        "GUID": "{79E2ABA5-9823-45FA-A840-91913544E366}"
+        "Id": "1502067097",
+        "Name": "roundThree",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundThree",
+        "GUID": "{681B9674-EE53-4436-BB57-44C10327970E}"
        },
        {
-        "Id": "3862977292",
-        "Name": "Wainting",
-        "ObjectPath": "\\States\\Default Work Unit\\musicStates\\Wainting",
-        "GUID": "{579EBAB5-A84E-4BA8-BFE9-384127358410}"
+        "Id": "3156796827",
+        "Name": "roundTwo",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundTwo",
+        "GUID": "{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}"
+       },
+       {
+        "Id": "3275667245",
+        "Name": "roundOne",
+        "ObjectPath": "\\States\\Music\\musicStates\\roundOne",
+        "GUID": "{57C8F57E-EC42-40F6-85D6-F15EF9811F18}"
        }
       ]
      }
@@ -132,9 +144,9 @@
       "GUID": "{883F927B-34F5-4971-BDE8-C31639331742}",
       "Switches": [
        {
-        "Id": "19135406",
-        "Name": "waiting",
-        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\waiting",
+        "Id": "741355794",
+        "Name": "inIntro",
+        "ObjectPath": "\\Switches\\Default Work Unit\\musicSwitch\\inIntro",
         "GUID": "{A00D6A9C-C6AA-4AF3-8F49-9FB61ADCF3FE}"
        },
        {
@@ -209,6 +221,6 @@
     ]
    }
   ],
-  "FileHash": "{5CBD64FF-DD18-02BB-66D1-CA767F1A7531}"
+  "FileHash": "{205106BF-1A69-FD12-0BC9-431AD9DC502C}"
  }
 }

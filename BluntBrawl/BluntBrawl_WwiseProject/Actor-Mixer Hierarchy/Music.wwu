@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}" SchemaVersion="123" RootDocumentID="{712A9839-C5CB-485C-B2F8-02792726FAE1}" ParentDocumentID="{712A9839-C5CB-485C-B2F8-02792726FAE1}">
+	<AudioObjects>
+		<WorkUnit Name="Music" ID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}" OwnerID="{712A9839-C5CB-485C-B2F8-02792726FAE1}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="19"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="Music" ID="{1DA6929D-BC55-4E53-A873-8A78FBC2628B}" ShortID="111536351">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="MUS_INTRO_LOOP_140bpm" ID="{B7D635C0-EFC3-433D-8C02-13B89B03E629}" ShortID="904598450">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MUS_INTRO_LOOP_140bpm" ID="{FCA69C22-93B7-4E06-A3CF-C4B3E4F261FE}">
+									<Language>SFX</Language>
+									<AudioFile>MUS_INTRO_LOOP_140bpm.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="113016683"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="musicStates" ID="{0F596A80-325B-4F11-B246-B11AB61AA7B2}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="roundOne" ID="{57C8F57E-EC42-40F6-85D6-F15EF9811F18}"/>
+										<CustomState Name="" ID="{B6DAE44C-37F0-4564-9A1D-BF30CA8DC94D}" ShortID="966309680">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="None" ID="{B7161368-F11C-41D4-8F5E-A4E85DD383CD}"/>
+										<CustomState Name="" ID="{4DAC2E4D-70BF-4825-884F-B0CDCF46A978}" ShortID="433827447"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}"/>
+										<CustomState Name="" ID="{94B521BC-507D-4E4B-B7D3-C0EB2B2B0CA1}" ShortID="918121297">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundTwo" ID="{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}"/>
+										<CustomState Name="" ID="{EF37A9AF-9ADA-446E-8184-9FACC16CF070}" ShortID="388319066">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="waiting" ID="{5902116C-A752-4795-BA72-BAC3B260ED5F}"/>
+										<CustomState Name="" ID="{1BBF6DEA-FA25-4B8C-B28F-63393AA00E6D}" ShortID="538551892"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="MUS_INTRO_LOOP_140bpm" ID="{FCA69C22-93B7-4E06-A3CF-C4B3E4F261FE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MUS_LOOP1_alt_140bpm" ID="{60D6A171-5363-41AD-8C38-3A711A871CB0}" ShortID="793286259">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MUS_LOOP1_alt_140bpm" ID="{12D76A86-6506-4C61-AB08-6EEE7E3F94BC}">
+									<Language>SFX</Language>
+									<AudioFile>MUS_LOOP1_alt_140bpm.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="795986345"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="musicStates" ID="{0F596A80-325B-4F11-B246-B11AB61AA7B2}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="roundOne" ID="{57C8F57E-EC42-40F6-85D6-F15EF9811F18}"/>
+										<CustomState Name="" ID="{32A521A9-D1F5-43C6-93DC-86EA598FFF05}" ShortID="849762293"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="None" ID="{B7161368-F11C-41D4-8F5E-A4E85DD383CD}"/>
+										<CustomState Name="" ID="{4EE6A257-3BF0-4DA4-87DC-CE752763AFE4}" ShortID="227169422"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}"/>
+										<CustomState Name="" ID="{0BC377BA-CC6A-4A44-8F99-379E16FCBD48}" ShortID="47142319">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundTwo" ID="{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}"/>
+										<CustomState Name="" ID="{2D4D8892-9B65-4C9C-AF31-DE8DEBEE4B86}" ShortID="213494228">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="waiting" ID="{5902116C-A752-4795-BA72-BAC3B260ED5F}"/>
+										<CustomState Name="" ID="{EEC274B5-4D78-477C-B92F-D41C5D6FA7AB}" ShortID="976843284">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="MUS_LOOP1_alt_140bpm" ID="{12D76A86-6506-4C61-AB08-6EEE7E3F94BC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MUS_LOOP2_alt_140bpm" ID="{E069E275-268B-4A47-AE3B-165FF71D8FCE}" ShortID="502187371">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MUS_LOOP2_alt_140bpm" ID="{BC40DC16-F971-4F14-8E4E-7D9AB981C9E2}">
+									<Language>SFX</Language>
+									<AudioFile>MUS_LOOP2_alt_140bpm.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="484646156"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="musicStates" ID="{0F596A80-325B-4F11-B246-B11AB61AA7B2}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="roundOne" ID="{57C8F57E-EC42-40F6-85D6-F15EF9811F18}"/>
+										<CustomState Name="" ID="{D65249F8-A00A-4CCA-B762-0B70FF00A0E3}" ShortID="528829649">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="None" ID="{B7161368-F11C-41D4-8F5E-A4E85DD383CD}"/>
+										<CustomState Name="" ID="{2E805761-802A-4656-B78E-AF573490EE00}" ShortID="141964529"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}"/>
+										<CustomState Name="" ID="{81B4AE42-BEFB-482D-9B6F-B426A1144B73}" ShortID="216459410">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundTwo" ID="{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}"/>
+										<CustomState Name="" ID="{A90C3CE5-9BB2-4D81-9D52-4B81CD857BC1}" ShortID="387209011"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="waiting" ID="{5902116C-A752-4795-BA72-BAC3B260ED5F}"/>
+										<CustomState Name="" ID="{65E89A8C-F26C-4B89-9431-378C1B20197B}" ShortID="722638698">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="MUS_LOOP2_alt_140bpm" ID="{BC40DC16-F971-4F14-8E4E-7D9AB981C9E2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MUS_LOOP4_140bpm" ID="{4F0456A1-F4CF-47B0-A6EA-35AA1F8D15D4}" ShortID="158361505">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{319FAF8B-B309-49FB-A04B-7D3C5178AC4C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{17E4B58D-613C-4F8A-A0A8-9A1BE9769883}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MUS_LOOP4_140bpm" ID="{287AE797-330A-451B-B69F-76B42D7859F8}">
+									<Language>SFX</Language>
+									<AudioFile>MUS_LOOP4_140bpm.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="448634472"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="musicStates" ID="{0F596A80-325B-4F11-B246-B11AB61AA7B2}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="roundOne" ID="{57C8F57E-EC42-40F6-85D6-F15EF9811F18}"/>
+										<CustomState Name="" ID="{65A8E742-75EF-4AB6-9ABF-B916A96C63D4}" ShortID="344221498">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="None" ID="{B7161368-F11C-41D4-8F5E-A4E85DD383CD}"/>
+										<CustomState Name="" ID="{99424429-2871-4061-B8B7-7391588AF03C}" ShortID="254521284"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}"/>
+										<CustomState Name="" ID="{B3F30B20-4147-4B7F-AEE9-5E6445CE0E94}" ShortID="916848566"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="roundTwo" ID="{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}"/>
+										<CustomState Name="" ID="{F4BC826C-1D19-4DE2-83FD-9986290B801C}" ShortID="388792789">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="waiting" ID="{5902116C-A752-4795-BA72-BAC3B260ED5F}"/>
+										<CustomState Name="" ID="{63971D9A-8DC0-49F7-8740-48978419650D}" ShortID="514595896">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="MUS_LOOP4_140bpm" ID="{287AE797-330A-451B-B69F-76B42D7859F8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -35,7 +35,7 @@ namespace Item.Runtime
 	        obj.transform.localPosition = Vector3.zero;
         }
 
-        [Command]
+        [Command(requiresAuthority = false)]
         public void CmdResetWeapon()
         {
 	        Debug.Log("Asked for a weapon reset");

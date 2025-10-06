@@ -4,6 +4,7 @@ using HealthBox.Runtime;
 using Mirror;
 using MisteryBox.Runtime;
 using PrimeTween;
+using Skins.Runtime;
 using Sounds.Runtime;
 using TMPro;
 using Unity.XR.CoreUtils;
@@ -50,13 +51,14 @@ namespace Rounds.Runtime
             // Initialisé uniquement côté serveur
             _roundTimer = m_roundStats.m_maxRoundTime;
             _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
+            _quitMatchTimer = m_roundStats.m_quitMatchTimer;
         }
 
         [ServerCallback]
         private void Update()
         {
             
-            if (_currentRound > m_roundStats.m_maxRounds)
+            if (_currentRound > m_roundStats.m_maxRounds && !_endMatch)
             {
                 EndMatch();
                 return;
@@ -65,14 +67,18 @@ namespace Rounds.Runtime
             if (_playersAlive.Count > 0 && _isWaitingForPlayers)
             {
                 _waitForPlayerTimer -= Time.deltaTime;
-                RpcBroadcast($"Waiting For Players: {_waitForPlayerTimer:F2}");
+                RpcBroadcastCommunication($"Waiting For Players");
+                RpcBroadcastTimer($"{_waitForPlayerTimer:F2}");
                 if (_waitForPlayerTimer <= 0)
                 {
+                    RpcBroadcastSkin();
+                    RpcActivePlayerPanels(_playersAlive.Count);
                     _isWaitingForPlayers = false;
+                   
                 }
             }
 
-            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted && !_isWaitingForPlayers)
+            if (!_isPreStartingRound && _playersAlive.Count >= m_roundStats.m_requiredPlayers && !_roundStarted && !_isWaitingForPlayers && !_endMatch)
             {
                 PreStartRound();
             }
@@ -96,6 +102,18 @@ namespace Rounds.Runtime
                 if (_roundTimer <= 0)
                 {
                     EndRound();
+                }
+            }
+
+            if (_endMatch == true)
+            {
+                _quitMatchTimer -= Time.deltaTime;
+                RpcBroadcastCommunication("Quit match in");
+                RpcBroadcastTimer($"{_quitMatchTimer:F2}");
+                if (_quitMatchTimer <= 0)
+                {
+                    QuitMatch();
+                    _endMatch = false;
                 }
             }
         }
@@ -150,15 +168,18 @@ namespace Rounds.Runtime
         }
 
         public void EndMatch()
-        {
-           _matchWinner = _playersAlive.OrderByDescending(p => p.m_roundsWon).First();
-           RpcBroadcast($"Match won by\n{_matchWinner.m_playerName}");
+        { 
+            _endMatch = true;
+            _matchWinner = _playersAlive.OrderByDescending(p => p.m_roundsWon).First();
+            RpcBroadcastCommunication($"Match won by {_matchWinner.m_playerName}");
         }
         
         [Server]
         public void SetRoundWinner()
         {
             RpcBroadcastWinner(_winnerPlayer.m_playerName);
+            List<int> indexes = GetPanelIndexesForPlayer(_winnerPlayer);
+            RpcBroadcastWinnerPoints(indexes.ToArray(),_winnerPlayer.m_roundsWon);
             Invoke(nameof(EndRound), 3f);
         }
         
@@ -172,6 +193,7 @@ namespace Rounds.Runtime
             SendLoserAnim(player.netIdentity.connectionToClient, player);
             player.m_isInputActive = false;
             Tween.Delay(1.5f,onComplete: () => TargetRpcSendLoserToSpectate(player.netIdentity.connectionToClient,player));
+            Tween.Delay(2.5f, onComplete: player.CancelDeathAnimation);
             if (_playersAlive.Count == 1)
             {
                 SendWinnerAnim(_playersAlive[0].netIdentity.connectionToClient,_playersAlive[0]);
@@ -187,6 +209,30 @@ namespace Rounds.Runtime
 
         #region Utils
 
+        
+        private void QuitMatch()
+        {
+            /*
+            for (int i = _players.Count - 1; i < 0; i--)
+            {
+                _players[i].QuitGame();
+            }
+            */
+            NetworkManager.singleton.StopClient();
+            NetworkManager.singleton.StopHost();
+            Application.Quit();
+          
+        }
+        
+        
+        [Server]
+        public void RpcBroadcastSkin()
+        {
+            foreach (var player in _players)
+            {
+                player.m_skinBehaviour.ApplySkin();
+            }
+        }
 
         private void RespawnProps()
         {
@@ -215,10 +261,16 @@ namespace Rounds.Runtime
                 player.m_combatSFX.StopCombatMusic();
             }
         }
-        
-        private void ForEachTextType(string message)
+        private void ForEachTimerText(string message)
         {
-            foreach (var text in m_texts)
+            foreach (var text in m_roundPanelTimer)
+            {
+                text.text = message;
+            }
+        }
+        private void ForEachCommText(string message)
+        {
+            foreach (var text in m_roundPanelCommunication)
             {
                 text.text = message;
             }
@@ -235,45 +287,87 @@ namespace Rounds.Runtime
         private void RpcUpdatePreStartRoundTimer()
         {
             //if (_roundBreak) return;
-            var message = "Time\n" + m_preStartRoundTimer.ToString("F2");
-            ForEachTextType(message);
+            var message = "Time";
+            ForEachCommText(message);
+            ForEachTimerText(m_preStartRoundTimer.ToString("F2"));
         }
         
         [ClientRpc]
         private void RpcUpdateRoundTimer()
         {
             if (_roundBreak) return;
-            var message = "Time\n" + m_currentRoundTime.ToString("F2");
-            ForEachTextType(message);
+            var message = "Time";
+            ForEachCommText(message);
+            ForEachTimerText( m_currentRoundTime.ToString("F2"));
         }
 
         [ClientRpc]
-        private void RpcBroadcast(string message)
+        private void RpcBroadcastCommunication(string message)
         {
-            ForEachTextType(message);
+            ForEachCommText(message);
+        }
+
+        [ClientRpc]
+        private void RpcBroadcastTimer(string message)
+        {
+            ForEachTimerText(message);
         }
         
         [ClientRpc]
         private void RpcBroadcastMatchNull()
         {
             var message = "Match Null";
-            ForEachTextType(message);
+            ForEachCommText(message);
         }
         
         [ClientRpc]
         private void RpcBroadcastLoser(string loserName)
         {
             Debug.Log($"[CLIENT RPC] Broadcast loser: {loserName}");
-            var message = "Disconnected :\n" + loserName;
-            ForEachTextType(message);
+            var message = "Disconnected : " + loserName;
+            ForEachCommText(message);
         }
 
 
         [ClientRpc]
         private void RpcBroadcastWinner(string winnerName)
         {
-            var message = "Winner \n" + winnerName;
-            ForEachTextType(message);
+            var message = "Winner : " + winnerName;
+            ForEachCommText(message);
+        }
+
+        [ClientRpc]
+        private void RpcBroadcastWinnerPoints(int[] panelIndexes, int points)
+        {
+            
+            foreach (int index in panelIndexes)
+            {
+                if (index >= 0 && index < m_roundPlayerPanels.Count)
+                {
+                    var panel = m_roundPlayerPanels[index];
+                    var text = panel.GetComponentInChildren<TMPro.TMP_Text>();
+                    text.text = points.ToString();
+                }
+            }
+        }
+        
+        [Server]
+        private List<int> GetPanelIndexesForPlayer(RoundPlayer winner)
+        {
+            var indexes = new List<int>();
+
+            if (m_roundPlayerPanelsLink.TryGetValue(winner, out var panels))
+            {
+                for (int i = 0; i < panels.Count; i++)
+                {
+                    // On récupère l'index du panel dans ta liste globale m_roundPlayerPanels
+                    int panelIndex = m_roundPlayerPanels.IndexOf(panels[i]);
+                    if (panelIndex >= 0)
+                        indexes.Add(panelIndex);
+                }
+            }
+
+            return indexes;
         }
         
         [Client]
@@ -352,8 +446,15 @@ namespace Rounds.Runtime
         [Server]
         public void RegisterPlayer(RoundPlayer player)
         {
-            if (!_players.Contains(player)) _players.Add(player);
-            if (!_playersAlive.Contains(player)) _playersAlive.Add(player);
+            if (!_players.Contains(player))
+            {
+                _players.Add(player);
+                AddRoundPlayerPanel(player);
+            }
+            if (!_playersAlive.Contains(player))
+            {
+                _playersAlive.Add(player);
+            }
             _waitForPlayerTimer = m_roundStats.m_waitForPlayerTimer;
             _isWaitingForPlayers = true;
             
@@ -366,9 +467,52 @@ namespace Rounds.Runtime
            //player.RpcSetPlayerName(identity.connectionToClient,name);
 
            player.m_playerName = name;
+           AssignSkin(player,_players.Count-1);
 
         }
 
+        [Server]
+        public void AddRoundPlayerPanel(RoundPlayer player)
+        {
+            var playerPanels = new List<GameObject>();
+
+            int index = _players.Count - 1;
+
+            var panel1 = m_roundPlayerPanels[index];
+            var panel2 = m_roundPlayerPanels[index + 4];
+
+            playerPanels.Add(panel1);
+            playerPanels.Add(panel2);
+
+            m_roundPlayerPanelsLink[player] = playerPanels;
+            /*
+            RpcActivePannels(index);
+            RpcActivePannels(index + 4);
+            */
+        }
+
+        [Server]
+        public void AssignSkin(RoundPlayer player, int skinIndex)
+        {
+            player.m_skinIndex = skinIndex;
+        }
+        
+        
+        [ClientRpc]
+        public void RpcActivePannels(int index)
+        {
+            m_roundPlayerPanels[index].SetActive(true);
+        }
+
+        [ClientRpc]
+        public void RpcActivePlayerPanels(int numberOfPlayers)
+        {
+            for (int i = 0; i < numberOfPlayers; i++)
+            {
+                m_roundPlayerPanels[i].SetActive(true);
+                m_roundPlayerPanels[i+4].SetActive(true);
+            }
+        }
         [Server]
         public void UnregisterPlayer(RoundPlayer player)
         {
@@ -385,7 +529,6 @@ namespace Rounds.Runtime
             player.m_isInputActive = true;
             
         }
-        
         
         #endregion
 
@@ -410,7 +553,13 @@ namespace Rounds.Runtime
         [SyncVar] private int _currentRound = 1;
         [SyncVar] private float _broadCastCurrentTimer;
         
-        [SerializeField] private List<TMP_Text> m_texts;
+        [SyncVar] private bool _endMatch = false;
+        [SyncVar] private float _quitMatchTimer;
+        
+        [SerializeField] private List<TMP_Text> m_roundPanelCommunication;
+        [SerializeField] private List<TMP_Text> m_roundPanelTimer;
+        [SerializeField] private List<GameObject> m_roundPlayerPanels = new List<GameObject>();
+        private Dictionary<RoundPlayer,List<GameObject>> m_roundPlayerPanelsLink = new Dictionary<RoundPlayer, List<GameObject>>();
         
         private bool _soundsWaitingRoom = false;
 

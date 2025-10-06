@@ -1,7 +1,9 @@
+using System;
 using Animation.Runtime;
 using DeathCam.Runtime;
 using Item.Runtime;
 using Mirror;
+using Skins.Runtime;
 using Sounds.Runtime;
 using UnityEngine;
 
@@ -12,13 +14,16 @@ namespace Rounds.Runtime
         //public int m_playerCurrentHealth;
         [SyncVar(hook = nameof(OnRoundWonChanged))] public int m_roundsWon;
         [SyncVar(hook = nameof(OnNameChanged))] public string m_playerName;
+        [SyncVar(hook = nameof(OnSkinIndexChanged))] public int m_skinIndex;
+
         
         public InGameUIAnimation m_inGameUIAnimation => _inGameUIAnimation;
         
         public CombatSFX m_combatSFX => GetComponent<CombatSFX>();
 
+        public SkinBehaviour m_skinBehaviour;
 
-        public bool m_playerInitialized = false;
+        [SyncVar] public bool m_playerInitialized = false;
         
         public bool m_isInputActive = true;
         private void OnNameChanged(string oldName, string newName)
@@ -30,7 +35,18 @@ namespace Rounds.Runtime
         {
             Debug.Log($"Round won: {newRound}");
         }
-        
+
+        private void OnSkinIndexChanged(int oldSkinIndex, int newSkinIndex)
+        {
+            m_skinBehaviour.m_skinIndex = newSkinIndex;
+            //m_skinBehaviour.ApplySkin();
+        }
+
+        private void Awake()
+        {
+            m_skinBehaviour = _skinBehaviour;
+        }
+
         private RoundSystem roundSystem;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         public override void OnStartClient()
@@ -60,6 +76,28 @@ namespace Rounds.Runtime
             _itemGrabber.CmdResetWeapon();
             
         }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+        
+        public void ResetPosition()
+        {
+            _xrPosition.transform.position = _spawnPosition;
+        }
+        
+        public void UnsetInitialize()
+        {
+            m_playerInitialized = false;
+        }
+        
+        [ClientRpc]
+        public void CancelDeathAnimation()
+        {
+            Debug.Log($"Player cancelled death animation at " + m_playerName);
+            _playerAnimator.SetBool("death", false);
+        }
         
         //[Command(requiresAuthority = false)]
         public void CmdAddPlayer()
@@ -73,6 +111,7 @@ namespace Rounds.Runtime
             //_deathCamSystem.SwipeCamera();
             _itemGrabber.CmdDropWeapon();
             roundSystem.SetRoundLoser(this);
+            //UnsetInitialize();
         }
         
         public void CmdSetCurrentPlayerHealth(int currentHealth)
@@ -93,7 +132,7 @@ namespace Rounds.Runtime
 
         public void RestoreVision()
         {
-            _playerAnimator.SetBool("death",false);
+            //_playerAnimator.SetBool("death",false);
             _deathCamVignette.RestoreVignette();
         }
         
@@ -112,6 +151,7 @@ namespace Rounds.Runtime
 
             [SerializeField] private ItemGrabber _itemGrabber; 
             
+            [SerializeField] private SkinBehaviour _skinBehaviour;
         #endregion
     }
 }

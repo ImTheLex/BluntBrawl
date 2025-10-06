@@ -11,7 +11,7 @@
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac />
-  <WwiseInstallationPathWindows>D:\AudioKinetic\Wwise2024.1.8.8893</WwiseInstallationPathWindows>
+  <WwiseInstallationPathWindows>C:\Audiokinetic\Wwise2024.1.8.8893</WwiseInstallationPathWindows>
   <WwiseProjectPath>../BluntBrawl_WwiseProject/BluntBrawl_WwiseProject.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>

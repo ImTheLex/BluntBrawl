@@ -451,6 +451,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708944421159223308, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
+      propertyPath: '_skinnedMeshRenderers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5228376823124744048, guid: e074f5df0e4c44ebb9bdb21f8f63524a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -628,6 +644,18 @@ PrefabInstance:
     - target: {fileID: 5644840914528085951, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769479870725419239, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975876280115024450, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975876280115024450, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.4
       objectReference: {fileID: 0}
     - target: {fileID: 9072926390193016116, guid: c4000ceb9efcd4202a34c8cf377d3b63, type: 3}
       propertyPath: m_Name

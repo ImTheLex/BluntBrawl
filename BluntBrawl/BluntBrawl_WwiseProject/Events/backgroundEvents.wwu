@@ -63,6 +63,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="endOfRound" ID="{73C0A8EA-83B4-4E20-A92D-CCCEF91ADB46}">
+					<ChildrenList>
+						<Action Name="" ID="{23EB496D-290C-4875-B05E-874E0A44C22B}" ShortID="431820426">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="endOfRound" ID="{9F8ED853-0FC4-4AC6-B40B-863E42FA726F}" WorkUnitID="{8CBAAB81-DAE3-45E1-BE6E-E93F945AD23C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

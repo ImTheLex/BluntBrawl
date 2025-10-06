@@ -7,67 +7,96 @@
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>
-				<Event Name="musicIntro01" ID="{CD66E785-5505-4BC0-89CB-F8790D65AEFB}">
-					<ChildrenList>
-						<Action Name="" ID="{EBABF687-380F-43ED-BA53-B0B293BD38A6}" ShortID="817279635">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="MUS_INTRO_LOOP" ID="{838773D2-E905-4E58-899A-2001457DC814}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="combatSound" ID="{0F544235-D02C-4F98-90D5-DCF1DCEFFB82}">
-					<ChildrenList>
-						<Action Name="" ID="{76B83DFB-2A8B-426F-A4A9-96E841F28832}" ShortID="1036008392">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="runStateMusic" ID="{3FDC6D05-7154-4A21-B891-B340694A84E5}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="waitingRoom" ID="{FD651358-E0A5-462F-BA58-8F52B539398F}">
 					<ChildrenList>
-						<Action Name="" ID="{F98C3F49-7440-4ED5-8314-A75BEFB016BF}" ShortID="227135044">
+						<Action Name="" ID="{E5F5A124-1B00-4B47-82E9-AA128EE70C5B}" ShortID="1066726322">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="waitingRoom" ID="{A435AFB4-E647-41C2-BD5C-FE5CC921D55C}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="waiting" ID="{5902116C-A752-4795-BA72-BAC3B260ED5F}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C04FEF2E-378D-418D-ACE8-59553054B107}" ShortID="1026200866">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_INTRO_LOOP_140bpm" ID="{B7D635C0-EFC3-433D-8C02-13B89B03E629}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="musicIntro02" ID="{29D456D3-643C-4B91-91D5-C77601C1799E}">
+				<Event Name="roundOne" ID="{4C9FAB62-80E8-4EB4-BA6D-9D9B747492A6}">
 					<ChildrenList>
-						<Action Name="" ID="{CE2F9273-1821-4CB4-A616-4168BF414596}" ShortID="911019327">
+						<Action Name="" ID="{23A0974C-A87F-4E3B-81DB-DC518FA689AE}" ShortID="315035014">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_INTRO_LOOP2" ID="{16912D6B-6FF9-4042-A79E-93C10B446FEF}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="roundOne" ID="{57C8F57E-EC42-40F6-85D6-F15EF9811F18}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{18D7A512-57DC-49FB-B080-FD8A14DE704C}" ShortID="898179352">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_LOOP1_alt_140bpm" ID="{60D6A171-5363-41AD-8C38-3A711A871CB0}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="MusicLoop01" ID="{C58C6EFB-D80B-4F08-8687-A86E9F3F41C4}">
+				<Event Name="roundTwo" ID="{4A1E80A0-065E-4292-8F96-DF4F4A2050B3}">
 					<ChildrenList>
-						<Action Name="" ID="{C9579C94-6010-41B1-B785-0922A8971E6B}" ShortID="1008209362">
+						<Action Name="" ID="{88799275-DE0B-4E54-A918-B0247E875450}" ShortID="203378096">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_LOOP1" ID="{B9449F88-3A10-487B-A8F0-11A4D431CD06}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="roundTwo" ID="{3A1734A3-C1AA-45E4-AC1E-85B118A4C746}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{74B84681-7277-4573-8ECA-4D257B46437B}" ShortID="362588915">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_LOOP2_alt_140bpm" ID="{E069E275-268B-4A47-AE3B-165FF71D8FCE}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="MusicLoop02" ID="{132ED500-CD76-4ECE-A825-88A35FD63414}">
+				<Event Name="roundThree" ID="{815CC30A-14F7-41D2-8EC5-93BB03151A42}">
 					<ChildrenList>
-						<Action Name="" ID="{C30826E9-8A45-4383-B0D5-6C327FC6E39D}" ShortID="515777533">
+						<Action Name="" ID="{B31B849E-AD12-4A67-9441-678BC4434857}" ShortID="40187423">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MUS_LOOP2" ID="{9843CF5F-C132-4542-A57C-6910EE57590A}" WorkUnitID="{ECEAFD43-A9D9-460B-890F-45656B78CD73}"/>
+									<ObjectRef Name="roundThree" ID="{681B9674-EE53-4436-BB57-44C10327970E}" WorkUnitID="{38EE6FD8-E4BC-4EC4-B6C9-4B953C40249F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2C187FC2-CB4C-45FB-86F8-9F52BF9CFD15}" ShortID="1022368701">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_LOOP4_140bpm" ID="{4F0456A1-F4CF-47B0-A6EA-35AA1F8D15D4}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TestMusicLoop" ID="{4CA5EE57-DF99-4BCB-B718-B5A29D3C266E}">
+					<ChildrenList>
+						<Action Name="" ID="{8958DFC2-788F-4BF8-85EC-733FEA247462}" ShortID="248892839">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_LOOP2_alt_140bpm" ID="{E069E275-268B-4A47-AE3B-165FF71D8FCE}" WorkUnitID="{10CC2ADC-624B-4A50-B5B4-0AC21C6CFD8E}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

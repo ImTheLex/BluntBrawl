@@ -1,4 +1,4 @@
-# 🥊 BluntBrawl
+# 🥊 [BluntBrawl]([https://example.com](https://bunnybusher.itch.io/blunt-brawl))
 
 ## 🛠️ Configure Local Git Hooks
 
